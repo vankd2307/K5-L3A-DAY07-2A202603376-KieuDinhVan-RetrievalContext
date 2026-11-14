@@ -1,94 +1,33 @@
 # Day 7 — Agentic RAG
 
-**Kiều Đình Văn · 2A202603376 · L3A · phần cơ bản**
+**Bài cá nhân · Python 3.11+ · tiếp nối Day 6**
 
-Dùng lại 42 trang Think Stats và index B (91 chunks) của Day 6. Agent Gemini thật gọi tool search, trả lời có citation hoặc từ chối khi thiếu evidence. So sánh TF-IDF, dense pgvector và hybrid RRF; có 5 cấu hình dev và benchmark 17 dev / 7 test.
+Dùng embedding và vector store từ Day 6 để xây một agent biết tìm bằng chứng, trả lời có nguồn và nhận biết khi không đủ thông tin. Bạn tự chọn kiến trúc, số tool và cách tổ chức retrieval.
 
-- [Báo cáo và kết quả](report/individual/2A202603376_KieuDinhVan.md)
-- [Giao thức benchmark](benchmark/PROTOCOL.md)
-- [Cấu hình và giả thuyết](configs/experiments.json)
-- [Dev](benchmark/dev.json) · [Test](benchmark/test.json) · [Nguồn/giấy phép](data/ATTRIBUTION.md)
-- [Checklist bài nộp](SUBMISSION_CHECKLIST.md)
-- [Workbook rà soát câu trả lời](results/review_workbook.md)
-- [Đề bài gốc](docs/LAB_ASSIGNMENT.md) · [Rubric](RUBRIC.md)
+> **Tùy chọn:** [Gợi ý dùng AI để lập trình](AGENT_SETUP.md) giúp bạn làm lab; phần này không bắt buộc và không tính điểm.
 
-## Phiên bản và kiểm tra sau sửa
+## Bài cần làm
 
-Benchmark đã công bố thuộc **frozen_v1**, được lưu nguyên vẹn trong [artifacts/frozen_v1](artifacts/frozen_v1). `src/` hiện tại là bản đã sửa lỗi. Không sửa selection_lock để gán benchmark cũ cho code mới. Lệnh `src.run test` ở bản mới sẽ từ chối chạy với lock cũ; đó là kiểm tra phiên bản có chủ đích.
+![Agent tìm tài liệu trong kho Day 6 và trả lời có nguồn](assets/retrieval-pipeline.svg)
 
-Trong Git Bash, kiểm tra bản hiện tại mà không gọi API:
+1. Kết nối dữ liệu, embedding và vector store Day 6.
+2. Xây agent dùng model thật và ít nhất một khả năng truy xuất dữ liệu. Agent có thể dùng nhiều tool và nhiều lượt gọi.
+3. Thử **ít nhất 3 phương pháp retrieval khác nhau**, trong đó có dense retrieval dùng vector store Day 6. Tự chọn các phương pháp còn lại; xem [gợi ý](GUIDE.md#2-thử-các-phương-pháp-retrieval).
+4. Thử nhiều cấu hình, benchmark, phân tích lỗi và chọn cấu hình tốt trên **dev**; sau đó đánh giá trên **test**.
 
-```bash
-./.venv/Scripts/python.exe -B -X utf8 -m scripts.check_all
-./.venv/Scripts/python.exe -B -X utf8 -m scripts.replay_regression
-```
+Benchmark tối thiểu có **24 câu**: dev gồm 15 câu có đáp án và 2 câu thiếu bằng chứng; test gồm 5 câu có đáp án và 2 câu thiếu bằng chứng. Xem [benchmark](BENCHMARK.md) và [rubric](RUBRIC.md).
 
-`check_all` báo riêng code hiện tại có khớp lock hay không, và xác minh archive/kết quả cũ. Replay dùng quyết định/tool result đã lưu; không phải test độc lập. Muốn đánh giá bản sửa độc lập phải tạo bộ test mới, chọn lại trên dev và khóa một thí nghiệm mới. Script prepare hiện tại tái tạo bộ câu hỏi cũ, nên không tự biến bộ đó thành test mới.
+## Thử thách nâng cao · +15 điểm
 
-Hai script write_reviews/review_test giờ chỉ xác minh nhãn đã chấm, không tạo lại điểm hoặc đặt lại student_verified. Xem [các lỗi đã sửa](MAINTENANCE.md).
+Index một tài liệu thực tế từ **100 trang** có bảng, ảnh và biểu đồ; xây agent truy xuất và trả lời các câu hỏi về nội dung đó. Hoàn thành [thử thách nâng cao](ADVANCED.md) và đạt **ít nhất 90% benchmark test** để nhận 15 điểm bonus. Phần cơ bản tối đa 85 điểm; toàn bài tối đa 100 điểm.
 
-## Cài và kết nối
+## Bắt đầu
 
-Python 3.11+, PowerShell, PostgreSQL/pgvector của Day 6. Từ thư mục repo:
+1. Đọc [hướng dẫn](GUIDE.md), [rubric](RUBRIC.md) và [quy tắc](RULES.md).
+2. Tạo repo cá nhân theo [cách nộp bài](SUBMISSION.md), chuẩn bị đầu ra Day 6 và model hỗ trợ tool calling.
+3. Dùng hoặc thay thế [starter](starter/README.md); bạn cần kết nối model và vector store thật.
+4. Chạy `python -m unittest discover -s tests -v`. Test mock chỉ kiểm tra code, không phải benchmark agent thật.
 
-```powershell
-.\setup.ps1
-```
+![Các bước thử nghiệm trên dev và đánh giá trên test](assets/experiment-loop.svg)
 
-Nếu PowerShell chặn script, dùng trực tiếp các lệnh Python tương ứng trong setup.ps1, không cần đổi chính sách máy.
-
-Sửa `.env` theo `.env.example`: DAY6_ROOT trỏ repo Day 6, DATABASE_URL trỏ index B. GEMINI_API_KEY có thể đặt trong môi trường/.env Day 7; trên máy hiện tại đọc local từ starter/.env Day 6 nếu Day 7 chưa đặt key. Không ghi đè hay commit key. FREE_TIER_CONFIRMED chỉ đặt true khi project không gắn billing; quota hết thì dừng, không tự chuyển trả phí.
-
-Model đã chốt trong configs/experiments.json phải khớp GEMINI_MODEL. Cổng mặc định 55433. Nếu container Day 6 chưa chạy:
-
-```powershell
-docker compose -f "$env:DAY6_ROOT/starter/docker-compose.yml" -p day6_student_starter up -d --wait
-```
-
-Biến PowerShell DAY6_ROOT cần được đặt riêng nếu dùng lệnh Docker trên; `.env` chỉ được ứng dụng Python đọc. Index cần được dựng theo README Day 6 trên máy mới. Snapshot chunks/pages/manifest và benchmark đã nằm trong repo, không cần gọi lại embedding tài liệu cho máy hiện tại.
-
-## Kiểm chứng bài đã chạy
-
-```powershell
-.\.venv\Scripts\python.exe -B -X utf8 -m unittest discover -s tests -v
-.\run.ps1 check
-.\.venv\Scripts\python.exe -B -X utf8 -m scripts.verify
-```
-
-Có thể chạy cả unit tests và kiểm tra artifact bằng `python -B -X utf8 -m scripts.check_all`. Test offline chỉ kiểm tra code; kết quả agent thật nằm ở results/dev và results/test. Test mặc định không gọi API.
-
-## Chạy thí nghiệm từ đầu
-
-Trong bản sao chưa có selection lock (không xóa lock để chỉnh theo test):
-
-```powershell
-.\.venv\Scripts\python.exe -B -X utf8 -m scripts.prepare
-.\run.ps1 retrieval
-.\run.ps1 agent
-.\run.ps1 freeze
-.\run.ps1 test
-```
-
-prepare cần repo Day 6. Nó giữ chunk ID và không dùng lại câu test cũ. Những case thành công được giữ để resume; lỗi trước lưu trong previous_attempts. CLI không tự retry hoặc đổi model. Nếu gặp 503, chờ rồi chạy lại cùng lệnh; nếu 429, chờ quota Free Tier. Không chạy nhiều tiến trình lab đồng thời.
-
-Sau khi đọc/điền nhãn trong results/review_labels.json, xuất báo cáo:
-
-```powershell
-.\.venv\Scripts\python.exe -B -X utf8 -m scripts.report
-```
-
-Khi có lock, lệnh test chỉ chạy baseline và cấu hình đã chọn, kiểm tra hash code/dữ liệu/configs. Case đã thành công được bỏ qua nên chạy lại trên máy này không gửi lại API cho chúng. Kết quả benchmark kém vẫn được giữ nguyên.
-
-## Tổ chức mã nguồn
-
-- src/provider.py: Gemini REST, response/query cache, rate limit, usage ledger và gate Free Tier.
-- src/retrieval.py: TF-IDF, dense pgvector read-only, hybrid RRF, context packing.
-- src/agent.py: native function-calling search/finish, citation gate, trace và xử lý lỗi.
-- src/run.py: CLI retrieval/dev/freeze/test, metric và fingerprint.
-- src/reviews.py: kiểm tra và tổng hợp nhãn nội dung đã được đọc, không tự chấm grounding.
-- scripts/prepare.py: xuất corpus và soạn benchmark cố định từ nguồn.
-- scripts/report.py, scripts/verify.py: báo cáo và kiểm tra artifacts.
-
-Kết quả test của cấu hình đã chọn: Hit@1/Hit@3 và evidence trong context đều 5/5; trả lời đúng đủ 5/5 câu có đáp án, từ chối đúng 2/2 câu thiếu evidence theo nhãn Codex. Benchmark nhỏ, không suy rộng kết quả này.
-
-Code và nhãn do Codex hỗ trợ; học viên đã rà soát và xác nhận nhãn (student_verified=true). 14 nhãn test còn được Claude (AI) đối chiếu lại với chunk nguồn và đồng ý với điểm (trường ai_recheck). Không có đánh giá độc lập/LLM judge qua API. Không làm phần bonus trong bài này.
+Nộp code, cách chạy, cấu hình, benchmark, trace và [báo cáo](report/individual/MSSV_HoTen.md). Thời gian ở [checkpoints](CHECKPOINTS.md) là gợi ý, có thể điều chỉnh theo lớp và phạm vi thử nghiệm.

@@ -124,7 +124,7 @@ def main():
         '- HTTP 503 được lưu, tiến trình dừng; chạy lại giữ lần lỗi trong previous_attempts và bỏ qua case đã thành công. 429 dừng để chờ quota.',
         '- Response cache theo model + toàn bộ request; embedding cache task-aware, tận dụng cache Day 6. Không gửi lại request đã cache.', '',
         '## Tái lập và giới hạn', '',
-        '- Xem README.md và run.ps1; Python ' + platform.python_version() + ', dependencies được pin trong requirements-lock.txt.',
+        '- Xem README_STUDENT.md và run.ps1; Python ' + platform.python_version() + ', dependencies được pin trong requirements-lock.txt.',
         '- Corpus text tiếng Anh, câu hỏi tiếng Việt, quy mô nhỏ. Các trang test đã thuộc sách Day 6; test mới về mục tiêu trả lời, không độc lập hoàn toàn với lịch sử đọc tài liệu.',
         '- Strict evidence match có thể bỏ sót paraphrase; nhãn semantic được công bố riêng, không tự sửa gold sau khi xem test.',
         '- Citation gate chỉ kiểm tra ID/format, không bảo đảm mọi phát biểu đều đúng. Cần đọc nhãn audit và đối chiếu nguồn.',
@@ -241,8 +241,8 @@ Code và nhãn do Codex hỗ trợ; học viên đã rà soát và xác nhận n
               'Hai script write_reviews/review_test giờ chỉ xác minh nhãn đã chấm, không tạo lại điểm '
               'hoặc đặt lại student_verified. Xem [các lỗi đã sửa](MAINTENANCE.md).\n\n')
     readme = readme.replace('## Cài và kết nối', notice + '## Cài và kết nối', 1)
-    (ROOT / 'README.md').write_text(readme, encoding='utf-8')
-    print('Report and README regenerated from artifacts.')
+    (ROOT / 'README_STUDENT.md').write_text(readme, encoding='utf-8')
+    print('Report and README_STUDENT regenerated from artifacts; assignment README preserved.')
 
 
 if __name__ == '__main__':

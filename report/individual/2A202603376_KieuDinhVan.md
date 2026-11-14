@@ -65,7 +65,7 @@ Citation hợp lệ là số citation có trong context và hỗ trợ câu tr�
   - Trace từng câu: `results/dev/<cấu hình>/agent/<query-id>.json` và `results/test/<cấu hình>/agent/<query-id>.json`, ví dụ [d7-q01](../../results/dev/dense_context/agent/d7-q01.json), [d7-u01](../../results/dev/dense_context/agent/d7-u01.json), [d7-u02](../../results/dev/dense_context/agent/d7-u02.json).
   - Nhãn và lý do từng câu: [review_labels.json](../../results/review_labels.json), [audit_dev.json](../../results/audit_dev.json), [audit_test.json](../../results/audit_test.json), [review_workbook.md](../../results/review_workbook.md). Codex đề xuất nhãn ban đầu kèm lý do; tôi đọc đối chiếu với nguồn rồi chốt. Đây không phải chấm mù hay chấm độc lập.
   - Tổng hợp: [summary_dev.json](../../results/summary_dev.json), [summary_test.json](../../results/summary_test.json), usage API: [api_usage.json](../../results/api_usage.json).
-  - Lệnh chạy (cài đặt xem [README](../../README.md) và `run.ps1`):
+  - Lệnh chạy (cài đặt xem [README](../../README_STUDENT.md) và `run.ps1`):
     ```
     .\.venv\Scripts\python.exe -X utf8 -m src.run check
     .\.venv\Scripts\python.exe -X utf8 -m src.run retrieval --split dev
