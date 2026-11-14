@@ -14,6 +14,7 @@ Phần cơ bản. Không cam kết điểm rubric; các nhãn nội dung do Code
 - [x] README, setup/run, dependencies pin, báo cáo cá nhân và workbook rà soát.
 - [x] Unit tests và script kiểm tra artifacts; xem results/unit_tests.txt và results/delivery_checks.json.
 - [ ] Học viên rà soát/điều chỉnh nhãn, nhất là 14 kết quả test và các lỗi dev; cập nhật student_verified nếu đã đọc.
+  - Đã có lượt kiểm tra lại bằng AI (Claude) cho 14 nhãn test, đồng ý với điểm; ghi ở trường ai_recheck. Chưa phải xác nhận của học viên.
 - [ ] Kiểm tra repo cá nhân/remote, commit/push và quyền xem của giảng viên; nộp link theo thông báo lớp.
 
 Không có API key trong file nộp; .env và .cache bị Git bỏ qua. Không tự bật billing; chỉ dùng project Free Tier đã xác nhận.

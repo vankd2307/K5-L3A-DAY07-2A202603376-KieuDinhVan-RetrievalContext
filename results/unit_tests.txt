@@ -23,6 +23,8 @@ test_lexical_retrieval_never_calls_api (test_day7.LabTests.test_lexical_retrieva
 test_native_tool_search_then_citation_and_no_gold_in_request (test_day7.LabTests.test_native_tool_search_then_citation_and_no_gold_in_request) ... ok
 test_rrf_uses_rank_and_deduplicates_within_component (test_day7.LabTests.test_rrf_uses_rank_and_deduplicates_within_component) ... ok
 test_fixture_gold_resolves (test_fixture.FixtureTest.test_fixture_gold_resolves) ... ok
+test_cacheable_rules (test_provider_cache.ProviderCacheTests.test_cacheable_rules) ... ok
+test_failed_response_is_requested_again_instead_of_replayed (test_provider_cache.ProviderCacheTests.test_failed_response_is_requested_again_instead_of_replayed) ... ok
 test_actual_abstention_remains_distinct_from_output_failure (test_robustness.RobustnessTests.test_actual_abstention_remains_distinct_from_output_failure) ... ok
 test_aggregation_rejects_stale_labels_before_writing (test_robustness.RobustnessTests.test_aggregation_rejects_stale_labels_before_writing) ... ok
 test_aggregation_uses_actual_reviewer_and_confirmation (test_robustness.RobustnessTests.test_aggregation_uses_actual_reviewer_and_confirmation) ... ok
@@ -36,6 +38,6 @@ test_no_answerable_questions_returns_not_applicable (test_robustness.RobustnessT
 test_review_validation_preserves_all_manual_fields_and_bytes (test_robustness.RobustnessTests.test_review_validation_preserves_all_manual_fields_and_bytes) ... ok
 
 ----------------------------------------------------------------------
-Ran 36 tests in 0.295s
+Ran 38 tests in 0.252s
 
 OK

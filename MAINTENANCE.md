@@ -16,6 +16,7 @@ Toàn bộ source, benchmark, config, dữ liệu, trace, review và lock cũ đ
 | Review generator ghi đè điểm, tác giả và student_verified | Hai script chỉ xác minh nhãn đã tồn tại và đúng hash; không viết lại file nhãn. |
 | Aggregator dùng nhãn lỗi thời và reviewer cố định | Kiểm tra trace hash, lấy reviewer/xác nhận từ nhãn thật, loại trace error khỏi điểm chất lượng. |
 | Thiếu trace làm verifier crash ở nhánh aggregate | Ghi check không đạt và exit code 1; vẫn xuất báo cáo kiểm tra. |
+| Response cache lưu cả response lỗi (không có functionCall, safety block, MALFORMED_FUNCTION_CALL) nên retry trả lại đúng lỗi cũ | Chỉ cache response dùng được: request có tools cần đúng một functionCall, request thường cần text. Test: tests/test_provider_cache.py. |
 | Code thay đổi sau selection lock | Giữ nguyên lock và snapshot cũ; verifier báo rõ current_pipeline_matches_lock=false, kiểm tra riêng archive và trace cũ. |
 
 ## Ý nghĩa metric citation

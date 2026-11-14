@@ -1245,7 +1245,14 @@
     "answer_grade": 2,
     "context_grade": 2,
     "abstention_correct": null,
-    "reason": "PDF 53 nêu Copy tạo và sửa bản sao mà không ảnh hưởng bản gốc; answer giữ đủ cả mục đích và điều kiện không sửa gốc."
+    "reason": "PDF 53 nêu Copy tạo và sửa bản sao mà không ảnh hưởng bản gốc; answer giữ đủ cả mục đích và điều kiện không sửa gốc.",
+    "ai_recheck": {
+      "reviewer": "Claude (AI) second source-based check",
+      "at": "2026-11-14T08:55:45.338849+00:00",
+      "agrees_with_grades": true,
+      "note": "Đã đối chiếu answer, citation và chunk nguồn; đồng ý với nhãn.",
+      "is_student_verification": false
+    }
   },
   {
     "config": "baseline",
@@ -1258,7 +1265,14 @@
     "answer_grade": 0,
     "context_grade": 1,
     "abstention_correct": null,
-    "reason": "PDF 58: UnbiasPmf nhân từng xác suất với 1.0/x rồi Normalize. Đúng phép toán và đúng bước cuối. Baseline giữ đoạn BiasPmf PDF 57, thiếu UnbiasPmf/Normalize; từ chối nhầm, context chỉ liên quan một phần."
+    "reason": "PDF 58: UnbiasPmf nhân từng xác suất với 1.0/x rồi Normalize. Đúng phép toán và đúng bước cuối. Baseline giữ đoạn BiasPmf PDF 57, thiếu UnbiasPmf/Normalize; từ chối nhầm, context chỉ liên quan một phần.",
+    "ai_recheck": {
+      "reviewer": "Claude (AI) second source-based check",
+      "at": "2026-11-14T08:55:45.338849+00:00",
+      "agrees_with_grades": true,
+      "note": "Đã kiểm tra: context chỉ có chunk p.57 (BiasPmf), không chứa UnbiasPmf; chunk p.58 có code new_pmf.Mult(x, 1.0/x) và new_pmf.Normalize().",
+      "is_student_verification": false
+    }
   },
   {
     "config": "baseline",
@@ -1273,7 +1287,14 @@
     "answer_grade": 2,
     "context_grade": 2,
     "abstention_correct": null,
-    "reason": "PDF 56 nêu sinh viên học 4–5 lớp, giảng viên dạy 1–2 và nhiều sinh viên quan sát lớp đông hơn lớp nhỏ; answer bao phủ hai lý do."
+    "reason": "PDF 56 nêu sinh viên học 4–5 lớp, giảng viên dạy 1–2 và nhiều sinh viên quan sát lớp đông hơn lớp nhỏ; answer bao phủ hai lý do.",
+    "ai_recheck": {
+      "reviewer": "Claude (AI) second source-based check",
+      "at": "2026-11-14T08:55:45.338849+00:00",
+      "agrees_with_grades": true,
+      "note": "Đã đối chiếu answer, citation và chunk nguồn; đồng ý với nhãn.",
+      "is_student_verification": false
+    }
   },
   {
     "config": "baseline",
@@ -1288,7 +1309,14 @@
     "answer_grade": 2,
     "context_grade": 2,
     "abstention_correct": null,
-    "reason": "PDF 62 nói cơ hội vượt/bị vượt tỷ lệ chênh lệch tốc độ, ít gặp người cùng tốc độ; answer đúng đại lượng và cơ chế."
+    "reason": "PDF 62 nói cơ hội vượt/bị vượt tỷ lệ chênh lệch tốc độ, ít gặp người cùng tốc độ; answer đúng đại lượng và cơ chế.",
+    "ai_recheck": {
+      "reviewer": "Claude (AI) second source-based check",
+      "at": "2026-11-14T08:55:45.338849+00:00",
+      "agrees_with_grades": true,
+      "note": "Answer nói mạnh hơn nguồn (\"chênh lệch bằng 0 ... cực kỳ thấp\" so với \"unlikely to see each other\"); đại lượng và cơ chế vẫn đúng, nên giữ 2.",
+      "is_student_verification": false
+    }
   },
   {
     "config": "baseline",
@@ -1301,7 +1329,14 @@
     "answer_grade": 0,
     "context_grade": 0,
     "abstention_correct": null,
-    "reason": "PDF 62 yêu cầu kiểm tra PmfMean/PmfVar nhất quán với Mean/Var của Pmf, đúng cả hai tên phương thức. Baseline có context rỗng, không đủ evidence và từ chối câu có đáp án."
+    "reason": "PDF 62 yêu cầu kiểm tra PmfMean/PmfVar nhất quán với Mean/Var của Pmf, đúng cả hai tên phương thức. Baseline có context rỗng, không đủ evidence và từ chối câu có đáp án.",
+    "ai_recheck": {
+      "reviewer": "Claude (AI) second source-based check",
+      "at": "2026-11-14T08:55:45.338849+00:00",
+      "agrees_with_grades": true,
+      "note": "Đã kiểm tra: search \"PmfMean PmfVar\" trả về 0 kết quả nên context rỗng; từ chối nhầm câu có đáp án.",
+      "is_student_verification": false
+    }
   },
   {
     "config": "baseline",
@@ -1314,7 +1349,14 @@
     "answer_grade": null,
     "context_grade": null,
     "abstention_correct": true,
-    "reason": "Đối chiếu toàn bộ 42 trang và câu hỏi: không có học phí từng sinh viên (u03) hoặc benchmark H100/PmfMean (u04). Agent từ chối rõ ràng, không thêm số liệu suy đoán."
+    "reason": "Đối chiếu toàn bộ 42 trang và câu hỏi: không có học phí từng sinh viên (u03) hoặc benchmark H100/PmfMean (u04). Agent từ chối rõ ràng, không thêm số liệu suy đoán.",
+    "ai_recheck": {
+      "reviewer": "Claude (AI) second source-based check",
+      "at": "2026-11-14T08:55:45.338849+00:00",
+      "agrees_with_grades": true,
+      "note": "Đã đối chiếu answer, citation và chunk nguồn; đồng ý với nhãn.",
+      "is_student_verification": false
+    }
   },
   {
     "config": "baseline",
@@ -1327,7 +1369,14 @@
     "answer_grade": null,
     "context_grade": null,
     "abstention_correct": true,
-    "reason": "Đối chiếu toàn bộ 42 trang và câu hỏi: không có học phí từng sinh viên (u03) hoặc benchmark H100/PmfMean (u04). Agent từ chối rõ ràng, không thêm số liệu suy đoán."
+    "reason": "Đối chiếu toàn bộ 42 trang và câu hỏi: không có học phí từng sinh viên (u03) hoặc benchmark H100/PmfMean (u04). Agent từ chối rõ ràng, không thêm số liệu suy đoán.",
+    "ai_recheck": {
+      "reviewer": "Claude (AI) second source-based check",
+      "at": "2026-11-14T08:55:45.338849+00:00",
+      "agrees_with_grades": true,
+      "note": "Đã đối chiếu answer, citation và chunk nguồn; đồng ý với nhãn.",
+      "is_student_verification": false
+    }
   },
   {
     "config": "dense_context",
@@ -1342,7 +1391,14 @@
     "answer_grade": 2,
     "context_grade": 2,
     "abstention_correct": null,
-    "reason": "PDF 53 nêu Copy tạo và sửa bản sao mà không ảnh hưởng bản gốc; answer giữ đủ cả mục đích và điều kiện không sửa gốc."
+    "reason": "PDF 53 nêu Copy tạo và sửa bản sao mà không ảnh hưởng bản gốc; answer giữ đủ cả mục đích và điều kiện không sửa gốc.",
+    "ai_recheck": {
+      "reviewer": "Claude (AI) second source-based check",
+      "at": "2026-11-14T08:55:45.338849+00:00",
+      "agrees_with_grades": true,
+      "note": "Đã đối chiếu answer, citation và chunk nguồn; đồng ý với nhãn.",
+      "is_student_verification": false
+    }
   },
   {
     "config": "dense_context",
@@ -1357,7 +1413,14 @@
     "answer_grade": 2,
     "context_grade": 2,
     "abstention_correct": null,
-    "reason": "PDF 58: UnbiasPmf nhân từng xác suất với 1.0/x rồi Normalize. Đúng phép toán và đúng bước cuối."
+    "reason": "PDF 58: UnbiasPmf nhân từng xác suất với 1.0/x rồi Normalize. Đúng phép toán và đúng bước cuối.",
+    "ai_recheck": {
+      "reviewer": "Claude (AI) second source-based check",
+      "at": "2026-11-14T08:55:45.338849+00:00",
+      "agrees_with_grades": true,
+      "note": "Đã đối chiếu answer, citation và chunk nguồn; đồng ý với nhãn.",
+      "is_student_verification": false
+    }
   },
   {
     "config": "dense_context",
@@ -1372,7 +1435,14 @@
     "answer_grade": 2,
     "context_grade": 2,
     "abstention_correct": null,
-    "reason": "PDF 56 nêu sinh viên học 4–5 lớp, giảng viên dạy 1–2 và nhiều sinh viên quan sát lớp đông hơn lớp nhỏ; answer bao phủ hai lý do."
+    "reason": "PDF 56 nêu sinh viên học 4–5 lớp, giảng viên dạy 1–2 và nhiều sinh viên quan sát lớp đông hơn lớp nhỏ; answer bao phủ hai lý do.",
+    "ai_recheck": {
+      "reviewer": "Claude (AI) second source-based check",
+      "at": "2026-11-14T08:55:45.338849+00:00",
+      "agrees_with_grades": true,
+      "note": "Cụm \"(hiệu ứng quy mô lớp học hoặc lấy mẫu bị chệch)\" là diễn giải của model, chunk p.56 không nêu; hai lý do chính vẫn đủ và đúng, nên giữ 2.",
+      "is_student_verification": false
+    }
   },
   {
     "config": "dense_context",
@@ -1387,7 +1457,14 @@
     "answer_grade": 2,
     "context_grade": 2,
     "abstention_correct": null,
-    "reason": "PDF 62 nói cơ hội vượt/bị vượt tỷ lệ chênh lệch tốc độ, ít gặp người cùng tốc độ; answer đúng đại lượng và cơ chế."
+    "reason": "PDF 62 nói cơ hội vượt/bị vượt tỷ lệ chênh lệch tốc độ, ít gặp người cùng tốc độ; answer đúng đại lượng và cơ chế.",
+    "ai_recheck": {
+      "reviewer": "Claude (AI) second source-based check",
+      "at": "2026-11-14T08:55:45.338849+00:00",
+      "agrees_with_grades": true,
+      "note": "Đã đối chiếu answer, citation và chunk nguồn; đồng ý với nhãn.",
+      "is_student_verification": false
+    }
   },
   {
     "config": "dense_context",
@@ -1402,7 +1479,14 @@
     "answer_grade": 2,
     "context_grade": 2,
     "abstention_correct": null,
-    "reason": "PDF 62 yêu cầu kiểm tra PmfMean/PmfVar nhất quán với Mean/Var của Pmf, đúng cả hai tên phương thức."
+    "reason": "PDF 62 yêu cầu kiểm tra PmfMean/PmfVar nhất quán với Mean/Var của Pmf, đúng cả hai tên phương thức.",
+    "ai_recheck": {
+      "reviewer": "Claude (AI) second source-based check",
+      "at": "2026-11-14T08:55:45.338849+00:00",
+      "agrees_with_grades": true,
+      "note": "Đã đối chiếu answer, citation và chunk nguồn; đồng ý với nhãn.",
+      "is_student_verification": false
+    }
   },
   {
     "config": "dense_context",
@@ -1415,7 +1499,14 @@
     "answer_grade": null,
     "context_grade": null,
     "abstention_correct": true,
-    "reason": "Đối chiếu toàn bộ 42 trang và câu hỏi: không có học phí từng sinh viên (u03) hoặc benchmark H100/PmfMean (u04). Agent từ chối rõ ràng, không thêm số liệu suy đoán."
+    "reason": "Đối chiếu toàn bộ 42 trang và câu hỏi: không có học phí từng sinh viên (u03) hoặc benchmark H100/PmfMean (u04). Agent từ chối rõ ràng, không thêm số liệu suy đoán.",
+    "ai_recheck": {
+      "reviewer": "Claude (AI) second source-based check",
+      "at": "2026-11-14T08:55:45.338849+00:00",
+      "agrees_with_grades": true,
+      "note": "Đã đối chiếu answer, citation và chunk nguồn; đồng ý với nhãn.",
+      "is_student_verification": false
+    }
   },
   {
     "config": "dense_context",
@@ -1428,6 +1519,13 @@
     "answer_grade": null,
     "context_grade": null,
     "abstention_correct": true,
-    "reason": "Đối chiếu toàn bộ 42 trang và câu hỏi: không có học phí từng sinh viên (u03) hoặc benchmark H100/PmfMean (u04). Agent từ chối rõ ràng, không thêm số liệu suy đoán."
+    "reason": "Đối chiếu toàn bộ 42 trang và câu hỏi: không có học phí từng sinh viên (u03) hoặc benchmark H100/PmfMean (u04). Agent từ chối rõ ràng, không thêm số liệu suy đoán.",
+    "ai_recheck": {
+      "reviewer": "Claude (AI) second source-based check",
+      "at": "2026-11-14T08:55:45.338849+00:00",
+      "agrees_with_grades": true,
+      "note": "Đã đối chiếu answer, citation và chunk nguồn; đồng ý với nhãn.",
+      "is_student_verification": false
+    }
   }
 ]

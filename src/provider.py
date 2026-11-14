@@ -12,6 +12,21 @@ class ProviderError(RuntimeError):
     pass
 
 
+def cacheable(body, data):
+    """Cache only usable responses, so a retry of a failed trace sends a fresh request.
+
+    Tool requests need exactly one functionCall in the first candidate; plain requests need text.
+    Empty candidates, safety blocks and malformed function calls are never replayed from cache.
+    """
+    candidates = data.get('candidates') or []
+    if not candidates:
+        return False
+    parts = (candidates[0].get('content') or {}).get('parts') or []
+    if body.get('tools'):
+        return sum('functionCall' in p for p in parts) == 1
+    return any(p.get('text') for p in parts)
+
+
 class Gemini:
     def __init__(self, cfg):
         self.cfg = cfg
@@ -66,8 +81,9 @@ class Gemini:
             self.cache_hits += 1
             return self.cache[identity], True
         result = self.request('models/' + self.model + ':generateContent', body)
-        self.cache[identity] = result
-        write(self.cache_path, self.cache)
+        if cacheable(body, result):
+            self.cache[identity] = result
+            write(self.cache_path, self.cache)
         return result, False
 
     def embed(self, text):
