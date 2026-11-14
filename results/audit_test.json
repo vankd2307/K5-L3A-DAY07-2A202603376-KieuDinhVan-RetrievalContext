@@ -7,7 +7,7 @@
       "Codex source-based reading"
     ],
     "reviewer": "Codex source-based reading",
-    "student_review_complete": false,
+    "student_review_complete": true,
     "answer_citation_scope": "Successfully answered outputs only; citation gate makes this conditional coverage, not grounding accuracy.",
     "answer_distribution": {
       "0": 2,
@@ -28,7 +28,7 @@
     "abstention_N": 2,
     "false_abstention_n": 2,
     "false_abstention_N": 5,
-    "student_verified_n": 0
+    "student_verified_n": 7
   },
   {
     "config": "dense_context",
@@ -38,7 +38,7 @@
       "Codex source-based reading"
     ],
     "reviewer": "Codex source-based reading",
-    "student_review_complete": false,
+    "student_review_complete": true,
     "answer_citation_scope": "Successfully answered outputs only; citation gate makes this conditional coverage, not grounding accuracy.",
     "answer_distribution": {
       "0": 0,
@@ -59,6 +59,6 @@
     "abstention_N": 2,
     "false_abstention_n": 0,
     "false_abstention_N": 5,
-    "student_verified_n": 0
+    "student_verified_n": 7
   }
 ]

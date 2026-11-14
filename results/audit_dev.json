@@ -7,7 +7,7 @@
       "Codex source-based reading"
     ],
     "reviewer": "Codex source-based reading",
-    "student_review_complete": false,
+    "student_review_complete": true,
     "answer_citation_scope": "Successfully answered outputs only; citation gate makes this conditional coverage, not grounding accuracy.",
     "answer_distribution": {
       "0": 5,
@@ -28,7 +28,7 @@
     "abstention_N": 2,
     "false_abstention_n": 5,
     "false_abstention_N": 15,
-    "student_verified_n": 0
+    "student_verified_n": 17
   },
   {
     "config": "dense",
@@ -38,7 +38,7 @@
       "Codex source-based reading"
     ],
     "reviewer": "Codex source-based reading",
-    "student_review_complete": false,
+    "student_review_complete": true,
     "answer_citation_scope": "Successfully answered outputs only; citation gate makes this conditional coverage, not grounding accuracy.",
     "answer_distribution": {
       "0": 6,
@@ -59,7 +59,7 @@
     "abstention_N": 2,
     "false_abstention_n": 6,
     "false_abstention_N": 15,
-    "student_verified_n": 0
+    "student_verified_n": 17
   },
   {
     "config": "hybrid",
@@ -69,7 +69,7 @@
       "Codex source-based reading"
     ],
     "reviewer": "Codex source-based reading",
-    "student_review_complete": false,
+    "student_review_complete": true,
     "answer_citation_scope": "Successfully answered outputs only; citation gate makes this conditional coverage, not grounding accuracy.",
     "answer_distribution": {
       "0": 5,
@@ -90,7 +90,7 @@
     "abstention_N": 2,
     "false_abstention_n": 4,
     "false_abstention_N": 15,
-    "student_verified_n": 0
+    "student_verified_n": 17
   },
   {
     "config": "dense_context",
@@ -100,7 +100,7 @@
       "Codex source-based reading"
     ],
     "reviewer": "Codex source-based reading",
-    "student_review_complete": false,
+    "student_review_complete": true,
     "answer_citation_scope": "Successfully answered outputs only; citation gate makes this conditional coverage, not grounding accuracy.",
     "answer_distribution": {
       "0": 2,
@@ -121,7 +121,7 @@
     "abstention_N": 2,
     "false_abstention_n": 2,
     "false_abstention_N": 15,
-    "student_verified_n": 0
+    "student_verified_n": 17
   },
   {
     "config": "hybrid_context",
@@ -131,7 +131,7 @@
       "Codex source-based reading"
     ],
     "reviewer": "Codex source-based reading",
-    "student_review_complete": false,
+    "student_review_complete": true,
     "answer_citation_scope": "Successfully answered outputs only; citation gate makes this conditional coverage, not grounding accuracy.",
     "answer_distribution": {
       "0": 0,
@@ -152,6 +152,6 @@
     "abstention_N": 2,
     "false_abstention_n": 0,
     "false_abstention_N": 15,
-    "student_verified_n": 0
+    "student_verified_n": 17
   }
 ]

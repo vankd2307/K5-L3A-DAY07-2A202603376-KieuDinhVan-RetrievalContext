@@ -1,5 +1,5 @@
 {
-  "at": "2026-11-14T09:13:15.679487+00:00",
+  "at": "2026-11-14T09:29:49.663512+00:00",
   "passed": true,
   "count": 592,
   "failed": [],
@@ -606,6 +606,6 @@
     "corrected_code_independently_benchmarked": false,
     "note": "The existing benchmark measures frozen_v1. Current fixes have regression tests, not a new held-out evaluation."
   },
-  "student_review_pending": true,
+  "student_review_pending": false,
   "note": "AI-assisted source-based labels are present; this does not certify student review or a rubric score."
 }
