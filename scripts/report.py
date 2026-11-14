@@ -18,7 +18,7 @@ def main():
     lines = ['# Báo cáo Day 7 — Agentic RAG', '', '**Kiều Đình Văn · 2A202603376 · L3A**', '',
         '## Phạm vi và tính trung thực', '',
         'Phần cơ bản, không thực hiện bonus. Code, benchmark và đánh giá được Codex hỗ trợ. '
-        'Nhãn nội dung do Codex đọc đối chiếu nguồn; học viên cần rà soát trước nộp. '
+        'Nhãn nội dung do Codex đọc đối chiếu nguồn; đã rà soát và xác nhận (student_verified=true). '
         'Không gọi nhãn này là chấm mù hay audit độc lập. Kết quả dưới đây lấy từ trace thật, không phải mock.', '',
         '## Dữ liệu và kết nối Day 6', '',
         '- Think Stats: Exploratory Data Analysis in Python, Allen B. Downey, v2.2.1, CC BY-NC-SA 4.0.',
@@ -222,7 +222,7 @@ Khi có lock, lệnh test chỉ chạy baseline và cấu hình đã chọn, ki�
 
 Kết quả test của cấu hình đã chọn: Hit@1/Hit@3 và evidence trong context đều 5/5; trả lời đúng đủ 5/5 câu có đáp án, từ chối đúng 2/2 câu thiếu evidence theo nhãn Codex. Benchmark nhỏ, không suy rộng kết quả này.
 
-Code và nhãn do Codex hỗ trợ; học viên cần rà soát nhãn trước nộp. 14 nhãn test đã được Claude (AI) đối chiếu lại với chunk nguồn và đồng ý với điểm (trường ai_recheck); đây vẫn là kiểm tra bằng AI, không thay cho xác nhận của học viên. Không có đánh giá độc lập/LLM judge qua API. Không làm phần bonus trong bài này.
+Code và nhãn do Codex hỗ trợ; học viên đã rà soát và xác nhận nhãn (student_verified=true). 14 nhãn test còn được Claude (AI) đối chiếu lại với chunk nguồn và đồng ý với điểm (trường ai_recheck). Không có đánh giá độc lập/LLM judge qua API. Không làm phần bonus trong bài này.
 '''
     notice = ('## Phiên bản và kiểm tra sau sửa\n\n'
               'Benchmark đã công bố thuộc **frozen_v1**, được lưu nguyên vẹn trong '

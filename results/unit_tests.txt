@@ -38,6 +38,6 @@ test_no_answerable_questions_returns_not_applicable (test_robustness.RobustnessT
 test_review_validation_preserves_all_manual_fields_and_bytes (test_robustness.RobustnessTests.test_review_validation_preserves_all_manual_fields_and_bytes) ... ok
 
 ----------------------------------------------------------------------
-Ran 38 tests in 0.252s
+Ran 38 tests in 0.298s
 
 OK
