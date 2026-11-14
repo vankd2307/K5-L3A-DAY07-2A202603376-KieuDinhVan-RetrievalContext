@@ -1,0 +1,289 @@
+{
+  "question": "Vì sao việc chỉ lấy ý kiến người tham gia thảo luận về con đầu sinh muộn có thể gây selection bias?",
+  "config": "baseline",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:11.170203+00:00",
+  "status": "answered",
+  "citations": [
+    "54f0c801e3aa64b436f8c68f"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "tfidf",
+      "query": "first born delayed childbearing selection bias respondents",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 22,
+          "text": "2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 2,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 895,
+            "chunking": "paragraph"
+          },
+          "id": "54f0c801e3aa64b436f8c68f",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.18650195515988832,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 55,
+          "text": "thinkplot.Bar(weeks, diffs)\nIn this code,weeksis the range of weeks;diffsis the difference between the\ntwo PMFs in percentage points. Figure 3.2 shows the result as a bar chart.\nThis figure makes the pattern clearer: first babies are less likely to be born\nin week 39, and somewhat more likely to be born in weeks 41 and 42.\nFor now we should hold this conclusion only tentatively. We used the same\ndataset to identify an apparent difference and then chose a visualization that\nmakes the difference apparent. We can’t be sure this effect is real; it might\nbe due to random variation. We’ll address this concern later.\n\n3.4 The class size paradox\n\nBefore we go on, I want to demonstrate one kind of computation you can do\nwith Pmf objects; I call this example the “class size paradox.”",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 35,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 744,
+            "end_char": 1528,
+            "chunking": "paragraph"
+          },
+          "id": "1bed87a28147c3fc49afaba2",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.1258050301955531,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 62,
+          "text": "42 Chapter 3. Probability mass functions\n\nWrite functions calledPmfMeanandPmfVarthat take a Pmf object and compute the mean and variance. To test these methods, check that they are\nconsistent with the methodsMeanandVarprovided by Pmf.\n\nExercise 3.3I started with the question, “Are first babies more likely to be\nlate?” To address it, I computed the difference in means between groups of\nbabies, but I ignored the possibility that there might be a difference between\nfirst babies and othersfor the same woman.\n\nTo address this version of the question, select respondents who have at least\ntwo babies and compute pairwise differences. Does this formulation of the\nquestion yield a different result?\n\nHint: usensfg.MakePregMap.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 42,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 725,
+            "chunking": "paragraph"
+          },
+          "id": "54dd11dc5985db806f55aedd",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.07068320576944859,
+          "method": "tfidf"
+        }
+      ],
+      "context": "[54f0c801e3aa64b436f8c68f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 22]\n2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.",
+      "context_ids": [
+        "54f0c801e3aa64b436f8c68f"
+      ],
+      "elapsed_ms": 0.2179000002797693
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "citations": [
+          "54f0c801e3aa64b436f8c68f"
+        ],
+        "answer": "Việc chỉ lấy ý kiến của những người tham gia thảo luận về con đầu sinh muộn có thể gây ra lựa chọn chệch (selection bias) vì những người tham gia có thể là những người có sự quan tâm đặc biệt đến vấn đề này (ví dụ: con đầu lòng của họ sinh muộn), do đó quá trình lựa chọn dữ liệu sẽ làm chệch kết quả của phân tích [54f0c801e3aa64b436f8c68f].",
+        "abstain": false
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 350,
+        "candidatesTokenCount": 21,
+        "totalTokenCount": 371,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 350
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 665,
+        "candidatesTokenCount": 154,
+        "totalTokenCount": 819,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 665
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Việc chỉ lấy ý kiến của những người tham gia thảo luận về con đầu sinh muộn có thể gây ra lựa chọn chệch (selection bias) vì những người tham gia có thể là những người có sự quan tâm đặc biệt đến vấn đề này (ví dụ: con đầu lòng của họ sinh muộn), do đó quá trình lựa chọn dữ liệu sẽ làm chệch kết quả của phân tích [54f0c801e3aa64b436f8c68f].",
+  "context": "[54f0c801e3aa64b436f8c68f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 22]\n2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.",
+  "context_ids": [
+    "54f0c801e3aa64b436f8c68f"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 0.5241000035312027,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q01",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 5842.259199998807,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Vì sao việc chỉ lấy ý kiến người tham gia thảo luận về con đầu sinh muộn có thể gây selection bias?",
+      "config": "baseline",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:23:50.983658+00:00",
+      "status": "answered",
+      "citations": [
+        "54f0c801e3aa64b436f8c68f"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "tfidf",
+          "query": "first born delayed childbearing selection bias respondents",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 22,
+              "text": "2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 2,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 895,
+                "chunking": "paragraph"
+              },
+              "id": "54f0c801e3aa64b436f8c68f",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.18650195515988832,
+              "method": "tfidf"
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 55,
+              "text": "thinkplot.Bar(weeks, diffs)\nIn this code,weeksis the range of weeks;diffsis the difference between the\ntwo PMFs in percentage points. Figure 3.2 shows the result as a bar chart.\nThis figure makes the pattern clearer: first babies are less likely to be born\nin week 39, and somewhat more likely to be born in weeks 41 and 42.\nFor now we should hold this conclusion only tentatively. We used the same\ndataset to identify an apparent difference and then chose a visualization that\nmakes the difference apparent. We can’t be sure this effect is real; it might\nbe due to random variation. We’ll address this concern later.\n\n3.4 The class size paradox\n\nBefore we go on, I want to demonstrate one kind of computation you can do\nwith Pmf objects; I call this example the “class size paradox.”",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "3",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 35,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 744,
+                "end_char": 1528,
+                "chunking": "paragraph"
+              },
+              "id": "1bed87a28147c3fc49afaba2",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.1258050301955531,
+              "method": "tfidf"
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 62,
+              "text": "42 Chapter 3. Probability mass functions\n\nWrite functions calledPmfMeanandPmfVarthat take a Pmf object and compute the mean and variance. To test these methods, check that they are\nconsistent with the methodsMeanandVarprovided by Pmf.\n\nExercise 3.3I started with the question, “Are first babies more likely to be\nlate?” To address it, I computed the difference in means between groups of\nbabies, but I ignored the possibility that there might be a difference between\nfirst babies and othersfor the same woman.\n\nTo address this version of the question, select respondents who have at least\ntwo babies and compute pairwise differences. Does this formulation of the\nquestion yield a different result?\n\nHint: usensfg.MakePregMap.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "3",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 42,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 725,
+                "chunking": "paragraph"
+              },
+              "id": "54dd11dc5985db806f55aedd",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.07068320576944859,
+              "method": "tfidf"
+            }
+          ],
+          "context": "[54f0c801e3aa64b436f8c68f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 22]\n2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.",
+          "context_ids": [
+            "54f0c801e3aa64b436f8c68f"
+          ],
+          "elapsed_ms": 0.6600000197067857
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "citations": [
+              "54f0c801e3aa64b436f8c68f"
+            ],
+            "answer": "Việc chỉ lấy ý kiến của những người tham gia thảo luận về con đầu sinh muộn có thể gây ra lựa chọn chệch (selection bias) vì những người tham gia có thể là những người có sự quan tâm đặc biệt đến vấn đề này (ví dụ: con đầu lòng của họ sinh muộn), do đó quá trình lựa chọn dữ liệu sẽ làm chệch kết quả của phân tích [54f0c801e3aa64b436f8c68f].",
+            "abstain": false
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 350,
+            "candidatesTokenCount": 21,
+            "totalTokenCount": 371,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 350
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 665,
+            "candidatesTokenCount": 154,
+            "totalTokenCount": 819,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 665
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Việc chỉ lấy ý kiến của những người tham gia thảo luận về con đầu sinh muộn có thể gây ra lựa chọn chệch (selection bias) vì những người tham gia có thể là những người có sự quan tâm đặc biệt đến vấn đề này (ví dụ: con đầu lòng của họ sinh muộn), do đó quá trình lựa chọn dữ liệu sẽ làm chệch kết quả của phân tích [54f0c801e3aa64b436f8c68f].",
+      "context": "[54f0c801e3aa64b436f8c68f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 22]\n2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.",
+      "context_ids": [
+        "54f0c801e3aa64b436f8c68f"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 5842.259199998807,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q01",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

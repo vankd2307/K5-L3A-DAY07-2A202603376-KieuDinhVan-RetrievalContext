@@ -1,0 +1,16 @@
+{
+  "query_id": "d7-t04",
+  "split": "test",
+  "config": "baseline",
+  "status": "ok",
+  "query": "Trong ví dụ chạy tiếp sức, xác suất hai người chạy vượt nhau tỷ lệ với đại lượng nào, và vì sao ít gặp người cùng tốc độ?",
+  "filter": {},
+  "results": [],
+  "context": "",
+  "context_ids": [],
+  "hit1": false,
+  "hit3": false,
+  "context_hit": false,
+  "elapsed_ms": 0.12229999992996454,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4"
+}

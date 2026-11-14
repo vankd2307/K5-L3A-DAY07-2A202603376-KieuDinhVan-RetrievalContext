@@ -1,0 +1,169 @@
+{
+  "query_id": "d7-q06",
+  "split": "dev",
+  "config": "baseline",
+  "status": "ok",
+  "query": "DataFrame NSFG được minh họa có bao nhiêu bản ghi và biến?",
+  "filter": {},
+  "results": [
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 59,
+      "text": "3.5. DataFrame indexing 39\n3.5 DataFrame indexing",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "3",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 39,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 49,
+        "chunking": "paragraph"
+      },
+      "id": "328bb76367d79e6b875428e2",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.2975446630659829,
+      "method": "tfidf"
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 26,
+      "text": "6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 6,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 542,
+        "chunking": "paragraph"
+      },
+      "id": "ee672fe7059e3b9d2b8e2207",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.23979577989300188,
+      "method": "tfidf"
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 25,
+      "text": "The result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 5,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 1345,
+        "end_char": 1637,
+        "chunking": "paragraph"
+      },
+      "id": "de378d91be893b62e4be3810",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.1724778353984379,
+      "method": "tfidf"
+    }
+  ],
+  "context": "[328bb76367d79e6b875428e2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 59]\n3.5. DataFrame indexing 39\n3.5 DataFrame indexing\n\n[ee672fe7059e3b9d2b8e2207 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\n6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.",
+  "context_ids": [
+    "328bb76367d79e6b875428e2",
+    "ee672fe7059e3b9d2b8e2207",
+    "de378d91be893b62e4be3810"
+  ],
+  "hit1": false,
+  "hit3": true,
+  "context_hit": true,
+  "elapsed_ms": 0.4099000070709735,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q06",
+      "split": "dev",
+      "config": "baseline",
+      "status": "ok",
+      "query": "DataFrame NSFG được minh họa có bao nhiêu bản ghi và biến?",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 59,
+          "text": "3.5. DataFrame indexing 39\n3.5 DataFrame indexing",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 39,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 49,
+            "chunking": "paragraph"
+          },
+          "id": "328bb76367d79e6b875428e2",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.2975446630659829,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 26,
+          "text": "6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 6,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 542,
+            "chunking": "paragraph"
+          },
+          "id": "ee672fe7059e3b9d2b8e2207",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.23979577989300188,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 25,
+          "text": "The result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 5,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 1345,
+            "end_char": 1637,
+            "chunking": "paragraph"
+          },
+          "id": "de378d91be893b62e4be3810",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.1724778353984379,
+          "method": "tfidf"
+        }
+      ],
+      "context": "[328bb76367d79e6b875428e2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 59]\n3.5. DataFrame indexing 39\n3.5 DataFrame indexing\n\n[ee672fe7059e3b9d2b8e2207 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\n6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.",
+      "context_ids": [
+        "328bb76367d79e6b875428e2",
+        "ee672fe7059e3b9d2b8e2207",
+        "de378d91be893b62e4be3810"
+      ],
+      "hit1": false,
+      "hit3": true,
+      "context_hit": true,
+      "elapsed_ms": 0.39870000910013914
+    }
+  ]
+}

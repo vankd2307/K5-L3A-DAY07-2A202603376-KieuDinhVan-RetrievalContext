@@ -1,0 +1,389 @@
+{
+  "question": "Khi thêm cột vào DataFrame, vì sao không nên gán bằng dot notation?",
+  "config": "dense_context",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:12.444387+00:00",
+  "status": "answered",
+  "citations": [
+    "798698989f39c80a59059a9a"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "dense",
+      "query": "DataFrame dot notation assign column Think Stats",
+      "filter": {},
+      "results": [
+        {
+          "id": "798698989f39c80a59059a9a",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 30,
+          "text": "10 Chapter 1. Exploratory data analysis\n\nOne important note: when you add a new column to a DataFrame, you must\nuse dictionary syntax, like this\n# CORRECT\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nNot dot notation, like this:\n# WRONG!\ndf.totalwgt_lb = df.birthwgt_lb + df.birthwgt_oz / 16.0\nThe version with dot notation adds an attribute to the DataFrame object,\nbut that attribute is not treated as a new column.\n\n1.7 Validation\n\nWhen data is exported from one software environment and imported into\nanother, errors might be introduced. And when you are getting familiar\nwith a new dataset, you might interpret data incorrectly or introduce other\nmisunderstandings. If you take time to validate the data, you can save time\nlater and avoid errors.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 765,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 10,
+            "extraction_status": "ok"
+          },
+          "score": 0.7505799680602583,
+          "method": "dense"
+        },
+        {
+          "id": "1d7f5a186b7ba77a2fe8ef9f",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 27,
+          "text": "1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 900,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 7,
+            "extraction_status": "ok"
+          },
+          "score": 0.7319880723953247,
+          "method": "dense"
+        },
+        {
+          "id": "625a4e9eb5e0818acf6c15f3",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 60,
+          "text": "40 Chapter 3. Probability mass functions\n\nAs we saw in the previous chapter, simple indexing selects a column, returning a Series:\n>>> df['A']\na -0.143510\nb -1.489647\nc -0.074350\nd -1.369968\nName: A, dtype: float64\nTo select a row by label, you can use thelocattribute, which returns a\nSeries:\n>>> df.loc['a']\nA -0.14351\nB 0.61605\nName: a, dtype: float64\nIf you know the integer position of a row, rather than its label, you can use\ntheilocattribute, which also returns a Series.\n>>> df.iloc[0]\nA -0.14351\nB 0.61605\nName: a, dtype: float64\nloccan also take a list of labels; in that case, the result is a DataFrame.\n>>> indices = ['a', 'c']\n>>> df.loc[indices]\nA B\na -0.14351 0.616050\nc -0.07435 0.039621\nFinally, you can use a slice to select a range of rows by label:\n>>> df['a':'c']\nA B\na -0.143510 0.616050\nb -1.489647 0.300774\nc -0.074350 0.039621\nOr by integer position:",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "3",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 876,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 40,
+            "extraction_status": "ok"
+          },
+          "score": 0.7117093801498413,
+          "method": "dense"
+        },
+        {
+          "id": "50718039f1ba18056fe56194",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 29,
+          "text": "df['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1193,
+            "language": "en",
+            "start_char": 298,
+            "printed_page": 9,
+            "extraction_status": "ok"
+          },
+          "score": 0.7016185522079468,
+          "method": "dense"
+        },
+        {
+          "id": "49643149477ca2ae881fb71f",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 29,
+          "text": "100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1487,
+            "language": "en",
+            "start_char": 1194,
+            "printed_page": 9,
+            "extraction_status": "ok"
+          },
+          "score": 0.6990448832511902,
+          "method": "dense"
+        }
+      ],
+      "context": "[798698989f39c80a59059a9a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\n10 Chapter 1. Exploratory data analysis\n\nOne important note: when you add a new column to a DataFrame, you must\nuse dictionary syntax, like this\n# CORRECT\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nNot dot notation, like this:\n# WRONG!\ndf.totalwgt_lb = df.birthwgt_lb + df.birthwgt_oz / 16.0\nThe version with dot notation adds an attribute to the DataFrame object,\nbut that attribute is not treated as a new column.\n\n1.7 Validation\n\nWhen data is exported from one software environment and imported into\nanother, errors might be introduced. And when you are getting familiar\nwith a new dataset, you might interpret data incorrectly or introduce other\nmisunderstandings. If you take time to validate the data, you can save time\nlater and avoid errors.\n\n[1d7f5a186b7ba77a2fe8ef9f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n[625a4e9eb5e0818acf6c15f3 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 60]\n40 Chapter 3. Probability mass functions\n\nAs we saw in the previous chapter, simple indexing selects a column, returning a Series:\n>>> df['A']\na -0.143510\nb -1.489647\nc -0.074350\nd -1.369968\nName: A, dtype: float64\nTo select a row by label, you can use thelocattribute, which returns a\nSeries:\n>>> df.loc['a']\nA -0.14351\nB 0.61605\nName: a, dtype: float64\nIf you know the integer position of a row, rather than its label, you can use\ntheilocattribute, which also returns a Series.\n>>> df.iloc[0]\nA -0.14351\nB 0.61605\nName: a, dtype: float64\nloccan also take a list of labels; in that case, the result is a DataFrame.\n>>> indices = ['a', 'c']\n>>> df.loc[indices]\nA B\na -0.14351 0.616050\nc -0.07435 0.039621\nFinally, you can use a slice to select a range of rows by label:\n>>> df['a':'c']\nA B\na -0.143510 0.616050\nb -1.489647 0.300774\nc -0.074350 0.039621\nOr by integer position:\n\n[50718039f1ba18056fe56194 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /\n\n[49643149477ca2ae881fb71f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.",
+      "context_ids": [
+        "798698989f39c80a59059a9a",
+        "1d7f5a186b7ba77a2fe8ef9f",
+        "625a4e9eb5e0818acf6c15f3",
+        "50718039f1ba18056fe56194",
+        "49643149477ca2ae881fb71f"
+      ],
+      "elapsed_ms": 29.502099991077557
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "abstain": false,
+        "answer": "Khi thêm một cột mới vào DataFrame, bạn không nên dùng ký hiệu chấm (dot notation) vì nó chỉ thêm một thuộc tính (attribute) vào đối tượng DataFrame chứ không xem thuộc tính đó là một cột mới [798698989f39c80a59059a9a]. Thay vào đó, bạn phải sử dụng cú pháp từ điển (dictionary syntax, ví dụ: `df['ten_cot']`) [798698989f39c80a59059a9a].",
+        "citations": [
+          "798698989f39c80a59059a9a"
+        ]
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 342,
+        "candidatesTokenCount": 20,
+        "totalTokenCount": 362,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 342
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1972,
+        "candidatesTokenCount": 169,
+        "totalTokenCount": 2141,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1972
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Khi thêm một cột mới vào DataFrame, bạn không nên dùng ký hiệu chấm (dot notation) vì nó chỉ thêm một thuộc tính (attribute) vào đối tượng DataFrame chứ không xem thuộc tính đó là một cột mới [798698989f39c80a59059a9a]. Thay vào đó, bạn phải sử dụng cú pháp từ điển (dictionary syntax, ví dụ: `df['ten_cot']`) [798698989f39c80a59059a9a].",
+  "context": "[798698989f39c80a59059a9a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\n10 Chapter 1. Exploratory data analysis\n\nOne important note: when you add a new column to a DataFrame, you must\nuse dictionary syntax, like this\n# CORRECT\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nNot dot notation, like this:\n# WRONG!\ndf.totalwgt_lb = df.birthwgt_lb + df.birthwgt_oz / 16.0\nThe version with dot notation adds an attribute to the DataFrame object,\nbut that attribute is not treated as a new column.\n\n1.7 Validation\n\nWhen data is exported from one software environment and imported into\nanother, errors might be introduced. And when you are getting familiar\nwith a new dataset, you might interpret data incorrectly or introduce other\nmisunderstandings. If you take time to validate the data, you can save time\nlater and avoid errors.\n\n[1d7f5a186b7ba77a2fe8ef9f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n[625a4e9eb5e0818acf6c15f3 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 60]\n40 Chapter 3. Probability mass functions\n\nAs we saw in the previous chapter, simple indexing selects a column, returning a Series:\n>>> df['A']\na -0.143510\nb -1.489647\nc -0.074350\nd -1.369968\nName: A, dtype: float64\nTo select a row by label, you can use thelocattribute, which returns a\nSeries:\n>>> df.loc['a']\nA -0.14351\nB 0.61605\nName: a, dtype: float64\nIf you know the integer position of a row, rather than its label, you can use\ntheilocattribute, which also returns a Series.\n>>> df.iloc[0]\nA -0.14351\nB 0.61605\nName: a, dtype: float64\nloccan also take a list of labels; in that case, the result is a DataFrame.\n>>> indices = ['a', 'c']\n>>> df.loc[indices]\nA B\na -0.14351 0.616050\nc -0.07435 0.039621\nFinally, you can use a slice to select a range of rows by label:\n>>> df['a':'c']\nA B\na -0.143510 0.616050\nb -1.489647 0.300774\nc -0.074350 0.039621\nOr by integer position:\n\n[50718039f1ba18056fe56194 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /\n\n[49643149477ca2ae881fb71f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.",
+  "context_ids": [
+    "798698989f39c80a59059a9a",
+    "1d7f5a186b7ba77a2fe8ef9f",
+    "625a4e9eb5e0818acf6c15f3",
+    "50718039f1ba18056fe56194",
+    "49643149477ca2ae881fb71f"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 29.791599983582273,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q10",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 4748.103799996898,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Khi thêm cột vào DataFrame, vì sao không nên gán bằng dot notation?",
+      "config": "dense_context",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:33:48.952567+00:00",
+      "status": "answered",
+      "citations": [
+        "798698989f39c80a59059a9a"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "dense",
+          "query": "DataFrame dot notation assign column Think Stats",
+          "filter": {},
+          "results": [
+            {
+              "id": "798698989f39c80a59059a9a",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 30,
+              "text": "10 Chapter 1. Exploratory data analysis\n\nOne important note: when you add a new column to a DataFrame, you must\nuse dictionary syntax, like this\n# CORRECT\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nNot dot notation, like this:\n# WRONG!\ndf.totalwgt_lb = df.birthwgt_lb + df.birthwgt_oz / 16.0\nThe version with dot notation adds an attribute to the DataFrame object,\nbut that attribute is not treated as a new column.\n\n1.7 Validation\n\nWhen data is exported from one software environment and imported into\nanother, errors might be introduced. And when you are getting familiar\nwith a new dataset, you might interpret data incorrectly or introduce other\nmisunderstandings. If you take time to validate the data, you can save time\nlater and avoid errors.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 765,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 10,
+                "extraction_status": "ok"
+              },
+              "score": 0.7505799680602583,
+              "method": "dense"
+            },
+            {
+              "id": "1d7f5a186b7ba77a2fe8ef9f",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 27,
+              "text": "1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 900,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 7,
+                "extraction_status": "ok"
+              },
+              "score": 0.7319880723953247,
+              "method": "dense"
+            },
+            {
+              "id": "625a4e9eb5e0818acf6c15f3",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 60,
+              "text": "40 Chapter 3. Probability mass functions\n\nAs we saw in the previous chapter, simple indexing selects a column, returning a Series:\n>>> df['A']\na -0.143510\nb -1.489647\nc -0.074350\nd -1.369968\nName: A, dtype: float64\nTo select a row by label, you can use thelocattribute, which returns a\nSeries:\n>>> df.loc['a']\nA -0.14351\nB 0.61605\nName: a, dtype: float64\nIf you know the integer position of a row, rather than its label, you can use\ntheilocattribute, which also returns a Series.\n>>> df.iloc[0]\nA -0.14351\nB 0.61605\nName: a, dtype: float64\nloccan also take a list of labels; in that case, the result is a DataFrame.\n>>> indices = ['a', 'c']\n>>> df.loc[indices]\nA B\na -0.14351 0.616050\nc -0.07435 0.039621\nFinally, you can use a slice to select a range of rows by label:\n>>> df['a':'c']\nA B\na -0.143510 0.616050\nb -1.489647 0.300774\nc -0.074350 0.039621\nOr by integer position:",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "3",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 876,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 40,
+                "extraction_status": "ok"
+              },
+              "score": 0.7117093801498413,
+              "method": "dense"
+            },
+            {
+              "id": "50718039f1ba18056fe56194",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 29,
+              "text": "df['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1193,
+                "language": "en",
+                "start_char": 298,
+                "printed_page": 9,
+                "extraction_status": "ok"
+              },
+              "score": 0.7016185522079468,
+              "method": "dense"
+            },
+            {
+              "id": "49643149477ca2ae881fb71f",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 29,
+              "text": "100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1487,
+                "language": "en",
+                "start_char": 1194,
+                "printed_page": 9,
+                "extraction_status": "ok"
+              },
+              "score": 0.6990448832511902,
+              "method": "dense"
+            }
+          ],
+          "context": "[798698989f39c80a59059a9a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\n10 Chapter 1. Exploratory data analysis\n\nOne important note: when you add a new column to a DataFrame, you must\nuse dictionary syntax, like this\n# CORRECT\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nNot dot notation, like this:\n# WRONG!\ndf.totalwgt_lb = df.birthwgt_lb + df.birthwgt_oz / 16.0\nThe version with dot notation adds an attribute to the DataFrame object,\nbut that attribute is not treated as a new column.\n\n1.7 Validation\n\nWhen data is exported from one software environment and imported into\nanother, errors might be introduced. And when you are getting familiar\nwith a new dataset, you might interpret data incorrectly or introduce other\nmisunderstandings. If you take time to validate the data, you can save time\nlater and avoid errors.\n\n[1d7f5a186b7ba77a2fe8ef9f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n[625a4e9eb5e0818acf6c15f3 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 60]\n40 Chapter 3. Probability mass functions\n\nAs we saw in the previous chapter, simple indexing selects a column, returning a Series:\n>>> df['A']\na -0.143510\nb -1.489647\nc -0.074350\nd -1.369968\nName: A, dtype: float64\nTo select a row by label, you can use thelocattribute, which returns a\nSeries:\n>>> df.loc['a']\nA -0.14351\nB 0.61605\nName: a, dtype: float64\nIf you know the integer position of a row, rather than its label, you can use\ntheilocattribute, which also returns a Series.\n>>> df.iloc[0]\nA -0.14351\nB 0.61605\nName: a, dtype: float64\nloccan also take a list of labels; in that case, the result is a DataFrame.\n>>> indices = ['a', 'c']\n>>> df.loc[indices]\nA B\na -0.14351 0.616050\nc -0.07435 0.039621\nFinally, you can use a slice to select a range of rows by label:\n>>> df['a':'c']\nA B\na -0.143510 0.616050\nb -1.489647 0.300774\nc -0.074350 0.039621\nOr by integer position:\n\n[50718039f1ba18056fe56194 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /\n\n[49643149477ca2ae881fb71f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.",
+          "context_ids": [
+            "798698989f39c80a59059a9a",
+            "1d7f5a186b7ba77a2fe8ef9f",
+            "625a4e9eb5e0818acf6c15f3",
+            "50718039f1ba18056fe56194",
+            "49643149477ca2ae881fb71f"
+          ],
+          "elapsed_ms": 16.13020000513643
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "abstain": false,
+            "answer": "Khi thêm một cột mới vào DataFrame, bạn không nên dùng ký hiệu chấm (dot notation) vì nó chỉ thêm một thuộc tính (attribute) vào đối tượng DataFrame chứ không xem thuộc tính đó là một cột mới [798698989f39c80a59059a9a]. Thay vào đó, bạn phải sử dụng cú pháp từ điển (dictionary syntax, ví dụ: `df['ten_cot']`) [798698989f39c80a59059a9a].",
+            "citations": [
+              "798698989f39c80a59059a9a"
+            ]
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 342,
+            "candidatesTokenCount": 20,
+            "totalTokenCount": 362,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 342
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1972,
+            "candidatesTokenCount": 169,
+            "totalTokenCount": 2141,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1972
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Khi thêm một cột mới vào DataFrame, bạn không nên dùng ký hiệu chấm (dot notation) vì nó chỉ thêm một thuộc tính (attribute) vào đối tượng DataFrame chứ không xem thuộc tính đó là một cột mới [798698989f39c80a59059a9a]. Thay vào đó, bạn phải sử dụng cú pháp từ điển (dictionary syntax, ví dụ: `df['ten_cot']`) [798698989f39c80a59059a9a].",
+      "context": "[798698989f39c80a59059a9a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\n10 Chapter 1. Exploratory data analysis\n\nOne important note: when you add a new column to a DataFrame, you must\nuse dictionary syntax, like this\n# CORRECT\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nNot dot notation, like this:\n# WRONG!\ndf.totalwgt_lb = df.birthwgt_lb + df.birthwgt_oz / 16.0\nThe version with dot notation adds an attribute to the DataFrame object,\nbut that attribute is not treated as a new column.\n\n1.7 Validation\n\nWhen data is exported from one software environment and imported into\nanother, errors might be introduced. And when you are getting familiar\nwith a new dataset, you might interpret data incorrectly or introduce other\nmisunderstandings. If you take time to validate the data, you can save time\nlater and avoid errors.\n\n[1d7f5a186b7ba77a2fe8ef9f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n[625a4e9eb5e0818acf6c15f3 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 60]\n40 Chapter 3. Probability mass functions\n\nAs we saw in the previous chapter, simple indexing selects a column, returning a Series:\n>>> df['A']\na -0.143510\nb -1.489647\nc -0.074350\nd -1.369968\nName: A, dtype: float64\nTo select a row by label, you can use thelocattribute, which returns a\nSeries:\n>>> df.loc['a']\nA -0.14351\nB 0.61605\nName: a, dtype: float64\nIf you know the integer position of a row, rather than its label, you can use\ntheilocattribute, which also returns a Series.\n>>> df.iloc[0]\nA -0.14351\nB 0.61605\nName: a, dtype: float64\nloccan also take a list of labels; in that case, the result is a DataFrame.\n>>> indices = ['a', 'c']\n>>> df.loc[indices]\nA B\na -0.14351 0.616050\nc -0.07435 0.039621\nFinally, you can use a slice to select a range of rows by label:\n>>> df['a':'c']\nA B\na -0.143510 0.616050\nb -1.489647 0.300774\nc -0.074350 0.039621\nOr by integer position:\n\n[50718039f1ba18056fe56194 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /\n\n[49643149477ca2ae881fb71f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.",
+      "context_ids": [
+        "798698989f39c80a59059a9a",
+        "1d7f5a186b7ba77a2fe8ef9f",
+        "625a4e9eb5e0818acf6c15f3",
+        "50718039f1ba18056fe56194",
+        "49643149477ca2ae881fb71f"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 4748.103799996898,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q10",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

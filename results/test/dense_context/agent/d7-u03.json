@@ -1,0 +1,189 @@
+{
+  "question": "Trong ví dụ khảo sát sĩ số lớp, học phí chính xác của từng sinh viên là bao nhiêu USD?",
+  "config": "dense_context",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:45:44.176056+00:00",
+  "status": "abstain",
+  "citations": [],
+  "events": [
+    {
+      "event": "search",
+      "tool": "dense",
+      "query": "class size tuition students dollars",
+      "filter": {},
+      "results": [
+        {
+          "id": "710efd907cbf9c83dd4f8018",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 56,
+          "text": "36 Chapter 3. Probability mass functions\n\nFigure 3.2: Difference, in percentage points, by week.\n\nAt many American colleges and universities, the student-to-faculty ratio is\nabout 10:1. But students are often surprised to discover that their average\nclass size is bigger than 10. There are two reasons for the discrepancy:\n•Students typically take 4–5 classes per semester, but professors often\nteach 1 or 2.\n•The number of students who enjoy a small class is small, but the num-\nber of students in a large class is (ahem!) large.\nThe first effect is obvious, at least once it is pointed out; the second is more\nsubtle. Let’s look at an example. Suppose that a college offers 65 classes in\na given semester, with the following distribution of sizes:\nsize count\n5- 9 8\n10-14 8\n15-19 14\n20-24 4\n25-29 6\n30-34 12\n35-39 8\n40-44 3\n45-49 2",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "3",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 833,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 36,
+            "extraction_status": "ok"
+          },
+          "score": 0.6373448155727884,
+          "method": "dense"
+        },
+        {
+          "id": "971ea28ecfc7e695419ea19c",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 57,
+          "text": "3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "3",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 777,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 37,
+            "extraction_status": "ok"
+          },
+          "score": 0.6186544071825997,
+          "method": "dense"
+        },
+        {
+          "id": "cb9a0be491d7015bfc3a82fa",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 57,
+          "text": "new_pmf.Normalize()\nreturn new_pmf\nFor each class size,x, we multiply the probability byx, the number of students\nwho observe that class size. The result is a new Pmf that represents the\nbiased distribution.\nNow we can plot the actual and observed distributions:\nbiased_pmf = BiasPmf(pmf, label='observed')\nthinkplot.PrePlot(2)\nthinkplot.Pmfs([pmf, biased_pmf])\nthinkplot.Show(xlabel='class size', ylabel='PMF')\nFigure 3.3 shows the result. In the biased distribution there are fewer small\nclasses and more large ones. The mean of the biased distribution is 29.1,\nalmost 25% higher than the actual mean.\nIt is also possible to invert this operation. Suppose you want to find the\ndistribution of class sizes at a college, but you can’t get reliable data from",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "3",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1536,
+            "language": "en",
+            "start_char": 779,
+            "printed_page": 37,
+            "extraction_status": "ok"
+          },
+          "score": 0.5858127998542312,
+          "method": "dense"
+        },
+        {
+          "id": "71a5a22bdfd93da6d526e632",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 35,
+          "text": "1.10. Glossary 15",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 17,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 15,
+            "extraction_status": "ok"
+          },
+          "score": 0.5827693343162578,
+          "method": "dense"
+        },
+        {
+          "id": "2aa14303b1183a41af894e45",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 22,
+          "text": "•Inaccuracy: Anecdotes are often personal stories, and often misremem-\nbered, misrepresented, repeated inaccurately, etc.\n\nSo how can we do better?\n\n1.1 A statistical approach\n\nTo address the limitations of anecdotes, we will use the tools of statistics,\nwhich include:\n\n•Data collection: We will use data from a large national survey that\nwas designed explicitly with the goal of generating statistically valid\ninferences about the U.S. population.\n\n•Descriptive statistics: We will generate statistics that summarize the\ndata concisely, and evaluate different ways to visualize data.\n\n•Exploratory data analysis: We will look for patterns, differences, and\nother features that address the questions we are interested in. At the\nsame time we will check for inconsistencies and identify limitations.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1696,
+            "language": "en",
+            "start_char": 897,
+            "printed_page": 2,
+            "extraction_status": "ok"
+          },
+          "score": 0.5790328477660236,
+          "method": "dense"
+        }
+      ],
+      "context": "[710efd907cbf9c83dd4f8018 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 56]\n36 Chapter 3. Probability mass functions\n\nFigure 3.2: Difference, in percentage points, by week.\n\nAt many American colleges and universities, the student-to-faculty ratio is\nabout 10:1. But students are often surprised to discover that their average\nclass size is bigger than 10. There are two reasons for the discrepancy:\n•Students typically take 4–5 classes per semester, but professors often\nteach 1 or 2.\n•The number of students who enjoy a small class is small, but the num-\nber of students in a large class is (ahem!) large.\nThe first effect is obvious, at least once it is pointed out; the second is more\nsubtle. Let’s look at an example. Suppose that a college offers 65 classes in\na given semester, with the following distribution of sizes:\nsize count\n5- 9 8\n10-14 8\n15-19 14\n20-24 4\n25-29 6\n30-34 12\n35-39 8\n40-44 3\n45-49 2\n\n[971ea28ecfc7e695419ea19c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\n3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)\n\n[cb9a0be491d7015bfc3a82fa | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\nnew_pmf.Normalize()\nreturn new_pmf\nFor each class size,x, we multiply the probability byx, the number of students\nwho observe that class size. The result is a new Pmf that represents the\nbiased distribution.\nNow we can plot the actual and observed distributions:\nbiased_pmf = BiasPmf(pmf, label='observed')\nthinkplot.PrePlot(2)\nthinkplot.Pmfs([pmf, biased_pmf])\nthinkplot.Show(xlabel='class size', ylabel='PMF')\nFigure 3.3 shows the result. In the biased distribution there are fewer small\nclasses and more large ones. The mean of the biased distribution is 29.1,\nalmost 25% higher than the actual mean.\nIt is also possible to invert this operation. Suppose you want to find the\ndistribution of class sizes at a college, but you can’t get reliable data from\n\n[71a5a22bdfd93da6d526e632 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 35]\n1.10. Glossary 15\n\n[2aa14303b1183a41af894e45 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 22]\n•Inaccuracy: Anecdotes are often personal stories, and often misremem-\nbered, misrepresented, repeated inaccurately, etc.\n\nSo how can we do better?\n\n1.1 A statistical approach\n\nTo address the limitations of anecdotes, we will use the tools of statistics,\nwhich include:\n\n•Data collection: We will use data from a large national survey that\nwas designed explicitly with the goal of generating statistically valid\ninferences about the U.S. population.\n\n•Descriptive statistics: We will generate statistics that summarize the\ndata concisely, and evaluate different ways to visualize data.\n\n•Exploratory data analysis: We will look for patterns, differences, and\nother features that address the questions we are interested in. At the\nsame time we will check for inconsistencies and identify limitations.",
+      "context_ids": [
+        "710efd907cbf9c83dd4f8018",
+        "971ea28ecfc7e695419ea19c",
+        "cb9a0be491d7015bfc3a82fa",
+        "71a5a22bdfd93da6d526e632",
+        "2aa14303b1183a41af894e45"
+      ],
+      "elapsed_ms": 3422.637300012866
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "citations": [],
+        "abstain": true,
+        "answer": "Tài liệu không cung cấp thông tin về học phí của sinh viên trong ví dụ khảo sát sĩ số lớp."
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 348,
+        "candidatesTokenCount": 18,
+        "totalTokenCount": 366,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 348
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": false,
+      "usage": {
+        "promptTokenCount": 1686,
+        "candidatesTokenCount": 44,
+        "totalTokenCount": 1730,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1686
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+  "context": "[710efd907cbf9c83dd4f8018 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 56]\n36 Chapter 3. Probability mass functions\n\nFigure 3.2: Difference, in percentage points, by week.\n\nAt many American colleges and universities, the student-to-faculty ratio is\nabout 10:1. But students are often surprised to discover that their average\nclass size is bigger than 10. There are two reasons for the discrepancy:\n•Students typically take 4–5 classes per semester, but professors often\nteach 1 or 2.\n•The number of students who enjoy a small class is small, but the num-\nber of students in a large class is (ahem!) large.\nThe first effect is obvious, at least once it is pointed out; the second is more\nsubtle. Let’s look at an example. Suppose that a college offers 65 classes in\na given semester, with the following distribution of sizes:\nsize count\n5- 9 8\n10-14 8\n15-19 14\n20-24 4\n25-29 6\n30-34 12\n35-39 8\n40-44 3\n45-49 2\n\n[971ea28ecfc7e695419ea19c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\n3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)\n\n[cb9a0be491d7015bfc3a82fa | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\nnew_pmf.Normalize()\nreturn new_pmf\nFor each class size,x, we multiply the probability byx, the number of students\nwho observe that class size. The result is a new Pmf that represents the\nbiased distribution.\nNow we can plot the actual and observed distributions:\nbiased_pmf = BiasPmf(pmf, label='observed')\nthinkplot.PrePlot(2)\nthinkplot.Pmfs([pmf, biased_pmf])\nthinkplot.Show(xlabel='class size', ylabel='PMF')\nFigure 3.3 shows the result. In the biased distribution there are fewer small\nclasses and more large ones. The mean of the biased distribution is 29.1,\nalmost 25% higher than the actual mean.\nIt is also possible to invert this operation. Suppose you want to find the\ndistribution of class sizes at a college, but you can’t get reliable data from\n\n[71a5a22bdfd93da6d526e632 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 35]\n1.10. Glossary 15\n\n[2aa14303b1183a41af894e45 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 22]\n•Inaccuracy: Anecdotes are often personal stories, and often misremem-\nbered, misrepresented, repeated inaccurately, etc.\n\nSo how can we do better?\n\n1.1 A statistical approach\n\nTo address the limitations of anecdotes, we will use the tools of statistics,\nwhich include:\n\n•Data collection: We will use data from a large national survey that\nwas designed explicitly with the goal of generating statistically valid\ninferences about the U.S. population.\n\n•Descriptive statistics: We will generate statistics that summarize the\ndata concisely, and evaluate different ways to visualize data.\n\n•Exploratory data analysis: We will look for patterns, differences, and\nother features that address the questions we are interested in. At the\nsame time we will check for inconsistencies and identify limitations.",
+  "context_ids": [
+    "710efd907cbf9c83dd4f8018",
+    "971ea28ecfc7e695419ea19c",
+    "cb9a0be491d7015bfc3a82fa",
+    "71a5a22bdfd93da6d526e632",
+    "2aa14303b1183a41af894e45"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 8448.246200016001,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-u03",
+  "split": "test",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": null
+}

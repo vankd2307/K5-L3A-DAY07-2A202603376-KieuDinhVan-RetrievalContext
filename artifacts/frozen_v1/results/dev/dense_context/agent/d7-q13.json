@@ -1,0 +1,389 @@
+{
+  "question": "Trong chương 2, histogram thể hiện điều gì và frequency nghĩa là gì?",
+  "config": "dense_context",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:12.526957+00:00",
+  "status": "answered",
+  "citations": [
+    "8849532a0610912f69f6978d"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "dense",
+      "query": "histogram frequency chapter 2 Think Stats",
+      "filter": {},
+      "results": [
+        {
+          "id": "8849532a0610912f69f6978d",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 37,
+          "text": "Chapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 846,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 17,
+            "extraction_status": "ok"
+          },
+          "score": 0.7915929431672672,
+          "method": "dense"
+        },
+        {
+          "id": "a8c59ca57b6a7e806bc2a5e9",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 39,
+          "text": "2.3. Plotting histograms 19\n\nFigure 2.1: Histogram of the pound part of birth weight.\n2.3 Plotting histograms\n\nFor this book I wrote a module calledthinkplot.pythat provides functions\nfor plotting Hists and other objects defined inthinkstats2.py. It is based\nonpyplot, which is part of thematplotlibpackage. See Section 0.2 for\ninformation about installingmatplotlib.\nTo plothistwiththinkplot, try this:\n>>> import thinkplot\n>>> thinkplot.Hist(hist)\n>>> thinkplot.Show(xlabel='value', ylabel='frequency')\nYou can read the documentation forthinkplotathttp://greenteapress.\ncom/thinkstats2/thinkplot.html.\n\n2.4 NSFG variables",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 623,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 19,
+            "extraction_status": "ok"
+          },
+          "score": 0.7806004751086532,
+          "method": "dense"
+        },
+        {
+          "id": "356f3e017f1acafcac074722",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 44,
+          "text": "width = 0.45\nthinkplot.PrePlot(2)\nthinkplot.Hist(first_hist, align='right', width=width)\nthinkplot.Hist(other_hist, align='left', width=width)\nthinkplot.Show(xlabel='weeks', ylabel='frequency',\nxlim=[27, 46])\nthinkplot.PrePlottakes the number of histograms we are planning to plot;\nit uses this information to choose an appropriate collection of colors.\nthinkplot.Histnormally usesalign='center'so that each bar is centered\nover its value. For this figure, I usealign='right'andalign='left'to\nplace corresponding bars on either side of the value.\nWithwidth=0.45, the total width of the two bars is 0.9, leaving some space\nbetween each pair.\nFinally, I adjust the axis to show only data between 27 and 46 weeks. Figure 2.5 shows the result.\nHistograms are useful because they make the most frequent values immediately apparent. But they are not the best choice for comparing two distributions. In",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 969,
+            "language": "en",
+            "start_char": 74,
+            "printed_page": 24,
+            "extraction_status": "ok"
+          },
+          "score": 0.7690384250306158,
+          "method": "dense"
+        },
+        {
+          "id": "529cdc9d1651a8ca2732b74f",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 38,
+          "text": "18 Chapter 2. Distributions\n\nAnother option is to use the pandas methodvalue_counts, which we saw in\nthe previous chapter. But for this book I created a class, Hist, that represents\nhistograms and provides the methods that operate on them.\n\n2.2 Representing histograms",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 268,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 18,
+            "extraction_status": "ok"
+          },
+          "score": 0.7615375092394681,
+          "method": "dense"
+        },
+        {
+          "id": "d198865311365c6ccfa5ea1f",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 44,
+          "text": "24 Chapter 2. Distributions\n\nFigure 2.5: Histogram of pregnancy lengths.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 72,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 24,
+            "extraction_status": "ok"
+          },
+          "score": 0.7568919143282102,
+          "method": "dense"
+        }
+      ],
+      "context": "[8849532a0610912f69f6978d | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 37]\nChapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.\n\n[a8c59ca57b6a7e806bc2a5e9 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\n2.3. Plotting histograms 19\n\nFigure 2.1: Histogram of the pound part of birth weight.\n2.3 Plotting histograms\n\nFor this book I wrote a module calledthinkplot.pythat provides functions\nfor plotting Hists and other objects defined inthinkstats2.py. It is based\nonpyplot, which is part of thematplotlibpackage. See Section 0.2 for\ninformation about installingmatplotlib.\nTo plothistwiththinkplot, try this:\n>>> import thinkplot\n>>> thinkplot.Hist(hist)\n>>> thinkplot.Show(xlabel='value', ylabel='frequency')\nYou can read the documentation forthinkplotathttp://greenteapress.\ncom/thinkstats2/thinkplot.html.\n\n2.4 NSFG variables\n\n[356f3e017f1acafcac074722 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 44]\nwidth = 0.45\nthinkplot.PrePlot(2)\nthinkplot.Hist(first_hist, align='right', width=width)\nthinkplot.Hist(other_hist, align='left', width=width)\nthinkplot.Show(xlabel='weeks', ylabel='frequency',\nxlim=[27, 46])\nthinkplot.PrePlottakes the number of histograms we are planning to plot;\nit uses this information to choose an appropriate collection of colors.\nthinkplot.Histnormally usesalign='center'so that each bar is centered\nover its value. For this figure, I usealign='right'andalign='left'to\nplace corresponding bars on either side of the value.\nWithwidth=0.45, the total width of the two bars is 0.9, leaving some space\nbetween each pair.\nFinally, I adjust the axis to show only data between 27 and 46 weeks. Figure 2.5 shows the result.\nHistograms are useful because they make the most frequent values immediately apparent. But they are not the best choice for comparing two distributions. In\n\n[529cdc9d1651a8ca2732b74f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 38]\n18 Chapter 2. Distributions\n\nAnother option is to use the pandas methodvalue_counts, which we saw in\nthe previous chapter. But for this book I created a class, Hist, that represents\nhistograms and provides the methods that operate on them.\n\n2.2 Representing histograms\n\n[d198865311365c6ccfa5ea1f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 44]\n24 Chapter 2. Distributions\n\nFigure 2.5: Histogram of pregnancy lengths.",
+      "context_ids": [
+        "8849532a0610912f69f6978d",
+        "a8c59ca57b6a7e806bc2a5e9",
+        "356f3e017f1acafcac074722",
+        "529cdc9d1651a8ca2732b74f",
+        "d198865311365c6ccfa5ea1f"
+      ],
+      "elapsed_ms": 21.36449998943135
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "abstain": false,
+        "answer": "Trong Chương 2 của sách Think Stats, biểu đồ histogram là một đồ thị thể hiện tần suất (frequency) của từng giá trị trong tập dữ liệu [8849532a0610912f69f6978d]. \n\nTrong bối cảnh này, \"frequency\" (tần suất/tần số) có nghĩa là số lần mà một giá trị xuất hiện trong tập dữ liệu [8849532a0610912f69f6978d].",
+        "citations": [
+          "8849532a0610912f69f6978d"
+        ]
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 342,
+        "candidatesTokenCount": 20,
+        "totalTokenCount": 362,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 342
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1463,
+        "candidatesTokenCount": 165,
+        "totalTokenCount": 1628,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1463
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Trong Chương 2 của sách Think Stats, biểu đồ histogram là một đồ thị thể hiện tần suất (frequency) của từng giá trị trong tập dữ liệu [8849532a0610912f69f6978d]. \n\nTrong bối cảnh này, \"frequency\" (tần suất/tần số) có nghĩa là số lần mà một giá trị xuất hiện trong tập dữ liệu [8849532a0610912f69f6978d].",
+  "context": "[8849532a0610912f69f6978d | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 37]\nChapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.\n\n[a8c59ca57b6a7e806bc2a5e9 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\n2.3. Plotting histograms 19\n\nFigure 2.1: Histogram of the pound part of birth weight.\n2.3 Plotting histograms\n\nFor this book I wrote a module calledthinkplot.pythat provides functions\nfor plotting Hists and other objects defined inthinkstats2.py. It is based\nonpyplot, which is part of thematplotlibpackage. See Section 0.2 for\ninformation about installingmatplotlib.\nTo plothistwiththinkplot, try this:\n>>> import thinkplot\n>>> thinkplot.Hist(hist)\n>>> thinkplot.Show(xlabel='value', ylabel='frequency')\nYou can read the documentation forthinkplotathttp://greenteapress.\ncom/thinkstats2/thinkplot.html.\n\n2.4 NSFG variables\n\n[356f3e017f1acafcac074722 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 44]\nwidth = 0.45\nthinkplot.PrePlot(2)\nthinkplot.Hist(first_hist, align='right', width=width)\nthinkplot.Hist(other_hist, align='left', width=width)\nthinkplot.Show(xlabel='weeks', ylabel='frequency',\nxlim=[27, 46])\nthinkplot.PrePlottakes the number of histograms we are planning to plot;\nit uses this information to choose an appropriate collection of colors.\nthinkplot.Histnormally usesalign='center'so that each bar is centered\nover its value. For this figure, I usealign='right'andalign='left'to\nplace corresponding bars on either side of the value.\nWithwidth=0.45, the total width of the two bars is 0.9, leaving some space\nbetween each pair.\nFinally, I adjust the axis to show only data between 27 and 46 weeks. Figure 2.5 shows the result.\nHistograms are useful because they make the most frequent values immediately apparent. But they are not the best choice for comparing two distributions. In\n\n[529cdc9d1651a8ca2732b74f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 38]\n18 Chapter 2. Distributions\n\nAnother option is to use the pandas methodvalue_counts, which we saw in\nthe previous chapter. But for this book I created a class, Hist, that represents\nhistograms and provides the methods that operate on them.\n\n2.2 Representing histograms\n\n[d198865311365c6ccfa5ea1f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 44]\n24 Chapter 2. Distributions\n\nFigure 2.5: Histogram of pregnancy lengths.",
+  "context_ids": [
+    "8849532a0610912f69f6978d",
+    "a8c59ca57b6a7e806bc2a5e9",
+    "356f3e017f1acafcac074722",
+    "529cdc9d1651a8ca2732b74f",
+    "d198865311365c6ccfa5ea1f"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 21.673799987183884,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q13",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 3502.2276999952737,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Trong chương 2, histogram thể hiện điều gì và frequency nghĩa là gì?",
+      "config": "dense_context",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:34:02.336100+00:00",
+      "status": "answered",
+      "citations": [
+        "8849532a0610912f69f6978d"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "dense",
+          "query": "histogram frequency chapter 2 Think Stats",
+          "filter": {},
+          "results": [
+            {
+              "id": "8849532a0610912f69f6978d",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 37,
+              "text": "Chapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 846,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 17,
+                "extraction_status": "ok"
+              },
+              "score": 0.7915929431672672,
+              "method": "dense"
+            },
+            {
+              "id": "a8c59ca57b6a7e806bc2a5e9",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 39,
+              "text": "2.3. Plotting histograms 19\n\nFigure 2.1: Histogram of the pound part of birth weight.\n2.3 Plotting histograms\n\nFor this book I wrote a module calledthinkplot.pythat provides functions\nfor plotting Hists and other objects defined inthinkstats2.py. It is based\nonpyplot, which is part of thematplotlibpackage. See Section 0.2 for\ninformation about installingmatplotlib.\nTo plothistwiththinkplot, try this:\n>>> import thinkplot\n>>> thinkplot.Hist(hist)\n>>> thinkplot.Show(xlabel='value', ylabel='frequency')\nYou can read the documentation forthinkplotathttp://greenteapress.\ncom/thinkstats2/thinkplot.html.\n\n2.4 NSFG variables",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 623,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 19,
+                "extraction_status": "ok"
+              },
+              "score": 0.7806004751086532,
+              "method": "dense"
+            },
+            {
+              "id": "356f3e017f1acafcac074722",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 44,
+              "text": "width = 0.45\nthinkplot.PrePlot(2)\nthinkplot.Hist(first_hist, align='right', width=width)\nthinkplot.Hist(other_hist, align='left', width=width)\nthinkplot.Show(xlabel='weeks', ylabel='frequency',\nxlim=[27, 46])\nthinkplot.PrePlottakes the number of histograms we are planning to plot;\nit uses this information to choose an appropriate collection of colors.\nthinkplot.Histnormally usesalign='center'so that each bar is centered\nover its value. For this figure, I usealign='right'andalign='left'to\nplace corresponding bars on either side of the value.\nWithwidth=0.45, the total width of the two bars is 0.9, leaving some space\nbetween each pair.\nFinally, I adjust the axis to show only data between 27 and 46 weeks. Figure 2.5 shows the result.\nHistograms are useful because they make the most frequent values immediately apparent. But they are not the best choice for comparing two distributions. In",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 969,
+                "language": "en",
+                "start_char": 74,
+                "printed_page": 24,
+                "extraction_status": "ok"
+              },
+              "score": 0.7690384250306158,
+              "method": "dense"
+            },
+            {
+              "id": "529cdc9d1651a8ca2732b74f",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 38,
+              "text": "18 Chapter 2. Distributions\n\nAnother option is to use the pandas methodvalue_counts, which we saw in\nthe previous chapter. But for this book I created a class, Hist, that represents\nhistograms and provides the methods that operate on them.\n\n2.2 Representing histograms",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 268,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 18,
+                "extraction_status": "ok"
+              },
+              "score": 0.7615375092394681,
+              "method": "dense"
+            },
+            {
+              "id": "d198865311365c6ccfa5ea1f",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 44,
+              "text": "24 Chapter 2. Distributions\n\nFigure 2.5: Histogram of pregnancy lengths.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 72,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 24,
+                "extraction_status": "ok"
+              },
+              "score": 0.7568919143282102,
+              "method": "dense"
+            }
+          ],
+          "context": "[8849532a0610912f69f6978d | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 37]\nChapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.\n\n[a8c59ca57b6a7e806bc2a5e9 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\n2.3. Plotting histograms 19\n\nFigure 2.1: Histogram of the pound part of birth weight.\n2.3 Plotting histograms\n\nFor this book I wrote a module calledthinkplot.pythat provides functions\nfor plotting Hists and other objects defined inthinkstats2.py. It is based\nonpyplot, which is part of thematplotlibpackage. See Section 0.2 for\ninformation about installingmatplotlib.\nTo plothistwiththinkplot, try this:\n>>> import thinkplot\n>>> thinkplot.Hist(hist)\n>>> thinkplot.Show(xlabel='value', ylabel='frequency')\nYou can read the documentation forthinkplotathttp://greenteapress.\ncom/thinkstats2/thinkplot.html.\n\n2.4 NSFG variables\n\n[356f3e017f1acafcac074722 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 44]\nwidth = 0.45\nthinkplot.PrePlot(2)\nthinkplot.Hist(first_hist, align='right', width=width)\nthinkplot.Hist(other_hist, align='left', width=width)\nthinkplot.Show(xlabel='weeks', ylabel='frequency',\nxlim=[27, 46])\nthinkplot.PrePlottakes the number of histograms we are planning to plot;\nit uses this information to choose an appropriate collection of colors.\nthinkplot.Histnormally usesalign='center'so that each bar is centered\nover its value. For this figure, I usealign='right'andalign='left'to\nplace corresponding bars on either side of the value.\nWithwidth=0.45, the total width of the two bars is 0.9, leaving some space\nbetween each pair.\nFinally, I adjust the axis to show only data between 27 and 46 weeks. Figure 2.5 shows the result.\nHistograms are useful because they make the most frequent values immediately apparent. But they are not the best choice for comparing two distributions. In\n\n[529cdc9d1651a8ca2732b74f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 38]\n18 Chapter 2. Distributions\n\nAnother option is to use the pandas methodvalue_counts, which we saw in\nthe previous chapter. But for this book I created a class, Hist, that represents\nhistograms and provides the methods that operate on them.\n\n2.2 Representing histograms\n\n[d198865311365c6ccfa5ea1f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 44]\n24 Chapter 2. Distributions\n\nFigure 2.5: Histogram of pregnancy lengths.",
+          "context_ids": [
+            "8849532a0610912f69f6978d",
+            "a8c59ca57b6a7e806bc2a5e9",
+            "356f3e017f1acafcac074722",
+            "529cdc9d1651a8ca2732b74f",
+            "d198865311365c6ccfa5ea1f"
+          ],
+          "elapsed_ms": 16.840900003444403
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "abstain": false,
+            "answer": "Trong Chương 2 của sách Think Stats, biểu đồ histogram là một đồ thị thể hiện tần suất (frequency) của từng giá trị trong tập dữ liệu [8849532a0610912f69f6978d]. \n\nTrong bối cảnh này, \"frequency\" (tần suất/tần số) có nghĩa là số lần mà một giá trị xuất hiện trong tập dữ liệu [8849532a0610912f69f6978d].",
+            "citations": [
+              "8849532a0610912f69f6978d"
+            ]
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 342,
+            "candidatesTokenCount": 20,
+            "totalTokenCount": 362,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 342
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1463,
+            "candidatesTokenCount": 165,
+            "totalTokenCount": 1628,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1463
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Trong Chương 2 của sách Think Stats, biểu đồ histogram là một đồ thị thể hiện tần suất (frequency) của từng giá trị trong tập dữ liệu [8849532a0610912f69f6978d]. \n\nTrong bối cảnh này, \"frequency\" (tần suất/tần số) có nghĩa là số lần mà một giá trị xuất hiện trong tập dữ liệu [8849532a0610912f69f6978d].",
+      "context": "[8849532a0610912f69f6978d | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 37]\nChapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.\n\n[a8c59ca57b6a7e806bc2a5e9 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\n2.3. Plotting histograms 19\n\nFigure 2.1: Histogram of the pound part of birth weight.\n2.3 Plotting histograms\n\nFor this book I wrote a module calledthinkplot.pythat provides functions\nfor plotting Hists and other objects defined inthinkstats2.py. It is based\nonpyplot, which is part of thematplotlibpackage. See Section 0.2 for\ninformation about installingmatplotlib.\nTo plothistwiththinkplot, try this:\n>>> import thinkplot\n>>> thinkplot.Hist(hist)\n>>> thinkplot.Show(xlabel='value', ylabel='frequency')\nYou can read the documentation forthinkplotathttp://greenteapress.\ncom/thinkstats2/thinkplot.html.\n\n2.4 NSFG variables\n\n[356f3e017f1acafcac074722 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 44]\nwidth = 0.45\nthinkplot.PrePlot(2)\nthinkplot.Hist(first_hist, align='right', width=width)\nthinkplot.Hist(other_hist, align='left', width=width)\nthinkplot.Show(xlabel='weeks', ylabel='frequency',\nxlim=[27, 46])\nthinkplot.PrePlottakes the number of histograms we are planning to plot;\nit uses this information to choose an appropriate collection of colors.\nthinkplot.Histnormally usesalign='center'so that each bar is centered\nover its value. For this figure, I usealign='right'andalign='left'to\nplace corresponding bars on either side of the value.\nWithwidth=0.45, the total width of the two bars is 0.9, leaving some space\nbetween each pair.\nFinally, I adjust the axis to show only data between 27 and 46 weeks. Figure 2.5 shows the result.\nHistograms are useful because they make the most frequent values immediately apparent. But they are not the best choice for comparing two distributions. In\n\n[529cdc9d1651a8ca2732b74f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 38]\n18 Chapter 2. Distributions\n\nAnother option is to use the pandas methodvalue_counts, which we saw in\nthe previous chapter. But for this book I created a class, Hist, that represents\nhistograms and provides the methods that operate on them.\n\n2.2 Representing histograms\n\n[d198865311365c6ccfa5ea1f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 44]\n24 Chapter 2. Distributions\n\nFigure 2.5: Histogram of pregnancy lengths.",
+      "context_ids": [
+        "8849532a0610912f69f6978d",
+        "a8c59ca57b6a7e806bc2a5e9",
+        "356f3e017f1acafcac074722",
+        "529cdc9d1651a8ca2732b74f",
+        "d198865311365c6ccfa5ea1f"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 3502.2276999952737,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q13",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+{
+  "query_id": "d7-q03",
+  "split": "dev",
+  "config": "dense",
+  "status": "ok",
+  "query": "Quần thể mục tiêu của khảo sát NSFG trong sách gồm những ai?",
+  "filter": {},
+  "results": [
+    {
+      "id": "f40266243aa427f23fa90b4e",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 23,
+      "text": "The NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "1",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1824,
+        "language": "en",
+        "start_char": 1377,
+        "printed_page": 3,
+        "extraction_status": "ok"
+      },
+      "score": 0.7771762476668519,
+      "method": "dense"
+    },
+    {
+      "id": "c820376c2fde59d33d4d8bc8",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 23,
+      "text": "Since 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "1",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1375,
+        "language": "en",
+        "start_char": 483,
+        "printed_page": 3,
+        "extraction_status": "ok"
+      },
+      "score": 0.7290666860898337,
+      "method": "dense"
+    },
+    {
+      "id": "bf7df453e01346a69a9a3055",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 23,
+      "text": "1.2. The National Survey of Family Growth 3\n\n•Estimation: We will use data from a sample to estimate characteristics\nof the general population.\n\n•Hypothesis testing: Where we see apparent effects, like a difference\nbetween two groups, we will evaluate whether the effect might have\nhappened by chance.\n\nBy performing these steps with care to avoid pitfalls, we can reach conclusions\nthat are more justifiable and more likely to be correct.\n\n1.2 The National Survey of Family Growth",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "1",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 481,
+        "language": "en",
+        "start_char": 0,
+        "printed_page": 3,
+        "extraction_status": "ok"
+      },
+      "score": 0.7283578080917724,
+      "method": "dense"
+    }
+  ],
+  "context": "[f40266243aa427f23fa90b4e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the\n\n[bf7df453e01346a69a9a3055 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\n1.2. The National Survey of Family Growth 3\n\n•Estimation: We will use data from a sample to estimate characteristics\nof the general population.\n\n•Hypothesis testing: Where we see apparent effects, like a difference\nbetween two groups, we will evaluate whether the effect might have\nhappened by chance.\n\nBy performing these steps with care to avoid pitfalls, we can reach conclusions\nthat are more justifiable and more likely to be correct.\n\n1.2 The National Survey of Family Growth",
+  "context_ids": [
+    "f40266243aa427f23fa90b4e",
+    "bf7df453e01346a69a9a3055"
+  ],
+  "hit1": true,
+  "hit3": true,
+  "context_hit": true,
+  "elapsed_ms": 17.045300017343834,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q03",
+      "split": "dev",
+      "config": "dense",
+      "status": "ok",
+      "query": "Quần thể mục tiêu của khảo sát NSFG trong sách gồm những ai?",
+      "filter": {},
+      "results": [
+        {
+          "id": "f40266243aa427f23fa90b4e",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 23,
+          "text": "The NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1824,
+            "language": "en",
+            "start_char": 1377,
+            "printed_page": 3,
+            "extraction_status": "ok"
+          },
+          "score": 0.7771762476668519,
+          "method": "dense"
+        },
+        {
+          "id": "c820376c2fde59d33d4d8bc8",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 23,
+          "text": "Since 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1375,
+            "language": "en",
+            "start_char": 483,
+            "printed_page": 3,
+            "extraction_status": "ok"
+          },
+          "score": 0.7290666860898337,
+          "method": "dense"
+        },
+        {
+          "id": "bf7df453e01346a69a9a3055",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 23,
+          "text": "1.2. The National Survey of Family Growth 3\n\n•Estimation: We will use data from a sample to estimate characteristics\nof the general population.\n\n•Hypothesis testing: Where we see apparent effects, like a difference\nbetween two groups, we will evaluate whether the effect might have\nhappened by chance.\n\nBy performing these steps with care to avoid pitfalls, we can reach conclusions\nthat are more justifiable and more likely to be correct.\n\n1.2 The National Survey of Family Growth",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 481,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 3,
+            "extraction_status": "ok"
+          },
+          "score": 0.7283578080917724,
+          "method": "dense"
+        }
+      ],
+      "context": "[f40266243aa427f23fa90b4e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the\n\n[bf7df453e01346a69a9a3055 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\n1.2. The National Survey of Family Growth 3\n\n•Estimation: We will use data from a sample to estimate characteristics\nof the general population.\n\n•Hypothesis testing: Where we see apparent effects, like a difference\nbetween two groups, we will evaluate whether the effect might have\nhappened by chance.\n\nBy performing these steps with care to avoid pitfalls, we can reach conclusions\nthat are more justifiable and more likely to be correct.\n\n1.2 The National Survey of Family Growth",
+      "context_ids": [
+        "f40266243aa427f23fa90b4e",
+        "bf7df453e01346a69a9a3055"
+      ],
+      "hit1": true,
+      "hit3": true,
+      "context_hit": true,
+      "elapsed_ms": 28.547100024297833
+    }
+  ]
+}

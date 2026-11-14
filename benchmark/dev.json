@@ -1,0 +1,265 @@
+[
+  {
+    "id": "d7-q01",
+    "split": "dev",
+    "question": "Vì sao việc chỉ lấy ý kiến người tham gia thảo luận về con đầu sinh muộn có thể gây selection bias?",
+    "answerable": true,
+    "expected_answer": "Người tham gia có thể quan tâm vì con đầu của họ sinh muộn; cách chọn dữ liệu làm lệch kết quả.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 22,
+        "evidence": "•Selection bias: People who join a discussion of this question might be interested because their first babies were late. In that case the process of selecting data would bias the results."
+      }
+    ],
+    "provenance": "Reused Day 6 dev only. No metadata filter applied in Day 7 comparison."
+  },
+  {
+    "id": "d7-q02",
+    "split": "dev",
+    "question": "Nghiên cứu cross-sectional khác longitudinal về thời điểm quan sát như thế nào?",
+    "answerable": true,
+    "expected_answer": "Cross-sectional chụp một nhóm tại một thời điểm; longitudinal quan sát lặp lại qua thời gian.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 23,
+        "evidence": "The NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time."
+      }
+    ],
+    "provenance": "Reused Day 6 dev only. No metadata filter applied in Day 7 comparison."
+  },
+  {
+    "id": "d7-q03",
+    "split": "dev",
+    "question": "Quần thể mục tiêu của khảo sát NSFG trong sách gồm những ai?",
+    "answerable": true,
+    "expected_answer": "Người ở Hoa Kỳ từ 15 đến 44 tuổi.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 23,
+        "evidence": "the target population of the NSFG is people in the United States aged 15-44."
+      }
+    ],
+    "provenance": "Reused Day 6 dev only. No metadata filter applied in Day 7 comparison."
+  },
+  {
+    "id": "d7-q04",
+    "split": "dev",
+    "question": "Trong chương 1, NSFG lấy mẫu vượt tỷ lệ ở ba nhóm nào và nhằm mục đích gì?",
+    "answerable": true,
+    "expected_answer": "Hispanics, African-Americans và teenagers; để đủ số người trả lời cho suy luận thống kê hợp lệ trong từng nhóm.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 24,
+        "evidence": "The NSFG is not representative; instead it is deliberatelyoversampled. The designers of the study recruited three groups—Hispanics, African-Americans and teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these groups is large enough to draw valid statistical inferences."
+      }
+    ],
+    "provenance": "Reused Day 6 dev only. No metadata filter applied in Day 7 comparison."
+  },
+  {
+    "id": "d7-q05",
+    "split": "dev",
+    "question": "Stata dictionary mô tả những thuộc tính nào để tìm biến trong mỗi dòng dữ liệu?",
+    "answerable": true,
+    "expected_answer": "Tên biến, kiểu và chỉ số/vị trí của biến trên mỗi dòng.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 25,
+        "evidence": "a “dictionary” in this context is a list of variable names, types, and indices that identify where in each line to find each variable."
+      }
+    ],
+    "provenance": "Reused Day 6 dev only. No metadata filter applied in Day 7 comparison."
+  },
+  {
+    "id": "d7-q06",
+    "split": "dev",
+    "question": "DataFrame NSFG được minh họa có bao nhiêu bản ghi và biến?",
+    "answerable": true,
+    "expected_answer": "13.593 bản ghi và 244 biến.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 26,
+        "evidence": "and the shape of the DataFrame, which is 13593 rows/records and 244 columns/variables."
+      }
+    ],
+    "provenance": "Reused Day 6 dev only. No metadata filter applied in Day 7 comparison."
+  },
+  {
+    "id": "d7-q07",
+    "split": "dev",
+    "question": "Mã outcome nào thể hiện một ca sinh sống?",
+    "answerable": true,
+    "expected_answer": "Mã 1.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 28,
+        "evidence": "•outcomeis an integer code for the outcome of the pregnancy. The code 1 indicates a live birth."
+      }
+    ],
+    "provenance": "Reused Day 6 dev only. No metadata filter applied in Day 7 comparison."
+  },
+  {
+    "id": "d7-q08",
+    "split": "dev",
+    "question": "Tại sao CleanFemPreg chia agepreg cho 100?",
+    "answerable": true,
+    "expected_answer": "Dữ liệu lưu tuổi bằng số nguyên centiyears; chia 100 để đổi sang số năm dạng số thực.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 29,
+        "evidence": "In the data file,agepregis encoded as an integer number of centiyears."
+      }
+    ],
+    "provenance": "Reused Day 6 dev only. No metadata filter applied in Day 7 comparison."
+  },
+  {
+    "id": "d7-q09",
+    "split": "dev",
+    "question": "Nếu cân nặng chứa mã 97, 98 hoặc 99 thì phải xử lý thế nào để tránh kết quả sai?",
+    "answerable": true,
+    "expected_answer": "Đó là mã thiếu thông tin, từ chối hoặc không biết; thay bằng np.nan trước khi tính toán.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 29,
+        "evidence": "97 NOT ASCERTAINED 98 REFUSED 99 DON'T KNOW Special values encoded as numbers aredangerousbecause if they are not handled properly, they can generate bogus results, like a 99-pound baby. Thereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”"
+      }
+    ],
+    "provenance": "Reused Day 6 dev only. No metadata filter applied in Day 7 comparison."
+  },
+  {
+    "id": "d7-q10",
+    "split": "dev",
+    "question": "Khi thêm cột vào DataFrame, vì sao không nên gán bằng dot notation?",
+    "answerable": true,
+    "expected_answer": "Phải dùng dictionary syntax; dot notation chỉ thêm thuộc tính và không được coi là cột mới.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 30,
+        "evidence": "One important note: when you add a new column to a DataFrame, you must use dictionary syntax, like this # CORRECT df['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0 Not dot notation, like this: # WRONG! df.totalwgt_lb = df.birthwgt_lb + df.birthwgt_oz / 16.0 The version with dot notation adds an attribute to the DataFrame object, but that attribute is not treated as a new column."
+      }
+    ],
+    "provenance": "Reused Day 6 dev only. No metadata filter applied in Day 7 comparison."
+  },
+  {
+    "id": "d7-q11",
+    "split": "dev",
+    "question": "Một cách kiểm chứng dữ liệu sau khi chuyển giữa hai môi trường phần mềm là gì?",
+    "answerable": true,
+    "expected_answer": "Tính thống kê cơ bản rồi đối chiếu kết quả đã công bố, ví dụ bảng tổng hợp trong codebook.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 30,
+        "evidence": "One way to validate data is to compute basic statistics and compare them with published results. For example, the NSFG codebook includes tables that summarize each variable."
+      }
+    ],
+    "provenance": "Reused Day 6 dev only. No metadata filter applied in Day 7 comparison."
+  },
+  {
+    "id": "d7-q12",
+    "split": "dev",
+    "question": "CleanFemPreg xử lý birthwgt_lb vượt 20 như thế nào?",
+    "answerable": true,
+    "expected_answer": "Thay các giá trị vượt 20 bằng np.nan.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 32,
+        "evidence": "df.loc[df.birthwgt_lb > 20, 'birthwgt_lb'] = np.nan This statement replaces invalid values withnp.nan."
+      }
+    ],
+    "provenance": "Reused Day 6 dev only. No metadata filter applied in Day 7 comparison."
+  },
+  {
+    "id": "d7-q13",
+    "split": "dev",
+    "question": "Trong chương 2, histogram thể hiện điều gì và frequency nghĩa là gì?",
+    "answerable": true,
+    "expected_answer": "Histogram cho biết tần số từng giá trị; frequency là số lần giá trị xuất hiện.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 37,
+        "evidence": "The most common representation of a distribution is ahistogram, which is a graph that shows thefrequencyof each value. In this context, “frequency” means the number of times the value appears."
+      }
+    ],
+    "provenance": "Reused Day 6 dev only. No metadata filter applied in Day 7 comparison."
+  },
+  {
+    "id": "d7-q14",
+    "split": "dev",
+    "question": "Tác giả phân biệt mean và average như thế nào?",
+    "answerable": true,
+    "expected_answer": "Mean là thống kê tính theo công thức tổng chia số lượng; average có thể là một trong nhiều thống kê mô tả xu hướng trung tâm.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 45,
+        "evidence": "•The “mean” of a sample is the summary statistic computed with the previous formula. •An “average” is one of several summary statistics you might choose to describe a central tendency."
+      }
+    ],
+    "provenance": "Reused Day 6 dev only. No metadata filter applied in Day 7 comparison."
+  },
+  {
+    "id": "d7-q15",
+    "split": "dev",
+    "question": "Độ lệch chuẩn có quan hệ gì với phương sai?",
+    "answerable": true,
+    "expected_answer": "Độ lệch chuẩn là căn bậc hai của phương sai, cũng đo độ phân tán.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 50,
+        "evidence": "•standard deviation: The square root of variance, also used as a measure of spread."
+      },
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 46,
+        "evidence": "The square root of variance,S, is thestandard deviation."
+      }
+    ],
+    "provenance": "Reused Day 6 dev only. No metadata filter applied in Day 7 comparison."
+  },
+  {
+    "id": "d7-u01",
+    "split": "dev",
+    "question": "Trong bộ tài liệu, tỷ lệ người trả lời NSFG sử dụng Python 3.12 là bao nhiêu phần trăm?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "Corpus describes NSFG and Python but does not report respondent Python-version usage.",
+    "absence_check": {
+      "scope": "All 42 indexed pages, PDF 21-63 except 41; not the entire 264-page book.",
+      "method": "Read source corpus; case-insensitive marker scan plus semantic inspection of relevant examples.",
+      "markers": [
+        "Python 3.12"
+      ]
+    },
+    "gold": []
+  },
+  {
+    "id": "d7-u02",
+    "split": "dev",
+    "question": "Trong nghiên cứu NSFG được mô tả, mã API cá nhân của từng người tham gia là gì?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "The book reports survey methodology, not participants personal API credentials.",
+    "absence_check": {
+      "scope": "All 42 indexed pages, PDF 21-63 except 41; not the entire 264-page book.",
+      "method": "Read source corpus; case-insensitive marker scan plus semantic inspection of relevant examples.",
+      "markers": [
+        "API key",
+        "API keys"
+      ]
+    },
+    "gold": []
+  }
+]

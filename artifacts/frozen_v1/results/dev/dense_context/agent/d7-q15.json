@@ -1,0 +1,389 @@
+{
+  "question": "Độ lệch chuẩn có quan hệ gì với phương sai?",
+  "config": "dense_context",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:12.586032+00:00",
+  "status": "answered",
+  "citations": [
+    "d3270a2b867639b7ed5e52b2"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "dense",
+      "query": "standard deviation variance Think Stats",
+      "filter": {},
+      "results": [
+        {
+          "id": "d3270a2b867639b7ed5e52b2",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 46,
+          "text": "If there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1638,
+            "language": "en",
+            "start_char": 793,
+            "printed_page": 26,
+            "extraction_status": "ok"
+          },
+          "score": 0.7503142431659323,
+          "method": "dense"
+        },
+        {
+          "id": "4321b3f26f9d26c0b20e8a04",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 46,
+          "text": "26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 791,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 26,
+            "extraction_status": "ok"
+          },
+          "score": 0.7249290943145803,
+          "method": "dense"
+        },
+        {
+          "id": "85c6d34102988e3d43bfab5f",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 50,
+          "text": "•standard deviation: The square root of variance, also used as a\nmeasure of spread.\n\n•effect size: A summary statistic intended to quantify the size of an\neffect like a difference between groups.\n\n•clinically significant: A result, like a difference between groups, that\nis relevant in practice.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1139,
+            "language": "en",
+            "start_char": 844,
+            "printed_page": 30,
+            "extraction_status": "ok"
+          },
+          "score": 0.7186509631456093,
+          "method": "dense"
+        },
+        {
+          "id": "449838e71555d1ff1d4b20c7",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 47,
+          "text": "2.9. Effect size 27\n\nFor all live births, the mean pregnancy length is 38.6 weeks, the standard\ndeviation is 2.7 weeks, which means we should expect deviations of 2-3 weeks\nto be common.\n\nVariance of pregnancy length is 7.3, which is hard to interpret, especially\nsince the units are weeks2, or “square weeks.” Variance is useful in some\ncalculations, but it is not a good summary statistic.\n\n2.9 Effect size\n\nAneffect sizeis a summary statistic intended to describe (wait for it) the\nsize of an effect. For example, to describe the difference between two groups,\none obvious choice is the difference in the means.\n\nMean pregnancy length for first babies is 38.601; for other babies it is 38.523.\nThe difference is 0.078 weeks, which works out to 13 hours. As a fraction of\nthe typical pregnancy length, this difference is about 0.2%.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 834,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 27,
+            "extraction_status": "ok"
+          },
+          "score": 0.706860268933805,
+          "method": "dense"
+        },
+        {
+          "id": "69c99c6b45abe7b28d8ff663",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 50,
+          "text": "30 Chapter 2. Distributions\n\n•frequency: The number of times a value appears in a sample.\n\n•mode: The most frequent value in a sample, or one of the most frequent\nvalues.\n\n•normal distribution: An idealization of a bell-shaped distribution;\nalso known as a Gaussian distribution.\n\n•uniform distribution: A distribution in which all values have the\nsame frequency.\n\n•tail: The part of a distribution at the high and low extremes.\n\n•central tendency: A characteristic of a sample or population; intu-\nitively, it is an average or typical value.\n\n•outlier: A value far from the central tendency.\n\n•spread: A measure of how spread out the values in a distribution are.\n\n•summary statistic: A statistic that quantifies some aspect of a dis-\ntribution, like central tendency or spread.\n\n•variance: A summary statistic often used to quantify spread.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 842,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 30,
+            "extraction_status": "ok"
+          },
+          "score": 0.7005844742582271,
+          "method": "dense"
+        }
+      ],
+      "context": "[d3270a2b867639b7ed5e52b2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\nIf there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()\n\n[4321b3f26f9d26c0b20e8a04 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\n26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance\n\n[85c6d34102988e3d43bfab5f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 50]\n•standard deviation: The square root of variance, also used as a\nmeasure of spread.\n\n•effect size: A summary statistic intended to quantify the size of an\neffect like a difference between groups.\n\n•clinically significant: A result, like a difference between groups, that\nis relevant in practice.\n\n[449838e71555d1ff1d4b20c7 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 47]\n2.9. Effect size 27\n\nFor all live births, the mean pregnancy length is 38.6 weeks, the standard\ndeviation is 2.7 weeks, which means we should expect deviations of 2-3 weeks\nto be common.\n\nVariance of pregnancy length is 7.3, which is hard to interpret, especially\nsince the units are weeks2, or “square weeks.” Variance is useful in some\ncalculations, but it is not a good summary statistic.\n\n2.9 Effect size\n\nAneffect sizeis a summary statistic intended to describe (wait for it) the\nsize of an effect. For example, to describe the difference between two groups,\none obvious choice is the difference in the means.\n\nMean pregnancy length for first babies is 38.601; for other babies it is 38.523.\nThe difference is 0.078 weeks, which works out to 13 hours. As a fraction of\nthe typical pregnancy length, this difference is about 0.2%.\n\n[69c99c6b45abe7b28d8ff663 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 50]\n30 Chapter 2. Distributions\n\n•frequency: The number of times a value appears in a sample.\n\n•mode: The most frequent value in a sample, or one of the most frequent\nvalues.\n\n•normal distribution: An idealization of a bell-shaped distribution;\nalso known as a Gaussian distribution.\n\n•uniform distribution: A distribution in which all values have the\nsame frequency.\n\n•tail: The part of a distribution at the high and low extremes.\n\n•central tendency: A characteristic of a sample or population; intu-\nitively, it is an average or typical value.\n\n•outlier: A value far from the central tendency.\n\n•spread: A measure of how spread out the values in a distribution are.\n\n•summary statistic: A statistic that quantifies some aspect of a dis-\ntribution, like central tendency or spread.\n\n•variance: A summary statistic often used to quantify spread.",
+      "context_ids": [
+        "d3270a2b867639b7ed5e52b2",
+        "4321b3f26f9d26c0b20e8a04",
+        "85c6d34102988e3d43bfab5f",
+        "449838e71555d1ff1d4b20c7",
+        "69c99c6b45abe7b28d8ff663"
+      ],
+      "elapsed_ms": 38.13939998508431
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "answer": "Độ lệch chuẩn là căn bậc hai của phương sai [d3270a2b867639b7ed5e52b2]. Cả hai đều là các thống kê tóm tắt dùng để mô tả độ phân tán hoặc sự biến động của một phân phối [d3270a2b867639b7ed5e52b2].",
+        "abstain": false,
+        "citations": [
+          "d3270a2b867639b7ed5e52b2"
+        ]
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 338,
+        "candidatesTokenCount": 18,
+        "totalTokenCount": 356,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 338
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1661,
+        "candidatesTokenCount": 133,
+        "totalTokenCount": 1794,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1661
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Độ lệch chuẩn là căn bậc hai của phương sai [d3270a2b867639b7ed5e52b2]. Cả hai đều là các thống kê tóm tắt dùng để mô tả độ phân tán hoặc sự biến động của một phân phối [d3270a2b867639b7ed5e52b2].",
+  "context": "[d3270a2b867639b7ed5e52b2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\nIf there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()\n\n[4321b3f26f9d26c0b20e8a04 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\n26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance\n\n[85c6d34102988e3d43bfab5f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 50]\n•standard deviation: The square root of variance, also used as a\nmeasure of spread.\n\n•effect size: A summary statistic intended to quantify the size of an\neffect like a difference between groups.\n\n•clinically significant: A result, like a difference between groups, that\nis relevant in practice.\n\n[449838e71555d1ff1d4b20c7 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 47]\n2.9. Effect size 27\n\nFor all live births, the mean pregnancy length is 38.6 weeks, the standard\ndeviation is 2.7 weeks, which means we should expect deviations of 2-3 weeks\nto be common.\n\nVariance of pregnancy length is 7.3, which is hard to interpret, especially\nsince the units are weeks2, or “square weeks.” Variance is useful in some\ncalculations, but it is not a good summary statistic.\n\n2.9 Effect size\n\nAneffect sizeis a summary statistic intended to describe (wait for it) the\nsize of an effect. For example, to describe the difference between two groups,\none obvious choice is the difference in the means.\n\nMean pregnancy length for first babies is 38.601; for other babies it is 38.523.\nThe difference is 0.078 weeks, which works out to 13 hours. As a fraction of\nthe typical pregnancy length, this difference is about 0.2%.\n\n[69c99c6b45abe7b28d8ff663 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 50]\n30 Chapter 2. Distributions\n\n•frequency: The number of times a value appears in a sample.\n\n•mode: The most frequent value in a sample, or one of the most frequent\nvalues.\n\n•normal distribution: An idealization of a bell-shaped distribution;\nalso known as a Gaussian distribution.\n\n•uniform distribution: A distribution in which all values have the\nsame frequency.\n\n•tail: The part of a distribution at the high and low extremes.\n\n•central tendency: A characteristic of a sample or population; intu-\nitively, it is an average or typical value.\n\n•outlier: A value far from the central tendency.\n\n•spread: A measure of how spread out the values in a distribution are.\n\n•summary statistic: A statistic that quantifies some aspect of a dis-\ntribution, like central tendency or spread.\n\n•variance: A summary statistic often used to quantify spread.",
+  "context_ids": [
+    "d3270a2b867639b7ed5e52b2",
+    "4321b3f26f9d26c0b20e8a04",
+    "85c6d34102988e3d43bfab5f",
+    "449838e71555d1ff1d4b20c7",
+    "69c99c6b45abe7b28d8ff663"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 38.674999988870695,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q15",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 3838.6500000196975,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Độ lệch chuẩn có quan hệ gì với phương sai?",
+      "config": "dense_context",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:34:11.241274+00:00",
+      "status": "answered",
+      "citations": [
+        "d3270a2b867639b7ed5e52b2"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "dense",
+          "query": "standard deviation variance Think Stats",
+          "filter": {},
+          "results": [
+            {
+              "id": "d3270a2b867639b7ed5e52b2",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 46,
+              "text": "If there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1638,
+                "language": "en",
+                "start_char": 793,
+                "printed_page": 26,
+                "extraction_status": "ok"
+              },
+              "score": 0.7503142431659323,
+              "method": "dense"
+            },
+            {
+              "id": "4321b3f26f9d26c0b20e8a04",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 46,
+              "text": "26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 791,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 26,
+                "extraction_status": "ok"
+              },
+              "score": 0.7249290943145803,
+              "method": "dense"
+            },
+            {
+              "id": "85c6d34102988e3d43bfab5f",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 50,
+              "text": "•standard deviation: The square root of variance, also used as a\nmeasure of spread.\n\n•effect size: A summary statistic intended to quantify the size of an\neffect like a difference between groups.\n\n•clinically significant: A result, like a difference between groups, that\nis relevant in practice.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1139,
+                "language": "en",
+                "start_char": 844,
+                "printed_page": 30,
+                "extraction_status": "ok"
+              },
+              "score": 0.7186509631456093,
+              "method": "dense"
+            },
+            {
+              "id": "449838e71555d1ff1d4b20c7",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 47,
+              "text": "2.9. Effect size 27\n\nFor all live births, the mean pregnancy length is 38.6 weeks, the standard\ndeviation is 2.7 weeks, which means we should expect deviations of 2-3 weeks\nto be common.\n\nVariance of pregnancy length is 7.3, which is hard to interpret, especially\nsince the units are weeks2, or “square weeks.” Variance is useful in some\ncalculations, but it is not a good summary statistic.\n\n2.9 Effect size\n\nAneffect sizeis a summary statistic intended to describe (wait for it) the\nsize of an effect. For example, to describe the difference between two groups,\none obvious choice is the difference in the means.\n\nMean pregnancy length for first babies is 38.601; for other babies it is 38.523.\nThe difference is 0.078 weeks, which works out to 13 hours. As a fraction of\nthe typical pregnancy length, this difference is about 0.2%.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 834,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 27,
+                "extraction_status": "ok"
+              },
+              "score": 0.706860268933805,
+              "method": "dense"
+            },
+            {
+              "id": "69c99c6b45abe7b28d8ff663",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 50,
+              "text": "30 Chapter 2. Distributions\n\n•frequency: The number of times a value appears in a sample.\n\n•mode: The most frequent value in a sample, or one of the most frequent\nvalues.\n\n•normal distribution: An idealization of a bell-shaped distribution;\nalso known as a Gaussian distribution.\n\n•uniform distribution: A distribution in which all values have the\nsame frequency.\n\n•tail: The part of a distribution at the high and low extremes.\n\n•central tendency: A characteristic of a sample or population; intu-\nitively, it is an average or typical value.\n\n•outlier: A value far from the central tendency.\n\n•spread: A measure of how spread out the values in a distribution are.\n\n•summary statistic: A statistic that quantifies some aspect of a dis-\ntribution, like central tendency or spread.\n\n•variance: A summary statistic often used to quantify spread.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 842,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 30,
+                "extraction_status": "ok"
+              },
+              "score": 0.7005844742582271,
+              "method": "dense"
+            }
+          ],
+          "context": "[d3270a2b867639b7ed5e52b2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\nIf there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()\n\n[4321b3f26f9d26c0b20e8a04 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\n26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance\n\n[85c6d34102988e3d43bfab5f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 50]\n•standard deviation: The square root of variance, also used as a\nmeasure of spread.\n\n•effect size: A summary statistic intended to quantify the size of an\neffect like a difference between groups.\n\n•clinically significant: A result, like a difference between groups, that\nis relevant in practice.\n\n[449838e71555d1ff1d4b20c7 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 47]\n2.9. Effect size 27\n\nFor all live births, the mean pregnancy length is 38.6 weeks, the standard\ndeviation is 2.7 weeks, which means we should expect deviations of 2-3 weeks\nto be common.\n\nVariance of pregnancy length is 7.3, which is hard to interpret, especially\nsince the units are weeks2, or “square weeks.” Variance is useful in some\ncalculations, but it is not a good summary statistic.\n\n2.9 Effect size\n\nAneffect sizeis a summary statistic intended to describe (wait for it) the\nsize of an effect. For example, to describe the difference between two groups,\none obvious choice is the difference in the means.\n\nMean pregnancy length for first babies is 38.601; for other babies it is 38.523.\nThe difference is 0.078 weeks, which works out to 13 hours. As a fraction of\nthe typical pregnancy length, this difference is about 0.2%.\n\n[69c99c6b45abe7b28d8ff663 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 50]\n30 Chapter 2. Distributions\n\n•frequency: The number of times a value appears in a sample.\n\n•mode: The most frequent value in a sample, or one of the most frequent\nvalues.\n\n•normal distribution: An idealization of a bell-shaped distribution;\nalso known as a Gaussian distribution.\n\n•uniform distribution: A distribution in which all values have the\nsame frequency.\n\n•tail: The part of a distribution at the high and low extremes.\n\n•central tendency: A characteristic of a sample or population; intu-\nitively, it is an average or typical value.\n\n•outlier: A value far from the central tendency.\n\n•spread: A measure of how spread out the values in a distribution are.\n\n•summary statistic: A statistic that quantifies some aspect of a dis-\ntribution, like central tendency or spread.\n\n•variance: A summary statistic often used to quantify spread.",
+          "context_ids": [
+            "d3270a2b867639b7ed5e52b2",
+            "4321b3f26f9d26c0b20e8a04",
+            "85c6d34102988e3d43bfab5f",
+            "449838e71555d1ff1d4b20c7",
+            "69c99c6b45abe7b28d8ff663"
+          ],
+          "elapsed_ms": 24.62289997492917
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "answer": "Độ lệch chuẩn là căn bậc hai của phương sai [d3270a2b867639b7ed5e52b2]. Cả hai đều là các thống kê tóm tắt dùng để mô tả độ phân tán hoặc sự biến động của một phân phối [d3270a2b867639b7ed5e52b2].",
+            "abstain": false,
+            "citations": [
+              "d3270a2b867639b7ed5e52b2"
+            ]
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 338,
+            "candidatesTokenCount": 18,
+            "totalTokenCount": 356,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 338
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1661,
+            "candidatesTokenCount": 133,
+            "totalTokenCount": 1794,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1661
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Độ lệch chuẩn là căn bậc hai của phương sai [d3270a2b867639b7ed5e52b2]. Cả hai đều là các thống kê tóm tắt dùng để mô tả độ phân tán hoặc sự biến động của một phân phối [d3270a2b867639b7ed5e52b2].",
+      "context": "[d3270a2b867639b7ed5e52b2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\nIf there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()\n\n[4321b3f26f9d26c0b20e8a04 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\n26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance\n\n[85c6d34102988e3d43bfab5f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 50]\n•standard deviation: The square root of variance, also used as a\nmeasure of spread.\n\n•effect size: A summary statistic intended to quantify the size of an\neffect like a difference between groups.\n\n•clinically significant: A result, like a difference between groups, that\nis relevant in practice.\n\n[449838e71555d1ff1d4b20c7 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 47]\n2.9. Effect size 27\n\nFor all live births, the mean pregnancy length is 38.6 weeks, the standard\ndeviation is 2.7 weeks, which means we should expect deviations of 2-3 weeks\nto be common.\n\nVariance of pregnancy length is 7.3, which is hard to interpret, especially\nsince the units are weeks2, or “square weeks.” Variance is useful in some\ncalculations, but it is not a good summary statistic.\n\n2.9 Effect size\n\nAneffect sizeis a summary statistic intended to describe (wait for it) the\nsize of an effect. For example, to describe the difference between two groups,\none obvious choice is the difference in the means.\n\nMean pregnancy length for first babies is 38.601; for other babies it is 38.523.\nThe difference is 0.078 weeks, which works out to 13 hours. As a fraction of\nthe typical pregnancy length, this difference is about 0.2%.\n\n[69c99c6b45abe7b28d8ff663 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 50]\n30 Chapter 2. Distributions\n\n•frequency: The number of times a value appears in a sample.\n\n•mode: The most frequent value in a sample, or one of the most frequent\nvalues.\n\n•normal distribution: An idealization of a bell-shaped distribution;\nalso known as a Gaussian distribution.\n\n•uniform distribution: A distribution in which all values have the\nsame frequency.\n\n•tail: The part of a distribution at the high and low extremes.\n\n•central tendency: A characteristic of a sample or population; intu-\nitively, it is an average or typical value.\n\n•outlier: A value far from the central tendency.\n\n•spread: A measure of how spread out the values in a distribution are.\n\n•summary statistic: A statistic that quantifies some aspect of a dis-\ntribution, like central tendency or spread.\n\n•variance: A summary statistic often used to quantify spread.",
+      "context_ids": [
+        "d3270a2b867639b7ed5e52b2",
+        "4321b3f26f9d26c0b20e8a04",
+        "85c6d34102988e3d43bfab5f",
+        "449838e71555d1ff1d4b20c7",
+        "69c99c6b45abe7b28d8ff663"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 3838.6500000196975,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q15",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

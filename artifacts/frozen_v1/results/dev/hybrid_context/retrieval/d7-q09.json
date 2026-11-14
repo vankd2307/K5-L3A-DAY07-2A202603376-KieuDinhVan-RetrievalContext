@@ -1,0 +1,293 @@
+{
+  "query_id": "d7-q09",
+  "split": "dev",
+  "config": "hybrid_context",
+  "status": "ok",
+  "query": "Nếu cân nặng chứa mã 97, 98 hoặc 99 thì phải xử lý thế nào để tránh kết quả sai?",
+  "filter": {},
+  "results": [
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 29,
+      "text": "df['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 9,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 298,
+        "end_char": 1193,
+        "chunking": "paragraph"
+      },
+      "id": "50718039f1ba18056fe56194",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.03252247488101534,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 1,
+        "1": 2
+      }
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 31,
+      "text": "1.7. Validation 11\n\n2 1862\n3 120\n4 1921\n5 190\n6 352\nThe result ofvalue_countsis a Series;sort_index()sorts the Series by\nindex, so the values appear in order.\n\nComparing the results with the published table, it looks like the values in\noutcomeare correct. Similarly, here is the published table forbirthwgt_lb\nvalue label Total\n. INAPPLICABLE 4449\n0-5 UNDER 6 POUNDS 1125\n6 6 POUNDS 2223\n7 7 POUNDS 3049\n8 8 POUNDS 1889\n9-95 9 POUNDS OR MORE 799\nAnd here are the value counts:\n>>> df.birthwgt_lb.value_counts(sort=False)\n0 8\n1 40\n2 53\n3 98\n4 229\n5 697\n6 2223\n7 3049\n8 1889\n9 623\n10 132\n11 26\n12 10\n13 3\n14 3\n15 1\n51 1",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 11,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 617,
+        "chunking": "paragraph"
+      },
+      "id": "4fcfe0efa8b50ff228b30f81",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.03149801587301587,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 4,
+        "1": 3
+      }
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 29,
+      "text": "1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 9,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 296,
+        "chunking": "paragraph"
+      },
+      "id": "378c9ef8a37471ebdc49dd13",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.03131881575727918,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 7,
+        "1": 1
+      }
+    },
+    {
+      "id": "9766333af7f057a687bda0c0",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 32,
+      "text": "12 Chapter 1. Exploratory data analysis\n\nThe counts for 6, 7, and 8 pounds check out, and if you add up the counts\nfor 0-5 and 9-95, they check out, too. But if you look more closely, you will\nnotice one value that has to be an error, a 51 pound baby!\n\nTo deal with this error, I added a line toCleanFemPreg:\ndf.loc[df.birthwgt_lb > 20, 'birthwgt_lb'] = np.nan\nThis statement replaces invalid values withnp.nan. The attributelocprovides several ways to select rows and columns from a DataFrame. In this\nexample, the first expression in brackets is the row indexer; the second expression selects the column.\n\nThe expressiondf.birthwgt_lb > 20yields a Series of typebool, where\nTrue indicates that the condition is true. When a boolean Series is used as\nan index, it selects only the elements that satisfy the condition.\n\n1.8 Interpretation",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "1",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 838,
+        "language": "en",
+        "start_char": 0,
+        "printed_page": 12,
+        "extraction_status": "ok"
+      },
+      "score": 0.016129032258064516,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 2
+      }
+    },
+    {
+      "id": "49643149477ca2ae881fb71f",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 29,
+      "text": "100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "1",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1487,
+        "language": "en",
+        "start_char": 1194,
+        "printed_page": 9,
+        "extraction_status": "ok"
+      },
+      "score": 0.015873015873015872,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 3
+      }
+    }
+  ],
+  "context": "[50718039f1ba18056fe56194 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /\n\n[4fcfe0efa8b50ff228b30f81 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 31]\n1.7. Validation 11\n\n2 1862\n3 120\n4 1921\n5 190\n6 352\nThe result ofvalue_countsis a Series;sort_index()sorts the Series by\nindex, so the values appear in order.\n\nComparing the results with the published table, it looks like the values in\noutcomeare correct. Similarly, here is the published table forbirthwgt_lb\nvalue label Total\n. INAPPLICABLE 4449\n0-5 UNDER 6 POUNDS 1125\n6 6 POUNDS 2223\n7 7 POUNDS 3049\n8 8 POUNDS 1889\n9-95 9 POUNDS OR MORE 799\nAnd here are the value counts:\n>>> df.birthwgt_lb.value_counts(sort=False)\n0 8\n1 40\n2 53\n3 98\n4 229\n5 697\n6 2223\n7 3049\n8 1889\n9 623\n10 132\n11 26\n12 10\n13 3\n14 3\n15 1\n51 1\n\n[378c9ef8a37471ebdc49dd13 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)\n\n[9766333af7f057a687bda0c0 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 32]\n12 Chapter 1. Exploratory data analysis\n\nThe counts for 6, 7, and 8 pounds check out, and if you add up the counts\nfor 0-5 and 9-95, they check out, too. But if you look more closely, you will\nnotice one value that has to be an error, a 51 pound baby!\n\nTo deal with this error, I added a line toCleanFemPreg:\ndf.loc[df.birthwgt_lb > 20, 'birthwgt_lb'] = np.nan\nThis statement replaces invalid values withnp.nan. The attributelocprovides several ways to select rows and columns from a DataFrame. In this\nexample, the first expression in brackets is the row indexer; the second expression selects the column.\n\nThe expressiondf.birthwgt_lb > 20yields a Series of typebool, where\nTrue indicates that the condition is true. When a boolean Series is used as\nan index, it selects only the elements that satisfy the condition.\n\n1.8 Interpretation\n\n[49643149477ca2ae881fb71f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.",
+  "context_ids": [
+    "50718039f1ba18056fe56194",
+    "4fcfe0efa8b50ff228b30f81",
+    "378c9ef8a37471ebdc49dd13",
+    "9766333af7f057a687bda0c0",
+    "49643149477ca2ae881fb71f"
+  ],
+  "hit1": true,
+  "hit3": true,
+  "context_hit": true,
+  "elapsed_ms": 43.55909998412244,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q09",
+      "split": "dev",
+      "config": "hybrid_context",
+      "status": "ok",
+      "query": "Nếu cân nặng chứa mã 97, 98 hoặc 99 thì phải xử lý thế nào để tránh kết quả sai?",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 29,
+          "text": "df['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 9,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 298,
+            "end_char": 1193,
+            "chunking": "paragraph"
+          },
+          "id": "50718039f1ba18056fe56194",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03252247488101534,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1,
+            "1": 2
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 31,
+          "text": "1.7. Validation 11\n\n2 1862\n3 120\n4 1921\n5 190\n6 352\nThe result ofvalue_countsis a Series;sort_index()sorts the Series by\nindex, so the values appear in order.\n\nComparing the results with the published table, it looks like the values in\noutcomeare correct. Similarly, here is the published table forbirthwgt_lb\nvalue label Total\n. INAPPLICABLE 4449\n0-5 UNDER 6 POUNDS 1125\n6 6 POUNDS 2223\n7 7 POUNDS 3049\n8 8 POUNDS 1889\n9-95 9 POUNDS OR MORE 799\nAnd here are the value counts:\n>>> df.birthwgt_lb.value_counts(sort=False)\n0 8\n1 40\n2 53\n3 98\n4 229\n5 697\n6 2223\n7 3049\n8 1889\n9 623\n10 132\n11 26\n12 10\n13 3\n14 3\n15 1\n51 1",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 11,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 617,
+            "chunking": "paragraph"
+          },
+          "id": "4fcfe0efa8b50ff228b30f81",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03149801587301587,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 4,
+            "1": 3
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 29,
+          "text": "1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 9,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 296,
+            "chunking": "paragraph"
+          },
+          "id": "378c9ef8a37471ebdc49dd13",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03131881575727918,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 7,
+            "1": 1
+          }
+        },
+        {
+          "id": "9766333af7f057a687bda0c0",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 32,
+          "text": "12 Chapter 1. Exploratory data analysis\n\nThe counts for 6, 7, and 8 pounds check out, and if you add up the counts\nfor 0-5 and 9-95, they check out, too. But if you look more closely, you will\nnotice one value that has to be an error, a 51 pound baby!\n\nTo deal with this error, I added a line toCleanFemPreg:\ndf.loc[df.birthwgt_lb > 20, 'birthwgt_lb'] = np.nan\nThis statement replaces invalid values withnp.nan. The attributelocprovides several ways to select rows and columns from a DataFrame. In this\nexample, the first expression in brackets is the row indexer; the second expression selects the column.\n\nThe expressiondf.birthwgt_lb > 20yields a Series of typebool, where\nTrue indicates that the condition is true. When a boolean Series is used as\nan index, it selects only the elements that satisfy the condition.\n\n1.8 Interpretation",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 838,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 12,
+            "extraction_status": "ok"
+          },
+          "score": 0.016129032258064516,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 2
+          }
+        },
+        {
+          "id": "49643149477ca2ae881fb71f",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 29,
+          "text": "100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1487,
+            "language": "en",
+            "start_char": 1194,
+            "printed_page": 9,
+            "extraction_status": "ok"
+          },
+          "score": 0.015873015873015872,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 3
+          }
+        }
+      ],
+      "context": "[50718039f1ba18056fe56194 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /\n\n[4fcfe0efa8b50ff228b30f81 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 31]\n1.7. Validation 11\n\n2 1862\n3 120\n4 1921\n5 190\n6 352\nThe result ofvalue_countsis a Series;sort_index()sorts the Series by\nindex, so the values appear in order.\n\nComparing the results with the published table, it looks like the values in\noutcomeare correct. Similarly, here is the published table forbirthwgt_lb\nvalue label Total\n. INAPPLICABLE 4449\n0-5 UNDER 6 POUNDS 1125\n6 6 POUNDS 2223\n7 7 POUNDS 3049\n8 8 POUNDS 1889\n9-95 9 POUNDS OR MORE 799\nAnd here are the value counts:\n>>> df.birthwgt_lb.value_counts(sort=False)\n0 8\n1 40\n2 53\n3 98\n4 229\n5 697\n6 2223\n7 3049\n8 1889\n9 623\n10 132\n11 26\n12 10\n13 3\n14 3\n15 1\n51 1\n\n[378c9ef8a37471ebdc49dd13 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)\n\n[9766333af7f057a687bda0c0 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 32]\n12 Chapter 1. Exploratory data analysis\n\nThe counts for 6, 7, and 8 pounds check out, and if you add up the counts\nfor 0-5 and 9-95, they check out, too. But if you look more closely, you will\nnotice one value that has to be an error, a 51 pound baby!\n\nTo deal with this error, I added a line toCleanFemPreg:\ndf.loc[df.birthwgt_lb > 20, 'birthwgt_lb'] = np.nan\nThis statement replaces invalid values withnp.nan. The attributelocprovides several ways to select rows and columns from a DataFrame. In this\nexample, the first expression in brackets is the row indexer; the second expression selects the column.\n\nThe expressiondf.birthwgt_lb > 20yields a Series of typebool, where\nTrue indicates that the condition is true. When a boolean Series is used as\nan index, it selects only the elements that satisfy the condition.\n\n1.8 Interpretation\n\n[49643149477ca2ae881fb71f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.",
+      "context_ids": [
+        "50718039f1ba18056fe56194",
+        "4fcfe0efa8b50ff228b30f81",
+        "378c9ef8a37471ebdc49dd13",
+        "9766333af7f057a687bda0c0",
+        "49643149477ca2ae881fb71f"
+      ],
+      "hit1": true,
+      "hit3": true,
+      "context_hit": true,
+      "elapsed_ms": 15.567900001769885
+    }
+  ]
+}

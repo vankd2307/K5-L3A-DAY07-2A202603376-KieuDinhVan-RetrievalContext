@@ -1,0 +1,167 @@
+{
+  "query_id": "d7-q12",
+  "split": "dev",
+  "config": "baseline",
+  "status": "ok",
+  "query": "CleanFemPreg xử lý birthwgt_lb vượt 20 như thế nào?",
+  "filter": {},
+  "results": [
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 29,
+      "text": "1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 9,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 296,
+        "chunking": "paragraph"
+      },
+      "id": "378c9ef8a37471ebdc49dd13",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.1973233351156265,
+      "method": "tfidf"
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 32,
+      "text": "12 Chapter 1. Exploratory data analysis\n\nThe counts for 6, 7, and 8 pounds check out, and if you add up the counts\nfor 0-5 and 9-95, they check out, too. But if you look more closely, you will\nnotice one value that has to be an error, a 51 pound baby!\n\nTo deal with this error, I added a line toCleanFemPreg:\ndf.loc[df.birthwgt_lb > 20, 'birthwgt_lb'] = np.nan\nThis statement replaces invalid values withnp.nan. The attributelocprovides several ways to select rows and columns from a DataFrame. In this\nexample, the first expression in brackets is the row indexer; the second expression selects the column.\n\nThe expressiondf.birthwgt_lb > 20yields a Series of typebool, where\nTrue indicates that the condition is true. When a boolean Series is used as\nan index, it selects only the elements that satisfy the condition.\n\n1.8 Interpretation",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 12,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 838,
+        "chunking": "paragraph"
+      },
+      "id": "9766333af7f057a687bda0c0",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.16731516139620667,
+      "method": "tfidf"
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 40,
+      "text": "20 Chapter 2. Distributions\n\nFigure 2.2: Histogram of the ounce part of birth weight.\n\nlooking at histograms.\n\nIn Section 1.6 we transformedagepregfrom centiyears to years, and combinedbirthwgt_lbandbirthwgt_ozinto a single quantity,totalwgt_lb.\nIn this section I use these variables to demonstrate some features of histograms.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "2",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 20,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 327,
+        "chunking": "paragraph"
+      },
+      "id": "78bd414bbf059a60f13c7286",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.09984026319649991,
+      "method": "tfidf"
+    }
+  ],
+  "context": "[378c9ef8a37471ebdc49dd13 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)\n\n[78bd414bbf059a60f13c7286 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 40]\n20 Chapter 2. Distributions\n\nFigure 2.2: Histogram of the ounce part of birth weight.\n\nlooking at histograms.\n\nIn Section 1.6 we transformedagepregfrom centiyears to years, and combinedbirthwgt_lbandbirthwgt_ozinto a single quantity,totalwgt_lb.\nIn this section I use these variables to demonstrate some features of histograms.",
+  "context_ids": [
+    "378c9ef8a37471ebdc49dd13",
+    "78bd414bbf059a60f13c7286"
+  ],
+  "hit1": false,
+  "hit3": true,
+  "context_hit": false,
+  "elapsed_ms": 0.42669998947530985,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q12",
+      "split": "dev",
+      "config": "baseline",
+      "status": "ok",
+      "query": "CleanFemPreg xử lý birthwgt_lb vượt 20 như thế nào?",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 29,
+          "text": "1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 9,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 296,
+            "chunking": "paragraph"
+          },
+          "id": "378c9ef8a37471ebdc49dd13",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.1973233351156265,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 32,
+          "text": "12 Chapter 1. Exploratory data analysis\n\nThe counts for 6, 7, and 8 pounds check out, and if you add up the counts\nfor 0-5 and 9-95, they check out, too. But if you look more closely, you will\nnotice one value that has to be an error, a 51 pound baby!\n\nTo deal with this error, I added a line toCleanFemPreg:\ndf.loc[df.birthwgt_lb > 20, 'birthwgt_lb'] = np.nan\nThis statement replaces invalid values withnp.nan. The attributelocprovides several ways to select rows and columns from a DataFrame. In this\nexample, the first expression in brackets is the row indexer; the second expression selects the column.\n\nThe expressiondf.birthwgt_lb > 20yields a Series of typebool, where\nTrue indicates that the condition is true. When a boolean Series is used as\nan index, it selects only the elements that satisfy the condition.\n\n1.8 Interpretation",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 12,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 838,
+            "chunking": "paragraph"
+          },
+          "id": "9766333af7f057a687bda0c0",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.16731516139620667,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 40,
+          "text": "20 Chapter 2. Distributions\n\nFigure 2.2: Histogram of the ounce part of birth weight.\n\nlooking at histograms.\n\nIn Section 1.6 we transformedagepregfrom centiyears to years, and combinedbirthwgt_lbandbirthwgt_ozinto a single quantity,totalwgt_lb.\nIn this section I use these variables to demonstrate some features of histograms.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 20,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 327,
+            "chunking": "paragraph"
+          },
+          "id": "78bd414bbf059a60f13c7286",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.09984026319649991,
+          "method": "tfidf"
+        }
+      ],
+      "context": "[378c9ef8a37471ebdc49dd13 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)\n\n[78bd414bbf059a60f13c7286 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 40]\n20 Chapter 2. Distributions\n\nFigure 2.2: Histogram of the ounce part of birth weight.\n\nlooking at histograms.\n\nIn Section 1.6 we transformedagepregfrom centiyears to years, and combinedbirthwgt_lbandbirthwgt_ozinto a single quantity,totalwgt_lb.\nIn this section I use these variables to demonstrate some features of histograms.",
+      "context_ids": [
+        "378c9ef8a37471ebdc49dd13",
+        "78bd414bbf059a60f13c7286"
+      ],
+      "hit1": false,
+      "hit3": true,
+      "context_hit": false,
+      "elapsed_ms": 0.6978000164963305
+    }
+  ]
+}

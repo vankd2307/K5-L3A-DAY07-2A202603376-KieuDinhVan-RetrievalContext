@@ -1,0 +1,257 @@
+{
+  "query_id": "d7-q15",
+  "split": "dev",
+  "config": "dense_context",
+  "status": "ok",
+  "query": "Độ lệch chuẩn có quan hệ gì với phương sai?",
+  "filter": {},
+  "results": [
+    {
+      "id": "85c6d34102988e3d43bfab5f",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 50,
+      "text": "•standard deviation: The square root of variance, also used as a\nmeasure of spread.\n\n•effect size: A summary statistic intended to quantify the size of an\neffect like a difference between groups.\n\n•clinically significant: A result, like a difference between groups, that\nis relevant in practice.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "2",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1139,
+        "language": "en",
+        "start_char": 844,
+        "printed_page": 30,
+        "extraction_status": "ok"
+      },
+      "score": 0.643403845239144,
+      "method": "dense"
+    },
+    {
+      "id": "d3270a2b867639b7ed5e52b2",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 46,
+      "text": "If there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "2",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1638,
+        "language": "en",
+        "start_char": 793,
+        "printed_page": 26,
+        "extraction_status": "ok"
+      },
+      "score": 0.6396273946428953,
+      "method": "dense"
+    },
+    {
+      "id": "4ea711974ff31d713d352e37",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 61,
+      "text": "mean, but the process is slightly different:\n\n̄x= X pi xi\ni\nwhere thex i are the unique values in the PMF andp i =PMF(x i). Similarly,\nyou can compute variance like this:\n\nS2 = X pi (x i − ̄x) 2\ni",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "3",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1442,
+        "language": "en",
+        "start_char": 1246,
+        "printed_page": 41,
+        "extraction_status": "ok"
+      },
+      "score": 0.6179190278053328,
+      "method": "dense"
+    },
+    {
+      "id": "4321b3f26f9d26c0b20e8a04",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 46,
+      "text": "26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "2",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 791,
+        "language": "en",
+        "start_char": 0,
+        "printed_page": 26,
+        "extraction_status": "ok"
+      },
+      "score": 0.6158519387245222,
+      "method": "dense"
+    },
+    {
+      "id": "449838e71555d1ff1d4b20c7",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 47,
+      "text": "2.9. Effect size 27\n\nFor all live births, the mean pregnancy length is 38.6 weeks, the standard\ndeviation is 2.7 weeks, which means we should expect deviations of 2-3 weeks\nto be common.\n\nVariance of pregnancy length is 7.3, which is hard to interpret, especially\nsince the units are weeks2, or “square weeks.” Variance is useful in some\ncalculations, but it is not a good summary statistic.\n\n2.9 Effect size\n\nAneffect sizeis a summary statistic intended to describe (wait for it) the\nsize of an effect. For example, to describe the difference between two groups,\none obvious choice is the difference in the means.\n\nMean pregnancy length for first babies is 38.601; for other babies it is 38.523.\nThe difference is 0.078 weeks, which works out to 13 hours. As a fraction of\nthe typical pregnancy length, this difference is about 0.2%.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "2",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 834,
+        "language": "en",
+        "start_char": 0,
+        "printed_page": 27,
+        "extraction_status": "ok"
+      },
+      "score": 0.611224724200335,
+      "method": "dense"
+    }
+  ],
+  "context": "[85c6d34102988e3d43bfab5f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 50]\n•standard deviation: The square root of variance, also used as a\nmeasure of spread.\n\n•effect size: A summary statistic intended to quantify the size of an\neffect like a difference between groups.\n\n•clinically significant: A result, like a difference between groups, that\nis relevant in practice.\n\n[d3270a2b867639b7ed5e52b2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\nIf there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()\n\n[4ea711974ff31d713d352e37 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 61]\nmean, but the process is slightly different:\n\n̄x= X pi xi\ni\nwhere thex i are the unique values in the PMF andp i =PMF(x i). Similarly,\nyou can compute variance like this:\n\nS2 = X pi (x i − ̄x) 2\ni\n\n[4321b3f26f9d26c0b20e8a04 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\n26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance\n\n[449838e71555d1ff1d4b20c7 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 47]\n2.9. Effect size 27\n\nFor all live births, the mean pregnancy length is 38.6 weeks, the standard\ndeviation is 2.7 weeks, which means we should expect deviations of 2-3 weeks\nto be common.\n\nVariance of pregnancy length is 7.3, which is hard to interpret, especially\nsince the units are weeks2, or “square weeks.” Variance is useful in some\ncalculations, but it is not a good summary statistic.\n\n2.9 Effect size\n\nAneffect sizeis a summary statistic intended to describe (wait for it) the\nsize of an effect. For example, to describe the difference between two groups,\none obvious choice is the difference in the means.\n\nMean pregnancy length for first babies is 38.601; for other babies it is 38.523.\nThe difference is 0.078 weeks, which works out to 13 hours. As a fraction of\nthe typical pregnancy length, this difference is about 0.2%.",
+  "context_ids": [
+    "85c6d34102988e3d43bfab5f",
+    "d3270a2b867639b7ed5e52b2",
+    "4ea711974ff31d713d352e37",
+    "4321b3f26f9d26c0b20e8a04",
+    "449838e71555d1ff1d4b20c7"
+  ],
+  "hit1": true,
+  "hit3": true,
+  "context_hit": true,
+  "elapsed_ms": 28.288899979088455,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q15",
+      "split": "dev",
+      "config": "dense_context",
+      "status": "ok",
+      "query": "Độ lệch chuẩn có quan hệ gì với phương sai?",
+      "filter": {},
+      "results": [
+        {
+          "id": "85c6d34102988e3d43bfab5f",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 50,
+          "text": "•standard deviation: The square root of variance, also used as a\nmeasure of spread.\n\n•effect size: A summary statistic intended to quantify the size of an\neffect like a difference between groups.\n\n•clinically significant: A result, like a difference between groups, that\nis relevant in practice.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1139,
+            "language": "en",
+            "start_char": 844,
+            "printed_page": 30,
+            "extraction_status": "ok"
+          },
+          "score": 0.643403845239144,
+          "method": "dense"
+        },
+        {
+          "id": "d3270a2b867639b7ed5e52b2",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 46,
+          "text": "If there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1638,
+            "language": "en",
+            "start_char": 793,
+            "printed_page": 26,
+            "extraction_status": "ok"
+          },
+          "score": 0.6396273946428953,
+          "method": "dense"
+        },
+        {
+          "id": "4ea711974ff31d713d352e37",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 61,
+          "text": "mean, but the process is slightly different:\n\n̄x= X pi xi\ni\nwhere thex i are the unique values in the PMF andp i =PMF(x i). Similarly,\nyou can compute variance like this:\n\nS2 = X pi (x i − ̄x) 2\ni",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "3",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1442,
+            "language": "en",
+            "start_char": 1246,
+            "printed_page": 41,
+            "extraction_status": "ok"
+          },
+          "score": 0.6179190278053328,
+          "method": "dense"
+        },
+        {
+          "id": "4321b3f26f9d26c0b20e8a04",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 46,
+          "text": "26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 791,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 26,
+            "extraction_status": "ok"
+          },
+          "score": 0.6158519387245222,
+          "method": "dense"
+        },
+        {
+          "id": "449838e71555d1ff1d4b20c7",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 47,
+          "text": "2.9. Effect size 27\n\nFor all live births, the mean pregnancy length is 38.6 weeks, the standard\ndeviation is 2.7 weeks, which means we should expect deviations of 2-3 weeks\nto be common.\n\nVariance of pregnancy length is 7.3, which is hard to interpret, especially\nsince the units are weeks2, or “square weeks.” Variance is useful in some\ncalculations, but it is not a good summary statistic.\n\n2.9 Effect size\n\nAneffect sizeis a summary statistic intended to describe (wait for it) the\nsize of an effect. For example, to describe the difference between two groups,\none obvious choice is the difference in the means.\n\nMean pregnancy length for first babies is 38.601; for other babies it is 38.523.\nThe difference is 0.078 weeks, which works out to 13 hours. As a fraction of\nthe typical pregnancy length, this difference is about 0.2%.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 834,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 27,
+            "extraction_status": "ok"
+          },
+          "score": 0.611224724200335,
+          "method": "dense"
+        }
+      ],
+      "context": "[85c6d34102988e3d43bfab5f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 50]\n•standard deviation: The square root of variance, also used as a\nmeasure of spread.\n\n•effect size: A summary statistic intended to quantify the size of an\neffect like a difference between groups.\n\n•clinically significant: A result, like a difference between groups, that\nis relevant in practice.\n\n[d3270a2b867639b7ed5e52b2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\nIf there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()\n\n[4ea711974ff31d713d352e37 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 61]\nmean, but the process is slightly different:\n\n̄x= X pi xi\ni\nwhere thex i are the unique values in the PMF andp i =PMF(x i). Similarly,\nyou can compute variance like this:\n\nS2 = X pi (x i − ̄x) 2\ni\n\n[4321b3f26f9d26c0b20e8a04 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\n26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance\n\n[449838e71555d1ff1d4b20c7 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 47]\n2.9. Effect size 27\n\nFor all live births, the mean pregnancy length is 38.6 weeks, the standard\ndeviation is 2.7 weeks, which means we should expect deviations of 2-3 weeks\nto be common.\n\nVariance of pregnancy length is 7.3, which is hard to interpret, especially\nsince the units are weeks2, or “square weeks.” Variance is useful in some\ncalculations, but it is not a good summary statistic.\n\n2.9 Effect size\n\nAneffect sizeis a summary statistic intended to describe (wait for it) the\nsize of an effect. For example, to describe the difference between two groups,\none obvious choice is the difference in the means.\n\nMean pregnancy length for first babies is 38.601; for other babies it is 38.523.\nThe difference is 0.078 weeks, which works out to 13 hours. As a fraction of\nthe typical pregnancy length, this difference is about 0.2%.",
+      "context_ids": [
+        "85c6d34102988e3d43bfab5f",
+        "d3270a2b867639b7ed5e52b2",
+        "4ea711974ff31d713d352e37",
+        "4321b3f26f9d26c0b20e8a04",
+        "449838e71555d1ff1d4b20c7"
+      ],
+      "hit1": true,
+      "hit3": true,
+      "context_hit": true,
+      "elapsed_ms": 15.289499977370724
+    }
+  ]
+}

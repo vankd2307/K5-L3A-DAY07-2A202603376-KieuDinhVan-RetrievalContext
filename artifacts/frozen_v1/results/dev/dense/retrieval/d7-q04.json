@@ -1,0 +1,165 @@
+{
+  "query_id": "d7-q04",
+  "split": "dev",
+  "config": "dense",
+  "status": "ok",
+  "query": "Trong chương 1, NSFG lấy mẫu vượt tỷ lệ ở ba nhóm nào và nhằm mục đích gì?",
+  "filter": {},
+  "results": [
+    {
+      "id": "8bca2eddf8d8ed85185da77e",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 24,
+      "text": "4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "1",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 752,
+        "language": "en",
+        "start_char": 0,
+        "printed_page": 4,
+        "extraction_status": "ok"
+      },
+      "score": 0.7498157024383545,
+      "method": "dense"
+    },
+    {
+      "id": "f40266243aa427f23fa90b4e",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 23,
+      "text": "The NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "1",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1824,
+        "language": "en",
+        "start_char": 1377,
+        "printed_page": 3,
+        "extraction_status": "ok"
+      },
+      "score": 0.7452900853926008,
+      "method": "dense"
+    },
+    {
+      "id": "bf7df453e01346a69a9a3055",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 23,
+      "text": "1.2. The National Survey of Family Growth 3\n\n•Estimation: We will use data from a sample to estimate characteristics\nof the general population.\n\n•Hypothesis testing: Where we see apparent effects, like a difference\nbetween two groups, we will evaluate whether the effect might have\nhappened by chance.\n\nBy performing these steps with care to avoid pitfalls, we can reach conclusions\nthat are more justifiable and more likely to be correct.\n\n1.2 The National Survey of Family Growth",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "1",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 481,
+        "language": "en",
+        "start_char": 0,
+        "printed_page": 3,
+        "extraction_status": "ok"
+      },
+      "score": 0.7387634075425037,
+      "method": "dense"
+    }
+  ],
+  "context": "[8bca2eddf8d8ed85185da77e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\n4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.",
+  "context_ids": [
+    "8bca2eddf8d8ed85185da77e"
+  ],
+  "hit1": true,
+  "hit3": true,
+  "context_hit": true,
+  "elapsed_ms": 14.686699985759333,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q04",
+      "split": "dev",
+      "config": "dense",
+      "status": "ok",
+      "query": "Trong chương 1, NSFG lấy mẫu vượt tỷ lệ ở ba nhóm nào và nhằm mục đích gì?",
+      "filter": {},
+      "results": [
+        {
+          "id": "8bca2eddf8d8ed85185da77e",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 24,
+          "text": "4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 752,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 4,
+            "extraction_status": "ok"
+          },
+          "score": 0.7498157024383545,
+          "method": "dense"
+        },
+        {
+          "id": "f40266243aa427f23fa90b4e",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 23,
+          "text": "The NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1824,
+            "language": "en",
+            "start_char": 1377,
+            "printed_page": 3,
+            "extraction_status": "ok"
+          },
+          "score": 0.7452900853926008,
+          "method": "dense"
+        },
+        {
+          "id": "bf7df453e01346a69a9a3055",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 23,
+          "text": "1.2. The National Survey of Family Growth 3\n\n•Estimation: We will use data from a sample to estimate characteristics\nof the general population.\n\n•Hypothesis testing: Where we see apparent effects, like a difference\nbetween two groups, we will evaluate whether the effect might have\nhappened by chance.\n\nBy performing these steps with care to avoid pitfalls, we can reach conclusions\nthat are more justifiable and more likely to be correct.\n\n1.2 The National Survey of Family Growth",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 481,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 3,
+            "extraction_status": "ok"
+          },
+          "score": 0.7387634075425037,
+          "method": "dense"
+        }
+      ],
+      "context": "[8bca2eddf8d8ed85185da77e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\n4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.",
+      "context_ids": [
+        "8bca2eddf8d8ed85185da77e"
+      ],
+      "hit1": true,
+      "hit3": true,
+      "context_hit": true,
+      "elapsed_ms": 18.609999999171123
+    }
+  ]
+}

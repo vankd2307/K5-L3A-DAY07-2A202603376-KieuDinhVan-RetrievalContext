@@ -1,0 +1,632 @@
+[
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 21,
+    "text": "Chapter 1\n\nExploratory data analysis\n\nThe thesis of this book is that data combined with practical methods can\nanswer questions and guide decisions under uncertainty.\nAs an example, I present a case study motivated by a question I heard when\nmy wife and I were expecting our first child: do first babies tend to arrive\nlate?\nIf you Google this question, you will find plenty of discussion. Some people\nclaim it’s true, others say it’s a myth, and some people say it’s the other way\naround: first babies come early.\nIn many of these discussions, people provide data to support their claims. I\nfound many examples like these:\n\n“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "1",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 1,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 22,
+    "text": "2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.\n\n•Inaccuracy: Anecdotes are often personal stories, and often misremem-\nbered, misrepresented, repeated inaccurately, etc.\n\nSo how can we do better?\n\n1.1 A statistical approach\n\nTo address the limitations of anecdotes, we will use the tools of statistics,\nwhich include:\n\n•Data collection: We will use data from a large national survey that\nwas designed explicitly with the goal of generating statistically valid\ninferences about the U.S. population.\n\n•Descriptive statistics: We will generate statistics that summarize the\ndata concisely, and evaluate different ways to visualize data.\n\n•Exploratory data analysis: We will look for patterns, differences, and\nother features that address the questions we are interested in. At the\nsame time we will check for inconsistencies and identify limitations.",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "1",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 2,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 23,
+    "text": "1.2. The National Survey of Family Growth 3\n\n•Estimation: We will use data from a sample to estimate characteristics\nof the general population.\n\n•Hypothesis testing: Where we see apparent effects, like a difference\nbetween two groups, we will evaluate whether the effect might have\nhappened by chance.\n\nBy performing these steps with care to avoid pitfalls, we can reach conclusions\nthat are more justifiable and more likely to be correct.\n\n1.2 The National Survey of Family Growth\n\nSince 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.\n\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "1",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 3,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 24,
+    "text": "4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.\n\nOf course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”\n\nLet’s see what it does. Pregnancy data from Cycle 6 of the NSFG is in a file\ncalled2002FemPreg.dat.gz; it is a gzip-compressed data file in plain text\n(ASCII), with fixed width columns. Each line in the file is arecordthat\ncontains data about one pregnancy.",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "1",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 4,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 25,
+    "text": "1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.\n\nThe code you downloaded includesthinkstats2.py, which is a Python module that contains many classes and functions used in this book, including\nfunctions that read the Stata dictionary and the NSFG data file. Here’s how\nthey are used innsfg.py:\ndef ReadFemPreg(dct_file='2002FemPreg.dct',\ndat_file='2002FemPreg.dat.gz'):\ndct = thinkstats2.ReadStataDct(dct_file)\ndf = dct.ReadFixedWidth(dat_file, compression='gzip')\nCleanFemPreg(df)\nreturn df\nReadStataDcttakes the name of the dictionary file and returnsdct, a\nFixedWidthVariablesobject that contains the information from the dictionary file.dctprovidesReadFixedWidth, which reads the data file.\n\n1.4 DataFrames\n\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "1",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 5,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 26,
+    "text": "6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.\n\nThe attributecolumnsreturns a sequence of column names as Unicode\nstrings:\n>>> df.columns\nIndex([u'caseid', u'pregordr', u'howpreg_n', u'howpreg_p', ... ])\nThe result is an Index, which is another pandas data structure. We’ll learn\nmore about Index later, but for now we’ll treat it like a list:\n>>> df.columns[1]\n'pregordr'\nTo access a column from a DataFrame, you can use the column name as a\nkey:\n>>> pregordr = df['pregordr']\n>>> type(pregordr)\n<class 'pandas.core.series.Series'>\nThe result is a Series, yet another pandas data structure. A Series is like a\nPython list with some additional features. When you print a Series, you get\nthe indices and the corresponding values:\n>>> pregordr\n0 1\n1 2\n2 1\n3 2",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "1",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 6,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 27,
+    "text": "1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "1",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 7,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 28,
+    "text": "8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.\n\nIf you read the codebook carefully, you will see that many of the variables\narerecodes, which means that they are not part of theraw datacollected\nby the survey; they are calculated using the raw data.\nFor example,prglngthfor live births is equal to the raw variablewksgest\n(weeks of gestation) if it is available; otherwise it is estimated using\nmosgest * 4.33(months of gestation times the average number of weeks\nin a month).\nRecodes are often based on logic that checks the consistency and accuracy of\nthe data. In general it is a good idea to use recodes when they are available,\nunless there is a compelling reason to process the raw data yourself.\n\n1.6 Transformation\n\nWhen you import data like this, you often have to check for errors, deal with\nspecial values, convert data into different formats, and perform calculations.\nThese operations are calleddata cleaning.",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "1",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 8,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 29,
+    "text": "1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)\n\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan / 100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "1",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 9,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 30,
+    "text": "10 Chapter 1. Exploratory data analysis\n\nOne important note: when you add a new column to a DataFrame, you must\nuse dictionary syntax, like this\n# CORRECT\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nNot dot notation, like this:\n# WRONG!\ndf.totalwgt_lb = df.birthwgt_lb + df.birthwgt_oz / 16.0\nThe version with dot notation adds an attribute to the DataFrame object,\nbut that attribute is not treated as a new column.\n\n1.7 Validation\n\nWhen data is exported from one software environment and imported into\nanother, errors might be introduced. And when you are getting familiar\nwith a new dataset, you might interpret data incorrectly or introduce other\nmisunderstandings. If you take time to validate the data, you can save time\nlater and avoid errors.\n\nOne way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "1",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 10,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 31,
+    "text": "1.7. Validation 11\n\n2 1862\n3 120\n4 1921\n5 190\n6 352\nThe result ofvalue_countsis a Series;sort_index()sorts the Series by\nindex, so the values appear in order.\n\nComparing the results with the published table, it looks like the values in\noutcomeare correct. Similarly, here is the published table forbirthwgt_lb\nvalue label Total\n. INAPPLICABLE 4449\n0-5 UNDER 6 POUNDS 1125\n6 6 POUNDS 2223\n7 7 POUNDS 3049\n8 8 POUNDS 1889\n9-95 9 POUNDS OR MORE 799\nAnd here are the value counts:\n>>> df.birthwgt_lb.value_counts(sort=False)\n0 8\n1 40\n2 53\n3 98\n4 229\n5 697\n6 2223\n7 3049\n8 1889\n9 623\n10 132\n11 26\n12 10\n13 3\n14 3\n15 1\n51 1",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "1",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 11,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 32,
+    "text": "12 Chapter 1. Exploratory data analysis\n\nThe counts for 6, 7, and 8 pounds check out, and if you add up the counts\nfor 0-5 and 9-95, they check out, too. But if you look more closely, you will\nnotice one value that has to be an error, a 51 pound baby!\n\nTo deal with this error, I added a line toCleanFemPreg:\ndf.loc[df.birthwgt_lb > 20, 'birthwgt_lb'] = np.nan\nThis statement replaces invalid values withnp.nan. The attributelocprovides several ways to select rows and columns from a DataFrame. In this\nexample, the first expression in brackets is the row indexer; the second expression selects the column.\n\nThe expressiondf.birthwgt_lb > 20yields a Series of typebool, where\nTrue indicates that the condition is true. When a boolean Series is used as\nan index, it selects only the elements that satisfy the condition.\n\n1.8 Interpretation\n\nTo work with data effectively, you have to think on two levels at the same\ntime: the level of statistics and the level of context.\n\nAs an example, let’s look at the sequence of outcomes for a few respondents.\nBecause of the way the data files are organized, we have to do some processing\nto collect the pregnancy data for each respondent. Here’s a function that does\nthat:\ndef MakePregMap(df):\nd = defaultdict(list)\nfor index, caseid in df.caseid.iteritems():\nd[caseid].append(index)\nreturn d\ndfis the DataFrame with pregnancy data. Theiteritemsmethod enumerates the index (row number) andcaseidfor each pregnancy.\n\ndis a dictionary that maps from each case ID to a list of indices. If you are not\nfamiliar withdefaultdict, it is in the Pythoncollectionsmodule. Using\nd, we can look up a respondent and get the indices of that respondent’s\npregnancies.",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "1",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 12,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 33,
+    "text": "1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.\n\nBut remembering the context, this data tells the story of a woman who was\npregnant six times, each time ending in miscarriage. Her seventh and most\nrecent pregnancy ended in a live birth. If we consider this data with empathy,\nit is natural to be moved by the story it tells.\n\nEach record in the NSFG dataset represents a person who provided honest\nanswers to many personal and difficult questions. We can use this data to\nanswer statistical questions about family life, reproduction, and health. At\nthe same time, we have an obligation to consider the people represented by\nthe data, and to afford them respect and gratitude.\n\n1.9 Exercises\n\nExercise 1.1In the repository you downloaded, you should find a file named\nchap01ex.ipynb, which is an IPython notebook. You can launch IPython\nnotebook from the command line like this:",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "1",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 13,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 34,
+    "text": "14 Chapter 1. Exploratory data analysis\n\n$ ipython notebook &\nIf IPython is installed, it should launch a server that runs in the background and open a browser to view the notebook. If you are not familiar\nwith IPython, I suggest you start athttp://ipython.org/ipython-doc/\nstable/notebook/notebook.html.\nTo launch the IPython notebook server, run:\n$ ipython notebook &\nIt should open a new browser window, but if not, the startup message provides a URL you can load in a browser, usuallyhttp://localhost:8888.\nThe new window should list the notebooks in the repository.\nOpenchap01ex.ipynb. Some cells are already filled in, and you should\nexecute them. Other cells give you instructions for exercises you should try.\nA solution to this exercise is inchap01soln.ipynb\nExercise 1.2In the repository you downloaded, you should find a file named\nchap01ex.py; using this file as a starting place, write a function that reads\nthe respondent file,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences, and see if you can formulate a question that lends itself to statistical\ninquiry.",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "1",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 14,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 35,
+    "text": "1.10. Glossary 15\n\nLook for data to help you address the question. Governments are good\nsources because data from public research is often freely available. Good\nplaces to start includehttp://www.data.gov/, andhttp://www.science.\ngov/, and in the United Kingdom,http://data.gov.uk/.\nTwo of my favorite data sets are the General Social Survey athttp://www3.\nnorc.org/gss+website/, and the European Social Survey athttp://www.\neuropeansocialsurvey.org/.\nIf it seems like someone has already answered your question, look closely to\nsee whether the answer is justified. There might be flaws in the data or the\nanalysis that make the conclusion unreliable. In that case you could perform\na different analysis of the same data, or look for a better source of data.\nIf you find a published paper that addresses your question, you should be\nable to get the raw data. Many authors make their data available on the\nweb, but for sensitive data you might have to write to the authors, provide\ninformation about how you plan to use the data, or agree to certain terms of\nuse. Be persistent!\n\n1.10 Glossary\n•anecdotal evidence: Evidence, often personal, that is collected casu-\nally rather than by a well-designed study.\n\n•population: A group we are interested in studying. “Population”\noften refers to a group of people, but the term is used for other subjects,\ntoo.\n•cross-sectional study: A study that collects data about a population\nat a particular point in time.\n\n•cycle: In a repeated cross-sectional study, each repetition of the study\nis called a cycle.\n\n•longitudinal study: A study that follows a population over time,\ncollecting data from the same group repeatedly.\n\n•record: In a dataset, a collection of information about a single person\nor other subject.",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "1",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 15,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 36,
+    "text": "16 Chapter 1. Exploratory data analysis\n\n•respondent: A person who responds to a survey.\n\n•sample: The subset of a population used to collect data.\n\n•representative: A sample is representative if every member of the\npopulation has the same chance of being in the sample.\n\n•oversampling: The technique of increasing the representation of a\nsub-population in order to avoid errors due to small sample sizes.\n\n•raw data: Values collected and recorded with little or no checking,\ncalculation or interpretation.\n\n•recode: A value that is generated by calculation and other logic ap-\nplied to raw data.\n\n•data cleaning: Processes that include validating data, identifying er-\nrors, translating between data types and representations, etc.",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "1",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 16,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 37,
+    "text": "Chapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "2",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 17,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 38,
+    "text": "18 Chapter 2. Distributions\n\nAnother option is to use the pandas methodvalue_counts, which we saw in\nthe previous chapter. But for this book I created a class, Hist, that represents\nhistograms and provides the methods that operate on them.\n\n2.2 Representing histograms\n\nThe Hist constructor can take a sequence, dictionary, pandas Series, or another Hist. You can instantiate a Hist object like this:\n>>> import thinkstats2\n>>> hist = thinkstats2.Hist([1, 2, 2, 3, 5])\n>>> hist\nHist({1: 1, 2: 2, 3: 1, 5: 1})\nHist objects provideFreq, which takes a value and returns its frequency:\n>>> hist.Freq(2)\n2\nThe bracket operator does the same thing:\n>>> hist[2]\n2\nIf you look up a value that has never appeared, the frequency is 0.\n>>> hist.Freq(4)\n0\nValuesreturns an unsorted list of the values in the Hist:\n>>> hist.Values()\n[1, 5, 3, 2]\nTo loop through the values in order, you can use the built-in functionsorted:\nfor val in sorted(hist.Values()):\nprint(val, hist.Freq(val))\nOr you can useItemsto iterate through value-frequency pairs:\nfor val, freq in hist.Items():\nprint(val, freq)",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "2",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 18,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 39,
+    "text": "2.3. Plotting histograms 19\n\nFigure 2.1: Histogram of the pound part of birth weight.\n2.3 Plotting histograms\n\nFor this book I wrote a module calledthinkplot.pythat provides functions\nfor plotting Hists and other objects defined inthinkstats2.py. It is based\nonpyplot, which is part of thematplotlibpackage. See Section 0.2 for\ninformation about installingmatplotlib.\nTo plothistwiththinkplot, try this:\n>>> import thinkplot\n>>> thinkplot.Hist(hist)\n>>> thinkplot.Show(xlabel='value', ylabel='frequency')\nYou can read the documentation forthinkplotathttp://greenteapress.\ncom/thinkstats2/thinkplot.html.\n\n2.4 NSFG variables\n\nNow let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "2",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 19,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 40,
+    "text": "20 Chapter 2. Distributions\n\nFigure 2.2: Histogram of the ounce part of birth weight.\n\nlooking at histograms.\n\nIn Section 1.6 we transformedagepregfrom centiyears to years, and combinedbirthwgt_lbandbirthwgt_ozinto a single quantity,totalwgt_lb.\nIn this section I use these variables to demonstrate some features of histograms.\n\nI’ll start by reading the data and selecting records for live births:\npreg = nsfg.ReadFemPreg()\nlive = preg[preg.outcome == 1]\nThe expression in brackets is a boolean Series that selects rows from the\nDataFrame and returns a new DataFrame. Next I generate and plot the\nhistogram ofbirthwgt_lbfor live births.\nhist = thinkstats2.Hist(live.birthwgt_lb, label='birthwgt_lb')\nthinkplot.Hist(hist)\nthinkplot.Show(xlabel='pounds', ylabel='frequency')\nWhen the argument passed to Hist is a pandas Series, anynanvalues are\ndropped.labelis a string that appears in the legend when the Hist is\nplotted.\n\nFigure 2.1 shows the result. The most common value, called themode, is 7\npounds. The distribution is approximately bell-shaped, which is the shape",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "2",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 20,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 42,
+    "text": "22 Chapter 2. Distributions\n\nof thenormaldistribution, also called aGaussiandistribution. But unlike\na true normal distribution, this distribution is asymmetric; it has atailthat\nextends farther to the left than to the right.\n\nFigure 2.2 shows the histogram ofbirthwgt_oz, which is the ounces part of\nbirth weight. In theory we expect this distribution to beuniform; that is, all\nvalues should have the same frequency. In fact, 0 is more common than the\nother values, and 1 and 15 are less common, probably because respondents\nround off birth weights that are close to an integer value.\n\nFigure 2.3 shows the histogram ofagepreg, the mother’s age at the end of\npregnancy. The mode is 21 years. The distribution is very roughly bellshaped, but in this case the tail extends farther to the right than left; most\nmothers are in their 20s, fewer in their 30s.\n\nFigure 2.4 shows the histogram ofprglngth, the length of the pregnancy in\nweeks. By far the most common value is 39 weeks. The left tail is longer\nthan the right; early babies are common, but pregnancies seldom go past 43\nweeks, and doctors often intervene if they do.\n\n2.5 Outliers\n\nLooking at histograms, it is easy to identify the most common values and\nthe shape of the distribution, but rare values are not always visible.\n\nBefore going on, it is a good idea to check foroutliers, which are extreme\nvalues that might be errors in measurement and recording, or might be accurate reports of rare events.\n\nHist provides methodsLargestandSmallest, which take an integernand\nreturn thenlargest or smallest values from the histogram:\nfor weeks, freq in hist.Smallest(10):\nprint(weeks, freq)\nIn the list of pregnancy lengths for live births, the 10 lowest values are\n[0, 4, 9, 13, 17, 18, 19, 20, 21, 22]. Values below 10 weeks are certainly errors; the most likely explanation is that the outcome was not coded\ncorrectly. Values higher than 30 weeks are probably legitimate. Between 10",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "2",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 22,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 43,
+    "text": "2.6. First babies 23\n\nand 30 weeks, it is hard to be sure; some values are probably errors, but\nsome represent premature babies.\nOn the other end of the range, the highest values are:\nweeks count\n43 148\n44 46\n45 10\n46 1\n47 1\n48 7\n50 2\nMost doctors recommend induced labor if a pregnancy exceeds 42 weeks,\nso some of the longer values are surprising. In particular, 50 weeks seems\nmedically unlikely.\nThe best way to handle outliers depends on “domain knowledge”; that is,\ninformation about where the data come from and what they mean. And it\ndepends on what analysis you are planning to perform.\nIn this example, the motivating question is whether first babies tend to be\nearly (or late). When people ask this question, they are usually interested in\nfull-term pregnancies, so for this analysis I will focus on pregnancies longer\nthan 27 weeks.\n\n2.6 First babies\n\nNow we can compare the distribution of pregnancy lengths for first babies\nand others. I divided the DataFrame of live births usingbirthord, and\ncomputed their histograms:\nfirsts = live[live.birthord == 1]\nothers = live[live.birthord != 1]\n\nfirst_hist = thinkstats2.Hist(firsts.prglngth, label='first')\nother_hist = thinkstats2.Hist(others.prglngth, label='other')\nThen I plotted their histograms on the same axis:",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "2",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 23,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 44,
+    "text": "24 Chapter 2. Distributions\n\nFigure 2.5: Histogram of pregnancy lengths.\n\nwidth = 0.45\nthinkplot.PrePlot(2)\nthinkplot.Hist(first_hist, align='right', width=width)\nthinkplot.Hist(other_hist, align='left', width=width)\nthinkplot.Show(xlabel='weeks', ylabel='frequency',\nxlim=[27, 46])\nthinkplot.PrePlottakes the number of histograms we are planning to plot;\nit uses this information to choose an appropriate collection of colors.\nthinkplot.Histnormally usesalign='center'so that each bar is centered\nover its value. For this figure, I usealign='right'andalign='left'to\nplace corresponding bars on either side of the value.\nWithwidth=0.45, the total width of the two bars is 0.9, leaving some space\nbetween each pair.\nFinally, I adjust the axis to show only data between 27 and 46 weeks. Figure 2.5 shows the result.\nHistograms are useful because they make the most frequent values immediately apparent. But they are not the best choice for comparing two distributions. In this example, there are fewer “first babies” than “others,” so some\nof the apparent differences in the histograms are due to sample sizes. In the\nnext chapter we address this problem using probability mass functions.",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "2",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 24,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 45,
+    "text": "2.7. Summarizing distributions 25\n2.7 Summarizing distributions\n\nA histogram is a complete description of the distribution of a sample; that is,\ngiven a histogram, we could reconstruct the values in the sample (although\nnot their order).\nIf the details of the distribution are important, it might be necessary to\npresent a histogram. But often we want to summarize the distribution with\na few descriptive statistics.\nSome of the characteristics we might want to report are:\n\n•central tendency: Do the values tend to cluster around a particular\npoint?\n\n•modes: Is there more than one cluster?\n\n•spread: How much variability is there in the values?\n\n•tails: How quickly do the probabilities drop off as we move away from\nthe modes?\n\n•outliers: Are there extreme values far from the modes?\n\nStatistics designed to answer these questions are calledsummary statistics.\nBy far the most common summary statistic is themean, which is meant to\ndescribe the central tendency of the distribution.\nIf you have a sample ofnvalues,x i, the mean, ̄x, is the sum of the values\ndivided by the number of values; in other words\n̄x= 1X xi\nn i\n\nThe words “mean” and “average” are sometimes used interchangeably, but I\nmake this distinction:\n\n•The “mean” of a sample is the summary statistic computed with the\nprevious formula.\n\n•An “average” is one of several summary statistics you might choose to\ndescribe a central tendency.",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "2",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 25,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 46,
+    "text": "26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance\n\nIf there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "2",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 26,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 47,
+    "text": "2.9. Effect size 27\n\nFor all live births, the mean pregnancy length is 38.6 weeks, the standard\ndeviation is 2.7 weeks, which means we should expect deviations of 2-3 weeks\nto be common.\n\nVariance of pregnancy length is 7.3, which is hard to interpret, especially\nsince the units are weeks2, or “square weeks.” Variance is useful in some\ncalculations, but it is not a good summary statistic.\n\n2.9 Effect size\n\nAneffect sizeis a summary statistic intended to describe (wait for it) the\nsize of an effect. For example, to describe the difference between two groups,\none obvious choice is the difference in the means.\n\nMean pregnancy length for first babies is 38.601; for other babies it is 38.523.\nThe difference is 0.078 weeks, which works out to 13 hours. As a fraction of\nthe typical pregnancy length, this difference is about 0.2%.\n\nIf we assume this estimate is accurate, such a difference would have no practical consequences. In fact, without observing a large number of pregnancies,\nit is unlikely that anyone would notice this difference at all.\n\nAnother way to convey the size of the effect is to compare the difference\nbetween groups to the variability within groups. Cohen’sdis a statistic\nintended to do that; it is defined\n\nd= ̄x 1 − ̄x 2s\n\nwhere ̄x 1 and ̄x 2 are the means of the groups andsis the “pooled standard\ndeviation”. Here’s the Python code that computes Cohen’sd:\ndef CohenEffectSize(group1, group2):\ndiff = group1.mean() - group2.mean()\n\nvar1 = group1.var()\nvar2 = group2.var()\nn1, n2 = len(group1), len(group2)",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "2",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 27,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 48,
+    "text": "28 Chapter 2. Distributions\n\npooled_var = (n1 * var1 + n2 * var2) / (n1 + n2)\nd = diff / math.sqrt(pooled_var)\nreturn d\nIn this example, the difference in means is 0.029 standard deviations, which\nis small. To put that in perspective, the difference in height between men\nand women is about 1.7 standard deviations (seehttps://en.wikipedia.\norg/wiki/Effect_size).\n\n2.10 Reporting results\n\nWe have seen several ways to describe the difference in pregnancy length (if\nthere is one) between first babies and others. How should we report these\nresults?\n\nThe answer depends on who is asking the question. A scientist might be\ninterested in any (real) effect, no matter how small. A doctor might only\ncare about effects that areclinically significant; that is, differences that\naffect treatment decisions. A pregnant woman might be interested in results\nthat are relevant to her, like the probability of delivering early or late.\n\nHow you report results also depends on your goals. If you are trying to\ndemonstrate the importance of an effect, you might choose summary statistics that emphasize differences. If you are trying to reassure a patient, you\nmight choose statistics that put the differences in context.\n\nOf course your decisions should also be guided by professional ethics. It’s ok\nto be persuasive; youshoulddesign statistical reports and visualizations that\ntell a story clearly. But you should also do your best to make your reports\nhonest, and to acknowledge uncertainty and limitations.\n\n2.11 Exercises\n\nExercise 2.1Based on the results in this chapter, suppose you were asked\nto summarize what you learned about whether first babies arrive late.",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "2",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 28,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 49,
+    "text": "2.12. Glossary 29\n\nWhich summary statistics would you use if you wanted to get a story on\nthe evening news? Which ones would you use if you wanted to reassure an\nanxious patient?\nFinally, imagine that you are Cecil Adams, author ofThe Straight Dope\n(http://straightdope.com), and your job is to answer the question, “Do\nfirst babies arrive late?” Write a paragraph that uses the results in this\nchapter to answer the question clearly, precisely, and honestly.\nExercise 2.2In the repository you downloaded, you should find a file named\nchap02ex.ipynb; open it. Some cells are already filled in, and you should\nexecute them. Other cells give you instructions for exercises. Follow the\ninstructions and fill in the answers.\nA solution to this exercise is inchap02soln.ipynb\n\nIn the repository you downloaded, you should find a file namedchap02ex.py;\nyou can use this file as a starting place for the following exercises. My solution\nis inchap02soln.py.\n\nExercise 2.3The mode of a distribution is the most frequent value; see\nhttp://wikipedia.org/wiki/Mode_(statistics). Write a function called\nModethat takes a Hist and returns the most frequent value.\nAs a more challenging exercise, write a function calledAllModesthat returns\na list of value-frequency pairs in descending order of frequency.\nExercise 2.4Using the variabletotalwgt_lb, investigate whether first babies are lighter or heavier than others. Compute Cohen’sdto quantify the\ndifference between the groups. How does it compare to the difference in\npregnancy length?\n\n2.12 Glossary\n•distribution: The values that appear in a sample and the frequency\nof each.\n\n•histogram: A mapping from values to frequencies, or a graph that\nshows this mapping.",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "2",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 29,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 50,
+    "text": "30 Chapter 2. Distributions\n\n•frequency: The number of times a value appears in a sample.\n\n•mode: The most frequent value in a sample, or one of the most frequent\nvalues.\n\n•normal distribution: An idealization of a bell-shaped distribution;\nalso known as a Gaussian distribution.\n\n•uniform distribution: A distribution in which all values have the\nsame frequency.\n\n•tail: The part of a distribution at the high and low extremes.\n\n•central tendency: A characteristic of a sample or population; intu-\nitively, it is an average or typical value.\n\n•outlier: A value far from the central tendency.\n\n•spread: A measure of how spread out the values in a distribution are.\n\n•summary statistic: A statistic that quantifies some aspect of a dis-\ntribution, like central tendency or spread.\n\n•variance: A summary statistic often used to quantify spread.\n\n•standard deviation: The square root of variance, also used as a\nmeasure of spread.\n\n•effect size: A summary statistic intended to quantify the size of an\neffect like a difference between groups.\n\n•clinically significant: A result, like a difference between groups, that\nis relevant in practice.",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "2",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 30,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 51,
+    "text": "Chapter 3\n\nProbability mass functions\n\nThe code for this chapter is inprobability.py. For information about\ndownloading and working with this code, see Section 0.2.\n\n3.1 Pmfs\n\nAnother way to represent a distribution is aprobability mass function\n(PMF), which maps from each value to its probability. Aprobabilityis a\nfrequency expressed as a fraction of the sample size,n. To get from frequencies to probabilities, we divide through byn, which is callednormalization.\n\nGiven a Hist, we can make a dictionary that maps from each value to its\nprobability:\n\nn = hist.Total()\nd = {}\nfor x, freq in hist.Items():\nd[x] = freq / n\n\nOr we can use the Pmf class provided bythinkstats2. Like Hist, the Pmf\nconstructor can take a list, pandas Series, dictionary, Hist, or another Pmf\nobject. Here’s an example with a simple list:",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "3",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 31,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 52,
+    "text": "32 Chapter 3. Probability mass functions\n\n>>> import thinkstats2\n>>> pmf = thinkstats2.Pmf([1, 2, 2, 3, 5])\n>>> pmf\nPmf({1: 0.2, 2: 0.4, 3: 0.2, 5: 0.2})\n\nThe Pmf is normalized so total probability is 1.\n\nPmf and Hist objects are similar in many ways; in fact, they inherit many\nof their methods from a common parent class. For example, the methods\nValuesandItemswork the same way for both. The biggest difference is\nthat a Hist maps from values to integer counters; a Pmf maps from values\nto floating-point probabilities.\n\nTo look up the probability associated with a value, useProb:\n\n>>> pmf.Prob(2)\n0.4\n\nThe bracket operator is equivalent:\n>>> pmf[2]\n0.4\nYou can modify an existing Pmf by incrementing the probability associated\nwith a value:\n\n>>> pmf.Incr(2, 0.2)\n>>> pmf.Prob(2)\n0.6\n\nOr you can multiply a probability by a factor:\n\n>>> pmf.Mult(2, 0.5)\n>>> pmf.Prob(2)\n0.3\n\nIf you modify a Pmf, the result may not be normalized; that is, the probabilities may no longer add up to 1. To check, you can callTotal, which returns\nthe sum of the probabilities:\n\n>>> pmf.Total()\n0.9",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "3",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 32,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 53,
+    "text": "3.2. Plotting PMFs 33\n\nTo renormalize, callNormalize:\n\n>>> pmf.Normalize()\n>>> pmf.Total()\n1.0\n\nPmf objects provide aCopymethod so you can make and modify a copy\nwithout affecting the original.\n\nMy notation in this section might seem inconsistent, but there is a system: I\nuse Pmf for the name of the class,pmffor an instance of the class, and PMF\nfor the mathematical concept of a probability mass function.\n\n3.2 Plotting PMFs\n\nthinkplotprovides two ways to plot Pmfs:\n\n•To plot a Pmf as a bar graph, you can usethinkplot.Hist. Bar graphs\nare most useful if the number of values in the Pmf is small.\n\n•To plot a Pmf as a step function, you can usethinkplot.Pmf. This\noption is most useful if there are a large number of values and the Pmf\nis smooth. This function also works with Hist objects.\n\nIn addition,pyplotprovides a function calledhistthat takes a sequence of\nvalues, computes a histogram, and plots it. Since I use Hist objects, I usually\ndon’t usepyplot.hist.\n\nFigure 3.1 shows PMFs of pregnancy length for first babies and others using\nbar graphs (left) and step functions (right).\n\nBy plotting the PMF instead of the histogram, we can compare the two\ndistributions without being mislead by the difference in sample size. Based\non this figure, first babies seem to be less likely than others to arrive on time\n(week 39) and more likely to be a late (weeks 41 and 42).\n\nHere’s the code that generates Figure 3.1:",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "3",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 33,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 54,
+    "text": "34 Chapter 3. Probability mass functions\n\nFigure 3.1: PMF of pregnancy lengths for first babies and others, using bar\ngraphs and step functions.\n\nthinkplot.PrePlot(2, cols=2)\nthinkplot.Hist(first_pmf, align='right', width=width)\nthinkplot.Hist(other_pmf, align='left', width=width)\nthinkplot.Config(xlabel='weeks',\nylabel='probability',\naxis=[27, 46, 0, 0.6])\n\nthinkplot.PrePlot(2)\nthinkplot.SubPlot(2)\nthinkplot.Pmfs([first_pmf, other_pmf])\nthinkplot.Show(xlabel='weeks',\naxis=[27, 46, 0, 0.6])\nPrePlottakes optional parametersrowsandcolsto make a grid of figures,\nin this case one row of two figures. The first figure (on the left) displays the\nPmfs usingthinkplot.Hist, as we have seen before.\nThe second call toPrePlotresets the color generator. ThenSubPlot\nswitches to the second figure (on the right) and displays the Pmfs using\nthinkplot.Pmfs. I used theaxisoption to ensure that the two figures are",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "3",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 34,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 55,
+    "text": "3.3. Other visualizations 35\n\non the same axes, which is generally a good idea if you intend to compare\ntwo figures.\n\n3.3 Other visualizations\n\nHistograms and PMFs are useful while you are exploring data and trying to\nidentify patterns and relationships. Once you have an idea what is going on,\na good next step is to design a visualization that makes the patterns you\nhave identified as clear as possible.\nIn the NSFG data, the biggest differences in the distributions are near the\nmode. So it makes sense to zoom in on that part of the graph, and to\ntransform the data to emphasize differences:\nweeks = range(35, 46)\ndiffs = []\nfor week in weeks:\np1 = first_pmf.Prob(week)\np2 = other_pmf.Prob(week)\ndiff = 100 * (p1 - p2)\ndiffs.append(diff)\n\nthinkplot.Bar(weeks, diffs)\nIn this code,weeksis the range of weeks;diffsis the difference between the\ntwo PMFs in percentage points. Figure 3.2 shows the result as a bar chart.\nThis figure makes the pattern clearer: first babies are less likely to be born\nin week 39, and somewhat more likely to be born in weeks 41 and 42.\nFor now we should hold this conclusion only tentatively. We used the same\ndataset to identify an apparent difference and then chose a visualization that\nmakes the difference apparent. We can’t be sure this effect is real; it might\nbe due to random variation. We’ll address this concern later.\n\n3.4 The class size paradox\n\nBefore we go on, I want to demonstrate one kind of computation you can do\nwith Pmf objects; I call this example the “class size paradox.”",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "3",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 35,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 56,
+    "text": "36 Chapter 3. Probability mass functions\n\nFigure 3.2: Difference, in percentage points, by week.\n\nAt many American colleges and universities, the student-to-faculty ratio is\nabout 10:1. But students are often surprised to discover that their average\nclass size is bigger than 10. There are two reasons for the discrepancy:\n•Students typically take 4–5 classes per semester, but professors often\nteach 1 or 2.\n•The number of students who enjoy a small class is small, but the num-\nber of students in a large class is (ahem!) large.\nThe first effect is obvious, at least once it is pointed out; the second is more\nsubtle. Let’s look at an example. Suppose that a college offers 65 classes in\na given semester, with the following distribution of sizes:\nsize count\n5- 9 8\n10-14 8\n15-19 14\n20-24 4\n25-29 6\n30-34 12\n35-39 8\n40-44 3\n45-49 2",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "3",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 36,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 57,
+    "text": "3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)\n\nnew_pmf.Normalize()\nreturn new_pmf\nFor each class size,x, we multiply the probability byx, the number of students\nwho observe that class size. The result is a new Pmf that represents the\nbiased distribution.\nNow we can plot the actual and observed distributions:\nbiased_pmf = BiasPmf(pmf, label='observed')\nthinkplot.PrePlot(2)\nthinkplot.Pmfs([pmf, biased_pmf])\nthinkplot.Show(xlabel='class size', ylabel='PMF')\nFigure 3.3 shows the result. In the biased distribution there are fewer small\nclasses and more large ones. The mean of the biased distribution is 29.1,\nalmost 25% higher than the actual mean.\nIt is also possible to invert this operation. Suppose you want to find the\ndistribution of class sizes at a college, but you can’t get reliable data from",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "3",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 37,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 58,
+    "text": "38 Chapter 3. Probability mass functions\n\nFigure 3.3: Distribution of class sizes, actual and as observed by students.\n\nthe Dean. An alternative is to choose a random sample of students and ask\nhow many students are in their classes.\n\nThe result would be biased for the reasons we’ve just seen, but you can use it\nto estimate the actual distribution. Here’s the function that unbiases a Pmf:\n\ndef UnbiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, 1.0/x)\n\nnew_pmf.Normalize()\nreturn new_pmf\n\nIt’s similar toBiasPmf; the only difference is that it divides each probability\nbyxinstead of multiplying.",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "3",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 38,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 59,
+    "text": "3.5. DataFrame indexing 39\n3.5 DataFrame indexing\n\nIn Section 1.4 we read a pandas DataFrame and used it to select and modify\ndata columns. Now let’s look at row selection. To start, I create a NumPy\narray of random numbers and use it to initialize a DataFrame:\n>>> import numpy as np\n>>> import pandas\n>>> array = np.random.randn(4, 2)\n>>> df = pandas.DataFrame(array)\n>>> df\n0 1\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nBy default, the rows and columns are numbered starting at zero, but you\ncan provide column names:\n>>> columns = ['A', 'B']\n>>> df = pandas.DataFrame(array, columns=columns)\n>>> df\nA B\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nYou can also provide row names. The set of row names is called theindex;\nthe row names themselves are calledlabels.\n>>> index = ['a', 'b', 'c', 'd']\n>>> df = pandas.DataFrame(array, columns=columns, index=index)\n>>> df\nA B\na -0.143510 0.616050\nb -1.489647 0.300774\nc -0.074350 0.039621\nd -1.369968 0.545897",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "3",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 39,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 60,
+    "text": "40 Chapter 3. Probability mass functions\n\nAs we saw in the previous chapter, simple indexing selects a column, returning a Series:\n>>> df['A']\na -0.143510\nb -1.489647\nc -0.074350\nd -1.369968\nName: A, dtype: float64\nTo select a row by label, you can use thelocattribute, which returns a\nSeries:\n>>> df.loc['a']\nA -0.14351\nB 0.61605\nName: a, dtype: float64\nIf you know the integer position of a row, rather than its label, you can use\ntheilocattribute, which also returns a Series.\n>>> df.iloc[0]\nA -0.14351\nB 0.61605\nName: a, dtype: float64\nloccan also take a list of labels; in that case, the result is a DataFrame.\n>>> indices = ['a', 'c']\n>>> df.loc[indices]\nA B\na -0.14351 0.616050\nc -0.07435 0.039621\nFinally, you can use a slice to select a range of rows by label:\n>>> df['a':'c']\nA B\na -0.143510 0.616050\nb -1.489647 0.300774\nc -0.074350 0.039621\nOr by integer position:",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "3",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 40,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 61,
+    "text": "3.6. Exercises 41\n\n>>> df[0:2]\nA B\na -0.143510 0.616050\nb -1.489647 0.300774\nThe result in either case is a DataFrame, but notice that the first result\nincludes the end of the slice; the second doesn’t.\nMy advice: if your rows have labels that are not simple integers, use the\nlabels consistently and avoid using integer positions.\n\n3.6 Exercises\n\nSolutions to these exercises are inchap03soln.ipynbandchap03soln.py\nExercise 3.1Something like the class size paradox appears if you survey\nchildren and ask how many children are in their family. Families with many\nchildren are more likely to appear in your sample, and families with no children have no chance to be in the sample.\nUse the NSFG respondent variableNUMKDHHto construct the actual distribution for the number of children under 18 in the household.\nNow compute the biased distribution we would see if we surveyed the children\nand asked them how many children under 18 (including themselves) are in\ntheir household.\nPlot the actual and biased distributions, and compute their means. As a\nstarting place, you can usechap03ex.ipynb.\nExercise 3.2In Section 2.7 we computed the mean of a sample by adding\nup the elements and dividing by n. If you are given a PMF, you can still\ncompute the mean, but the process is slightly different:\n\n̄x= X pi xi\ni\nwhere thex i are the unique values in the PMF andp i =PMF(x i). Similarly,\nyou can compute variance like this:\n\nS2 = X pi (x i − ̄x) 2\ni",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "3",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 41,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 62,
+    "text": "42 Chapter 3. Probability mass functions\n\nWrite functions calledPmfMeanandPmfVarthat take a Pmf object and compute the mean and variance. To test these methods, check that they are\nconsistent with the methodsMeanandVarprovided by Pmf.\n\nExercise 3.3I started with the question, “Are first babies more likely to be\nlate?” To address it, I computed the difference in means between groups of\nbabies, but I ignored the possibility that there might be a difference between\nfirst babies and othersfor the same woman.\n\nTo address this version of the question, select respondents who have at least\ntwo babies and compute pairwise differences. Does this formulation of the\nquestion yield a different result?\n\nHint: usensfg.MakePregMap.\n\nExercise 3.4In most foot races, everyone starts at the same time. If you\nare a fast runner, you usually pass a lot of people at the beginning of the\nrace, but after a few miles everyone around you is going at the same speed.\n\nWhen I ran a long-distance (209 miles) relay race for the first time, I noticed\nan odd phenomenon: when I overtook another runner, I was usually much\nfaster, and when another runner overtook me, he was usually much faster.\n\nAt first I thought that the distribution of speeds might be bimodal; that is,\nthere were many slow runners and many fast runners, but few at my speed.\n\nThen I realized that I was the victim of a bias similar to the effect of class\nsize. The race was unusual in two ways: it used a staggered start, so teams\nstarted at different times; also, many teams included runners at different\nlevels of ability.\n\nAs a result, runners were spread out along the course with little relationship\nbetween speed and location. When I joined the race, the runners near me\nwere (pretty much) a random sample of the runners in the race.\n\nSo where does the bias come from? During my time on the course, the chance\nof overtaking a runner, or being overtaken, is proportional to the difference\nin our speeds. I am more likely to catch a slow runner, and more likely to be\ncaught by a fast runner. But runners at the same speed are unlikely to see\neach other.",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "3",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 42,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  },
+  {
+    "document_id": "thinkstats2-v2.2.1",
+    "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+    "page": 63,
+    "text": "3.7. Glossary 43\n\nWrite a function calledObservedPmfthat takes a Pmf representing the actual\ndistribution of runners’ speeds, and the speed of a running observer, and\nreturns a new Pmf representing the distribution of runners’ speeds as seen\nby the observer.\nTo test your function, you can userelay.py, which reads the results from\nthe James Joyce Ramble 10K in Dedham MA and converts the pace of each\nrunner to mph.\nCompute the distribution of speeds you would observe if you ran a relay\nrace at 7.5 mph with this group of runners. A solution to this exercise is in\nrelay_soln.py.\n\n3.7 Glossary\n\n•Probability mass function (PMF): a representation of a distribu-\ntion as a function that maps from values to probabilities.\n\n•probability: A frequency expressed as a fraction of the sample size.\n\n•normalization: The process of dividing a frequency by a sample size\nto get a probability.\n\n•index: In a pandas DataFrame, the index is a special column that\ncontains the row labels.",
+    "metadata": {
+      "extraction_status": "ok",
+      "chapter": "3",
+      "language": "en",
+      "version": "2.2.1",
+      "printed_page": 43,
+      "license": "CC-BY-NC-SA-4.0",
+      "author": "Allen B. Downey"
+    }
+  }
+]

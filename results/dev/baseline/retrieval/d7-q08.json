@@ -1,0 +1,167 @@
+{
+  "query_id": "d7-q08",
+  "split": "dev",
+  "config": "baseline",
+  "status": "ok",
+  "query": "Tại sao CleanFemPreg chia agepreg cho 100?",
+  "filter": {},
+  "results": [
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 29,
+      "text": "1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 9,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 296,
+        "chunking": "paragraph"
+      },
+      "id": "378c9ef8a37471ebdc49dd13",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.2274309035495254,
+      "method": "tfidf"
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 29,
+      "text": "100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 9,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 1194,
+        "end_char": 1487,
+        "chunking": "paragraph"
+      },
+      "id": "49643149477ca2ae881fb71f",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.07929785991477709,
+      "method": "tfidf"
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 46,
+      "text": "26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "2",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 26,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 791,
+        "chunking": "paragraph"
+      },
+      "id": "4321b3f26f9d26c0b20e8a04",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.07216126267430804,
+      "method": "tfidf"
+    }
+  ],
+  "context": "[378c9ef8a37471ebdc49dd13 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)\n\n[49643149477ca2ae881fb71f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.",
+  "context_ids": [
+    "378c9ef8a37471ebdc49dd13",
+    "49643149477ca2ae881fb71f"
+  ],
+  "hit1": false,
+  "hit3": false,
+  "context_hit": false,
+  "elapsed_ms": 0.3129999968223274,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q08",
+      "split": "dev",
+      "config": "baseline",
+      "status": "ok",
+      "query": "Tại sao CleanFemPreg chia agepreg cho 100?",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 29,
+          "text": "1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 9,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 296,
+            "chunking": "paragraph"
+          },
+          "id": "378c9ef8a37471ebdc49dd13",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.2274309035495254,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 29,
+          "text": "100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 9,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 1194,
+            "end_char": 1487,
+            "chunking": "paragraph"
+          },
+          "id": "49643149477ca2ae881fb71f",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.07929785991477709,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 46,
+          "text": "26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 26,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 791,
+            "chunking": "paragraph"
+          },
+          "id": "4321b3f26f9d26c0b20e8a04",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.07216126267430804,
+          "method": "tfidf"
+        }
+      ],
+      "context": "[378c9ef8a37471ebdc49dd13 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)\n\n[49643149477ca2ae881fb71f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.",
+      "context_ids": [
+        "378c9ef8a37471ebdc49dd13",
+        "49643149477ca2ae881fb71f"
+      ],
+      "hit1": false,
+      "hit3": false,
+      "context_hit": false,
+      "elapsed_ms": 0.44100001105107367
+    }
+  ]
+}

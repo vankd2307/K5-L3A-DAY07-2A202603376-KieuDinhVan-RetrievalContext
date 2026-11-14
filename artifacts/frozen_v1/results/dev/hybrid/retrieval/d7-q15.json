@@ -1,0 +1,185 @@
+{
+  "query_id": "d7-q15",
+  "split": "dev",
+  "config": "hybrid",
+  "status": "ok",
+  "query": "Độ lệch chuẩn có quan hệ gì với phương sai?",
+  "filter": {},
+  "results": [
+    {
+      "id": "85c6d34102988e3d43bfab5f",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 50,
+      "text": "•standard deviation: The square root of variance, also used as a\nmeasure of spread.\n\n•effect size: A summary statistic intended to quantify the size of an\neffect like a difference between groups.\n\n•clinically significant: A result, like a difference between groups, that\nis relevant in practice.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "2",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1139,
+        "language": "en",
+        "start_char": 844,
+        "printed_page": 30,
+        "extraction_status": "ok"
+      },
+      "score": 0.01639344262295082,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 1
+      }
+    },
+    {
+      "id": "d3270a2b867639b7ed5e52b2",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 46,
+      "text": "If there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "2",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1638,
+        "language": "en",
+        "start_char": 793,
+        "printed_page": 26,
+        "extraction_status": "ok"
+      },
+      "score": 0.016129032258064516,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 2
+      }
+    },
+    {
+      "id": "4ea711974ff31d713d352e37",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 61,
+      "text": "mean, but the process is slightly different:\n\n̄x= X pi xi\ni\nwhere thex i are the unique values in the PMF andp i =PMF(x i). Similarly,\nyou can compute variance like this:\n\nS2 = X pi (x i − ̄x) 2\ni",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "3",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1442,
+        "language": "en",
+        "start_char": 1246,
+        "printed_page": 41,
+        "extraction_status": "ok"
+      },
+      "score": 0.015873015873015872,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 3
+      }
+    }
+  ],
+  "context": "[85c6d34102988e3d43bfab5f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 50]\n•standard deviation: The square root of variance, also used as a\nmeasure of spread.\n\n•effect size: A summary statistic intended to quantify the size of an\neffect like a difference between groups.\n\n•clinically significant: A result, like a difference between groups, that\nis relevant in practice.\n\n[4ea711974ff31d713d352e37 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 61]\nmean, but the process is slightly different:\n\n̄x= X pi xi\ni\nwhere thex i are the unique values in the PMF andp i =PMF(x i). Similarly,\nyou can compute variance like this:\n\nS2 = X pi (x i − ̄x) 2\ni",
+  "context_ids": [
+    "85c6d34102988e3d43bfab5f",
+    "4ea711974ff31d713d352e37"
+  ],
+  "hit1": true,
+  "hit3": true,
+  "context_hit": true,
+  "elapsed_ms": 20.422999979928136,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q15",
+      "split": "dev",
+      "config": "hybrid",
+      "status": "ok",
+      "query": "Độ lệch chuẩn có quan hệ gì với phương sai?",
+      "filter": {},
+      "results": [
+        {
+          "id": "85c6d34102988e3d43bfab5f",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 50,
+          "text": "•standard deviation: The square root of variance, also used as a\nmeasure of spread.\n\n•effect size: A summary statistic intended to quantify the size of an\neffect like a difference between groups.\n\n•clinically significant: A result, like a difference between groups, that\nis relevant in practice.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1139,
+            "language": "en",
+            "start_char": 844,
+            "printed_page": 30,
+            "extraction_status": "ok"
+          },
+          "score": 0.01639344262295082,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1
+          }
+        },
+        {
+          "id": "d3270a2b867639b7ed5e52b2",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 46,
+          "text": "If there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1638,
+            "language": "en",
+            "start_char": 793,
+            "printed_page": 26,
+            "extraction_status": "ok"
+          },
+          "score": 0.016129032258064516,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 2
+          }
+        },
+        {
+          "id": "4ea711974ff31d713d352e37",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 61,
+          "text": "mean, but the process is slightly different:\n\n̄x= X pi xi\ni\nwhere thex i are the unique values in the PMF andp i =PMF(x i). Similarly,\nyou can compute variance like this:\n\nS2 = X pi (x i − ̄x) 2\ni",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "3",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1442,
+            "language": "en",
+            "start_char": 1246,
+            "printed_page": 41,
+            "extraction_status": "ok"
+          },
+          "score": 0.015873015873015872,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 3
+          }
+        }
+      ],
+      "context": "[85c6d34102988e3d43bfab5f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 50]\n•standard deviation: The square root of variance, also used as a\nmeasure of spread.\n\n•effect size: A summary statistic intended to quantify the size of an\neffect like a difference between groups.\n\n•clinically significant: A result, like a difference between groups, that\nis relevant in practice.\n\n[4ea711974ff31d713d352e37 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 61]\nmean, but the process is slightly different:\n\n̄x= X pi xi\ni\nwhere thex i are the unique values in the PMF andp i =PMF(x i). Similarly,\nyou can compute variance like this:\n\nS2 = X pi (x i − ̄x) 2\ni",
+      "context_ids": [
+        "85c6d34102988e3d43bfab5f",
+        "4ea711974ff31d713d352e37"
+      ],
+      "hit1": true,
+      "hit3": true,
+      "context_hit": true,
+      "elapsed_ms": 16.30660000955686
+    }
+  ]
+}

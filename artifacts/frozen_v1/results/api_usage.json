@@ -1,0 +1,2662 @@
+[
+  {
+    "at": "2026-11-14T07:21:16.822280+00:00",
+    "endpoint": "models/gemini-2.5-flash-lite:generateContent",
+    "status": "HTTP_404",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null
+  },
+  {
+    "at": "2026-11-14T07:22:29.014522+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 5,
+      "candidatesTokenCount": 1,
+      "totalTokenCount": 6,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 5
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:23:50.983658+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 350,
+      "candidatesTokenCount": 21,
+      "totalTokenCount": 371,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 350
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:23:55.181724+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 665,
+      "candidatesTokenCount": 154,
+      "totalTokenCount": 819,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 665
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:23:59.371737+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 344,
+      "candidatesTokenCount": 21,
+      "totalTokenCount": 365,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 344
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:24:03.585505+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 669,
+      "candidatesTokenCount": 179,
+      "totalTokenCount": 848,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 669
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:24:07.783846+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 342,
+      "candidatesTokenCount": 20,
+      "totalTokenCount": 362,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 342
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:24:11.980386+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 577,
+      "candidatesTokenCount": 105,
+      "totalTokenCount": 682,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 577
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:24:16.182670+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 348,
+      "candidatesTokenCount": 22,
+      "totalTokenCount": 370,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 348
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:24:20.388398+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 628,
+      "candidatesTokenCount": 54,
+      "totalTokenCount": 682,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 628
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:24:24.593322+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 344,
+      "candidatesTokenCount": 16,
+      "totalTokenCount": 360,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 344
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:24:28.803614+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 651,
+      "candidatesTokenCount": 112,
+      "totalTokenCount": 763,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 651
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:24:32.994819+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 340,
+      "candidatesTokenCount": 18,
+      "totalTokenCount": 358,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 340
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:24:37.196211+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 841,
+      "candidatesTokenCount": 103,
+      "totalTokenCount": 944,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 841
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:24:41.397471+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 337,
+      "candidatesTokenCount": 19,
+      "totalTokenCount": 356,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 337
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:24:45.589012+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 678,
+      "candidatesTokenCount": 87,
+      "totalTokenCount": 765,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 678
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:24:49.801558+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 340,
+      "candidatesTokenCount": 22,
+      "totalTokenCount": 362,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 340
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:24:54.005038+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 733,
+      "candidatesTokenCount": 135,
+      "totalTokenCount": 868,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 733
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:24:58.204192+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 354,
+      "candidatesTokenCount": 25,
+      "totalTokenCount": 379,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 354
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:25:02.409754+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 730,
+      "candidatesTokenCount": 263,
+      "totalTokenCount": 993,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 730
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:25:06.609590+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 342,
+      "candidatesTokenCount": 20,
+      "totalTokenCount": 362,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 342
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:25:10.820986+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 771,
+      "candidatesTokenCount": 174,
+      "totalTokenCount": 945,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 771
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:25:15.017971+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 344,
+      "candidatesTokenCount": 20,
+      "totalTokenCount": 364,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 344
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:25:19.224672+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 678,
+      "candidatesTokenCount": 121,
+      "totalTokenCount": 799,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 678
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:25:23.420103+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 344,
+      "candidatesTokenCount": 24,
+      "totalTokenCount": 368,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 344
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:25:27.632328+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "HTTP_503",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null
+  },
+  {
+    "at": "2026-11-14T07:29:52.576176+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 752,
+      "candidatesTokenCount": 58,
+      "totalTokenCount": 810,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 752
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:29:56.777621+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 342,
+      "candidatesTokenCount": 20,
+      "totalTokenCount": 362,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 342
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:30:00.980330+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 644,
+      "candidatesTokenCount": 50,
+      "totalTokenCount": 694,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 644
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:30:05.192405+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 338,
+      "candidatesTokenCount": 17,
+      "totalTokenCount": 355,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 338
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:30:09.398759+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 733,
+      "candidatesTokenCount": 44,
+      "totalTokenCount": 777,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 733
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:30:13.610874+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 338,
+      "candidatesTokenCount": 18,
+      "totalTokenCount": 356,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 338
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:30:17.818614+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 680,
+      "candidatesTokenCount": 82,
+      "totalTokenCount": 762,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 680
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:30:22.009660+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 352,
+      "candidatesTokenCount": 21,
+      "totalTokenCount": 373,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 352
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:30:26.202059+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 631,
+      "candidatesTokenCount": 46,
+      "totalTokenCount": 677,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 631
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:30:30.412750+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 347,
+      "candidatesTokenCount": 19,
+      "totalTokenCount": 366,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 347
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:30:34.606307+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 688,
+      "candidatesTokenCount": 50,
+      "totalTokenCount": 738,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 688
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:30:38.819700+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:30:43.022591+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 678,
+      "candidatesTokenCount": 59,
+      "totalTokenCount": 737,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 678
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:30:47.219516+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:30:51.430810+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 672,
+      "candidatesTokenCount": 139,
+      "totalTokenCount": 811,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 672
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:30:55.621329+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:30:59.820888+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:31:04.023658+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 628,
+      "candidatesTokenCount": 170,
+      "totalTokenCount": 798,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 628
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:31:08.224080+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:31:12.427935+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 833,
+      "candidatesTokenCount": 131,
+      "totalTokenCount": 964,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 833
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:31:16.622557+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:31:20.831485+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 748,
+      "candidatesTokenCount": 103,
+      "totalTokenCount": 851,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 748
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:31:25.033525+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:31:29.239592+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 716,
+      "candidatesTokenCount": 41,
+      "totalTokenCount": 757,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 716
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:31:33.449682+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:31:37.663628+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 730,
+      "candidatesTokenCount": 81,
+      "totalTokenCount": 811,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 730
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:31:41.872648+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:31:46.086476+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 714,
+      "candidatesTokenCount": 60,
+      "totalTokenCount": 774,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 714
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:31:50.295993+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:31:54.503710+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 676,
+      "candidatesTokenCount": 180,
+      "totalTokenCount": 856,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 676
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:31:58.698014+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:32:02.905983+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 652,
+      "candidatesTokenCount": 35,
+      "totalTokenCount": 687,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 652
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:32:07.111215+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:32:11.319168+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 719,
+      "candidatesTokenCount": 55,
+      "totalTokenCount": 774,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 719
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:32:15.510449+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:32:19.714885+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 672,
+      "candidatesTokenCount": 150,
+      "totalTokenCount": 822,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 672
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:32:23.920703+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:32:28.121536+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 655,
+      "candidatesTokenCount": 490,
+      "totalTokenCount": 1145,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 655
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:32:32.324513+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:32:36.534471+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:32:40.732168+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 750,
+      "candidatesTokenCount": 48,
+      "totalTokenCount": 798,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 750
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:32:44.940603+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:32:49.144169+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 684,
+      "candidatesTokenCount": 37,
+      "totalTokenCount": 721,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 684
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:32:53.345727+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 748,
+      "candidatesTokenCount": 143,
+      "totalTokenCount": 891,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 748
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:32:57.548666+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 701,
+      "candidatesTokenCount": 35,
+      "totalTokenCount": 736,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 701
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:33:01.752992+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 591,
+      "candidatesTokenCount": 151,
+      "totalTokenCount": 742,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 591
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:33:05.956701+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 730,
+      "candidatesTokenCount": 65,
+      "totalTokenCount": 795,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 730
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:33:10.157693+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 698,
+      "candidatesTokenCount": 47,
+      "totalTokenCount": 745,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 698
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:33:14.367638+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1481,
+      "candidatesTokenCount": 188,
+      "totalTokenCount": 1669,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1481
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:33:18.581672+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1741,
+      "candidatesTokenCount": 269,
+      "totalTokenCount": 2010,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1741
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:33:22.802908+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1562,
+      "candidatesTokenCount": 105,
+      "totalTokenCount": 1667,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1562
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:33:26.999003+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1570,
+      "candidatesTokenCount": 181,
+      "totalTokenCount": 1751,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1570
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:33:31.209269+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1361,
+      "candidatesTokenCount": 168,
+      "totalTokenCount": 1529,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1361
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:33:35.413388+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1409,
+      "candidatesTokenCount": 103,
+      "totalTokenCount": 1512,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1409
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:33:39.628833+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1539,
+      "candidatesTokenCount": 135,
+      "totalTokenCount": 1674,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1539
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:33:43.824087+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1495,
+      "candidatesTokenCount": 174,
+      "totalTokenCount": 1669,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1495
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:33:48.034644+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1844,
+      "candidatesTokenCount": 21,
+      "totalTokenCount": 1865,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1844
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:33:52.231661+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1972,
+      "candidatesTokenCount": 169,
+      "totalTokenCount": 2141,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1972
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:33:56.432956+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1845,
+      "candidatesTokenCount": 143,
+      "totalTokenCount": 1988,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1845
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:34:00.647162+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1663,
+      "candidatesTokenCount": 102,
+      "totalTokenCount": 1765,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1663
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:34:04.851568+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1463,
+      "candidatesTokenCount": 165,
+      "totalTokenCount": 1628,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1463
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:34:09.043118+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1777,
+      "candidatesTokenCount": 226,
+      "totalTokenCount": 2003,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1777
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:34:13.249209+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1661,
+      "candidatesTokenCount": 133,
+      "totalTokenCount": 1794,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1661
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:34:17.457066+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1494,
+      "candidatesTokenCount": 46,
+      "totalTokenCount": 1540,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1494
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:34:21.652486+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1443,
+      "candidatesTokenCount": 92,
+      "totalTokenCount": 1535,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1443
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:34:25.856588+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1627,
+      "candidatesTokenCount": 23,
+      "totalTokenCount": 1650,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1627
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:34:30.066237+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:34:34.270645+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1789,
+      "candidatesTokenCount": 183,
+      "totalTokenCount": 1972,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1789
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:34:38.489733+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1741,
+      "candidatesTokenCount": 25,
+      "totalTokenCount": 1766,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1741
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:34:42.683321+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:34:46.899164+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1712,
+      "candidatesTokenCount": 269,
+      "totalTokenCount": 1981,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1712
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:34:51.104335+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1562,
+      "candidatesTokenCount": 98,
+      "totalTokenCount": 1660,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1562
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:34:55.305895+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1537,
+      "candidatesTokenCount": 184,
+      "totalTokenCount": 1721,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1537
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:34:59.510502+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1375,
+      "candidatesTokenCount": 25,
+      "totalTokenCount": 1400,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1375
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:35:03.719503+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:35:07.923825+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 2076,
+      "candidatesTokenCount": 138,
+      "totalTokenCount": 2214,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 2076
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:35:12.128912+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1318,
+      "candidatesTokenCount": 25,
+      "totalTokenCount": 1343,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1318
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:35:16.331593+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:35:20.531358+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 2144,
+      "candidatesTokenCount": 101,
+      "totalTokenCount": 2245,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 2144
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:35:24.734258+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1680,
+      "candidatesTokenCount": 88,
+      "totalTokenCount": 1768,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1680
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:35:28.940932+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1473,
+      "candidatesTokenCount": 18,
+      "totalTokenCount": 1491,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1473
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:35:33.141028+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:35:37.351103+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1924,
+      "candidatesTokenCount": 154,
+      "totalTokenCount": 2078,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1924
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:35:41.560787+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1704,
+      "candidatesTokenCount": 22,
+      "totalTokenCount": 1726,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1704
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:35:45.767540+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:35:49.976347+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1940,
+      "candidatesTokenCount": 471,
+      "totalTokenCount": 2411,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1940
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:35:54.189236+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1709,
+      "candidatesTokenCount": 175,
+      "totalTokenCount": 1884,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1709
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:35:58.395556+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1683,
+      "candidatesTokenCount": 22,
+      "totalTokenCount": 1705,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1683
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:36:02.602811+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:36:06.815796+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 2079,
+      "candidatesTokenCount": 203,
+      "totalTokenCount": 2282,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 2079
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:36:11.020475+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1658,
+      "candidatesTokenCount": 40,
+      "totalTokenCount": 1698,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1658
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:36:15.220601+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:36:19.418326+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1960,
+      "candidatesTokenCount": 162,
+      "totalTokenCount": 2122,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1960
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:36:23.622132+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1363,
+      "candidatesTokenCount": 26,
+      "totalTokenCount": 1389,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1363
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:36:27.838006+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:36:32.048671+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1466,
+      "candidatesTokenCount": 227,
+      "totalTokenCount": 1693,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1466
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:36:36.250462+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1800,
+      "candidatesTokenCount": 213,
+      "totalTokenCount": 2013,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1800
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:36:40.448495+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1494,
+      "candidatesTokenCount": 21,
+      "totalTokenCount": 1515,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1494
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:36:44.641923+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:36:48.844872+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1765,
+      "candidatesTokenCount": 82,
+      "totalTokenCount": 1847,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1765
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:36:53.044260+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1579,
+      "candidatesTokenCount": 19,
+      "totalTokenCount": 1598,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1579
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:36:57.247049+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:37:01.452534+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1999,
+      "candidatesTokenCount": 48,
+      "totalTokenCount": 2047,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1999
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:37:05.656954+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1553,
+      "candidatesTokenCount": 18,
+      "totalTokenCount": 1571,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1553
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:37:09.865436+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:37:14.056483+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1731,
+      "candidatesTokenCount": 92,
+      "totalTokenCount": 1823,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1731
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:43:45.141431+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:43:49.344581+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:43:53.554670+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:43:57.749541+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:44:01.954114+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:44:06.151495+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 344,
+      "candidatesTokenCount": 16,
+      "totalTokenCount": 360,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 344
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:44:10.357595+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 683,
+      "candidatesTokenCount": 113,
+      "totalTokenCount": 796,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 683
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:44:14.571412+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 349,
+      "candidatesTokenCount": 20,
+      "totalTokenCount": 369,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 349
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:44:18.776489+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 747,
+      "candidatesTokenCount": 39,
+      "totalTokenCount": 786,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 747
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:44:22.982594+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 359,
+      "candidatesTokenCount": 21,
+      "totalTokenCount": 380,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 359
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:44:27.191585+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 745,
+      "candidatesTokenCount": 198,
+      "totalTokenCount": 943,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 745
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:44:31.392995+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 357,
+      "candidatesTokenCount": 18,
+      "totalTokenCount": 375,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 357
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:44:35.616435+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 595,
+      "candidatesTokenCount": 228,
+      "totalTokenCount": 823,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 595
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:44:39.817631+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 353,
+      "candidatesTokenCount": 19,
+      "totalTokenCount": 372,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 353
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:44:44.026329+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 402,
+      "candidatesTokenCount": 47,
+      "totalTokenCount": 449,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 402
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:44:48.243475+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 348,
+      "candidatesTokenCount": 18,
+      "totalTokenCount": 366,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 348
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:44:52.437417+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 744,
+      "candidatesTokenCount": 46,
+      "totalTokenCount": 790,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 744
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:44:56.636351+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 353,
+      "candidatesTokenCount": 23,
+      "totalTokenCount": 376,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 353
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:45:00.851515+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 406,
+      "candidatesTokenCount": 50,
+      "totalTokenCount": 456,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 406
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:45:05.057930+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:45:09.262188+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1737,
+      "candidatesTokenCount": 128,
+      "totalTokenCount": 1865,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1737
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:45:13.484400+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:45:17.689459+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1905,
+      "candidatesTokenCount": 158,
+      "totalTokenCount": 2063,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1905
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:45:21.891136+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:45:26.090972+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1727,
+      "candidatesTokenCount": 197,
+      "totalTokenCount": 1924,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1727
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:45:30.301913+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:45:34.499482+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1580,
+      "candidatesTokenCount": 195,
+      "totalTokenCount": 1775,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1580
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:45:38.710446+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:45:42.903507+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1723,
+      "candidatesTokenCount": 117,
+      "totalTokenCount": 1840,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1723
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:45:47.119711+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:45:51.324447+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1686,
+      "candidatesTokenCount": 44,
+      "totalTokenCount": 1730,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1686
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  },
+  {
+    "at": "2026-11-14T07:45:55.538665+00:00",
+    "endpoint": "models/gemini-embedding-001:embedContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {}
+  },
+  {
+    "at": "2026-11-14T07:45:59.728984+00:00",
+    "endpoint": "models/gemini-3.5-flash-lite:generateContent",
+    "status": "ok",
+    "free_tier_confirmed_by_user": true,
+    "billing_cost_usd": null,
+    "usage": {
+      "promptTokenCount": 1709,
+      "candidatesTokenCount": 50,
+      "totalTokenCount": 1759,
+      "promptTokensDetails": [
+        {
+          "modality": "TEXT",
+          "tokenCount": 1709
+        }
+      ],
+      "serviceTier": "standard"
+    }
+  }
+]

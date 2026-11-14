@@ -1,0 +1,747 @@
+{
+  "question": "Trong nghiên cứu NSFG được mô tả, mã API cá nhân của từng người tham gia là gì?",
+  "config": "hybrid_context",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:13.232263+00:00",
+  "status": "answered",
+  "citations": [
+    "2302c0aa2fd4d36ec776cd0e"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "hybrid",
+      "query": "NSFG respondent personal API code",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 33,
+          "text": "1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 13,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 794,
+            "chunking": "paragraph"
+          },
+          "id": "aed02b84a2698a8ad98395fb",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03177805800756621,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1,
+            "1": 5
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 39,
+          "text": "Now let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 19,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 625,
+            "end_char": 938,
+            "chunking": "paragraph"
+          },
+          "id": "11f52ca93e1d19a06edc1381",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.031746031746031744,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 3,
+            "1": 3
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 34,
+          "text": "file,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences,",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 14,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 936,
+            "end_char": 1831,
+            "chunking": "paragraph"
+          },
+          "id": "1d8260bcb7068f12171046d3",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.031009615384615385,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 5,
+            "1": 4
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 24,
+          "text": "Of course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 4,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 754,
+            "end_char": 1634,
+            "chunking": "paragraph"
+          },
+          "id": "62ef79f5baf905618bdfe92a",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.030621785881252923,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 9,
+            "1": 2
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 27,
+          "text": "1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 7,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 902,
+            "end_char": 1158,
+            "chunking": "paragraph"
+          },
+          "id": "2302c0aa2fd4d36ec776cd0e",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03055037313432836,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 4,
+            "1": 7
+          }
+        }
+      ],
+      "context": "[aed02b84a2698a8ad98395fb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 33]\n1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.\n\n[11f52ca93e1d19a06edc1381 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\nNow let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by\n\n[1d8260bcb7068f12171046d3 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 34]\nfile,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences,\n\n[62ef79f5baf905618bdfe92a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\nOf course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”\n\n[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.",
+      "context_ids": [
+        "aed02b84a2698a8ad98395fb",
+        "11f52ca93e1d19a06edc1381",
+        "1d8260bcb7068f12171046d3",
+        "62ef79f5baf905618bdfe92a",
+        "2302c0aa2fd4d36ec776cd0e"
+      ],
+      "elapsed_ms": 15.636000025551766
+    },
+    {
+      "event": "search",
+      "tool": "hybrid",
+      "query": "caseid NSFG respondent",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 27,
+          "text": "1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 7,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 902,
+            "end_char": 1158,
+            "chunking": "paragraph"
+          },
+          "id": "2302c0aa2fd4d36ec776cd0e",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.031544957774465976,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1,
+            "1": 6
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 32,
+          "text": "To work with data effectively, you have to think on two levels at the same\ntime: the level of statistics and the level of context.\n\nAs an example, let’s look at the sequence of outcomes for a few respondents.\nBecause of the way the data files are organized, we have to do some processing\nto collect the pregnancy data for each respondent. Here’s a function that does\nthat:\ndef MakePregMap(df):\nd = defaultdict(list)\nfor index, caseid in df.caseid.iteritems():\nd[caseid].append(index)\nreturn d\ndfis the DataFrame with pregnancy data. Theiteritemsmethod enumerates the index (row number) andcaseidfor each pregnancy.\n\ndis a dictionary that maps from each case ID to a list of indices. If you are not\nfamiliar withdefaultdict, it is in the Pythoncollectionsmodule. Using\nd, we can look up a respondent and get the indices of that respondent’s\npregnancies.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 12,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 840,
+            "end_char": 1692,
+            "chunking": "paragraph"
+          },
+          "id": "963781e5e55ef4b886914fc6",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.031544957774465976,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 6,
+            "1": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 33,
+          "text": "1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 13,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 794,
+            "chunking": "paragraph"
+          },
+          "id": "aed02b84a2698a8ad98395fb",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.0315136476426799,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 5,
+            "1": 2
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 23,
+          "text": "The NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 3,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 1377,
+            "end_char": 1824,
+            "chunking": "paragraph"
+          },
+          "id": "f40266243aa427f23fa90b4e",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.030621785881252923,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 2,
+            "1": 9
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 34,
+          "text": "file,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences,",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 14,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 936,
+            "end_char": 1831,
+            "chunking": "paragraph"
+          },
+          "id": "1d8260bcb7068f12171046d3",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.030330882352941176,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 8,
+            "1": 4
+          }
+        }
+      ],
+      "context": "[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.\n\n[963781e5e55ef4b886914fc6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 32]\nTo work with data effectively, you have to think on two levels at the same\ntime: the level of statistics and the level of context.\n\nAs an example, let’s look at the sequence of outcomes for a few respondents.\nBecause of the way the data files are organized, we have to do some processing\nto collect the pregnancy data for each respondent. Here’s a function that does\nthat:\ndef MakePregMap(df):\nd = defaultdict(list)\nfor index, caseid in df.caseid.iteritems():\nd[caseid].append(index)\nreturn d\ndfis the DataFrame with pregnancy data. Theiteritemsmethod enumerates the index (row number) andcaseidfor each pregnancy.\n\ndis a dictionary that maps from each case ID to a list of indices. If you are not\nfamiliar withdefaultdict, it is in the Pythoncollectionsmodule. Using\nd, we can look up a respondent and get the indices of that respondent’s\npregnancies.\n\n[aed02b84a2698a8ad98395fb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 33]\n1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.\n\n[f40266243aa427f23fa90b4e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the\n\n[1d8260bcb7068f12171046d3 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 34]\nfile,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences,\n\n[11f52ca93e1d19a06edc1381 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\nNow let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+      "context_ids": [
+        "2302c0aa2fd4d36ec776cd0e",
+        "963781e5e55ef4b886914fc6",
+        "aed02b84a2698a8ad98395fb",
+        "f40266243aa427f23fa90b4e",
+        "1d8260bcb7068f12171046d3",
+        "11f52ca93e1d19a06edc1381"
+      ],
+      "elapsed_ms": 31.507300009252504
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "abstain": false,
+        "answer": "Trong nghiên cứu NSFG được mô tả, mã định danh (ID) số nguyên của từng người tham gia là `caseid` [2302c0aa2fd4d36ec776cd0e].",
+        "citations": [
+          "2302c0aa2fd4d36ec776cd0e"
+        ]
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 347,
+        "candidatesTokenCount": 19,
+        "totalTokenCount": 366,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 347
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1553,
+        "candidatesTokenCount": 18,
+        "totalTokenCount": 1571,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1553
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1731,
+        "candidatesTokenCount": 92,
+        "totalTokenCount": 1823,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1731
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Trong nghiên cứu NSFG được mô tả, mã định danh (ID) số nguyên của từng người tham gia là `caseid` [2302c0aa2fd4d36ec776cd0e].",
+  "context": "[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.\n\n[963781e5e55ef4b886914fc6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 32]\nTo work with data effectively, you have to think on two levels at the same\ntime: the level of statistics and the level of context.\n\nAs an example, let’s look at the sequence of outcomes for a few respondents.\nBecause of the way the data files are organized, we have to do some processing\nto collect the pregnancy data for each respondent. Here’s a function that does\nthat:\ndef MakePregMap(df):\nd = defaultdict(list)\nfor index, caseid in df.caseid.iteritems():\nd[caseid].append(index)\nreturn d\ndfis the DataFrame with pregnancy data. Theiteritemsmethod enumerates the index (row number) andcaseidfor each pregnancy.\n\ndis a dictionary that maps from each case ID to a list of indices. If you are not\nfamiliar withdefaultdict, it is in the Pythoncollectionsmodule. Using\nd, we can look up a respondent and get the indices of that respondent’s\npregnancies.\n\n[aed02b84a2698a8ad98395fb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 33]\n1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.\n\n[f40266243aa427f23fa90b4e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the\n\n[1d8260bcb7068f12171046d3 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 34]\nfile,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences,\n\n[11f52ca93e1d19a06edc1381 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\nNow let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+  "context_ids": [
+    "2302c0aa2fd4d36ec776cd0e",
+    "963781e5e55ef4b886914fc6",
+    "aed02b84a2698a8ad98395fb",
+    "f40266243aa427f23fa90b4e",
+    "1d8260bcb7068f12171046d3",
+    "11f52ca93e1d19a06edc1381"
+  ],
+  "search_count": 2,
+  "elapsed_ms": 47.52230001031421,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-u02",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": null,
+  "reference_elapsed_ms": 12509.536199999275,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Trong nghiên cứu NSFG được mô tả, mã API cá nhân của từng người tham gia là gì?",
+      "config": "hybrid_context",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:37:02.485891+00:00",
+      "status": "answered",
+      "citations": [
+        "2302c0aa2fd4d36ec776cd0e"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "hybrid",
+          "query": "NSFG respondent personal API code",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 33,
+              "text": "1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 13,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 794,
+                "chunking": "paragraph"
+              },
+              "id": "aed02b84a2698a8ad98395fb",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03177805800756621,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 1,
+                "1": 5
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 39,
+              "text": "Now let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "2",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 19,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 625,
+                "end_char": 938,
+                "chunking": "paragraph"
+              },
+              "id": "11f52ca93e1d19a06edc1381",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.031746031746031744,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 3,
+                "1": 3
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 34,
+              "text": "file,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences,",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 14,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 936,
+                "end_char": 1831,
+                "chunking": "paragraph"
+              },
+              "id": "1d8260bcb7068f12171046d3",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.031009615384615385,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 5,
+                "1": 4
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 24,
+              "text": "Of course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 4,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 754,
+                "end_char": 1634,
+                "chunking": "paragraph"
+              },
+              "id": "62ef79f5baf905618bdfe92a",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.030621785881252923,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 9,
+                "1": 2
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 27,
+              "text": "1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 7,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 902,
+                "end_char": 1158,
+                "chunking": "paragraph"
+              },
+              "id": "2302c0aa2fd4d36ec776cd0e",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03055037313432836,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 4,
+                "1": 7
+              }
+            }
+          ],
+          "context": "[aed02b84a2698a8ad98395fb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 33]\n1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.\n\n[11f52ca93e1d19a06edc1381 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\nNow let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by\n\n[1d8260bcb7068f12171046d3 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 34]\nfile,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences,\n\n[62ef79f5baf905618bdfe92a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\nOf course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”\n\n[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.",
+          "context_ids": [
+            "aed02b84a2698a8ad98395fb",
+            "11f52ca93e1d19a06edc1381",
+            "1d8260bcb7068f12171046d3",
+            "62ef79f5baf905618bdfe92a",
+            "2302c0aa2fd4d36ec776cd0e"
+          ],
+          "elapsed_ms": 16.478700010338798
+        },
+        {
+          "event": "search",
+          "tool": "hybrid",
+          "query": "caseid NSFG respondent",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 27,
+              "text": "1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 7,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 902,
+                "end_char": 1158,
+                "chunking": "paragraph"
+              },
+              "id": "2302c0aa2fd4d36ec776cd0e",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.031544957774465976,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 1,
+                "1": 6
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 32,
+              "text": "To work with data effectively, you have to think on two levels at the same\ntime: the level of statistics and the level of context.\n\nAs an example, let’s look at the sequence of outcomes for a few respondents.\nBecause of the way the data files are organized, we have to do some processing\nto collect the pregnancy data for each respondent. Here’s a function that does\nthat:\ndef MakePregMap(df):\nd = defaultdict(list)\nfor index, caseid in df.caseid.iteritems():\nd[caseid].append(index)\nreturn d\ndfis the DataFrame with pregnancy data. Theiteritemsmethod enumerates the index (row number) andcaseidfor each pregnancy.\n\ndis a dictionary that maps from each case ID to a list of indices. If you are not\nfamiliar withdefaultdict, it is in the Pythoncollectionsmodule. Using\nd, we can look up a respondent and get the indices of that respondent’s\npregnancies.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 12,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 840,
+                "end_char": 1692,
+                "chunking": "paragraph"
+              },
+              "id": "963781e5e55ef4b886914fc6",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.031544957774465976,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 6,
+                "1": 1
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 33,
+              "text": "1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 13,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 794,
+                "chunking": "paragraph"
+              },
+              "id": "aed02b84a2698a8ad98395fb",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.0315136476426799,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 5,
+                "1": 2
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 23,
+              "text": "The NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 3,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 1377,
+                "end_char": 1824,
+                "chunking": "paragraph"
+              },
+              "id": "f40266243aa427f23fa90b4e",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.030621785881252923,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 2,
+                "1": 9
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 34,
+              "text": "file,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences,",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 14,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 936,
+                "end_char": 1831,
+                "chunking": "paragraph"
+              },
+              "id": "1d8260bcb7068f12171046d3",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.030330882352941176,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 8,
+                "1": 4
+              }
+            }
+          ],
+          "context": "[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.\n\n[963781e5e55ef4b886914fc6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 32]\nTo work with data effectively, you have to think on two levels at the same\ntime: the level of statistics and the level of context.\n\nAs an example, let’s look at the sequence of outcomes for a few respondents.\nBecause of the way the data files are organized, we have to do some processing\nto collect the pregnancy data for each respondent. Here’s a function that does\nthat:\ndef MakePregMap(df):\nd = defaultdict(list)\nfor index, caseid in df.caseid.iteritems():\nd[caseid].append(index)\nreturn d\ndfis the DataFrame with pregnancy data. Theiteritemsmethod enumerates the index (row number) andcaseidfor each pregnancy.\n\ndis a dictionary that maps from each case ID to a list of indices. If you are not\nfamiliar withdefaultdict, it is in the Pythoncollectionsmodule. Using\nd, we can look up a respondent and get the indices of that respondent’s\npregnancies.\n\n[aed02b84a2698a8ad98395fb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 33]\n1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.\n\n[f40266243aa427f23fa90b4e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the\n\n[1d8260bcb7068f12171046d3 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 34]\nfile,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences,\n\n[11f52ca93e1d19a06edc1381 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\nNow let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+          "context_ids": [
+            "2302c0aa2fd4d36ec776cd0e",
+            "963781e5e55ef4b886914fc6",
+            "aed02b84a2698a8ad98395fb",
+            "f40266243aa427f23fa90b4e",
+            "1d8260bcb7068f12171046d3",
+            "11f52ca93e1d19a06edc1381"
+          ],
+          "elapsed_ms": 3347.9813000012655
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "abstain": false,
+            "answer": "Trong nghiên cứu NSFG được mô tả, mã định danh (ID) số nguyên của từng người tham gia là `caseid` [2302c0aa2fd4d36ec776cd0e].",
+            "citations": [
+              "2302c0aa2fd4d36ec776cd0e"
+            ]
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 347,
+            "candidatesTokenCount": 19,
+            "totalTokenCount": 366,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 347
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1553,
+            "candidatesTokenCount": 18,
+            "totalTokenCount": 1571,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1553
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1731,
+            "candidatesTokenCount": 92,
+            "totalTokenCount": 1823,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1731
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Trong nghiên cứu NSFG được mô tả, mã định danh (ID) số nguyên của từng người tham gia là `caseid` [2302c0aa2fd4d36ec776cd0e].",
+      "context": "[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.\n\n[963781e5e55ef4b886914fc6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 32]\nTo work with data effectively, you have to think on two levels at the same\ntime: the level of statistics and the level of context.\n\nAs an example, let’s look at the sequence of outcomes for a few respondents.\nBecause of the way the data files are organized, we have to do some processing\nto collect the pregnancy data for each respondent. Here’s a function that does\nthat:\ndef MakePregMap(df):\nd = defaultdict(list)\nfor index, caseid in df.caseid.iteritems():\nd[caseid].append(index)\nreturn d\ndfis the DataFrame with pregnancy data. Theiteritemsmethod enumerates the index (row number) andcaseidfor each pregnancy.\n\ndis a dictionary that maps from each case ID to a list of indices. If you are not\nfamiliar withdefaultdict, it is in the Pythoncollectionsmodule. Using\nd, we can look up a respondent and get the indices of that respondent’s\npregnancies.\n\n[aed02b84a2698a8ad98395fb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 33]\n1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.\n\n[f40266243aa427f23fa90b4e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the\n\n[1d8260bcb7068f12171046d3 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 34]\nfile,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences,\n\n[11f52ca93e1d19a06edc1381 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\nNow let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+      "context_ids": [
+        "2302c0aa2fd4d36ec776cd0e",
+        "963781e5e55ef4b886914fc6",
+        "aed02b84a2698a8ad98395fb",
+        "f40266243aa427f23fa90b4e",
+        "1d8260bcb7068f12171046d3",
+        "11f52ca93e1d19a06edc1381"
+      ],
+      "search_count": 2,
+      "elapsed_ms": 12509.536199999275,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-u02",
+      "split": "dev",
+      "context_hit": null
+    }
+  ]
+}

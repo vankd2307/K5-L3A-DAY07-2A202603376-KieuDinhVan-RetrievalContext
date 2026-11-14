@@ -1,0 +1,83 @@
+{
+  "query_id": "d7-t02",
+  "split": "test",
+  "config": "baseline",
+  "status": "ok",
+  "query": "UnbiasPmf hiệu chỉnh xác suất theo sĩ số lớp x bằng cách nào, và bước cuối là gì?",
+  "filter": {},
+  "results": [
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 61,
+      "text": "mean, but the process is slightly different:\n\n̄x= X pi xi\ni\nwhere thex i are the unique values in the PMF andp i =PMF(x i). Similarly,\nyou can compute variance like this:\n\nS2 = X pi (x i − ̄x) 2\ni",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "3",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 41,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 1246,
+        "end_char": 1442,
+        "chunking": "paragraph"
+      },
+      "id": "4ea711974ff31d713d352e37",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.33854445050034526,
+      "method": "tfidf"
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 58,
+      "text": "38 Chapter 3. Probability mass functions\n\nFigure 3.3: Distribution of class sizes, actual and as observed by students.\n\nthe Dean. An alternative is to choose a random sample of students and ask\nhow many students are in their classes.\n\nThe result would be biased for the reasons we’ve just seen, but you can use it\nto estimate the actual distribution. Here’s the function that unbiases a Pmf:\n\ndef UnbiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, 1.0/x)\n\nnew_pmf.Normalize()\nreturn new_pmf\n\nIt’s similar toBiasPmf; the only difference is that it divides each probability\nbyxinstead of multiplying.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "3",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 38,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 644,
+        "chunking": "paragraph"
+      },
+      "id": "28f79f47128ffffd50f881e4",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.21917723431056038,
+      "method": "tfidf"
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 47,
+      "text": "If we assume this estimate is accurate, such a difference would have no practical consequences. In fact, without observing a large number of pregnancies,\nit is unlikely that anyone would notice this difference at all.\n\nAnother way to convey the size of the effect is to compare the difference\nbetween groups to the variability within groups. Cohen’sdis a statistic\nintended to do that; it is defined\n\nd= ̄x 1 − ̄x 2s\n\nwhere ̄x 1 and ̄x 2 are the means of the groups andsis the “pooled standard\ndeviation”. Here’s the Python code that computes Cohen’sd:\ndef CohenEffectSize(group1, group2):\ndiff = group1.mean() - group2.mean()\n\nvar1 = group1.var()\nvar2 = group2.var()\nn1, n2 = len(group1), len(group2)",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "2",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 27,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 836,
+        "end_char": 1537,
+        "chunking": "paragraph"
+      },
+      "id": "d27c407814b847e0b7d9dc97",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.13668127715188202,
+      "method": "tfidf"
+    }
+  ],
+  "context": "[4ea711974ff31d713d352e37 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 61]\nmean, but the process is slightly different:\n\n̄x= X pi xi\ni\nwhere thex i are the unique values in the PMF andp i =PMF(x i). Similarly,\nyou can compute variance like this:\n\nS2 = X pi (x i − ̄x) 2\ni\n\n[28f79f47128ffffd50f881e4 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 58]\n38 Chapter 3. Probability mass functions\n\nFigure 3.3: Distribution of class sizes, actual and as observed by students.\n\nthe Dean. An alternative is to choose a random sample of students and ask\nhow many students are in their classes.\n\nThe result would be biased for the reasons we’ve just seen, but you can use it\nto estimate the actual distribution. Here’s the function that unbiases a Pmf:\n\ndef UnbiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, 1.0/x)\n\nnew_pmf.Normalize()\nreturn new_pmf\n\nIt’s similar toBiasPmf; the only difference is that it divides each probability\nbyxinstead of multiplying.",
+  "context_ids": [
+    "4ea711974ff31d713d352e37",
+    "28f79f47128ffffd50f881e4"
+  ],
+  "hit1": false,
+  "hit3": true,
+  "context_hit": true,
+  "elapsed_ms": 0.3063000040128827,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4"
+}

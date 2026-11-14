@@ -1,0 +1,389 @@
+{
+  "question": "Quần thể mục tiêu của khảo sát NSFG trong sách gồm những ai?",
+  "config": "dense_context",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:12.267637+00:00",
+  "status": "answered",
+  "citations": [
+    "f40266243aa427f23fa90b4e"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "dense",
+      "query": "NSFG population survey target Think Stats",
+      "filter": {},
+      "results": [
+        {
+          "id": "f40266243aa427f23fa90b4e",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 23,
+          "text": "The NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1824,
+            "language": "en",
+            "start_char": 1377,
+            "printed_page": 3,
+            "extraction_status": "ok"
+          },
+          "score": 0.811083912849432,
+          "method": "dense"
+        },
+        {
+          "id": "8bca2eddf8d8ed85185da77e",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 24,
+          "text": "4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 752,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 4,
+            "extraction_status": "ok"
+          },
+          "score": 0.7721700208085777,
+          "method": "dense"
+        },
+        {
+          "id": "62ef79f5baf905618bdfe92a",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 24,
+          "text": "Of course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1634,
+            "language": "en",
+            "start_char": 754,
+            "printed_page": 4,
+            "extraction_status": "ok"
+          },
+          "score": 0.7591484332592242,
+          "method": "dense"
+        },
+        {
+          "id": "bf7df453e01346a69a9a3055",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 23,
+          "text": "1.2. The National Survey of Family Growth 3\n\n•Estimation: We will use data from a sample to estimate characteristics\nof the general population.\n\n•Hypothesis testing: Where we see apparent effects, like a difference\nbetween two groups, we will evaluate whether the effect might have\nhappened by chance.\n\nBy performing these steps with care to avoid pitfalls, we can reach conclusions\nthat are more justifiable and more likely to be correct.\n\n1.2 The National Survey of Family Growth",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 481,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 3,
+            "extraction_status": "ok"
+          },
+          "score": 0.7591014195559717,
+          "method": "dense"
+        },
+        {
+          "id": "c820376c2fde59d33d4d8bc8",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 23,
+          "text": "Since 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1375,
+            "language": "en",
+            "start_char": 483,
+            "printed_page": 3,
+            "extraction_status": "ok"
+          },
+          "score": 0.7481541933829554,
+          "method": "dense"
+        }
+      ],
+      "context": "[f40266243aa427f23fa90b4e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the\n\n[8bca2eddf8d8ed85185da77e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\n4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.\n\n[62ef79f5baf905618bdfe92a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\nOf course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”\n\n[bf7df453e01346a69a9a3055 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\n1.2. The National Survey of Family Growth 3\n\n•Estimation: We will use data from a sample to estimate characteristics\nof the general population.\n\n•Hypothesis testing: Where we see apparent effects, like a difference\nbetween two groups, we will evaluate whether the effect might have\nhappened by chance.\n\nBy performing these steps with care to avoid pitfalls, we can reach conclusions\nthat are more justifiable and more likely to be correct.\n\n1.2 The National Survey of Family Growth\n\n[c820376c2fde59d33d4d8bc8 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nSince 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+      "context_ids": [
+        "f40266243aa427f23fa90b4e",
+        "8bca2eddf8d8ed85185da77e",
+        "62ef79f5baf905618bdfe92a",
+        "bf7df453e01346a69a9a3055",
+        "c820376c2fde59d33d4d8bc8"
+      ],
+      "elapsed_ms": 19.931300019379705
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "abstain": false,
+        "citations": [
+          "f40266243aa427f23fa90b4e"
+        ],
+        "answer": "Quần thể mục tiêu của khảo sát NSFG (National Survey of Family Growth) trong sách là những người ở Hoa Kỳ trong độ tuổi từ 15 đến 44 [f40266243aa427f23fa90b4e]."
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 342,
+        "candidatesTokenCount": 20,
+        "totalTokenCount": 362,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 342
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1562,
+        "candidatesTokenCount": 105,
+        "totalTokenCount": 1667,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1562
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Quần thể mục tiêu của khảo sát NSFG (National Survey of Family Growth) trong sách là những người ở Hoa Kỳ trong độ tuổi từ 15 đến 44 [f40266243aa427f23fa90b4e].",
+  "context": "[f40266243aa427f23fa90b4e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the\n\n[8bca2eddf8d8ed85185da77e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\n4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.\n\n[62ef79f5baf905618bdfe92a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\nOf course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”\n\n[bf7df453e01346a69a9a3055 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\n1.2. The National Survey of Family Growth 3\n\n•Estimation: We will use data from a sample to estimate characteristics\nof the general population.\n\n•Hypothesis testing: Where we see apparent effects, like a difference\nbetween two groups, we will evaluate whether the effect might have\nhappened by chance.\n\nBy performing these steps with care to avoid pitfalls, we can reach conclusions\nthat are more justifiable and more likely to be correct.\n\n1.2 The National Survey of Family Growth\n\n[c820376c2fde59d33d4d8bc8 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nSince 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+  "context_ids": [
+    "f40266243aa427f23fa90b4e",
+    "8bca2eddf8d8ed85185da77e",
+    "62ef79f5baf905618bdfe92a",
+    "bf7df453e01346a69a9a3055",
+    "c820376c2fde59d33d4d8bc8"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 20.255399984307587,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q03",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 3639.028400008101,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Quần thể mục tiêu của khảo sát NSFG trong sách gồm những ai?",
+      "config": "dense_context",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:33:20.404286+00:00",
+      "status": "answered",
+      "citations": [
+        "f40266243aa427f23fa90b4e"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "dense",
+          "query": "NSFG population survey target Think Stats",
+          "filter": {},
+          "results": [
+            {
+              "id": "f40266243aa427f23fa90b4e",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 23,
+              "text": "The NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1824,
+                "language": "en",
+                "start_char": 1377,
+                "printed_page": 3,
+                "extraction_status": "ok"
+              },
+              "score": 0.811083912849432,
+              "method": "dense"
+            },
+            {
+              "id": "8bca2eddf8d8ed85185da77e",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 24,
+              "text": "4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 752,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 4,
+                "extraction_status": "ok"
+              },
+              "score": 0.7721700208085777,
+              "method": "dense"
+            },
+            {
+              "id": "62ef79f5baf905618bdfe92a",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 24,
+              "text": "Of course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1634,
+                "language": "en",
+                "start_char": 754,
+                "printed_page": 4,
+                "extraction_status": "ok"
+              },
+              "score": 0.7591484332592242,
+              "method": "dense"
+            },
+            {
+              "id": "bf7df453e01346a69a9a3055",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 23,
+              "text": "1.2. The National Survey of Family Growth 3\n\n•Estimation: We will use data from a sample to estimate characteristics\nof the general population.\n\n•Hypothesis testing: Where we see apparent effects, like a difference\nbetween two groups, we will evaluate whether the effect might have\nhappened by chance.\n\nBy performing these steps with care to avoid pitfalls, we can reach conclusions\nthat are more justifiable and more likely to be correct.\n\n1.2 The National Survey of Family Growth",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 481,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 3,
+                "extraction_status": "ok"
+              },
+              "score": 0.7591014195559717,
+              "method": "dense"
+            },
+            {
+              "id": "c820376c2fde59d33d4d8bc8",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 23,
+              "text": "Since 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1375,
+                "language": "en",
+                "start_char": 483,
+                "printed_page": 3,
+                "extraction_status": "ok"
+              },
+              "score": 0.7481541933829554,
+              "method": "dense"
+            }
+          ],
+          "context": "[f40266243aa427f23fa90b4e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the\n\n[8bca2eddf8d8ed85185da77e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\n4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.\n\n[62ef79f5baf905618bdfe92a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\nOf course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”\n\n[bf7df453e01346a69a9a3055 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\n1.2. The National Survey of Family Growth 3\n\n•Estimation: We will use data from a sample to estimate characteristics\nof the general population.\n\n•Hypothesis testing: Where we see apparent effects, like a difference\nbetween two groups, we will evaluate whether the effect might have\nhappened by chance.\n\nBy performing these steps with care to avoid pitfalls, we can reach conclusions\nthat are more justifiable and more likely to be correct.\n\n1.2 The National Survey of Family Growth\n\n[c820376c2fde59d33d4d8bc8 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nSince 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+          "context_ids": [
+            "f40266243aa427f23fa90b4e",
+            "8bca2eddf8d8ed85185da77e",
+            "62ef79f5baf905618bdfe92a",
+            "bf7df453e01346a69a9a3055",
+            "c820376c2fde59d33d4d8bc8"
+          ],
+          "elapsed_ms": 25.02449997700751
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "abstain": false,
+            "citations": [
+              "f40266243aa427f23fa90b4e"
+            ],
+            "answer": "Quần thể mục tiêu của khảo sát NSFG (National Survey of Family Growth) trong sách là những người ở Hoa Kỳ trong độ tuổi từ 15 đến 44 [f40266243aa427f23fa90b4e]."
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 342,
+            "candidatesTokenCount": 20,
+            "totalTokenCount": 362,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 342
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1562,
+            "candidatesTokenCount": 105,
+            "totalTokenCount": 1667,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1562
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Quần thể mục tiêu của khảo sát NSFG (National Survey of Family Growth) trong sách là những người ở Hoa Kỳ trong độ tuổi từ 15 đến 44 [f40266243aa427f23fa90b4e].",
+      "context": "[f40266243aa427f23fa90b4e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the\n\n[8bca2eddf8d8ed85185da77e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\n4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.\n\n[62ef79f5baf905618bdfe92a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\nOf course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”\n\n[bf7df453e01346a69a9a3055 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\n1.2. The National Survey of Family Growth 3\n\n•Estimation: We will use data from a sample to estimate characteristics\nof the general population.\n\n•Hypothesis testing: Where we see apparent effects, like a difference\nbetween two groups, we will evaluate whether the effect might have\nhappened by chance.\n\nBy performing these steps with care to avoid pitfalls, we can reach conclusions\nthat are more justifiable and more likely to be correct.\n\n1.2 The National Survey of Family Growth\n\n[c820376c2fde59d33d4d8bc8 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nSince 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+      "context_ids": [
+        "f40266243aa427f23fa90b4e",
+        "8bca2eddf8d8ed85185da77e",
+        "62ef79f5baf905618bdfe92a",
+        "bf7df453e01346a69a9a3055",
+        "c820376c2fde59d33d4d8bc8"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 3639.028400008101,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q03",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

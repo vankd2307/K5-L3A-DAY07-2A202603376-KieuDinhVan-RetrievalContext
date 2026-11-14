@@ -1,0 +1,165 @@
+{
+  "query_id": "d7-q02",
+  "split": "dev",
+  "config": "baseline",
+  "status": "ok",
+  "query": "Nghiên cứu cross-sectional khác longitudinal về thời điểm quan sát như thế nào?",
+  "filter": {},
+  "results": [
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 35,
+      "text": "sensitive data you might have to write to the authors, provide\ninformation about how you plan to use the data, or agree to certain terms of\nuse. Be persistent!\n\n1.10 Glossary\n•anecdotal evidence: Evidence, often personal, that is collected casu-\nally rather than by a well-designed study.\n\n•population: A group we are interested in studying. “Population”\noften refers to a group of people, but the term is used for other subjects,\ntoo.\n•cross-sectional study: A study that collects data about a population\nat a particular point in time.\n\n•cycle: In a repeated cross-sectional study, each repetition of the study\nis called a cycle.\n\n•longitudinal study: A study that follows a population over time,\ncollecting data from the same group repeatedly.\n\n•record: In a dataset, a collection of information about a single person\nor other subject.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 15,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 918,
+        "end_char": 1755,
+        "chunking": "paragraph"
+      },
+      "id": "a6a5f497332f50f7f5a86fb6",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.23361487096241695,
+      "method": "tfidf"
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 24,
+      "text": "4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 4,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 752,
+        "chunking": "paragraph"
+      },
+      "id": "8bca2eddf8d8ed85185da77e",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.12102258482116396,
+      "method": "tfidf"
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 34,
+      "text": "file,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences,",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 14,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 936,
+        "end_char": 1831,
+        "chunking": "paragraph"
+      },
+      "id": "1d8260bcb7068f12171046d3",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.051557474581315925,
+      "method": "tfidf"
+    }
+  ],
+  "context": "[a6a5f497332f50f7f5a86fb6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 35]\nsensitive data you might have to write to the authors, provide\ninformation about how you plan to use the data, or agree to certain terms of\nuse. Be persistent!\n\n1.10 Glossary\n•anecdotal evidence: Evidence, often personal, that is collected casu-\nally rather than by a well-designed study.\n\n•population: A group we are interested in studying. “Population”\noften refers to a group of people, but the term is used for other subjects,\ntoo.\n•cross-sectional study: A study that collects data about a population\nat a particular point in time.\n\n•cycle: In a repeated cross-sectional study, each repetition of the study\nis called a cycle.\n\n•longitudinal study: A study that follows a population over time,\ncollecting data from the same group repeatedly.\n\n•record: In a dataset, a collection of information about a single person\nor other subject.",
+  "context_ids": [
+    "a6a5f497332f50f7f5a86fb6"
+  ],
+  "hit1": false,
+  "hit3": false,
+  "context_hit": false,
+  "elapsed_ms": 0.4191999905742705,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q02",
+      "split": "dev",
+      "config": "baseline",
+      "status": "ok",
+      "query": "Nghiên cứu cross-sectional khác longitudinal về thời điểm quan sát như thế nào?",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 35,
+          "text": "sensitive data you might have to write to the authors, provide\ninformation about how you plan to use the data, or agree to certain terms of\nuse. Be persistent!\n\n1.10 Glossary\n•anecdotal evidence: Evidence, often personal, that is collected casu-\nally rather than by a well-designed study.\n\n•population: A group we are interested in studying. “Population”\noften refers to a group of people, but the term is used for other subjects,\ntoo.\n•cross-sectional study: A study that collects data about a population\nat a particular point in time.\n\n•cycle: In a repeated cross-sectional study, each repetition of the study\nis called a cycle.\n\n•longitudinal study: A study that follows a population over time,\ncollecting data from the same group repeatedly.\n\n•record: In a dataset, a collection of information about a single person\nor other subject.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 15,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 918,
+            "end_char": 1755,
+            "chunking": "paragraph"
+          },
+          "id": "a6a5f497332f50f7f5a86fb6",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.23361487096241695,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 24,
+          "text": "4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 4,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 752,
+            "chunking": "paragraph"
+          },
+          "id": "8bca2eddf8d8ed85185da77e",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.12102258482116396,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 34,
+          "text": "file,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences,",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 14,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 936,
+            "end_char": 1831,
+            "chunking": "paragraph"
+          },
+          "id": "1d8260bcb7068f12171046d3",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.051557474581315925,
+          "method": "tfidf"
+        }
+      ],
+      "context": "[a6a5f497332f50f7f5a86fb6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 35]\nsensitive data you might have to write to the authors, provide\ninformation about how you plan to use the data, or agree to certain terms of\nuse. Be persistent!\n\n1.10 Glossary\n•anecdotal evidence: Evidence, often personal, that is collected casu-\nally rather than by a well-designed study.\n\n•population: A group we are interested in studying. “Population”\noften refers to a group of people, but the term is used for other subjects,\ntoo.\n•cross-sectional study: A study that collects data about a population\nat a particular point in time.\n\n•cycle: In a repeated cross-sectional study, each repetition of the study\nis called a cycle.\n\n•longitudinal study: A study that follows a population over time,\ncollecting data from the same group repeatedly.\n\n•record: In a dataset, a collection of information about a single person\nor other subject.",
+      "context_ids": [
+        "a6a5f497332f50f7f5a86fb6"
+      ],
+      "hit1": false,
+      "hit3": false,
+      "context_hit": false,
+      "elapsed_ms": 0.5765999958384782
+    }
+  ]
+}

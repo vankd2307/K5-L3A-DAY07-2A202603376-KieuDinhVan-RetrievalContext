@@ -1,0 +1,59 @@
+{
+  "embedding_model": "gemini-embedding-001",
+  "dimensions": 768,
+  "day6_strategy": "B",
+  "selection_rule": "Among configurations with complete successful dev agent runs, maximize dev Context Evidence Rate, then Evidence Hit@3, then Hit@1; ties favor smaller context budget, then fewer allowed searches, then config name. Answer/citation audits are reported as limitations, not used to silently retune test.",
+  "configs": [
+    {
+      "name": "baseline",
+      "method": "tfidf",
+      "top_k": 3,
+      "candidates": 12,
+      "budget_chars": 1200,
+      "max_searches": 1,
+      "prefer_latest": false,
+      "hypothesis": "Lexical baseline; Vietnamese questions versus English source may miss synonyms."
+    },
+    {
+      "name": "dense",
+      "method": "dense",
+      "top_k": 3,
+      "candidates": 12,
+      "budget_chars": 1200,
+      "max_searches": 1,
+      "prefer_latest": false,
+      "hypothesis": "Cross-lingual embeddings improve evidence retrieval relative to lexical baseline."
+    },
+    {
+      "name": "hybrid",
+      "method": "hybrid",
+      "top_k": 3,
+      "candidates": 12,
+      "budget_chars": 1200,
+      "max_searches": 1,
+      "prefer_latest": false,
+      "hypothesis": "RRF combines lexical terms and dense semantic evidence."
+    },
+    {
+      "name": "dense_context",
+      "method": "dense",
+      "top_k": 5,
+      "candidates": 12,
+      "budget_chars": 5000,
+      "max_searches": 1,
+      "prefer_latest": false,
+      "hypothesis": "Larger top-k and context reduce loss of complete evidence during packing."
+    },
+    {
+      "name": "hybrid_context",
+      "method": "hybrid",
+      "top_k": 5,
+      "candidates": 12,
+      "budget_chars": 5000,
+      "max_searches": 2,
+      "prefer_latest": true,
+      "hypothesis": "More context and optional query refinement improve evidence coverage at additional latency."
+    }
+  ],
+  "agent_model": "gemini-3.5-flash-lite"
+}

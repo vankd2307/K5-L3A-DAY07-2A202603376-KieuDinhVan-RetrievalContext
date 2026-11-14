@@ -1,0 +1,429 @@
+{
+  "question": "Tác giả phân biệt mean và average như thế nào?",
+  "config": "hybrid_context",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:13.126230+00:00",
+  "status": "answered",
+  "citations": [
+    "7b3b142d5d2b25996d5b4bbb"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "hybrid",
+      "query": "mean average Think Stats",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 57,
+          "text": "3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 37,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 777,
+            "chunking": "paragraph"
+          },
+          "id": "971ea28ecfc7e695419ea19c",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03252247488101534,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 2,
+            "1": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 46,
+          "text": "26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 26,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 791,
+            "chunking": "paragraph"
+          },
+          "id": "4321b3f26f9d26c0b20e8a04",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.032018442622950824,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1,
+            "1": 4
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 45,
+          "text": "Statistics designed to answer these questions are calledsummary statistics.\nBy far the most common summary statistic is themean, which is meant to\ndescribe the central tendency of the distribution.\nIf you have a sample ofnvalues,x i, the mean, ̄x, is the sum of the values\ndivided by the number of values; in other words\n̄x= 1X xi\nn i\n\nThe words “mean” and “average” are sometimes used interchangeably, but I\nmake this distinction:\n\n•The “mean” of a sample is the summary statistic computed with the\nprevious formula.\n\n•An “average” is one of several summary statistics you might choose to\ndescribe a central tendency.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 25,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 788,
+            "end_char": 1406,
+            "chunking": "paragraph"
+          },
+          "id": "7b3b142d5d2b25996d5b4bbb",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03200204813108039,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 3,
+            "1": 2
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 46,
+          "text": "If there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 26,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 793,
+            "end_char": 1638,
+            "chunking": "paragraph"
+          },
+          "id": "d3270a2b867639b7ed5e52b2",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03149801587301587,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 4,
+            "1": 3
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 57,
+          "text": "new_pmf.Normalize()\nreturn new_pmf\nFor each class size,x, we multiply the probability byx, the number of students\nwho observe that class size. The result is a new Pmf that represents the\nbiased distribution.\nNow we can plot the actual and observed distributions:\nbiased_pmf = BiasPmf(pmf, label='observed')\nthinkplot.PrePlot(2)\nthinkplot.Pmfs([pmf, biased_pmf])\nthinkplot.Show(xlabel='class size', ylabel='PMF')\nFigure 3.3 shows the result. In the biased distribution there are fewer small\nclasses and more large ones. The mean of the biased distribution is 29.1,\nalmost 25% higher than the actual mean.\nIt is also possible to invert this operation. Suppose you want to find the\ndistribution of class sizes at a college, but you can’t get reliable data from",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 37,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 779,
+            "end_char": 1536,
+            "chunking": "paragraph"
+          },
+          "id": "cb9a0be491d7015bfc3a82fa",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.029236022193768675,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 11,
+            "1": 6
+          }
+        }
+      ],
+      "context": "[971ea28ecfc7e695419ea19c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\n3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)\n\n[4321b3f26f9d26c0b20e8a04 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\n26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance\n\n[7b3b142d5d2b25996d5b4bbb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 45]\nStatistics designed to answer these questions are calledsummary statistics.\nBy far the most common summary statistic is themean, which is meant to\ndescribe the central tendency of the distribution.\nIf you have a sample ofnvalues,x i, the mean, ̄x, is the sum of the values\ndivided by the number of values; in other words\n̄x= 1X xi\nn i\n\nThe words “mean” and “average” are sometimes used interchangeably, but I\nmake this distinction:\n\n•The “mean” of a sample is the summary statistic computed with the\nprevious formula.\n\n•An “average” is one of several summary statistics you might choose to\ndescribe a central tendency.\n\n[d3270a2b867639b7ed5e52b2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\nIf there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()\n\n[cb9a0be491d7015bfc3a82fa | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\nnew_pmf.Normalize()\nreturn new_pmf\nFor each class size,x, we multiply the probability byx, the number of students\nwho observe that class size. The result is a new Pmf that represents the\nbiased distribution.\nNow we can plot the actual and observed distributions:\nbiased_pmf = BiasPmf(pmf, label='observed')\nthinkplot.PrePlot(2)\nthinkplot.Pmfs([pmf, biased_pmf])\nthinkplot.Show(xlabel='class size', ylabel='PMF')\nFigure 3.3 shows the result. In the biased distribution there are fewer small\nclasses and more large ones. The mean of the biased distribution is 29.1,\nalmost 25% higher than the actual mean.\nIt is also possible to invert this operation. Suppose you want to find the\ndistribution of class sizes at a college, but you can’t get reliable data from",
+      "context_ids": [
+        "971ea28ecfc7e695419ea19c",
+        "4321b3f26f9d26c0b20e8a04",
+        "7b3b142d5d2b25996d5b4bbb",
+        "d3270a2b867639b7ed5e52b2",
+        "cb9a0be491d7015bfc3a82fa"
+      ],
+      "elapsed_ms": 14.872100000502542
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "answer": "Mặc dù các từ “mean” (số trung bình) và “average” (giá trị trung bình) đôi khi được sử dụng thay thế cho nhau, tác giả đã đưa ra sự phân biệt rõ ràng:\n\n* **“Mean” của một mẫu** là một thống kê tóm tắt (summary statistic) được tính toán theo công thức cụ thể (tổng các giá trị chia cho số lượng giá trị) [7b3b142d5d2b25996d5b4bbb].\n* **“Average”** là một trong số các thống kê tóm tắt mà bạn có thể chọn để mô tả xu hướng trung tâm (central tendency) [7b3b142d5d2b25996d5b4bbb].",
+        "citations": [
+          "7b3b142d5d2b25996d5b4bbb"
+        ],
+        "abstain": false
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 338,
+        "candidatesTokenCount": 17,
+        "totalTokenCount": 355,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 338
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1800,
+        "candidatesTokenCount": 213,
+        "totalTokenCount": 2013,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1800
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Mặc dù các từ “mean” (số trung bình) và “average” (giá trị trung bình) đôi khi được sử dụng thay thế cho nhau, tác giả đã đưa ra sự phân biệt rõ ràng:\n\n* **“Mean” của một mẫu** là một thống kê tóm tắt (summary statistic) được tính toán theo công thức cụ thể (tổng các giá trị chia cho số lượng giá trị) [7b3b142d5d2b25996d5b4bbb].\n* **“Average”** là một trong số các thống kê tóm tắt mà bạn có thể chọn để mô tả xu hướng trung tâm (central tendency) [7b3b142d5d2b25996d5b4bbb].",
+  "context": "[971ea28ecfc7e695419ea19c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\n3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)\n\n[4321b3f26f9d26c0b20e8a04 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\n26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance\n\n[7b3b142d5d2b25996d5b4bbb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 45]\nStatistics designed to answer these questions are calledsummary statistics.\nBy far the most common summary statistic is themean, which is meant to\ndescribe the central tendency of the distribution.\nIf you have a sample ofnvalues,x i, the mean, ̄x, is the sum of the values\ndivided by the number of values; in other words\n̄x= 1X xi\nn i\n\nThe words “mean” and “average” are sometimes used interchangeably, but I\nmake this distinction:\n\n•The “mean” of a sample is the summary statistic computed with the\nprevious formula.\n\n•An “average” is one of several summary statistics you might choose to\ndescribe a central tendency.\n\n[d3270a2b867639b7ed5e52b2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\nIf there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()\n\n[cb9a0be491d7015bfc3a82fa | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\nnew_pmf.Normalize()\nreturn new_pmf\nFor each class size,x, we multiply the probability byx, the number of students\nwho observe that class size. The result is a new Pmf that represents the\nbiased distribution.\nNow we can plot the actual and observed distributions:\nbiased_pmf = BiasPmf(pmf, label='observed')\nthinkplot.PrePlot(2)\nthinkplot.Pmfs([pmf, biased_pmf])\nthinkplot.Show(xlabel='class size', ylabel='PMF')\nFigure 3.3 shows the result. In the biased distribution there are fewer small\nclasses and more large ones. The mean of the biased distribution is 29.1,\nalmost 25% higher than the actual mean.\nIt is also possible to invert this operation. Suppose you want to find the\ndistribution of class sizes at a college, but you can’t get reliable data from",
+  "context_ids": [
+    "971ea28ecfc7e695419ea19c",
+    "4321b3f26f9d26c0b20e8a04",
+    "7b3b142d5d2b25996d5b4bbb",
+    "d3270a2b867639b7ed5e52b2",
+    "cb9a0be491d7015bfc3a82fa"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 15.13770001474768,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q14",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 3369.913500006078,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Tác giả phân biệt mean và average như thế nào?",
+      "config": "hybrid_context",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:36:34.121814+00:00",
+      "status": "answered",
+      "citations": [
+        "7b3b142d5d2b25996d5b4bbb"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "hybrid",
+          "query": "mean average Think Stats",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 57,
+              "text": "3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "3",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 37,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 777,
+                "chunking": "paragraph"
+              },
+              "id": "971ea28ecfc7e695419ea19c",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03252247488101534,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 2,
+                "1": 1
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 46,
+              "text": "26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "2",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 26,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 791,
+                "chunking": "paragraph"
+              },
+              "id": "4321b3f26f9d26c0b20e8a04",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.032018442622950824,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 1,
+                "1": 4
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 45,
+              "text": "Statistics designed to answer these questions are calledsummary statistics.\nBy far the most common summary statistic is themean, which is meant to\ndescribe the central tendency of the distribution.\nIf you have a sample ofnvalues,x i, the mean, ̄x, is the sum of the values\ndivided by the number of values; in other words\n̄x= 1X xi\nn i\n\nThe words “mean” and “average” are sometimes used interchangeably, but I\nmake this distinction:\n\n•The “mean” of a sample is the summary statistic computed with the\nprevious formula.\n\n•An “average” is one of several summary statistics you might choose to\ndescribe a central tendency.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "2",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 25,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 788,
+                "end_char": 1406,
+                "chunking": "paragraph"
+              },
+              "id": "7b3b142d5d2b25996d5b4bbb",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03200204813108039,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 3,
+                "1": 2
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 46,
+              "text": "If there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "2",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 26,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 793,
+                "end_char": 1638,
+                "chunking": "paragraph"
+              },
+              "id": "d3270a2b867639b7ed5e52b2",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03149801587301587,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 4,
+                "1": 3
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 57,
+              "text": "new_pmf.Normalize()\nreturn new_pmf\nFor each class size,x, we multiply the probability byx, the number of students\nwho observe that class size. The result is a new Pmf that represents the\nbiased distribution.\nNow we can plot the actual and observed distributions:\nbiased_pmf = BiasPmf(pmf, label='observed')\nthinkplot.PrePlot(2)\nthinkplot.Pmfs([pmf, biased_pmf])\nthinkplot.Show(xlabel='class size', ylabel='PMF')\nFigure 3.3 shows the result. In the biased distribution there are fewer small\nclasses and more large ones. The mean of the biased distribution is 29.1,\nalmost 25% higher than the actual mean.\nIt is also possible to invert this operation. Suppose you want to find the\ndistribution of class sizes at a college, but you can’t get reliable data from",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "3",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 37,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 779,
+                "end_char": 1536,
+                "chunking": "paragraph"
+              },
+              "id": "cb9a0be491d7015bfc3a82fa",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.029236022193768675,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 11,
+                "1": 6
+              }
+            }
+          ],
+          "context": "[971ea28ecfc7e695419ea19c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\n3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)\n\n[4321b3f26f9d26c0b20e8a04 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\n26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance\n\n[7b3b142d5d2b25996d5b4bbb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 45]\nStatistics designed to answer these questions are calledsummary statistics.\nBy far the most common summary statistic is themean, which is meant to\ndescribe the central tendency of the distribution.\nIf you have a sample ofnvalues,x i, the mean, ̄x, is the sum of the values\ndivided by the number of values; in other words\n̄x= 1X xi\nn i\n\nThe words “mean” and “average” are sometimes used interchangeably, but I\nmake this distinction:\n\n•The “mean” of a sample is the summary statistic computed with the\nprevious formula.\n\n•An “average” is one of several summary statistics you might choose to\ndescribe a central tendency.\n\n[d3270a2b867639b7ed5e52b2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\nIf there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()\n\n[cb9a0be491d7015bfc3a82fa | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\nnew_pmf.Normalize()\nreturn new_pmf\nFor each class size,x, we multiply the probability byx, the number of students\nwho observe that class size. The result is a new Pmf that represents the\nbiased distribution.\nNow we can plot the actual and observed distributions:\nbiased_pmf = BiasPmf(pmf, label='observed')\nthinkplot.PrePlot(2)\nthinkplot.Pmfs([pmf, biased_pmf])\nthinkplot.Show(xlabel='class size', ylabel='PMF')\nFigure 3.3 shows the result. In the biased distribution there are fewer small\nclasses and more large ones. The mean of the biased distribution is 29.1,\nalmost 25% higher than the actual mean.\nIt is also possible to invert this operation. Suppose you want to find the\ndistribution of class sizes at a college, but you can’t get reliable data from",
+          "context_ids": [
+            "971ea28ecfc7e695419ea19c",
+            "4321b3f26f9d26c0b20e8a04",
+            "7b3b142d5d2b25996d5b4bbb",
+            "d3270a2b867639b7ed5e52b2",
+            "cb9a0be491d7015bfc3a82fa"
+          ],
+          "elapsed_ms": 48.58790000434965
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "answer": "Mặc dù các từ “mean” (số trung bình) và “average” (giá trị trung bình) đôi khi được sử dụng thay thế cho nhau, tác giả đã đưa ra sự phân biệt rõ ràng:\n\n* **“Mean” của một mẫu** là một thống kê tóm tắt (summary statistic) được tính toán theo công thức cụ thể (tổng các giá trị chia cho số lượng giá trị) [7b3b142d5d2b25996d5b4bbb].\n* **“Average”** là một trong số các thống kê tóm tắt mà bạn có thể chọn để mô tả xu hướng trung tâm (central tendency) [7b3b142d5d2b25996d5b4bbb].",
+            "citations": [
+              "7b3b142d5d2b25996d5b4bbb"
+            ],
+            "abstain": false
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 338,
+            "candidatesTokenCount": 17,
+            "totalTokenCount": 355,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 338
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1800,
+            "candidatesTokenCount": 213,
+            "totalTokenCount": 2013,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1800
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Mặc dù các từ “mean” (số trung bình) và “average” (giá trị trung bình) đôi khi được sử dụng thay thế cho nhau, tác giả đã đưa ra sự phân biệt rõ ràng:\n\n* **“Mean” của một mẫu** là một thống kê tóm tắt (summary statistic) được tính toán theo công thức cụ thể (tổng các giá trị chia cho số lượng giá trị) [7b3b142d5d2b25996d5b4bbb].\n* **“Average”** là một trong số các thống kê tóm tắt mà bạn có thể chọn để mô tả xu hướng trung tâm (central tendency) [7b3b142d5d2b25996d5b4bbb].",
+      "context": "[971ea28ecfc7e695419ea19c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\n3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)\n\n[4321b3f26f9d26c0b20e8a04 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\n26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance\n\n[7b3b142d5d2b25996d5b4bbb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 45]\nStatistics designed to answer these questions are calledsummary statistics.\nBy far the most common summary statistic is themean, which is meant to\ndescribe the central tendency of the distribution.\nIf you have a sample ofnvalues,x i, the mean, ̄x, is the sum of the values\ndivided by the number of values; in other words\n̄x= 1X xi\nn i\n\nThe words “mean” and “average” are sometimes used interchangeably, but I\nmake this distinction:\n\n•The “mean” of a sample is the summary statistic computed with the\nprevious formula.\n\n•An “average” is one of several summary statistics you might choose to\ndescribe a central tendency.\n\n[d3270a2b867639b7ed5e52b2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\nIf there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()\n\n[cb9a0be491d7015bfc3a82fa | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\nnew_pmf.Normalize()\nreturn new_pmf\nFor each class size,x, we multiply the probability byx, the number of students\nwho observe that class size. The result is a new Pmf that represents the\nbiased distribution.\nNow we can plot the actual and observed distributions:\nbiased_pmf = BiasPmf(pmf, label='observed')\nthinkplot.PrePlot(2)\nthinkplot.Pmfs([pmf, biased_pmf])\nthinkplot.Show(xlabel='class size', ylabel='PMF')\nFigure 3.3 shows the result. In the biased distribution there are fewer small\nclasses and more large ones. The mean of the biased distribution is 29.1,\nalmost 25% higher than the actual mean.\nIt is also possible to invert this operation. Suppose you want to find the\ndistribution of class sizes at a college, but you can’t get reliable data from",
+      "context_ids": [
+        "971ea28ecfc7e695419ea19c",
+        "4321b3f26f9d26c0b20e8a04",
+        "7b3b142d5d2b25996d5b4bbb",
+        "d3270a2b867639b7ed5e52b2",
+        "cb9a0be491d7015bfc3a82fa"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 3369.913500006078,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q14",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

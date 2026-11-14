@@ -1,0 +1,389 @@
+{
+  "question": "Vì sao việc chỉ lấy ý kiến người tham gia thảo luận về con đầu sinh muộn có thể gây selection bias?",
+  "config": "dense_context",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:12.188831+00:00",
+  "status": "answered",
+  "citations": [
+    "54f0c801e3aa64b436f8c68f"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "dense",
+      "query": "first born delayed childbearing selection bias respondents",
+      "filter": {},
+      "results": [
+        {
+          "id": "c820376c2fde59d33d4d8bc8",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 23,
+          "text": "Since 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1375,
+            "language": "en",
+            "start_char": 483,
+            "printed_page": 3,
+            "extraction_status": "ok"
+          },
+          "score": 0.685876408640256,
+          "method": "dense"
+        },
+        {
+          "id": "ef334e7bae7044ad56c05991",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 21,
+          "text": "“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1141,
+            "language": "en",
+            "start_char": 625,
+            "printed_page": 1,
+            "extraction_status": "ok"
+          },
+          "score": 0.675095359986744,
+          "method": "dense"
+        },
+        {
+          "id": "dff6ab57deda33c673685cdb",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 44,
+          "text": "this example, there are fewer “first babies” than “others,” so some\nof the apparent differences in the histograms are due to sample sizes. In the\nnext chapter we address this problem using probability mass functions.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1186,
+            "language": "en",
+            "start_char": 970,
+            "printed_page": 24,
+            "extraction_status": "ok"
+          },
+          "score": 0.6703485650031903,
+          "method": "dense"
+        },
+        {
+          "id": "8bca2eddf8d8ed85185da77e",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 24,
+          "text": "4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 752,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 4,
+            "extraction_status": "ok"
+          },
+          "score": 0.6682797869527279,
+          "method": "dense"
+        },
+        {
+          "id": "54f0c801e3aa64b436f8c68f",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 22,
+          "text": "2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 895,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 2,
+            "extraction_status": "ok"
+          },
+          "score": 0.6618523794964668,
+          "method": "dense"
+        }
+      ],
+      "context": "[c820376c2fde59d33d4d8bc8 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nSince 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.\n\n[ef334e7bae7044ad56c05991 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 21]\n“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,\n\n[dff6ab57deda33c673685cdb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 44]\nthis example, there are fewer “first babies” than “others,” so some\nof the apparent differences in the histograms are due to sample sizes. In the\nnext chapter we address this problem using probability mass functions.\n\n[8bca2eddf8d8ed85185da77e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\n4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.\n\n[54f0c801e3aa64b436f8c68f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 22]\n2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.",
+      "context_ids": [
+        "c820376c2fde59d33d4d8bc8",
+        "ef334e7bae7044ad56c05991",
+        "dff6ab57deda33c673685cdb",
+        "8bca2eddf8d8ed85185da77e",
+        "54f0c801e3aa64b436f8c68f"
+      ],
+      "elapsed_ms": 53.45669999951497
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "citations": [
+          "54f0c801e3aa64b436f8c68f"
+        ],
+        "answer": "Việc chỉ lấy ý kiến hoặc dựa vào những người tham gia thảo luận về con đầu sinh muộn có thể gây ra hiện tượng thiên vị lựa chọn (selection bias) vì những người tham gia vào một cuộc thảo luận như vậy có thể bị thu hút hoặc quan tâm đến chủ đề này chính vì con đầu của họ sinh muộn [54f0c801e3aa64b436f8c68f]. Do đó, quá trình chọn lọc dữ liệu này sẽ làm lệch kết quả của toàn bộ khảo sát/thảo luận [54f0c801e3aa64b436f8c68f].",
+        "abstain": false
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 350,
+        "candidatesTokenCount": 21,
+        "totalTokenCount": 371,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 350
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1481,
+        "candidatesTokenCount": 188,
+        "totalTokenCount": 1669,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1481
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Việc chỉ lấy ý kiến hoặc dựa vào những người tham gia thảo luận về con đầu sinh muộn có thể gây ra hiện tượng thiên vị lựa chọn (selection bias) vì những người tham gia vào một cuộc thảo luận như vậy có thể bị thu hút hoặc quan tâm đến chủ đề này chính vì con đầu của họ sinh muộn [54f0c801e3aa64b436f8c68f]. Do đó, quá trình chọn lọc dữ liệu này sẽ làm lệch kết quả của toàn bộ khảo sát/thảo luận [54f0c801e3aa64b436f8c68f].",
+  "context": "[c820376c2fde59d33d4d8bc8 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nSince 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.\n\n[ef334e7bae7044ad56c05991 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 21]\n“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,\n\n[dff6ab57deda33c673685cdb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 44]\nthis example, there are fewer “first babies” than “others,” so some\nof the apparent differences in the histograms are due to sample sizes. In the\nnext chapter we address this problem using probability mass functions.\n\n[8bca2eddf8d8ed85185da77e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\n4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.\n\n[54f0c801e3aa64b436f8c68f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 22]\n2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.",
+  "context_ids": [
+    "c820376c2fde59d33d4d8bc8",
+    "ef334e7bae7044ad56c05991",
+    "dff6ab57deda33c673685cdb",
+    "8bca2eddf8d8ed85185da77e",
+    "54f0c801e3aa64b436f8c68f"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 53.82209998788312,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q01",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 4052.0487000176217,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Vì sao việc chỉ lấy ý kiến người tham gia thảo luận về con đầu sinh muộn có thể gây selection bias?",
+      "config": "dense_context",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:33:12.480392+00:00",
+      "status": "answered",
+      "citations": [
+        "54f0c801e3aa64b436f8c68f"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "dense",
+          "query": "first born delayed childbearing selection bias respondents",
+          "filter": {},
+          "results": [
+            {
+              "id": "c820376c2fde59d33d4d8bc8",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 23,
+              "text": "Since 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1375,
+                "language": "en",
+                "start_char": 483,
+                "printed_page": 3,
+                "extraction_status": "ok"
+              },
+              "score": 0.685876408640256,
+              "method": "dense"
+            },
+            {
+              "id": "ef334e7bae7044ad56c05991",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 21,
+              "text": "“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1141,
+                "language": "en",
+                "start_char": 625,
+                "printed_page": 1,
+                "extraction_status": "ok"
+              },
+              "score": 0.675095359986744,
+              "method": "dense"
+            },
+            {
+              "id": "dff6ab57deda33c673685cdb",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 44,
+              "text": "this example, there are fewer “first babies” than “others,” so some\nof the apparent differences in the histograms are due to sample sizes. In the\nnext chapter we address this problem using probability mass functions.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1186,
+                "language": "en",
+                "start_char": 970,
+                "printed_page": 24,
+                "extraction_status": "ok"
+              },
+              "score": 0.6703485650031903,
+              "method": "dense"
+            },
+            {
+              "id": "8bca2eddf8d8ed85185da77e",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 24,
+              "text": "4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 752,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 4,
+                "extraction_status": "ok"
+              },
+              "score": 0.6682797869527279,
+              "method": "dense"
+            },
+            {
+              "id": "54f0c801e3aa64b436f8c68f",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 22,
+              "text": "2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 895,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 2,
+                "extraction_status": "ok"
+              },
+              "score": 0.6618523794964668,
+              "method": "dense"
+            }
+          ],
+          "context": "[c820376c2fde59d33d4d8bc8 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nSince 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.\n\n[ef334e7bae7044ad56c05991 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 21]\n“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,\n\n[dff6ab57deda33c673685cdb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 44]\nthis example, there are fewer “first babies” than “others,” so some\nof the apparent differences in the histograms are due to sample sizes. In the\nnext chapter we address this problem using probability mass functions.\n\n[8bca2eddf8d8ed85185da77e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\n4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.\n\n[54f0c801e3aa64b436f8c68f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 22]\n2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.",
+          "context_ids": [
+            "c820376c2fde59d33d4d8bc8",
+            "ef334e7bae7044ad56c05991",
+            "dff6ab57deda33c673685cdb",
+            "8bca2eddf8d8ed85185da77e",
+            "54f0c801e3aa64b436f8c68f"
+          ],
+          "elapsed_ms": 14.435499993851408
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "citations": [
+              "54f0c801e3aa64b436f8c68f"
+            ],
+            "answer": "Việc chỉ lấy ý kiến hoặc dựa vào những người tham gia thảo luận về con đầu sinh muộn có thể gây ra hiện tượng thiên vị lựa chọn (selection bias) vì những người tham gia vào một cuộc thảo luận như vậy có thể bị thu hút hoặc quan tâm đến chủ đề này chính vì con đầu của họ sinh muộn [54f0c801e3aa64b436f8c68f]. Do đó, quá trình chọn lọc dữ liệu này sẽ làm lệch kết quả của toàn bộ khảo sát/thảo luận [54f0c801e3aa64b436f8c68f].",
+            "abstain": false
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 350,
+            "candidatesTokenCount": 21,
+            "totalTokenCount": 371,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 350
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1481,
+            "candidatesTokenCount": 188,
+            "totalTokenCount": 1669,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1481
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Việc chỉ lấy ý kiến hoặc dựa vào những người tham gia thảo luận về con đầu sinh muộn có thể gây ra hiện tượng thiên vị lựa chọn (selection bias) vì những người tham gia vào một cuộc thảo luận như vậy có thể bị thu hút hoặc quan tâm đến chủ đề này chính vì con đầu của họ sinh muộn [54f0c801e3aa64b436f8c68f]. Do đó, quá trình chọn lọc dữ liệu này sẽ làm lệch kết quả của toàn bộ khảo sát/thảo luận [54f0c801e3aa64b436f8c68f].",
+      "context": "[c820376c2fde59d33d4d8bc8 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nSince 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.\n\n[ef334e7bae7044ad56c05991 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 21]\n“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,\n\n[dff6ab57deda33c673685cdb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 44]\nthis example, there are fewer “first babies” than “others,” so some\nof the apparent differences in the histograms are due to sample sizes. In the\nnext chapter we address this problem using probability mass functions.\n\n[8bca2eddf8d8ed85185da77e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\n4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.\n\n[54f0c801e3aa64b436f8c68f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 22]\n2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.",
+      "context_ids": [
+        "c820376c2fde59d33d4d8bc8",
+        "ef334e7bae7044ad56c05991",
+        "dff6ab57deda33c673685cdb",
+        "8bca2eddf8d8ed85185da77e",
+        "54f0c801e3aa64b436f8c68f"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 4052.0487000176217,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q01",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

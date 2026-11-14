@@ -1,0 +1,297 @@
+{
+  "question": "DataFrame NSFG được minh họa có bao nhiêu bản ghi và biến?",
+  "config": "baseline",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:11.190204+00:00",
+  "status": "answered",
+  "citations": [
+    "ee672fe7059e3b9d2b8e2207"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "tfidf",
+      "query": "DataFrame NSFG records variables",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 27,
+          "text": "1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 7,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 902,
+            "end_char": 1158,
+            "chunking": "paragraph"
+          },
+          "id": "2302c0aa2fd4d36ec776cd0e",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.31709165331852884,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 26,
+          "text": "6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 6,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 542,
+            "chunking": "paragraph"
+          },
+          "id": "ee672fe7059e3b9d2b8e2207",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.24800600721376542,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 59,
+          "text": "3.5. DataFrame indexing 39\n3.5 DataFrame indexing",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 39,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 49,
+            "chunking": "paragraph"
+          },
+          "id": "328bb76367d79e6b875428e2",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.17236159569174223,
+          "method": "tfidf"
+        }
+      ],
+      "context": "[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.\n\n[ee672fe7059e3b9d2b8e2207 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\n6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.\n\n[328bb76367d79e6b875428e2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 59]\n3.5. DataFrame indexing 39\n3.5 DataFrame indexing",
+      "context_ids": [
+        "2302c0aa2fd4d36ec776cd0e",
+        "ee672fe7059e3b9d2b8e2207",
+        "328bb76367d79e6b875428e2"
+      ],
+      "elapsed_ms": 0.3395999956410378
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "answer": "DataFrame NSFG được minh họa có 13.593 bản ghi (hàng/rows) và 244 biến (cột/variables) [ee672fe7059e3b9d2b8e2207].",
+        "abstain": false,
+        "citations": [
+          "ee672fe7059e3b9d2b8e2207"
+        ]
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 340,
+        "candidatesTokenCount": 18,
+        "totalTokenCount": 358,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 340
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 841,
+        "candidatesTokenCount": 103,
+        "totalTokenCount": 944,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 841
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "DataFrame NSFG được minh họa có 13.593 bản ghi (hàng/rows) và 244 biến (cột/variables) [ee672fe7059e3b9d2b8e2207].",
+  "context": "[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.\n\n[ee672fe7059e3b9d2b8e2207 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\n6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.\n\n[328bb76367d79e6b875428e2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 59]\n3.5. DataFrame indexing 39\n3.5 DataFrame indexing",
+  "context_ids": [
+    "2302c0aa2fd4d36ec776cd0e",
+    "ee672fe7059e3b9d2b8e2207",
+    "328bb76367d79e6b875428e2"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 0.5626000056508929,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q06",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 8479.662799974903,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "DataFrame NSFG được minh họa có bao nhiêu bản ghi và biến?",
+      "config": "baseline",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:24:29.950425+00:00",
+      "status": "answered",
+      "citations": [
+        "ee672fe7059e3b9d2b8e2207"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "tfidf",
+          "query": "DataFrame NSFG records variables",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 27,
+              "text": "1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 7,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 902,
+                "end_char": 1158,
+                "chunking": "paragraph"
+              },
+              "id": "2302c0aa2fd4d36ec776cd0e",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.31709165331852884,
+              "method": "tfidf"
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 26,
+              "text": "6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 6,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 542,
+                "chunking": "paragraph"
+              },
+              "id": "ee672fe7059e3b9d2b8e2207",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.24800600721376542,
+              "method": "tfidf"
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 59,
+              "text": "3.5. DataFrame indexing 39\n3.5 DataFrame indexing",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "3",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 39,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 49,
+                "chunking": "paragraph"
+              },
+              "id": "328bb76367d79e6b875428e2",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.17236159569174223,
+              "method": "tfidf"
+            }
+          ],
+          "context": "[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.\n\n[ee672fe7059e3b9d2b8e2207 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\n6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.\n\n[328bb76367d79e6b875428e2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 59]\n3.5. DataFrame indexing 39\n3.5 DataFrame indexing",
+          "context_ids": [
+            "2302c0aa2fd4d36ec776cd0e",
+            "ee672fe7059e3b9d2b8e2207",
+            "328bb76367d79e6b875428e2"
+          ],
+          "elapsed_ms": 0.3209999995306134
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "answer": "DataFrame NSFG được minh họa có 13.593 bản ghi (hàng/rows) và 244 biến (cột/variables) [ee672fe7059e3b9d2b8e2207].",
+            "abstain": false,
+            "citations": [
+              "ee672fe7059e3b9d2b8e2207"
+            ]
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 340,
+            "candidatesTokenCount": 18,
+            "totalTokenCount": 358,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 340
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 841,
+            "candidatesTokenCount": 103,
+            "totalTokenCount": 944,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 841
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "DataFrame NSFG được minh họa có 13.593 bản ghi (hàng/rows) và 244 biến (cột/variables) [ee672fe7059e3b9d2b8e2207].",
+      "context": "[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.\n\n[ee672fe7059e3b9d2b8e2207 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\n6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.\n\n[328bb76367d79e6b875428e2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 59]\n3.5. DataFrame indexing 39\n3.5 DataFrame indexing",
+      "context_ids": [
+        "2302c0aa2fd4d36ec776cd0e",
+        "ee672fe7059e3b9d2b8e2207",
+        "328bb76367d79e6b875428e2"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 8479.662799974903,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q06",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

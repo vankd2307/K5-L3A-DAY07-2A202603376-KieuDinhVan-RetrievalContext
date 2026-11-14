@@ -1,0 +1,743 @@
+{
+  "question": "Vì sao việc chỉ lấy ý kiến người tham gia thảo luận về con đầu sinh muộn có thể gây selection bias?",
+  "config": "hybrid_context",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:12.678134+00:00",
+  "status": "answered",
+  "citations": [
+    "54f0c801e3aa64b436f8c68f"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "hybrid",
+      "query": "first born delayed childbearing selection bias respondents",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 22,
+          "text": "2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 2,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 895,
+            "chunking": "paragraph"
+          },
+          "id": "54f0c801e3aa64b436f8c68f",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03177805800756621,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 5,
+            "1": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 21,
+          "text": "“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 1,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 625,
+            "end_char": 1141,
+            "chunking": "paragraph"
+          },
+          "id": "ef334e7bae7044ad56c05991",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03128054740957967,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 2,
+            "1": 6
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 24,
+          "text": "4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 4,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 752,
+            "chunking": "paragraph"
+          },
+          "id": "8bca2eddf8d8ed85185da77e",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.030330882352941176,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 4,
+            "1": 8
+          }
+        },
+        {
+          "id": "c820376c2fde59d33d4d8bc8",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 23,
+          "text": "Since 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1375,
+            "language": "en",
+            "start_char": 483,
+            "printed_page": 3,
+            "extraction_status": "ok"
+          },
+          "score": 0.01639344262295082,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 55,
+          "text": "thinkplot.Bar(weeks, diffs)\nIn this code,weeksis the range of weeks;diffsis the difference between the\ntwo PMFs in percentage points. Figure 3.2 shows the result as a bar chart.\nThis figure makes the pattern clearer: first babies are less likely to be born\nin week 39, and somewhat more likely to be born in weeks 41 and 42.\nFor now we should hold this conclusion only tentatively. We used the same\ndataset to identify an apparent difference and then chose a visualization that\nmakes the difference apparent. We can’t be sure this effect is real; it might\nbe due to random variation. We’ll address this concern later.\n\n3.4 The class size paradox\n\nBefore we go on, I want to demonstrate one kind of computation you can do\nwith Pmf objects; I call this example the “class size paradox.”",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 35,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 744,
+            "end_char": 1528,
+            "chunking": "paragraph"
+          },
+          "id": "1bed87a28147c3fc49afaba2",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.016129032258064516,
+          "method": "hybrid",
+          "component_ranks": {
+            "1": 2
+          }
+        }
+      ],
+      "context": "[54f0c801e3aa64b436f8c68f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 22]\n2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.\n\n[ef334e7bae7044ad56c05991 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 21]\n“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,\n\n[8bca2eddf8d8ed85185da77e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\n4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.\n\n[c820376c2fde59d33d4d8bc8 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nSince 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.\n\n[1bed87a28147c3fc49afaba2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 55]\nthinkplot.Bar(weeks, diffs)\nIn this code,weeksis the range of weeks;diffsis the difference between the\ntwo PMFs in percentage points. Figure 3.2 shows the result as a bar chart.\nThis figure makes the pattern clearer: first babies are less likely to be born\nin week 39, and somewhat more likely to be born in weeks 41 and 42.\nFor now we should hold this conclusion only tentatively. We used the same\ndataset to identify an apparent difference and then chose a visualization that\nmakes the difference apparent. We can’t be sure this effect is real; it might\nbe due to random variation. We’ll address this concern later.\n\n3.4 The class size paradox\n\nBefore we go on, I want to demonstrate one kind of computation you can do\nwith Pmf objects; I call this example the “class size paradox.”",
+      "context_ids": [
+        "54f0c801e3aa64b436f8c68f",
+        "ef334e7bae7044ad56c05991",
+        "8bca2eddf8d8ed85185da77e",
+        "c820376c2fde59d33d4d8bc8",
+        "1bed87a28147c3fc49afaba2"
+      ],
+      "elapsed_ms": 17.56900001782924
+    },
+    {
+      "event": "search",
+      "tool": "hybrid",
+      "query": "\"Selection bias: People who join a discussion\"",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 62,
+          "text": "As a result, runners were spread out along the course with little relationship\nbetween speed and location. When I joined the race, the runners near me\nwere (pretty much) a random sample of the runners in the race.\n\nSo where does the bias come from? During my time on the course, the chance\nof overtaking a runner, or being overtaken, is proportional to the difference\nin our speeds. I am more likely to catch a slow runner, and more likely to be\ncaught by a fast runner. But runners at the same speed are unlikely to see\neach other.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 42,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 1579,
+            "end_char": 2111,
+            "chunking": "paragraph"
+          },
+          "id": "004c768971ba76dd4ebdb170",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.031544957774465976,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1,
+            "1": 6
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 22,
+          "text": "2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 2,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 895,
+            "chunking": "paragraph"
+          },
+          "id": "54f0c801e3aa64b436f8c68f",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.031544957774465976,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 6,
+            "1": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 62,
+          "text": "Exercise 3.4In most foot races, everyone starts at the same time. If you\nare a fast runner, you usually pass a lot of people at the beginning of the\nrace, but after a few miles everyone around you is going at the same speed.\n\nWhen I ran a long-distance (209 miles) relay race for the first time, I noticed\nan odd phenomenon: when I overtook another runner, I was usually much\nfaster, and when another runner overtook me, he was usually much faster.\n\nAt first I thought that the distribution of speeds might be bimodal; that is,\nthere were many slow runners and many fast runners, but few at my speed.\n\nThen I realized that I was the victim of a bias similar to the effect of class\nsize. The race was unusual in two ways: it used a staggered start, so teams\nstarted at different times; also, many teams included runners at different\nlevels of ability.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 42,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 727,
+            "end_char": 1577,
+            "chunking": "paragraph"
+          },
+          "id": "1e66e8dc3acff693d400f751",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.0315136476426799,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 2,
+            "1": 5
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 24,
+          "text": "4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 4,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 752,
+            "chunking": "paragraph"
+          },
+          "id": "8bca2eddf8d8ed85185da77e",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03125763125763126,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 5,
+            "1": 3
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 36,
+          "text": "16 Chapter 1. Exploratory data analysis\n\n•respondent: A person who responds to a survey.\n\n•sample: The subset of a population used to collect data.\n\n•representative: A sample is representative if every member of the\npopulation has the same chance of being in the sample.\n\n•oversampling: The technique of increasing the representation of a\nsub-population in order to avoid errors due to small sample sizes.\n\n•raw data: Values collected and recorded with little or no checking,\ncalculation or interpretation.\n\n•recode: A value that is generated by calculation and other logic ap-\nplied to raw data.\n\n•data cleaning: Processes that include validating data, identifying er-\nrors, translating between data types and representations, etc.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 16,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 732,
+            "chunking": "paragraph"
+          },
+          "id": "8903ab20f97949921bed50c5",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.028790389395194696,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 11,
+            "1": 8
+          }
+        }
+      ],
+      "context": "[004c768971ba76dd4ebdb170 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 62]\nAs a result, runners were spread out along the course with little relationship\nbetween speed and location. When I joined the race, the runners near me\nwere (pretty much) a random sample of the runners in the race.\n\nSo where does the bias come from? During my time on the course, the chance\nof overtaking a runner, or being overtaken, is proportional to the difference\nin our speeds. I am more likely to catch a slow runner, and more likely to be\ncaught by a fast runner. But runners at the same speed are unlikely to see\neach other.\n\n[54f0c801e3aa64b436f8c68f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 22]\n2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.\n\n[1e66e8dc3acff693d400f751 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 62]\nExercise 3.4In most foot races, everyone starts at the same time. If you\nare a fast runner, you usually pass a lot of people at the beginning of the\nrace, but after a few miles everyone around you is going at the same speed.\n\nWhen I ran a long-distance (209 miles) relay race for the first time, I noticed\nan odd phenomenon: when I overtook another runner, I was usually much\nfaster, and when another runner overtook me, he was usually much faster.\n\nAt first I thought that the distribution of speeds might be bimodal; that is,\nthere were many slow runners and many fast runners, but few at my speed.\n\nThen I realized that I was the victim of a bias similar to the effect of class\nsize. The race was unusual in two ways: it used a staggered start, so teams\nstarted at different times; also, many teams included runners at different\nlevels of ability.\n\n[8bca2eddf8d8ed85185da77e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\n4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.\n\n[8903ab20f97949921bed50c5 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 36]\n16 Chapter 1. Exploratory data analysis\n\n•respondent: A person who responds to a survey.\n\n•sample: The subset of a population used to collect data.\n\n•representative: A sample is representative if every member of the\npopulation has the same chance of being in the sample.\n\n•oversampling: The technique of increasing the representation of a\nsub-population in order to avoid errors due to small sample sizes.\n\n•raw data: Values collected and recorded with little or no checking,\ncalculation or interpretation.\n\n•recode: A value that is generated by calculation and other logic ap-\nplied to raw data.\n\n•data cleaning: Processes that include validating data, identifying er-\nrors, translating between data types and representations, etc.\n\n[ef334e7bae7044ad56c05991 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 21]\n“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,",
+      "context_ids": [
+        "004c768971ba76dd4ebdb170",
+        "54f0c801e3aa64b436f8c68f",
+        "1e66e8dc3acff693d400f751",
+        "8bca2eddf8d8ed85185da77e",
+        "8903ab20f97949921bed50c5",
+        "ef334e7bae7044ad56c05991"
+      ],
+      "elapsed_ms": 17.41749999928288
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "abstain": false,
+        "answer": "Việc chỉ lấy ý kiến của những người tham gia thảo luận về con đầu sinh muộn có thể gây ra hiện tượng thiên vị chọn mẫu (selection bias), bởi vì những người tham gia vào cuộc thảo luận đó có thể bị thu hút hoặc quan tâm đến vấn đề này chính vì con đầu lòng của họ sinh muộn [54f0c801e3aa64b436f8c68f]. Khi quá trình chọn lọc dữ liệu diễn ra theo cách này, nó sẽ làm lệch kết quả phân tích [54f0c801e3aa64b436f8c68f].",
+        "citations": [
+          "54f0c801e3aa64b436f8c68f"
+        ]
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 350,
+        "candidatesTokenCount": 21,
+        "totalTokenCount": 371,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 350
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1627,
+        "candidatesTokenCount": 23,
+        "totalTokenCount": 1650,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1627
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1789,
+        "candidatesTokenCount": 183,
+        "totalTokenCount": 1972,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1789
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Việc chỉ lấy ý kiến của những người tham gia thảo luận về con đầu sinh muộn có thể gây ra hiện tượng thiên vị chọn mẫu (selection bias), bởi vì những người tham gia vào cuộc thảo luận đó có thể bị thu hút hoặc quan tâm đến vấn đề này chính vì con đầu lòng của họ sinh muộn [54f0c801e3aa64b436f8c68f]. Khi quá trình chọn lọc dữ liệu diễn ra theo cách này, nó sẽ làm lệch kết quả phân tích [54f0c801e3aa64b436f8c68f].",
+  "context": "[004c768971ba76dd4ebdb170 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 62]\nAs a result, runners were spread out along the course with little relationship\nbetween speed and location. When I joined the race, the runners near me\nwere (pretty much) a random sample of the runners in the race.\n\nSo where does the bias come from? During my time on the course, the chance\nof overtaking a runner, or being overtaken, is proportional to the difference\nin our speeds. I am more likely to catch a slow runner, and more likely to be\ncaught by a fast runner. But runners at the same speed are unlikely to see\neach other.\n\n[54f0c801e3aa64b436f8c68f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 22]\n2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.\n\n[1e66e8dc3acff693d400f751 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 62]\nExercise 3.4In most foot races, everyone starts at the same time. If you\nare a fast runner, you usually pass a lot of people at the beginning of the\nrace, but after a few miles everyone around you is going at the same speed.\n\nWhen I ran a long-distance (209 miles) relay race for the first time, I noticed\nan odd phenomenon: when I overtook another runner, I was usually much\nfaster, and when another runner overtook me, he was usually much faster.\n\nAt first I thought that the distribution of speeds might be bimodal; that is,\nthere were many slow runners and many fast runners, but few at my speed.\n\nThen I realized that I was the victim of a bias similar to the effect of class\nsize. The race was unusual in two ways: it used a staggered start, so teams\nstarted at different times; also, many teams included runners at different\nlevels of ability.\n\n[8bca2eddf8d8ed85185da77e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\n4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.\n\n[8903ab20f97949921bed50c5 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 36]\n16 Chapter 1. Exploratory data analysis\n\n•respondent: A person who responds to a survey.\n\n•sample: The subset of a population used to collect data.\n\n•representative: A sample is representative if every member of the\npopulation has the same chance of being in the sample.\n\n•oversampling: The technique of increasing the representation of a\nsub-population in order to avoid errors due to small sample sizes.\n\n•raw data: Values collected and recorded with little or no checking,\ncalculation or interpretation.\n\n•recode: A value that is generated by calculation and other logic ap-\nplied to raw data.\n\n•data cleaning: Processes that include validating data, identifying er-\nrors, translating between data types and representations, etc.\n\n[ef334e7bae7044ad56c05991 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 21]\n“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,",
+  "context_ids": [
+    "004c768971ba76dd4ebdb170",
+    "54f0c801e3aa64b436f8c68f",
+    "1e66e8dc3acff693d400f751",
+    "8bca2eddf8d8ed85185da77e",
+    "8903ab20f97949921bed50c5",
+    "ef334e7bae7044ad56c05991"
+  ],
+  "search_count": 2,
+  "elapsed_ms": 35.398999985773116,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q01",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 13285.720099986065,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Vì sao việc chỉ lấy ý kiến người tham gia thảo luận về con đầu sinh muộn có thể gây selection bias?",
+      "config": "hybrid_context",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:34:22.653895+00:00",
+      "status": "answered",
+      "citations": [
+        "54f0c801e3aa64b436f8c68f"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "hybrid",
+          "query": "first born delayed childbearing selection bias respondents",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 22,
+              "text": "2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 2,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 895,
+                "chunking": "paragraph"
+              },
+              "id": "54f0c801e3aa64b436f8c68f",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03177805800756621,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 5,
+                "1": 1
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 21,
+              "text": "“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 1,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 625,
+                "end_char": 1141,
+                "chunking": "paragraph"
+              },
+              "id": "ef334e7bae7044ad56c05991",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03128054740957967,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 2,
+                "1": 6
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 24,
+              "text": "4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 4,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 752,
+                "chunking": "paragraph"
+              },
+              "id": "8bca2eddf8d8ed85185da77e",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.030330882352941176,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 4,
+                "1": 8
+              }
+            },
+            {
+              "id": "c820376c2fde59d33d4d8bc8",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 23,
+              "text": "Since 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1375,
+                "language": "en",
+                "start_char": 483,
+                "printed_page": 3,
+                "extraction_status": "ok"
+              },
+              "score": 0.01639344262295082,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 1
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 55,
+              "text": "thinkplot.Bar(weeks, diffs)\nIn this code,weeksis the range of weeks;diffsis the difference between the\ntwo PMFs in percentage points. Figure 3.2 shows the result as a bar chart.\nThis figure makes the pattern clearer: first babies are less likely to be born\nin week 39, and somewhat more likely to be born in weeks 41 and 42.\nFor now we should hold this conclusion only tentatively. We used the same\ndataset to identify an apparent difference and then chose a visualization that\nmakes the difference apparent. We can’t be sure this effect is real; it might\nbe due to random variation. We’ll address this concern later.\n\n3.4 The class size paradox\n\nBefore we go on, I want to demonstrate one kind of computation you can do\nwith Pmf objects; I call this example the “class size paradox.”",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "3",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 35,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 744,
+                "end_char": 1528,
+                "chunking": "paragraph"
+              },
+              "id": "1bed87a28147c3fc49afaba2",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.016129032258064516,
+              "method": "hybrid",
+              "component_ranks": {
+                "1": 2
+              }
+            }
+          ],
+          "context": "[54f0c801e3aa64b436f8c68f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 22]\n2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.\n\n[ef334e7bae7044ad56c05991 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 21]\n“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,\n\n[8bca2eddf8d8ed85185da77e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\n4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.\n\n[c820376c2fde59d33d4d8bc8 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nSince 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.\n\n[1bed87a28147c3fc49afaba2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 55]\nthinkplot.Bar(weeks, diffs)\nIn this code,weeksis the range of weeks;diffsis the difference between the\ntwo PMFs in percentage points. Figure 3.2 shows the result as a bar chart.\nThis figure makes the pattern clearer: first babies are less likely to be born\nin week 39, and somewhat more likely to be born in weeks 41 and 42.\nFor now we should hold this conclusion only tentatively. We used the same\ndataset to identify an apparent difference and then chose a visualization that\nmakes the difference apparent. We can’t be sure this effect is real; it might\nbe due to random variation. We’ll address this concern later.\n\n3.4 The class size paradox\n\nBefore we go on, I want to demonstrate one kind of computation you can do\nwith Pmf objects; I call this example the “class size paradox.”",
+          "context_ids": [
+            "54f0c801e3aa64b436f8c68f",
+            "ef334e7bae7044ad56c05991",
+            "8bca2eddf8d8ed85185da77e",
+            "c820376c2fde59d33d4d8bc8",
+            "1bed87a28147c3fc49afaba2"
+          ],
+          "elapsed_ms": 17.542499990668148
+        },
+        {
+          "event": "search",
+          "tool": "hybrid",
+          "query": "\"Selection bias: People who join a discussion\"",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 62,
+              "text": "As a result, runners were spread out along the course with little relationship\nbetween speed and location. When I joined the race, the runners near me\nwere (pretty much) a random sample of the runners in the race.\n\nSo where does the bias come from? During my time on the course, the chance\nof overtaking a runner, or being overtaken, is proportional to the difference\nin our speeds. I am more likely to catch a slow runner, and more likely to be\ncaught by a fast runner. But runners at the same speed are unlikely to see\neach other.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "3",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 42,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 1579,
+                "end_char": 2111,
+                "chunking": "paragraph"
+              },
+              "id": "004c768971ba76dd4ebdb170",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.031544957774465976,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 1,
+                "1": 6
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 22,
+              "text": "2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 2,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 895,
+                "chunking": "paragraph"
+              },
+              "id": "54f0c801e3aa64b436f8c68f",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.031544957774465976,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 6,
+                "1": 1
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 62,
+              "text": "Exercise 3.4In most foot races, everyone starts at the same time. If you\nare a fast runner, you usually pass a lot of people at the beginning of the\nrace, but after a few miles everyone around you is going at the same speed.\n\nWhen I ran a long-distance (209 miles) relay race for the first time, I noticed\nan odd phenomenon: when I overtook another runner, I was usually much\nfaster, and when another runner overtook me, he was usually much faster.\n\nAt first I thought that the distribution of speeds might be bimodal; that is,\nthere were many slow runners and many fast runners, but few at my speed.\n\nThen I realized that I was the victim of a bias similar to the effect of class\nsize. The race was unusual in two ways: it used a staggered start, so teams\nstarted at different times; also, many teams included runners at different\nlevels of ability.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "3",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 42,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 727,
+                "end_char": 1577,
+                "chunking": "paragraph"
+              },
+              "id": "1e66e8dc3acff693d400f751",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.0315136476426799,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 2,
+                "1": 5
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 24,
+              "text": "4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 4,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 752,
+                "chunking": "paragraph"
+              },
+              "id": "8bca2eddf8d8ed85185da77e",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03125763125763126,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 5,
+                "1": 3
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 36,
+              "text": "16 Chapter 1. Exploratory data analysis\n\n•respondent: A person who responds to a survey.\n\n•sample: The subset of a population used to collect data.\n\n•representative: A sample is representative if every member of the\npopulation has the same chance of being in the sample.\n\n•oversampling: The technique of increasing the representation of a\nsub-population in order to avoid errors due to small sample sizes.\n\n•raw data: Values collected and recorded with little or no checking,\ncalculation or interpretation.\n\n•recode: A value that is generated by calculation and other logic ap-\nplied to raw data.\n\n•data cleaning: Processes that include validating data, identifying er-\nrors, translating between data types and representations, etc.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 16,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 732,
+                "chunking": "paragraph"
+              },
+              "id": "8903ab20f97949921bed50c5",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.028790389395194696,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 11,
+                "1": 8
+              }
+            }
+          ],
+          "context": "[004c768971ba76dd4ebdb170 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 62]\nAs a result, runners were spread out along the course with little relationship\nbetween speed and location. When I joined the race, the runners near me\nwere (pretty much) a random sample of the runners in the race.\n\nSo where does the bias come from? During my time on the course, the chance\nof overtaking a runner, or being overtaken, is proportional to the difference\nin our speeds. I am more likely to catch a slow runner, and more likely to be\ncaught by a fast runner. But runners at the same speed are unlikely to see\neach other.\n\n[54f0c801e3aa64b436f8c68f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 22]\n2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.\n\n[1e66e8dc3acff693d400f751 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 62]\nExercise 3.4In most foot races, everyone starts at the same time. If you\nare a fast runner, you usually pass a lot of people at the beginning of the\nrace, but after a few miles everyone around you is going at the same speed.\n\nWhen I ran a long-distance (209 miles) relay race for the first time, I noticed\nan odd phenomenon: when I overtook another runner, I was usually much\nfaster, and when another runner overtook me, he was usually much faster.\n\nAt first I thought that the distribution of speeds might be bimodal; that is,\nthere were many slow runners and many fast runners, but few at my speed.\n\nThen I realized that I was the victim of a bias similar to the effect of class\nsize. The race was unusual in two ways: it used a staggered start, so teams\nstarted at different times; also, many teams included runners at different\nlevels of ability.\n\n[8bca2eddf8d8ed85185da77e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\n4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.\n\n[8903ab20f97949921bed50c5 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 36]\n16 Chapter 1. Exploratory data analysis\n\n•respondent: A person who responds to a survey.\n\n•sample: The subset of a population used to collect data.\n\n•representative: A sample is representative if every member of the\npopulation has the same chance of being in the sample.\n\n•oversampling: The technique of increasing the representation of a\nsub-population in order to avoid errors due to small sample sizes.\n\n•raw data: Values collected and recorded with little or no checking,\ncalculation or interpretation.\n\n•recode: A value that is generated by calculation and other logic ap-\nplied to raw data.\n\n•data cleaning: Processes that include validating data, identifying er-\nrors, translating between data types and representations, etc.\n\n[ef334e7bae7044ad56c05991 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 21]\n“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,",
+          "context_ids": [
+            "004c768971ba76dd4ebdb170",
+            "54f0c801e3aa64b436f8c68f",
+            "1e66e8dc3acff693d400f751",
+            "8bca2eddf8d8ed85185da77e",
+            "8903ab20f97949921bed50c5",
+            "ef334e7bae7044ad56c05991"
+          ],
+          "elapsed_ms": 3064.1422000189777
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "abstain": false,
+            "answer": "Việc chỉ lấy ý kiến của những người tham gia thảo luận về con đầu sinh muộn có thể gây ra hiện tượng thiên vị chọn mẫu (selection bias), bởi vì những người tham gia vào cuộc thảo luận đó có thể bị thu hút hoặc quan tâm đến vấn đề này chính vì con đầu lòng của họ sinh muộn [54f0c801e3aa64b436f8c68f]. Khi quá trình chọn lọc dữ liệu diễn ra theo cách này, nó sẽ làm lệch kết quả phân tích [54f0c801e3aa64b436f8c68f].",
+            "citations": [
+              "54f0c801e3aa64b436f8c68f"
+            ]
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 350,
+            "candidatesTokenCount": 21,
+            "totalTokenCount": 371,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 350
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1627,
+            "candidatesTokenCount": 23,
+            "totalTokenCount": 1650,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1627
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1789,
+            "candidatesTokenCount": 183,
+            "totalTokenCount": 1972,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1789
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Việc chỉ lấy ý kiến của những người tham gia thảo luận về con đầu sinh muộn có thể gây ra hiện tượng thiên vị chọn mẫu (selection bias), bởi vì những người tham gia vào cuộc thảo luận đó có thể bị thu hút hoặc quan tâm đến vấn đề này chính vì con đầu lòng của họ sinh muộn [54f0c801e3aa64b436f8c68f]. Khi quá trình chọn lọc dữ liệu diễn ra theo cách này, nó sẽ làm lệch kết quả phân tích [54f0c801e3aa64b436f8c68f].",
+      "context": "[004c768971ba76dd4ebdb170 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 62]\nAs a result, runners were spread out along the course with little relationship\nbetween speed and location. When I joined the race, the runners near me\nwere (pretty much) a random sample of the runners in the race.\n\nSo where does the bias come from? During my time on the course, the chance\nof overtaking a runner, or being overtaken, is proportional to the difference\nin our speeds. I am more likely to catch a slow runner, and more likely to be\ncaught by a fast runner. But runners at the same speed are unlikely to see\neach other.\n\n[54f0c801e3aa64b436f8c68f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 22]\n2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.\n\n[1e66e8dc3acff693d400f751 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 62]\nExercise 3.4In most foot races, everyone starts at the same time. If you\nare a fast runner, you usually pass a lot of people at the beginning of the\nrace, but after a few miles everyone around you is going at the same speed.\n\nWhen I ran a long-distance (209 miles) relay race for the first time, I noticed\nan odd phenomenon: when I overtook another runner, I was usually much\nfaster, and when another runner overtook me, he was usually much faster.\n\nAt first I thought that the distribution of speeds might be bimodal; that is,\nthere were many slow runners and many fast runners, but few at my speed.\n\nThen I realized that I was the victim of a bias similar to the effect of class\nsize. The race was unusual in two ways: it used a staggered start, so teams\nstarted at different times; also, many teams included runners at different\nlevels of ability.\n\n[8bca2eddf8d8ed85185da77e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\n4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.\n\n[8903ab20f97949921bed50c5 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 36]\n16 Chapter 1. Exploratory data analysis\n\n•respondent: A person who responds to a survey.\n\n•sample: The subset of a population used to collect data.\n\n•representative: A sample is representative if every member of the\npopulation has the same chance of being in the sample.\n\n•oversampling: The technique of increasing the representation of a\nsub-population in order to avoid errors due to small sample sizes.\n\n•raw data: Values collected and recorded with little or no checking,\ncalculation or interpretation.\n\n•recode: A value that is generated by calculation and other logic ap-\nplied to raw data.\n\n•data cleaning: Processes that include validating data, identifying er-\nrors, translating between data types and representations, etc.\n\n[ef334e7bae7044ad56c05991 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 21]\n“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,",
+      "context_ids": [
+        "004c768971ba76dd4ebdb170",
+        "54f0c801e3aa64b436f8c68f",
+        "1e66e8dc3acff693d400f751",
+        "8bca2eddf8d8ed85185da77e",
+        "8903ab20f97949921bed50c5",
+        "ef334e7bae7044ad56c05991"
+      ],
+      "search_count": 2,
+      "elapsed_ms": 13285.720099986065,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q01",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

@@ -1,0 +1,389 @@
+{
+  "question": "Tác giả phân biệt mean và average như thế nào?",
+  "config": "dense_context",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:12.551914+00:00",
+  "status": "answered",
+  "citations": [
+    "7b3b142d5d2b25996d5b4bbb"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "dense",
+      "query": "mean average Think Stats",
+      "filter": {},
+      "results": [
+        {
+          "id": "4321b3f26f9d26c0b20e8a04",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 46,
+          "text": "26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 791,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 26,
+            "extraction_status": "ok"
+          },
+          "score": 0.7461833064337604,
+          "method": "dense"
+        },
+        {
+          "id": "971ea28ecfc7e695419ea19c",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 57,
+          "text": "3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "3",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 777,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 37,
+            "extraction_status": "ok"
+          },
+          "score": 0.7447795423996735,
+          "method": "dense"
+        },
+        {
+          "id": "7b3b142d5d2b25996d5b4bbb",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 45,
+          "text": "Statistics designed to answer these questions are calledsummary statistics.\nBy far the most common summary statistic is themean, which is meant to\ndescribe the central tendency of the distribution.\nIf you have a sample ofnvalues,x i, the mean, ̄x, is the sum of the values\ndivided by the number of values; in other words\n̄x= 1X xi\nn i\n\nThe words “mean” and “average” are sometimes used interchangeably, but I\nmake this distinction:\n\n•The “mean” of a sample is the summary statistic computed with the\nprevious formula.\n\n•An “average” is one of several summary statistics you might choose to\ndescribe a central tendency.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1406,
+            "language": "en",
+            "start_char": 788,
+            "printed_page": 25,
+            "extraction_status": "ok"
+          },
+          "score": 0.741181090999778,
+          "method": "dense"
+        },
+        {
+          "id": "d3270a2b867639b7ed5e52b2",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 46,
+          "text": "If there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1638,
+            "language": "en",
+            "start_char": 793,
+            "printed_page": 26,
+            "extraction_status": "ok"
+          },
+          "score": 0.7057824520533574,
+          "method": "dense"
+        },
+        {
+          "id": "d7d2aae035763a16fdd52f2a",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 45,
+          "text": "2.7. Summarizing distributions 25\n2.7 Summarizing distributions\n\nA histogram is a complete description of the distribution of a sample; that is,\ngiven a histogram, we could reconstruct the values in the sample (although\nnot their order).\nIf the details of the distribution are important, it might be necessary to\npresent a histogram. But often we want to summarize the distribution with\na few descriptive statistics.\nSome of the characteristics we might want to report are:\n\n•central tendency: Do the values tend to cluster around a particular\npoint?\n\n•modes: Is there more than one cluster?\n\n•spread: How much variability is there in the values?\n\n•tails: How quickly do the probabilities drop off as we move away from\nthe modes?\n\n•outliers: Are there extreme values far from the modes?",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 786,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 25,
+            "extraction_status": "ok"
+          },
+          "score": 0.7018185791101624,
+          "method": "dense"
+        }
+      ],
+      "context": "[4321b3f26f9d26c0b20e8a04 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\n26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance\n\n[971ea28ecfc7e695419ea19c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\n3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)\n\n[7b3b142d5d2b25996d5b4bbb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 45]\nStatistics designed to answer these questions are calledsummary statistics.\nBy far the most common summary statistic is themean, which is meant to\ndescribe the central tendency of the distribution.\nIf you have a sample ofnvalues,x i, the mean, ̄x, is the sum of the values\ndivided by the number of values; in other words\n̄x= 1X xi\nn i\n\nThe words “mean” and “average” are sometimes used interchangeably, but I\nmake this distinction:\n\n•The “mean” of a sample is the summary statistic computed with the\nprevious formula.\n\n•An “average” is one of several summary statistics you might choose to\ndescribe a central tendency.\n\n[d3270a2b867639b7ed5e52b2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\nIf there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()\n\n[d7d2aae035763a16fdd52f2a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 45]\n2.7. Summarizing distributions 25\n2.7 Summarizing distributions\n\nA histogram is a complete description of the distribution of a sample; that is,\ngiven a histogram, we could reconstruct the values in the sample (although\nnot their order).\nIf the details of the distribution are important, it might be necessary to\npresent a histogram. But often we want to summarize the distribution with\na few descriptive statistics.\nSome of the characteristics we might want to report are:\n\n•central tendency: Do the values tend to cluster around a particular\npoint?\n\n•modes: Is there more than one cluster?\n\n•spread: How much variability is there in the values?\n\n•tails: How quickly do the probabilities drop off as we move away from\nthe modes?\n\n•outliers: Are there extreme values far from the modes?",
+      "context_ids": [
+        "4321b3f26f9d26c0b20e8a04",
+        "971ea28ecfc7e695419ea19c",
+        "7b3b142d5d2b25996d5b4bbb",
+        "d3270a2b867639b7ed5e52b2",
+        "d7d2aae035763a16fdd52f2a"
+      ],
+      "elapsed_ms": 28.889100009109825
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "abstain": false,
+        "citations": [
+          "7b3b142d5d2b25996d5b4bbb"
+        ],
+        "answer": "Tác giả phân biệt hai thuật ngữ này như sau [7b3b142d5d2b25996d5b4bbb]:\n- **Mean (Số trung bình):** Là một thống kê tóm tắt (summary statistic) cụ thể được tính bằng tổng các giá trị chia cho số lượng giá trị (theo công thức tính $\\bar{x}$) [7b3b142d5d2b25996d5b4bbb].\n- **Average (Giá trị trung bình):** Là một thuật ngữ tổng quát hơn, chỉ một trong số các thống kê tóm tắt khác nhau mà bạn có thể lựa chọn để mô tả xu hướng trung tâm (central tendency) của tập dữ liệu [7b3b142d5d2b25996d5b4bbb]."
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 338,
+        "candidatesTokenCount": 17,
+        "totalTokenCount": 355,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 338
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1777,
+        "candidatesTokenCount": 226,
+        "totalTokenCount": 2003,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1777
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Tác giả phân biệt hai thuật ngữ này như sau [7b3b142d5d2b25996d5b4bbb]:\n- **Mean (Số trung bình):** Là một thống kê tóm tắt (summary statistic) cụ thể được tính bằng tổng các giá trị chia cho số lượng giá trị (theo công thức tính $\\bar{x}$) [7b3b142d5d2b25996d5b4bbb].\n- **Average (Giá trị trung bình):** Là một thuật ngữ tổng quát hơn, chỉ một trong số các thống kê tóm tắt khác nhau mà bạn có thể lựa chọn để mô tả xu hướng trung tâm (central tendency) của tập dữ liệu [7b3b142d5d2b25996d5b4bbb].",
+  "context": "[4321b3f26f9d26c0b20e8a04 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\n26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance\n\n[971ea28ecfc7e695419ea19c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\n3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)\n\n[7b3b142d5d2b25996d5b4bbb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 45]\nStatistics designed to answer these questions are calledsummary statistics.\nBy far the most common summary statistic is themean, which is meant to\ndescribe the central tendency of the distribution.\nIf you have a sample ofnvalues,x i, the mean, ̄x, is the sum of the values\ndivided by the number of values; in other words\n̄x= 1X xi\nn i\n\nThe words “mean” and “average” are sometimes used interchangeably, but I\nmake this distinction:\n\n•The “mean” of a sample is the summary statistic computed with the\nprevious formula.\n\n•An “average” is one of several summary statistics you might choose to\ndescribe a central tendency.\n\n[d3270a2b867639b7ed5e52b2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\nIf there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()\n\n[d7d2aae035763a16fdd52f2a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 45]\n2.7. Summarizing distributions 25\n2.7 Summarizing distributions\n\nA histogram is a complete description of the distribution of a sample; that is,\ngiven a histogram, we could reconstruct the values in the sample (although\nnot their order).\nIf the details of the distribution are important, it might be necessary to\npresent a histogram. But often we want to summarize the distribution with\na few descriptive statistics.\nSome of the characteristics we might want to report are:\n\n•central tendency: Do the values tend to cluster around a particular\npoint?\n\n•modes: Is there more than one cluster?\n\n•spread: How much variability is there in the values?\n\n•tails: How quickly do the probabilities drop off as we move away from\nthe modes?\n\n•outliers: Are there extreme values far from the modes?",
+  "context_ids": [
+    "4321b3f26f9d26c0b20e8a04",
+    "971ea28ecfc7e695419ea19c",
+    "7b3b142d5d2b25996d5b4bbb",
+    "d3270a2b867639b7ed5e52b2",
+    "d7d2aae035763a16fdd52f2a"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 29.400500003248453,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q14",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 5399.888400017517,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Tác giả phân biệt mean và average như thế nào?",
+      "config": "dense_context",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:34:05.839365+00:00",
+      "status": "answered",
+      "citations": [
+        "7b3b142d5d2b25996d5b4bbb"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "dense",
+          "query": "mean average Think Stats",
+          "filter": {},
+          "results": [
+            {
+              "id": "4321b3f26f9d26c0b20e8a04",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 46,
+              "text": "26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 791,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 26,
+                "extraction_status": "ok"
+              },
+              "score": 0.7461833064337604,
+              "method": "dense"
+            },
+            {
+              "id": "971ea28ecfc7e695419ea19c",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 57,
+              "text": "3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "3",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 777,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 37,
+                "extraction_status": "ok"
+              },
+              "score": 0.7447795423996735,
+              "method": "dense"
+            },
+            {
+              "id": "7b3b142d5d2b25996d5b4bbb",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 45,
+              "text": "Statistics designed to answer these questions are calledsummary statistics.\nBy far the most common summary statistic is themean, which is meant to\ndescribe the central tendency of the distribution.\nIf you have a sample ofnvalues,x i, the mean, ̄x, is the sum of the values\ndivided by the number of values; in other words\n̄x= 1X xi\nn i\n\nThe words “mean” and “average” are sometimes used interchangeably, but I\nmake this distinction:\n\n•The “mean” of a sample is the summary statistic computed with the\nprevious formula.\n\n•An “average” is one of several summary statistics you might choose to\ndescribe a central tendency.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1406,
+                "language": "en",
+                "start_char": 788,
+                "printed_page": 25,
+                "extraction_status": "ok"
+              },
+              "score": 0.741181090999778,
+              "method": "dense"
+            },
+            {
+              "id": "d3270a2b867639b7ed5e52b2",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 46,
+              "text": "If there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1638,
+                "language": "en",
+                "start_char": 793,
+                "printed_page": 26,
+                "extraction_status": "ok"
+              },
+              "score": 0.7057824520533574,
+              "method": "dense"
+            },
+            {
+              "id": "d7d2aae035763a16fdd52f2a",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 45,
+              "text": "2.7. Summarizing distributions 25\n2.7 Summarizing distributions\n\nA histogram is a complete description of the distribution of a sample; that is,\ngiven a histogram, we could reconstruct the values in the sample (although\nnot their order).\nIf the details of the distribution are important, it might be necessary to\npresent a histogram. But often we want to summarize the distribution with\na few descriptive statistics.\nSome of the characteristics we might want to report are:\n\n•central tendency: Do the values tend to cluster around a particular\npoint?\n\n•modes: Is there more than one cluster?\n\n•spread: How much variability is there in the values?\n\n•tails: How quickly do the probabilities drop off as we move away from\nthe modes?\n\n•outliers: Are there extreme values far from the modes?",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 786,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 25,
+                "extraction_status": "ok"
+              },
+              "score": 0.7018185791101624,
+              "method": "dense"
+            }
+          ],
+          "context": "[4321b3f26f9d26c0b20e8a04 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\n26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance\n\n[971ea28ecfc7e695419ea19c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\n3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)\n\n[7b3b142d5d2b25996d5b4bbb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 45]\nStatistics designed to answer these questions are calledsummary statistics.\nBy far the most common summary statistic is themean, which is meant to\ndescribe the central tendency of the distribution.\nIf you have a sample ofnvalues,x i, the mean, ̄x, is the sum of the values\ndivided by the number of values; in other words\n̄x= 1X xi\nn i\n\nThe words “mean” and “average” are sometimes used interchangeably, but I\nmake this distinction:\n\n•The “mean” of a sample is the summary statistic computed with the\nprevious formula.\n\n•An “average” is one of several summary statistics you might choose to\ndescribe a central tendency.\n\n[d3270a2b867639b7ed5e52b2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\nIf there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()\n\n[d7d2aae035763a16fdd52f2a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 45]\n2.7. Summarizing distributions 25\n2.7 Summarizing distributions\n\nA histogram is a complete description of the distribution of a sample; that is,\ngiven a histogram, we could reconstruct the values in the sample (although\nnot their order).\nIf the details of the distribution are important, it might be necessary to\npresent a histogram. But often we want to summarize the distribution with\na few descriptive statistics.\nSome of the characteristics we might want to report are:\n\n•central tendency: Do the values tend to cluster around a particular\npoint?\n\n•modes: Is there more than one cluster?\n\n•spread: How much variability is there in the values?\n\n•tails: How quickly do the probabilities drop off as we move away from\nthe modes?\n\n•outliers: Are there extreme values far from the modes?",
+          "context_ids": [
+            "4321b3f26f9d26c0b20e8a04",
+            "971ea28ecfc7e695419ea19c",
+            "7b3b142d5d2b25996d5b4bbb",
+            "d3270a2b867639b7ed5e52b2",
+            "d7d2aae035763a16fdd52f2a"
+          ],
+          "elapsed_ms": 17.1198999742046
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "abstain": false,
+            "citations": [
+              "7b3b142d5d2b25996d5b4bbb"
+            ],
+            "answer": "Tác giả phân biệt hai thuật ngữ này như sau [7b3b142d5d2b25996d5b4bbb]:\n- **Mean (Số trung bình):** Là một thống kê tóm tắt (summary statistic) cụ thể được tính bằng tổng các giá trị chia cho số lượng giá trị (theo công thức tính $\\bar{x}$) [7b3b142d5d2b25996d5b4bbb].\n- **Average (Giá trị trung bình):** Là một thuật ngữ tổng quát hơn, chỉ một trong số các thống kê tóm tắt khác nhau mà bạn có thể lựa chọn để mô tả xu hướng trung tâm (central tendency) của tập dữ liệu [7b3b142d5d2b25996d5b4bbb]."
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 338,
+            "candidatesTokenCount": 17,
+            "totalTokenCount": 355,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 338
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1777,
+            "candidatesTokenCount": 226,
+            "totalTokenCount": 2003,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1777
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Tác giả phân biệt hai thuật ngữ này như sau [7b3b142d5d2b25996d5b4bbb]:\n- **Mean (Số trung bình):** Là một thống kê tóm tắt (summary statistic) cụ thể được tính bằng tổng các giá trị chia cho số lượng giá trị (theo công thức tính $\\bar{x}$) [7b3b142d5d2b25996d5b4bbb].\n- **Average (Giá trị trung bình):** Là một thuật ngữ tổng quát hơn, chỉ một trong số các thống kê tóm tắt khác nhau mà bạn có thể lựa chọn để mô tả xu hướng trung tâm (central tendency) của tập dữ liệu [7b3b142d5d2b25996d5b4bbb].",
+      "context": "[4321b3f26f9d26c0b20e8a04 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\n26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance\n\n[971ea28ecfc7e695419ea19c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\n3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)\n\n[7b3b142d5d2b25996d5b4bbb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 45]\nStatistics designed to answer these questions are calledsummary statistics.\nBy far the most common summary statistic is themean, which is meant to\ndescribe the central tendency of the distribution.\nIf you have a sample ofnvalues,x i, the mean, ̄x, is the sum of the values\ndivided by the number of values; in other words\n̄x= 1X xi\nn i\n\nThe words “mean” and “average” are sometimes used interchangeably, but I\nmake this distinction:\n\n•The “mean” of a sample is the summary statistic computed with the\nprevious formula.\n\n•An “average” is one of several summary statistics you might choose to\ndescribe a central tendency.\n\n[d3270a2b867639b7ed5e52b2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\nIf there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()\n\n[d7d2aae035763a16fdd52f2a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 45]\n2.7. Summarizing distributions 25\n2.7 Summarizing distributions\n\nA histogram is a complete description of the distribution of a sample; that is,\ngiven a histogram, we could reconstruct the values in the sample (although\nnot their order).\nIf the details of the distribution are important, it might be necessary to\npresent a histogram. But often we want to summarize the distribution with\na few descriptive statistics.\nSome of the characteristics we might want to report are:\n\n•central tendency: Do the values tend to cluster around a particular\npoint?\n\n•modes: Is there more than one cluster?\n\n•spread: How much variability is there in the values?\n\n•tails: How quickly do the probabilities drop off as we move away from\nthe modes?\n\n•outliers: Are there extreme values far from the modes?",
+      "context_ids": [
+        "4321b3f26f9d26c0b20e8a04",
+        "971ea28ecfc7e695419ea19c",
+        "7b3b142d5d2b25996d5b4bbb",
+        "d3270a2b867639b7ed5e52b2",
+        "d7d2aae035763a16fdd52f2a"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 5399.888400017517,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q14",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

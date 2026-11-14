@@ -1,0 +1,757 @@
+{
+  "question": "Nếu cân nặng chứa mã 97, 98 hoặc 99 thì phải xử lý thế nào để tránh kết quả sai?",
+  "config": "hybrid_context",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:12.930489+00:00",
+  "status": "answered",
+  "citations": [
+    "50718039f1ba18056fe56194",
+    "378c9ef8a37471ebdc49dd13",
+    "49643149477ca2ae881fb71f"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "hybrid",
+      "query": "weight 97 98 99 Think Stats",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 28,
+          "text": "8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 8,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 837,
+            "chunking": "paragraph"
+          },
+          "id": "f5d4f52297470390e5b98ec6",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03076923076923077,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 5,
+            "1": 5
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 29,
+          "text": "df['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 9,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 298,
+            "end_char": 1193,
+            "chunking": "paragraph"
+          },
+          "id": "50718039f1ba18056fe56194",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03047794966520434,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 11,
+            "1": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 40,
+          "text": "20 Chapter 2. Distributions\n\nFigure 2.2: Histogram of the ounce part of birth weight.\n\nlooking at histograms.\n\nIn Section 1.6 we transformedagepregfrom centiyears to years, and combinedbirthwgt_lbandbirthwgt_ozinto a single quantity,totalwgt_lb.\nIn this section I use these variables to demonstrate some features of histograms.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 20,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 327,
+            "chunking": "paragraph"
+          },
+          "id": "78bd414bbf059a60f13c7286",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.030117753623188408,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 9,
+            "1": 4
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 39,
+          "text": "2.3. Plotting histograms 19\n\nFigure 2.1: Histogram of the pound part of birth weight.\n2.3 Plotting histograms\n\nFor this book I wrote a module calledthinkplot.pythat provides functions\nfor plotting Hists and other objects defined inthinkstats2.py. It is based\nonpyplot, which is part of thematplotlibpackage. See Section 0.2 for\ninformation about installingmatplotlib.\nTo plothistwiththinkplot, try this:\n>>> import thinkplot\n>>> thinkplot.Hist(hist)\n>>> thinkplot.Show(xlabel='value', ylabel='frequency')\nYou can read the documentation forthinkplotathttp://greenteapress.\ncom/thinkstats2/thinkplot.html.\n\n2.4 NSFG variables",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 19,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 623,
+            "chunking": "paragraph"
+          },
+          "id": "a8c59ca57b6a7e806bc2a5e9",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03007688828584351,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 6,
+            "1": 7
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 46,
+          "text": "26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 26,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 791,
+            "chunking": "paragraph"
+          },
+          "id": "4321b3f26f9d26c0b20e8a04",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.027777777777777776,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 12,
+            "1": 12
+          }
+        }
+      ],
+      "context": "[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.\n\n[50718039f1ba18056fe56194 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /\n\n[78bd414bbf059a60f13c7286 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 40]\n20 Chapter 2. Distributions\n\nFigure 2.2: Histogram of the ounce part of birth weight.\n\nlooking at histograms.\n\nIn Section 1.6 we transformedagepregfrom centiyears to years, and combinedbirthwgt_lbandbirthwgt_ozinto a single quantity,totalwgt_lb.\nIn this section I use these variables to demonstrate some features of histograms.\n\n[a8c59ca57b6a7e806bc2a5e9 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\n2.3. Plotting histograms 19\n\nFigure 2.1: Histogram of the pound part of birth weight.\n2.3 Plotting histograms\n\nFor this book I wrote a module calledthinkplot.pythat provides functions\nfor plotting Hists and other objects defined inthinkstats2.py. It is based\nonpyplot, which is part of thematplotlibpackage. See Section 0.2 for\ninformation about installingmatplotlib.\nTo plothistwiththinkplot, try this:\n>>> import thinkplot\n>>> thinkplot.Hist(hist)\n>>> thinkplot.Show(xlabel='value', ylabel='frequency')\nYou can read the documentation forthinkplotathttp://greenteapress.\ncom/thinkstats2/thinkplot.html.\n\n2.4 NSFG variables\n\n[4321b3f26f9d26c0b20e8a04 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\n26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+      "context_ids": [
+        "f5d4f52297470390e5b98ec6",
+        "50718039f1ba18056fe56194",
+        "78bd414bbf059a60f13c7286",
+        "a8c59ca57b6a7e806bc2a5e9",
+        "4321b3f26f9d26c0b20e8a04"
+      ],
+      "elapsed_ms": 17.553500016219914
+    },
+    {
+      "event": "search",
+      "tool": "hybrid",
+      "query": "replace special codes np.nan weight thinkstats",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 29,
+          "text": "df['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 9,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 298,
+            "end_char": 1193,
+            "chunking": "paragraph"
+          },
+          "id": "50718039f1ba18056fe56194",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03252247488101534,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1,
+            "1": 2
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 29,
+          "text": "1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 9,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 296,
+            "chunking": "paragraph"
+          },
+          "id": "378c9ef8a37471ebdc49dd13",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.032018442622950824,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 4,
+            "1": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 29,
+          "text": "100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 9,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 1194,
+            "end_char": 1487,
+            "chunking": "paragraph"
+          },
+          "id": "49643149477ca2ae881fb71f",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.0315136476426799,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 2,
+            "1": 5
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 32,
+          "text": "12 Chapter 1. Exploratory data analysis\n\nThe counts for 6, 7, and 8 pounds check out, and if you add up the counts\nfor 0-5 and 9-95, they check out, too. But if you look more closely, you will\nnotice one value that has to be an error, a 51 pound baby!\n\nTo deal with this error, I added a line toCleanFemPreg:\ndf.loc[df.birthwgt_lb > 20, 'birthwgt_lb'] = np.nan\nThis statement replaces invalid values withnp.nan. The attributelocprovides several ways to select rows and columns from a DataFrame. In this\nexample, the first expression in brackets is the row indexer; the second expression selects the column.\n\nThe expressiondf.birthwgt_lb > 20yields a Series of typebool, where\nTrue indicates that the condition is true. When a boolean Series is used as\nan index, it selects only the elements that satisfy the condition.\n\n1.8 Interpretation",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 12,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 838,
+            "chunking": "paragraph"
+          },
+          "id": "9766333af7f057a687bda0c0",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03149801587301587,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 3,
+            "1": 4
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 28,
+          "text": "If you read the codebook carefully, you will see that many of the variables\narerecodes, which means that they are not part of theraw datacollected\nby the survey; they are calculated using the raw data.\nFor example,prglngthfor live births is equal to the raw variablewksgest\n(weeks of gestation) if it is available; otherwise it is estimated using\nmosgest * 4.33(months of gestation times the average number of weeks\nin a month).\nRecodes are often based on logic that checks the consistency and accuracy of\nthe data. In general it is a good idea to use recodes when they are available,\nunless there is a compelling reason to process the raw data yourself.\n\n1.6 Transformation\n\nWhen you import data like this, you often have to check for errors, deal with\nspecial values, convert data into different formats, and perform calculations.\nThese operations are calleddata cleaning.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 8,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 839,
+            "end_char": 1713,
+            "chunking": "paragraph"
+          },
+          "id": "ba9952aacd92f76d8acc4ed7",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.029877369007803793,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 5,
+            "1": 9
+          }
+        }
+      ],
+      "context": "[50718039f1ba18056fe56194 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /\n\n[378c9ef8a37471ebdc49dd13 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)\n\n[49643149477ca2ae881fb71f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.\n\n[9766333af7f057a687bda0c0 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 32]\n12 Chapter 1. Exploratory data analysis\n\nThe counts for 6, 7, and 8 pounds check out, and if you add up the counts\nfor 0-5 and 9-95, they check out, too. But if you look more closely, you will\nnotice one value that has to be an error, a 51 pound baby!\n\nTo deal with this error, I added a line toCleanFemPreg:\ndf.loc[df.birthwgt_lb > 20, 'birthwgt_lb'] = np.nan\nThis statement replaces invalid values withnp.nan. The attributelocprovides several ways to select rows and columns from a DataFrame. In this\nexample, the first expression in brackets is the row indexer; the second expression selects the column.\n\nThe expressiondf.birthwgt_lb > 20yields a Series of typebool, where\nTrue indicates that the condition is true. When a boolean Series is used as\nan index, it selects only the elements that satisfy the condition.\n\n1.8 Interpretation\n\n[ba9952aacd92f76d8acc4ed7 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\nIf you read the codebook carefully, you will see that many of the variables\narerecodes, which means that they are not part of theraw datacollected\nby the survey; they are calculated using the raw data.\nFor example,prglngthfor live births is equal to the raw variablewksgest\n(weeks of gestation) if it is available; otherwise it is estimated using\nmosgest * 4.33(months of gestation times the average number of weeks\nin a month).\nRecodes are often based on logic that checks the consistency and accuracy of\nthe data. In general it is a good idea to use recodes when they are available,\nunless there is a compelling reason to process the raw data yourself.\n\n1.6 Transformation\n\nWhen you import data like this, you often have to check for errors, deal with\nspecial values, convert data into different formats, and perform calculations.\nThese operations are calleddata cleaning.\n\n[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+      "context_ids": [
+        "50718039f1ba18056fe56194",
+        "378c9ef8a37471ebdc49dd13",
+        "49643149477ca2ae881fb71f",
+        "9766333af7f057a687bda0c0",
+        "ba9952aacd92f76d8acc4ed7",
+        "f5d4f52297470390e5b98ec6"
+      ],
+      "elapsed_ms": 30.025799991562963
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "citations": [
+          "50718039f1ba18056fe56194",
+          "378c9ef8a37471ebdc49dd13",
+          "49643149477ca2ae881fb71f"
+        ],
+        "abstain": false,
+        "answer": "Các giá trị đặc biệt được mã hóa bằng số (như 97 cho \"NOT ASCERTAINED\", 98 cho \"REFUSED\", và 99 cho \"DON'T KNOW\") có thể gây ra kết quả sai lệch (như tính ra một em bé nặng 99 pound) nếu không được xử lý đúng cách [50718039f1ba18056fe56194]. \n\nĐể tránh tình trạng này, các giá trị này cần được thay thế bằng `np.nan` (một giá trị số thực đặc biệt biểu thị \"không phải là số\" - not a number) [50718039f1ba18056fe56194]. Trong Python và pandas, việc này thường được thực hiện bằng phương thức `.replace()`, ví dụ [378c9ef8a37471ebdc49dd13]:\n\n```python\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)\n```\n\nKhi sử dụng `np.nan`, các phép toán sẽ trả về `nan` nếu một trong các đối số là `nan` và hầu hết các hàm của pandas đều xử lý các giá trị `nan` này một cách phù hợp [50718039f1ba18056fe56194, 49643149477ca2ae881fb71f]."
+      }
+    },
+    {
+      "event": "citation_normalization",
+      "from": "Các giá trị đặc biệt được mã hóa bằng số (như 97 cho \"NOT ASCERTAINED\", 98 cho \"REFUSED\", và 99 cho \"DON'T KNOW\") có thể gây ra kết quả sai lệch (như tính ra một em bé nặng 99 pound) nếu không được xử lý đúng cách [50718039f1ba18056fe56194]. \n\nĐể tránh tình trạng này, các giá trị này cần được thay thế bằng `np.nan` (một giá trị số thực đặc biệt biểu thị \"không phải là số\" - not a number) [50718039f1ba18056fe56194]. Trong Python và pandas, việc này thường được thực hiện bằng phương thức `.replace()`, ví dụ [378c9ef8a37471ebdc49dd13]:\n\n```python\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)\n```\n\nKhi sử dụng `np.nan`, các phép toán sẽ trả về `nan` nếu một trong các đối số là `nan` và hầu hết các hàm của pandas đều xử lý các giá trị `nan` này một cách phù hợp [50718039f1ba18056fe56194, 49643149477ca2ae881fb71f].",
+      "to": "Các giá trị đặc biệt được mã hóa bằng số (như 97 cho \"NOT ASCERTAINED\", 98 cho \"REFUSED\", và 99 cho \"DON'T KNOW\") có thể gây ra kết quả sai lệch (như tính ra một em bé nặng 99 pound) nếu không được xử lý đúng cách [50718039f1ba18056fe56194]. \n\nĐể tránh tình trạng này, các giá trị này cần được thay thế bằng `np.nan` (một giá trị số thực đặc biệt biểu thị \"không phải là số\" - not a number) [50718039f1ba18056fe56194]. Trong Python và pandas, việc này thường được thực hiện bằng phương thức `.replace()`, ví dụ [378c9ef8a37471ebdc49dd13]:\n\n```python\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)\n```\n\nKhi sử dụng `np.nan`, các phép toán sẽ trả về `nan` nếu một trong các đối số là `nan` và hầu hết các hàm của pandas đều xử lý các giá trị `nan` này một cách phù hợp [50718039f1ba18056fe56194] [49643149477ca2ae881fb71f]."
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 354,
+        "candidatesTokenCount": 25,
+        "totalTokenCount": 379,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 354
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1704,
+        "candidatesTokenCount": 22,
+        "totalTokenCount": 1726,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1704
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1940,
+        "candidatesTokenCount": 471,
+        "totalTokenCount": 2411,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1940
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Các giá trị đặc biệt được mã hóa bằng số (như 97 cho \"NOT ASCERTAINED\", 98 cho \"REFUSED\", và 99 cho \"DON'T KNOW\") có thể gây ra kết quả sai lệch (như tính ra một em bé nặng 99 pound) nếu không được xử lý đúng cách [50718039f1ba18056fe56194]. \n\nĐể tránh tình trạng này, các giá trị này cần được thay thế bằng `np.nan` (một giá trị số thực đặc biệt biểu thị \"không phải là số\" - not a number) [50718039f1ba18056fe56194]. Trong Python và pandas, việc này thường được thực hiện bằng phương thức `.replace()`, ví dụ [378c9ef8a37471ebdc49dd13]:\n\n```python\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)\n```\n\nKhi sử dụng `np.nan`, các phép toán sẽ trả về `nan` nếu một trong các đối số là `nan` và hầu hết các hàm của pandas đều xử lý các giá trị `nan` này một cách phù hợp [50718039f1ba18056fe56194] [49643149477ca2ae881fb71f].",
+  "context": "[50718039f1ba18056fe56194 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /\n\n[378c9ef8a37471ebdc49dd13 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)\n\n[49643149477ca2ae881fb71f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.\n\n[9766333af7f057a687bda0c0 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 32]\n12 Chapter 1. Exploratory data analysis\n\nThe counts for 6, 7, and 8 pounds check out, and if you add up the counts\nfor 0-5 and 9-95, they check out, too. But if you look more closely, you will\nnotice one value that has to be an error, a 51 pound baby!\n\nTo deal with this error, I added a line toCleanFemPreg:\ndf.loc[df.birthwgt_lb > 20, 'birthwgt_lb'] = np.nan\nThis statement replaces invalid values withnp.nan. The attributelocprovides several ways to select rows and columns from a DataFrame. In this\nexample, the first expression in brackets is the row indexer; the second expression selects the column.\n\nThe expressiondf.birthwgt_lb > 20yields a Series of typebool, where\nTrue indicates that the condition is true. When a boolean Series is used as\nan index, it selects only the elements that satisfy the condition.\n\n1.8 Interpretation\n\n[ba9952aacd92f76d8acc4ed7 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\nIf you read the codebook carefully, you will see that many of the variables\narerecodes, which means that they are not part of theraw datacollected\nby the survey; they are calculated using the raw data.\nFor example,prglngthfor live births is equal to the raw variablewksgest\n(weeks of gestation) if it is available; otherwise it is estimated using\nmosgest * 4.33(months of gestation times the average number of weeks\nin a month).\nRecodes are often based on logic that checks the consistency and accuracy of\nthe data. In general it is a good idea to use recodes when they are available,\nunless there is a compelling reason to process the raw data yourself.\n\n1.6 Transformation\n\nWhen you import data like this, you often have to check for errors, deal with\nspecial values, convert data into different formats, and perform calculations.\nThese operations are calleddata cleaning.\n\n[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+  "context_ids": [
+    "50718039f1ba18056fe56194",
+    "378c9ef8a37471ebdc49dd13",
+    "49643149477ca2ae881fb71f",
+    "9766333af7f057a687bda0c0",
+    "ba9952aacd92f76d8acc4ed7",
+    "f5d4f52297470390e5b98ec6"
+  ],
+  "search_count": 2,
+  "elapsed_ms": 48.01329999463633,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q09",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 13697.159499977715,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Nếu cân nặng chứa mã 97, 98 hoặc 99 thì phải xử lý thế nào để tránh kết quả sai?",
+      "config": "hybrid_context",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:35:38.350537+00:00",
+      "status": "abstain",
+      "citations": [],
+      "events": [
+        {
+          "event": "search",
+          "tool": "hybrid",
+          "query": "weight 97 98 99 Think Stats",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 28,
+              "text": "8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 8,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 837,
+                "chunking": "paragraph"
+              },
+              "id": "f5d4f52297470390e5b98ec6",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03076923076923077,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 5,
+                "1": 5
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 29,
+              "text": "df['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 9,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 298,
+                "end_char": 1193,
+                "chunking": "paragraph"
+              },
+              "id": "50718039f1ba18056fe56194",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03047794966520434,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 11,
+                "1": 1
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 40,
+              "text": "20 Chapter 2. Distributions\n\nFigure 2.2: Histogram of the ounce part of birth weight.\n\nlooking at histograms.\n\nIn Section 1.6 we transformedagepregfrom centiyears to years, and combinedbirthwgt_lbandbirthwgt_ozinto a single quantity,totalwgt_lb.\nIn this section I use these variables to demonstrate some features of histograms.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "2",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 20,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 327,
+                "chunking": "paragraph"
+              },
+              "id": "78bd414bbf059a60f13c7286",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.030117753623188408,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 9,
+                "1": 4
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 39,
+              "text": "2.3. Plotting histograms 19\n\nFigure 2.1: Histogram of the pound part of birth weight.\n2.3 Plotting histograms\n\nFor this book I wrote a module calledthinkplot.pythat provides functions\nfor plotting Hists and other objects defined inthinkstats2.py. It is based\nonpyplot, which is part of thematplotlibpackage. See Section 0.2 for\ninformation about installingmatplotlib.\nTo plothistwiththinkplot, try this:\n>>> import thinkplot\n>>> thinkplot.Hist(hist)\n>>> thinkplot.Show(xlabel='value', ylabel='frequency')\nYou can read the documentation forthinkplotathttp://greenteapress.\ncom/thinkstats2/thinkplot.html.\n\n2.4 NSFG variables",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "2",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 19,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 623,
+                "chunking": "paragraph"
+              },
+              "id": "a8c59ca57b6a7e806bc2a5e9",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03007688828584351,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 6,
+                "1": 7
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 46,
+              "text": "26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "2",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 26,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 791,
+                "chunking": "paragraph"
+              },
+              "id": "4321b3f26f9d26c0b20e8a04",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.027777777777777776,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 12,
+                "1": 12
+              }
+            }
+          ],
+          "context": "[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.\n\n[50718039f1ba18056fe56194 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /\n\n[78bd414bbf059a60f13c7286 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 40]\n20 Chapter 2. Distributions\n\nFigure 2.2: Histogram of the ounce part of birth weight.\n\nlooking at histograms.\n\nIn Section 1.6 we transformedagepregfrom centiyears to years, and combinedbirthwgt_lbandbirthwgt_ozinto a single quantity,totalwgt_lb.\nIn this section I use these variables to demonstrate some features of histograms.\n\n[a8c59ca57b6a7e806bc2a5e9 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\n2.3. Plotting histograms 19\n\nFigure 2.1: Histogram of the pound part of birth weight.\n2.3 Plotting histograms\n\nFor this book I wrote a module calledthinkplot.pythat provides functions\nfor plotting Hists and other objects defined inthinkstats2.py. It is based\nonpyplot, which is part of thematplotlibpackage. See Section 0.2 for\ninformation about installingmatplotlib.\nTo plothistwiththinkplot, try this:\n>>> import thinkplot\n>>> thinkplot.Hist(hist)\n>>> thinkplot.Show(xlabel='value', ylabel='frequency')\nYou can read the documentation forthinkplotathttp://greenteapress.\ncom/thinkstats2/thinkplot.html.\n\n2.4 NSFG variables\n\n[4321b3f26f9d26c0b20e8a04 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\n26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+          "context_ids": [
+            "f5d4f52297470390e5b98ec6",
+            "50718039f1ba18056fe56194",
+            "78bd414bbf059a60f13c7286",
+            "a8c59ca57b6a7e806bc2a5e9",
+            "4321b3f26f9d26c0b20e8a04"
+          ],
+          "elapsed_ms": 25.395000004209578
+        },
+        {
+          "event": "search",
+          "tool": "hybrid",
+          "query": "replace special codes np.nan weight thinkstats",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 29,
+              "text": "df['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 9,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 298,
+                "end_char": 1193,
+                "chunking": "paragraph"
+              },
+              "id": "50718039f1ba18056fe56194",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03252247488101534,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 1,
+                "1": 2
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 29,
+              "text": "1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 9,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 296,
+                "chunking": "paragraph"
+              },
+              "id": "378c9ef8a37471ebdc49dd13",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.032018442622950824,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 4,
+                "1": 1
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 29,
+              "text": "100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 9,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 1194,
+                "end_char": 1487,
+                "chunking": "paragraph"
+              },
+              "id": "49643149477ca2ae881fb71f",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.0315136476426799,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 2,
+                "1": 5
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 32,
+              "text": "12 Chapter 1. Exploratory data analysis\n\nThe counts for 6, 7, and 8 pounds check out, and if you add up the counts\nfor 0-5 and 9-95, they check out, too. But if you look more closely, you will\nnotice one value that has to be an error, a 51 pound baby!\n\nTo deal with this error, I added a line toCleanFemPreg:\ndf.loc[df.birthwgt_lb > 20, 'birthwgt_lb'] = np.nan\nThis statement replaces invalid values withnp.nan. The attributelocprovides several ways to select rows and columns from a DataFrame. In this\nexample, the first expression in brackets is the row indexer; the second expression selects the column.\n\nThe expressiondf.birthwgt_lb > 20yields a Series of typebool, where\nTrue indicates that the condition is true. When a boolean Series is used as\nan index, it selects only the elements that satisfy the condition.\n\n1.8 Interpretation",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 12,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 838,
+                "chunking": "paragraph"
+              },
+              "id": "9766333af7f057a687bda0c0",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03149801587301587,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 3,
+                "1": 4
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 28,
+              "text": "If you read the codebook carefully, you will see that many of the variables\narerecodes, which means that they are not part of theraw datacollected\nby the survey; they are calculated using the raw data.\nFor example,prglngthfor live births is equal to the raw variablewksgest\n(weeks of gestation) if it is available; otherwise it is estimated using\nmosgest * 4.33(months of gestation times the average number of weeks\nin a month).\nRecodes are often based on logic that checks the consistency and accuracy of\nthe data. In general it is a good idea to use recodes when they are available,\nunless there is a compelling reason to process the raw data yourself.\n\n1.6 Transformation\n\nWhen you import data like this, you often have to check for errors, deal with\nspecial values, convert data into different formats, and perform calculations.\nThese operations are calleddata cleaning.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 8,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 839,
+                "end_char": 1713,
+                "chunking": "paragraph"
+              },
+              "id": "ba9952aacd92f76d8acc4ed7",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.029877369007803793,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 5,
+                "1": 9
+              }
+            }
+          ],
+          "context": "[50718039f1ba18056fe56194 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /\n\n[378c9ef8a37471ebdc49dd13 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)\n\n[49643149477ca2ae881fb71f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.\n\n[9766333af7f057a687bda0c0 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 32]\n12 Chapter 1. Exploratory data analysis\n\nThe counts for 6, 7, and 8 pounds check out, and if you add up the counts\nfor 0-5 and 9-95, they check out, too. But if you look more closely, you will\nnotice one value that has to be an error, a 51 pound baby!\n\nTo deal with this error, I added a line toCleanFemPreg:\ndf.loc[df.birthwgt_lb > 20, 'birthwgt_lb'] = np.nan\nThis statement replaces invalid values withnp.nan. The attributelocprovides several ways to select rows and columns from a DataFrame. In this\nexample, the first expression in brackets is the row indexer; the second expression selects the column.\n\nThe expressiondf.birthwgt_lb > 20yields a Series of typebool, where\nTrue indicates that the condition is true. When a boolean Series is used as\nan index, it selects only the elements that satisfy the condition.\n\n1.8 Interpretation\n\n[ba9952aacd92f76d8acc4ed7 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\nIf you read the codebook carefully, you will see that many of the variables\narerecodes, which means that they are not part of theraw datacollected\nby the survey; they are calculated using the raw data.\nFor example,prglngthfor live births is equal to the raw variablewksgest\n(weeks of gestation) if it is available; otherwise it is estimated using\nmosgest * 4.33(months of gestation times the average number of weeks\nin a month).\nRecodes are often based on logic that checks the consistency and accuracy of\nthe data. In general it is a good idea to use recodes when they are available,\nunless there is a compelling reason to process the raw data yourself.\n\n1.6 Transformation\n\nWhen you import data like this, you often have to check for errors, deal with\nspecial values, convert data into different formats, and perform calculations.\nThese operations are calleddata cleaning.\n\n[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+          "context_ids": [
+            "50718039f1ba18056fe56194",
+            "378c9ef8a37471ebdc49dd13",
+            "49643149477ca2ae881fb71f",
+            "9766333af7f057a687bda0c0",
+            "ba9952aacd92f76d8acc4ed7",
+            "f5d4f52297470390e5b98ec6"
+          ],
+          "elapsed_ms": 3832.430000009481
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "citations": [
+              "50718039f1ba18056fe56194",
+              "378c9ef8a37471ebdc49dd13",
+              "49643149477ca2ae881fb71f"
+            ],
+            "abstain": false,
+            "answer": "Các giá trị đặc biệt được mã hóa bằng số (như 97 cho \"NOT ASCERTAINED\", 98 cho \"REFUSED\", và 99 cho \"DON'T KNOW\") có thể gây ra kết quả sai lệch (như tính ra một em bé nặng 99 pound) nếu không được xử lý đúng cách [50718039f1ba18056fe56194]. \n\nĐể tránh tình trạng này, các giá trị này cần được thay thế bằng `np.nan` (một giá trị số thực đặc biệt biểu thị \"không phải là số\" - not a number) [50718039f1ba18056fe56194]. Trong Python và pandas, việc này thường được thực hiện bằng phương thức `.replace()`, ví dụ [378c9ef8a37471ebdc49dd13]:\n\n```python\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)\n```\n\nKhi sử dụng `np.nan`, các phép toán sẽ trả về `nan` nếu một trong các đối số là `nan` và hầu hết các hàm của pandas đều xử lý các giá trị `nan` này một cách phù hợp [50718039f1ba18056fe56194, 49643149477ca2ae881fb71f]."
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 354,
+            "candidatesTokenCount": 25,
+            "totalTokenCount": 379,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 354
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1704,
+            "candidatesTokenCount": 22,
+            "totalTokenCount": 1726,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1704
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1940,
+            "candidatesTokenCount": 471,
+            "totalTokenCount": 2411,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1940
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+      "reason": "invalid_citations",
+      "context": "[50718039f1ba18056fe56194 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /\n\n[378c9ef8a37471ebdc49dd13 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)\n\n[49643149477ca2ae881fb71f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n100.0\nnan\nSo computations withnantend to do the right thing, and most pandas\nfunctions handlenanappropriately. But dealing with missing data will be a\nrecurring issue.\nThe last line ofCleanFemPregcreates a new columntotalwgt_lbthat combines pounds and ounces into a single quantity, in pounds.\n\n[9766333af7f057a687bda0c0 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 32]\n12 Chapter 1. Exploratory data analysis\n\nThe counts for 6, 7, and 8 pounds check out, and if you add up the counts\nfor 0-5 and 9-95, they check out, too. But if you look more closely, you will\nnotice one value that has to be an error, a 51 pound baby!\n\nTo deal with this error, I added a line toCleanFemPreg:\ndf.loc[df.birthwgt_lb > 20, 'birthwgt_lb'] = np.nan\nThis statement replaces invalid values withnp.nan. The attributelocprovides several ways to select rows and columns from a DataFrame. In this\nexample, the first expression in brackets is the row indexer; the second expression selects the column.\n\nThe expressiondf.birthwgt_lb > 20yields a Series of typebool, where\nTrue indicates that the condition is true. When a boolean Series is used as\nan index, it selects only the elements that satisfy the condition.\n\n1.8 Interpretation\n\n[ba9952aacd92f76d8acc4ed7 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\nIf you read the codebook carefully, you will see that many of the variables\narerecodes, which means that they are not part of theraw datacollected\nby the survey; they are calculated using the raw data.\nFor example,prglngthfor live births is equal to the raw variablewksgest\n(weeks of gestation) if it is available; otherwise it is estimated using\nmosgest * 4.33(months of gestation times the average number of weeks\nin a month).\nRecodes are often based on logic that checks the consistency and accuracy of\nthe data. In general it is a good idea to use recodes when they are available,\nunless there is a compelling reason to process the raw data yourself.\n\n1.6 Transformation\n\nWhen you import data like this, you often have to check for errors, deal with\nspecial values, convert data into different formats, and perform calculations.\nThese operations are calleddata cleaning.\n\n[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+      "context_ids": [
+        "50718039f1ba18056fe56194",
+        "378c9ef8a37471ebdc49dd13",
+        "49643149477ca2ae881fb71f",
+        "9766333af7f057a687bda0c0",
+        "ba9952aacd92f76d8acc4ed7",
+        "f5d4f52297470390e5b98ec6"
+      ],
+      "search_count": 2,
+      "elapsed_ms": 13697.159499977715,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q09",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

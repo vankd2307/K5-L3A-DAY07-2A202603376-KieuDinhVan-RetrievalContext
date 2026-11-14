@@ -1,0 +1,165 @@
+{
+  "query_id": "d7-q02",
+  "split": "dev",
+  "config": "dense",
+  "status": "ok",
+  "query": "Nghiên cứu cross-sectional khác longitudinal về thời điểm quan sát như thế nào?",
+  "filter": {},
+  "results": [
+    {
+      "id": "c820376c2fde59d33d4d8bc8",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 23,
+      "text": "Since 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "1",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1375,
+        "language": "en",
+        "start_char": 483,
+        "printed_page": 3,
+        "extraction_status": "ok"
+      },
+      "score": 0.6734040172810534,
+      "method": "dense"
+    },
+    {
+      "id": "a6a5f497332f50f7f5a86fb6",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 35,
+      "text": "sensitive data you might have to write to the authors, provide\ninformation about how you plan to use the data, or agree to certain terms of\nuse. Be persistent!\n\n1.10 Glossary\n•anecdotal evidence: Evidence, often personal, that is collected casu-\nally rather than by a well-designed study.\n\n•population: A group we are interested in studying. “Population”\noften refers to a group of people, but the term is used for other subjects,\ntoo.\n•cross-sectional study: A study that collects data about a population\nat a particular point in time.\n\n•cycle: In a repeated cross-sectional study, each repetition of the study\nis called a cycle.\n\n•longitudinal study: A study that follows a population over time,\ncollecting data from the same group repeatedly.\n\n•record: In a dataset, a collection of information about a single person\nor other subject.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "1",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1755,
+        "language": "en",
+        "start_char": 918,
+        "printed_page": 15,
+        "extraction_status": "ok"
+      },
+      "score": 0.6681927839460166,
+      "method": "dense"
+    },
+    {
+      "id": "8bca2eddf8d8ed85185da77e",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 24,
+      "text": "4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "1",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 752,
+        "language": "en",
+        "start_char": 0,
+        "printed_page": 4,
+        "extraction_status": "ok"
+      },
+      "score": 0.6201976168037893,
+      "method": "dense"
+    }
+  ],
+  "context": "[c820376c2fde59d33d4d8bc8 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nSince 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+  "context_ids": [
+    "c820376c2fde59d33d4d8bc8"
+  ],
+  "hit1": true,
+  "hit3": true,
+  "context_hit": true,
+  "elapsed_ms": 16.567799990298226,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q02",
+      "split": "dev",
+      "config": "dense",
+      "status": "ok",
+      "query": "Nghiên cứu cross-sectional khác longitudinal về thời điểm quan sát như thế nào?",
+      "filter": {},
+      "results": [
+        {
+          "id": "c820376c2fde59d33d4d8bc8",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 23,
+          "text": "Since 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1375,
+            "language": "en",
+            "start_char": 483,
+            "printed_page": 3,
+            "extraction_status": "ok"
+          },
+          "score": 0.6734040172810534,
+          "method": "dense"
+        },
+        {
+          "id": "a6a5f497332f50f7f5a86fb6",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 35,
+          "text": "sensitive data you might have to write to the authors, provide\ninformation about how you plan to use the data, or agree to certain terms of\nuse. Be persistent!\n\n1.10 Glossary\n•anecdotal evidence: Evidence, often personal, that is collected casu-\nally rather than by a well-designed study.\n\n•population: A group we are interested in studying. “Population”\noften refers to a group of people, but the term is used for other subjects,\ntoo.\n•cross-sectional study: A study that collects data about a population\nat a particular point in time.\n\n•cycle: In a repeated cross-sectional study, each repetition of the study\nis called a cycle.\n\n•longitudinal study: A study that follows a population over time,\ncollecting data from the same group repeatedly.\n\n•record: In a dataset, a collection of information about a single person\nor other subject.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1755,
+            "language": "en",
+            "start_char": 918,
+            "printed_page": 15,
+            "extraction_status": "ok"
+          },
+          "score": 0.6681927839460166,
+          "method": "dense"
+        },
+        {
+          "id": "8bca2eddf8d8ed85185da77e",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 24,
+          "text": "4 Chapter 1. Exploratory data analysis\n\npopulation called asample. The people who participate in a survey are\ncalledrespondents.\n\nIn general, cross-sectional studies are meant to berepresentative, which\nmeans that every member of the target population has an equal chance of\nparticipating. That ideal is hard to achieve in practice, but people who\nconduct surveys come as close as they can.\n\nThe NSFG is not representative; instead it is deliberatelyoversampled. The\ndesigners of the study recruited three groups—Hispanics, African-Americans\nand teenagers—at rates higher than their representation in the U.S. population, in order to make sure that the number of respondents in each of these\ngroups is large enough to draw valid statistical inferences.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 752,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 4,
+            "extraction_status": "ok"
+          },
+          "score": 0.6201976168037893,
+          "method": "dense"
+        }
+      ],
+      "context": "[c820376c2fde59d33d4d8bc8 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nSince 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+      "context_ids": [
+        "c820376c2fde59d33d4d8bc8"
+      ],
+      "hit1": true,
+      "hit3": true,
+      "context_hit": true,
+      "elapsed_ms": 22.44940001401119
+    }
+  ]
+}

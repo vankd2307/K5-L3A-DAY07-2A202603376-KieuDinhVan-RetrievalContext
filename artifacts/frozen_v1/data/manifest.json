@@ -1,0 +1,275 @@
+{
+  "source_id": "thinkstats2-v2.2.1",
+  "title": "Think Stats: Exploratory Data Analysis in Python",
+  "author": "Allen B. Downey",
+  "version": "2.2.1",
+  "source_path_or_url": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+  "local_path": "data/raw/thinkstats2.pdf",
+  "license_or_permission": "CC BY-NC-SA 4.0; see physical PDF page 4. Noncommercial educational lab; derived excerpts use same license.",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "accessed_at": "2026-11-13T10:44:00.946309+00:00",
+  "sha256": "5dbea9094f3606472087e16dc920ae6b87d680f5cff3f3142e6a58a78d9cf567",
+  "physical_page_count": 264,
+  "content_page_count": 42,
+  "counting_rule": "Physical PDF pages 21-63 (printed 1-43), chapters 1-3; exclude figure-dominated pages with fewer than 300 normalized characters. No cover, TOC, blank page or references-only page. Exercises and glossaries contain substantive content. Included page IDs below are authoritative.",
+  "metadata_provenance": "chapter from verified chapter boundaries (21,37,51); printed_page=physical_page-20; version and author from title; language from source.",
+  "replacement_reason": "User approved replacement of OpenStax because its web terms restrict ingestion into AI offerings without permission.",
+  "pages": [
+    {
+      "page": 21,
+      "printed_page": 1,
+      "chapter": "1",
+      "characters": 1141
+    },
+    {
+      "page": 22,
+      "printed_page": 2,
+      "chapter": "1",
+      "characters": 1696
+    },
+    {
+      "page": 23,
+      "printed_page": 3,
+      "chapter": "1",
+      "characters": 1824
+    },
+    {
+      "page": 24,
+      "printed_page": 4,
+      "chapter": "1",
+      "characters": 1893
+    },
+    {
+      "page": 25,
+      "printed_page": 5,
+      "chapter": "1",
+      "characters": 1637
+    },
+    {
+      "page": 26,
+      "printed_page": 6,
+      "chapter": "1",
+      "characters": 1253
+    },
+    {
+      "page": 27,
+      "printed_page": 7,
+      "chapter": "1",
+      "characters": 1158
+    },
+    {
+      "page": 28,
+      "printed_page": 8,
+      "chapter": "1",
+      "characters": 1713
+    },
+    {
+      "page": 29,
+      "printed_page": 9,
+      "chapter": "1",
+      "characters": 1487
+    },
+    {
+      "page": 30,
+      "printed_page": 10,
+      "chapter": "1",
+      "characters": 1418
+    },
+    {
+      "page": 31,
+      "printed_page": 11,
+      "chapter": "1",
+      "characters": 617
+    },
+    {
+      "page": 32,
+      "printed_page": 12,
+      "chapter": "1",
+      "characters": 1692
+    },
+    {
+      "page": 33,
+      "printed_page": 13,
+      "chapter": "1",
+      "characters": 1624
+    },
+    {
+      "page": 34,
+      "printed_page": 14,
+      "chapter": "1",
+      "characters": 1913
+    },
+    {
+      "page": 35,
+      "printed_page": 15,
+      "chapter": "1",
+      "characters": 1755
+    },
+    {
+      "page": 36,
+      "printed_page": 16,
+      "chapter": "1",
+      "characters": 732
+    },
+    {
+      "page": 37,
+      "printed_page": 17,
+      "chapter": "2",
+      "characters": 846
+    },
+    {
+      "page": 38,
+      "printed_page": 18,
+      "chapter": "2",
+      "characters": 1080
+    },
+    {
+      "page": 39,
+      "printed_page": 19,
+      "chapter": "2",
+      "characters": 938
+    },
+    {
+      "page": 40,
+      "printed_page": 20,
+      "chapter": "2",
+      "characters": 1069
+    },
+    {
+      "page": 42,
+      "printed_page": 22,
+      "chapter": "2",
+      "characters": 1941
+    },
+    {
+      "page": 43,
+      "printed_page": 23,
+      "chapter": "2",
+      "characters": 1277
+    },
+    {
+      "page": 44,
+      "printed_page": 24,
+      "chapter": "2",
+      "characters": 1186
+    },
+    {
+      "page": 45,
+      "printed_page": 25,
+      "chapter": "2",
+      "characters": 1406
+    },
+    {
+      "page": 46,
+      "printed_page": 26,
+      "chapter": "2",
+      "characters": 1638
+    },
+    {
+      "page": 47,
+      "printed_page": 27,
+      "chapter": "2",
+      "characters": 1537
+    },
+    {
+      "page": 48,
+      "printed_page": 28,
+      "chapter": "2",
+      "characters": 1657
+    },
+    {
+      "page": 49,
+      "printed_page": 29,
+      "chapter": "2",
+      "characters": 1704
+    },
+    {
+      "page": 50,
+      "printed_page": 30,
+      "chapter": "2",
+      "characters": 1139
+    },
+    {
+      "page": 51,
+      "printed_page": 31,
+      "chapter": "3",
+      "characters": 818
+    },
+    {
+      "page": 52,
+      "printed_page": 32,
+      "chapter": "3",
+      "characters": 1081
+    },
+    {
+      "page": 53,
+      "printed_page": 33,
+      "chapter": "3",
+      "characters": 1423
+    },
+    {
+      "page": 54,
+      "printed_page": 34,
+      "chapter": "3",
+      "characters": 906
+    },
+    {
+      "page": 55,
+      "printed_page": 35,
+      "chapter": "3",
+      "characters": 1528
+    },
+    {
+      "page": 56,
+      "printed_page": 36,
+      "chapter": "3",
+      "characters": 833
+    },
+    {
+      "page": 57,
+      "printed_page": 37,
+      "chapter": "3",
+      "characters": 1536
+    },
+    {
+      "page": 58,
+      "printed_page": 38,
+      "chapter": "3",
+      "characters": 644
+    },
+    {
+      "page": 59,
+      "printed_page": 39,
+      "chapter": "3",
+      "characters": 1039
+    },
+    {
+      "page": 60,
+      "printed_page": 40,
+      "chapter": "3",
+      "characters": 876
+    },
+    {
+      "page": 61,
+      "printed_page": 41,
+      "chapter": "3",
+      "characters": 1442
+    },
+    {
+      "page": 62,
+      "printed_page": 42,
+      "chapter": "3",
+      "characters": 2111
+    },
+    {
+      "page": 63,
+      "printed_page": 43,
+      "chapter": "3",
+      "characters": 976
+    }
+  ],
+  "day6_strategy": "B",
+  "day7_chunk_count": 91,
+  "day7_created_at": "2026-11-14T07:21:15.508735+00:00",
+  "derivation": "Read-only reuse of Day 6 42-page corpus, paragraph chunks <=900 normalized characters."
+}

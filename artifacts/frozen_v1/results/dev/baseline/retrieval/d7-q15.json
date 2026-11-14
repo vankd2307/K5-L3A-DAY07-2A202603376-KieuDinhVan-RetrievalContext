@@ -1,0 +1,33 @@
+{
+  "query_id": "d7-q15",
+  "split": "dev",
+  "config": "baseline",
+  "status": "ok",
+  "query": "Độ lệch chuẩn có quan hệ gì với phương sai?",
+  "filter": {},
+  "results": [],
+  "context": "",
+  "context_ids": [],
+  "hit1": false,
+  "hit3": false,
+  "context_hit": false,
+  "elapsed_ms": 0.2106999745592475,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q15",
+      "split": "dev",
+      "config": "baseline",
+      "status": "ok",
+      "query": "Độ lệch chuẩn có quan hệ gì với phương sai?",
+      "filter": {},
+      "results": [],
+      "context": "",
+      "context_ids": [],
+      "hit1": false,
+      "hit3": false,
+      "context_hit": false,
+      "elapsed_ms": 0.6367999885696918
+    }
+  ]
+}

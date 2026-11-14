@@ -1,0 +1,289 @@
+{
+  "question": "Nghiên cứu cross-sectional khác longitudinal về thời điểm quan sát như thế nào?",
+  "config": "dense",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:11.241470+00:00",
+  "status": "answered",
+  "citations": [
+    "c820376c2fde59d33d4d8bc8"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "dense",
+      "query": "cross-sectional longitudinal timing observation Think Stats",
+      "filter": {},
+      "results": [
+        {
+          "id": "c820376c2fde59d33d4d8bc8",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 23,
+          "text": "Since 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1375,
+            "language": "en",
+            "start_char": 483,
+            "printed_page": 3,
+            "extraction_status": "ok"
+          },
+          "score": 0.7491772324337238,
+          "method": "dense"
+        },
+        {
+          "id": "a6a5f497332f50f7f5a86fb6",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 35,
+          "text": "sensitive data you might have to write to the authors, provide\ninformation about how you plan to use the data, or agree to certain terms of\nuse. Be persistent!\n\n1.10 Glossary\n•anecdotal evidence: Evidence, often personal, that is collected casu-\nally rather than by a well-designed study.\n\n•population: A group we are interested in studying. “Population”\noften refers to a group of people, but the term is used for other subjects,\ntoo.\n•cross-sectional study: A study that collects data about a population\nat a particular point in time.\n\n•cycle: In a repeated cross-sectional study, each repetition of the study\nis called a cycle.\n\n•longitudinal study: A study that follows a population over time,\ncollecting data from the same group repeatedly.\n\n•record: In a dataset, a collection of information about a single person\nor other subject.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1755,
+            "language": "en",
+            "start_char": 918,
+            "printed_page": 15,
+            "extraction_status": "ok"
+          },
+          "score": 0.7430163843338607,
+          "method": "dense"
+        },
+        {
+          "id": "1e66e8dc3acff693d400f751",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 62,
+          "text": "Exercise 3.4In most foot races, everyone starts at the same time. If you\nare a fast runner, you usually pass a lot of people at the beginning of the\nrace, but after a few miles everyone around you is going at the same speed.\n\nWhen I ran a long-distance (209 miles) relay race for the first time, I noticed\nan odd phenomenon: when I overtook another runner, I was usually much\nfaster, and when another runner overtook me, he was usually much faster.\n\nAt first I thought that the distribution of speeds might be bimodal; that is,\nthere were many slow runners and many fast runners, but few at my speed.\n\nThen I realized that I was the victim of a bias similar to the effect of class\nsize. The race was unusual in two ways: it used a staggered start, so teams\nstarted at different times; also, many teams included runners at different\nlevels of ability.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "3",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1577,
+            "language": "en",
+            "start_char": 727,
+            "printed_page": 42,
+            "extraction_status": "ok"
+          },
+          "score": 0.6967021642149797,
+          "method": "dense"
+        }
+      ],
+      "context": "[c820376c2fde59d33d4d8bc8 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nSince 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+      "context_ids": [
+        "c820376c2fde59d33d4d8bc8"
+      ],
+      "elapsed_ms": 14.72870001452975
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "citations": [
+          "c820376c2fde59d33d4d8bc8"
+        ],
+        "answer": "Nghiên cứu cross-sectional (cắt ngang) khác với nghiên cứu longitudinal (dọc) ở điểm: nghiên cứu cắt ngang ghi lại một bức ảnh chụp nhanh (snapshot) của một nhóm đối tượng tại một thời điểm, trong khi nghiên cứu dọc quan sát một nhóm đối tượng lặp đi lặp lại trong một khoảng thời gian [c820376c2fde59d33d4d8bc8].",
+        "abstain": false
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 344,
+        "candidatesTokenCount": 21,
+        "totalTokenCount": 365,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 344
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 672,
+        "candidatesTokenCount": 139,
+        "totalTokenCount": 811,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 672
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Nghiên cứu cross-sectional (cắt ngang) khác với nghiên cứu longitudinal (dọc) ở điểm: nghiên cứu cắt ngang ghi lại một bức ảnh chụp nhanh (snapshot) của một nhóm đối tượng tại một thời điểm, trong khi nghiên cứu dọc quan sát một nhóm đối tượng lặp đi lặp lại trong một khoảng thời gian [c820376c2fde59d33d4d8bc8].",
+  "context": "[c820376c2fde59d33d4d8bc8 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nSince 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+  "context_ids": [
+    "c820376c2fde59d33d4d8bc8"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 14.947500021662563,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q02",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 8838.471299997764,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Nghiên cứu cross-sectional khác longitudinal về thời điểm quan sát như thế nào?",
+      "config": "dense",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:30:43.924604+00:00",
+      "status": "answered",
+      "citations": [
+        "c820376c2fde59d33d4d8bc8"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "dense",
+          "query": "cross-sectional longitudinal timing observation Think Stats",
+          "filter": {},
+          "results": [
+            {
+              "id": "c820376c2fde59d33d4d8bc8",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 23,
+              "text": "Since 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1375,
+                "language": "en",
+                "start_char": 483,
+                "printed_page": 3,
+                "extraction_status": "ok"
+              },
+              "score": 0.7491772324337238,
+              "method": "dense"
+            },
+            {
+              "id": "a6a5f497332f50f7f5a86fb6",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 35,
+              "text": "sensitive data you might have to write to the authors, provide\ninformation about how you plan to use the data, or agree to certain terms of\nuse. Be persistent!\n\n1.10 Glossary\n•anecdotal evidence: Evidence, often personal, that is collected casu-\nally rather than by a well-designed study.\n\n•population: A group we are interested in studying. “Population”\noften refers to a group of people, but the term is used for other subjects,\ntoo.\n•cross-sectional study: A study that collects data about a population\nat a particular point in time.\n\n•cycle: In a repeated cross-sectional study, each repetition of the study\nis called a cycle.\n\n•longitudinal study: A study that follows a population over time,\ncollecting data from the same group repeatedly.\n\n•record: In a dataset, a collection of information about a single person\nor other subject.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1755,
+                "language": "en",
+                "start_char": 918,
+                "printed_page": 15,
+                "extraction_status": "ok"
+              },
+              "score": 0.7430163843338607,
+              "method": "dense"
+            },
+            {
+              "id": "1e66e8dc3acff693d400f751",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 62,
+              "text": "Exercise 3.4In most foot races, everyone starts at the same time. If you\nare a fast runner, you usually pass a lot of people at the beginning of the\nrace, but after a few miles everyone around you is going at the same speed.\n\nWhen I ran a long-distance (209 miles) relay race for the first time, I noticed\nan odd phenomenon: when I overtook another runner, I was usually much\nfaster, and when another runner overtook me, he was usually much faster.\n\nAt first I thought that the distribution of speeds might be bimodal; that is,\nthere were many slow runners and many fast runners, but few at my speed.\n\nThen I realized that I was the victim of a bias similar to the effect of class\nsize. The race was unusual in two ways: it used a staggered start, so teams\nstarted at different times; also, many teams included runners at different\nlevels of ability.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "3",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1577,
+                "language": "en",
+                "start_char": 727,
+                "printed_page": 42,
+                "extraction_status": "ok"
+              },
+              "score": 0.6967021642149797,
+              "method": "dense"
+            }
+          ],
+          "context": "[c820376c2fde59d33d4d8bc8 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nSince 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+          "context_ids": [
+            "c820376c2fde59d33d4d8bc8"
+          ],
+          "elapsed_ms": 3898.406599997543
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "citations": [
+              "c820376c2fde59d33d4d8bc8"
+            ],
+            "answer": "Nghiên cứu cross-sectional (cắt ngang) khác với nghiên cứu longitudinal (dọc) ở điểm: nghiên cứu cắt ngang ghi lại một bức ảnh chụp nhanh (snapshot) của một nhóm đối tượng tại một thời điểm, trong khi nghiên cứu dọc quan sát một nhóm đối tượng lặp đi lặp lại trong một khoảng thời gian [c820376c2fde59d33d4d8bc8].",
+            "abstain": false
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 344,
+            "candidatesTokenCount": 21,
+            "totalTokenCount": 365,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 344
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 672,
+            "candidatesTokenCount": 139,
+            "totalTokenCount": 811,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 672
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Nghiên cứu cross-sectional (cắt ngang) khác với nghiên cứu longitudinal (dọc) ở điểm: nghiên cứu cắt ngang ghi lại một bức ảnh chụp nhanh (snapshot) của một nhóm đối tượng tại một thời điểm, trong khi nghiên cứu dọc quan sát một nhóm đối tượng lặp đi lặp lại trong một khoảng thời gian [c820376c2fde59d33d4d8bc8].",
+      "context": "[c820376c2fde59d33d4d8bc8 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nSince 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+      "context_ids": [
+        "c820376c2fde59d33d4d8bc8"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 8838.471299997764,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q02",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

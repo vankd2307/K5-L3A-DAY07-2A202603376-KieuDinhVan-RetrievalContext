@@ -1,0 +1,396 @@
+{
+  "question": "Mã outcome nào thể hiện một ca sinh sống?",
+  "config": "dense_context",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:12.364371+00:00",
+  "status": "answered",
+  "citations": [
+    "4f0610284ca731ebc56f0974",
+    "f5d4f52297470390e5b98ec6"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "dense",
+      "query": "live birth outcome code NSFG",
+      "filter": {},
+      "results": [
+        {
+          "id": "f40266243aa427f23fa90b4e",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 23,
+          "text": "The NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1824,
+            "language": "en",
+            "start_char": 1377,
+            "printed_page": 3,
+            "extraction_status": "ok"
+          },
+          "score": 0.6906112844116273,
+          "method": "dense"
+        },
+        {
+          "id": "09ee26549d92640de06ef64c",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 24,
+          "text": "Let’s see what it does. Pregnancy data from Cycle 6 of the NSFG is in a file\ncalled2002FemPreg.dat.gz; it is a gzip-compressed data file in plain text\n(ASCII), with fixed width columns. Each line in the file is arecordthat\ncontains data about one pregnancy.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1893,
+            "language": "en",
+            "start_char": 1636,
+            "printed_page": 4,
+            "extraction_status": "ok"
+          },
+          "score": 0.6767684817314148,
+          "method": "dense"
+        },
+        {
+          "id": "4f0610284ca731ebc56f0974",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 30,
+          "text": "One way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1418,
+            "language": "en",
+            "start_char": 767,
+            "printed_page": 10,
+            "extraction_status": "ok"
+          },
+          "score": 0.6745096445083618,
+          "method": "dense"
+        },
+        {
+          "id": "f5d4f52297470390e5b98ec6",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 28,
+          "text": "8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 837,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 8,
+            "extraction_status": "ok"
+          },
+          "score": 0.6677502195686245,
+          "method": "dense"
+        },
+        {
+          "id": "ba9952aacd92f76d8acc4ed7",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 28,
+          "text": "If you read the codebook carefully, you will see that many of the variables\narerecodes, which means that they are not part of theraw datacollected\nby the survey; they are calculated using the raw data.\nFor example,prglngthfor live births is equal to the raw variablewksgest\n(weeks of gestation) if it is available; otherwise it is estimated using\nmosgest * 4.33(months of gestation times the average number of weeks\nin a month).\nRecodes are often based on logic that checks the consistency and accuracy of\nthe data. In general it is a good idea to use recodes when they are available,\nunless there is a compelling reason to process the raw data yourself.\n\n1.6 Transformation\n\nWhen you import data like this, you often have to check for errors, deal with\nspecial values, convert data into different formats, and perform calculations.\nThese operations are calleddata cleaning.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1713,
+            "language": "en",
+            "start_char": 839,
+            "printed_page": 8,
+            "extraction_status": "ok"
+          },
+          "score": 0.6642571687698364,
+          "method": "dense"
+        }
+      ],
+      "context": "[f40266243aa427f23fa90b4e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the\n\n[09ee26549d92640de06ef64c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\nLet’s see what it does. Pregnancy data from Cycle 6 of the NSFG is in a file\ncalled2002FemPreg.dat.gz; it is a gzip-compressed data file in plain text\n(ASCII), with fixed width columns. Each line in the file is arecordthat\ncontains data about one pregnancy.\n\n[4f0610284ca731ebc56f0974 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\nOne way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148\n\n[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.\n\n[ba9952aacd92f76d8acc4ed7 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\nIf you read the codebook carefully, you will see that many of the variables\narerecodes, which means that they are not part of theraw datacollected\nby the survey; they are calculated using the raw data.\nFor example,prglngthfor live births is equal to the raw variablewksgest\n(weeks of gestation) if it is available; otherwise it is estimated using\nmosgest * 4.33(months of gestation times the average number of weeks\nin a month).\nRecodes are often based on logic that checks the consistency and accuracy of\nthe data. In general it is a good idea to use recodes when they are available,\nunless there is a compelling reason to process the raw data yourself.\n\n1.6 Transformation\n\nWhen you import data like this, you often have to check for errors, deal with\nspecial values, convert data into different formats, and perform calculations.\nThese operations are calleddata cleaning.",
+      "context_ids": [
+        "f40266243aa427f23fa90b4e",
+        "09ee26549d92640de06ef64c",
+        "4f0610284ca731ebc56f0974",
+        "f5d4f52297470390e5b98ec6",
+        "ba9952aacd92f76d8acc4ed7"
+      ],
+      "elapsed_ms": 17.22199999494478
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "answer": "Mã outcome thể hiện một ca sinh sống (live birth) là 1 [4f0610284ca731ebc56f0974, f5d4f52297470390e5b98ec6].",
+        "citations": [
+          "4f0610284ca731ebc56f0974",
+          "f5d4f52297470390e5b98ec6"
+        ],
+        "abstain": false
+      }
+    },
+    {
+      "event": "citation_normalization",
+      "from": "Mã outcome thể hiện một ca sinh sống (live birth) là 1 [4f0610284ca731ebc56f0974, f5d4f52297470390e5b98ec6].",
+      "to": "Mã outcome thể hiện một ca sinh sống (live birth) là 1 [4f0610284ca731ebc56f0974] [f5d4f52297470390e5b98ec6]."
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 337,
+        "candidatesTokenCount": 19,
+        "totalTokenCount": 356,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 337
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1539,
+        "candidatesTokenCount": 135,
+        "totalTokenCount": 1674,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1539
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Mã outcome thể hiện một ca sinh sống (live birth) là 1 [4f0610284ca731ebc56f0974] [f5d4f52297470390e5b98ec6].",
+  "context": "[f40266243aa427f23fa90b4e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the\n\n[09ee26549d92640de06ef64c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\nLet’s see what it does. Pregnancy data from Cycle 6 of the NSFG is in a file\ncalled2002FemPreg.dat.gz; it is a gzip-compressed data file in plain text\n(ASCII), with fixed width columns. Each line in the file is arecordthat\ncontains data about one pregnancy.\n\n[4f0610284ca731ebc56f0974 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\nOne way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148\n\n[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.\n\n[ba9952aacd92f76d8acc4ed7 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\nIf you read the codebook carefully, you will see that many of the variables\narerecodes, which means that they are not part of theraw datacollected\nby the survey; they are calculated using the raw data.\nFor example,prglngthfor live births is equal to the raw variablewksgest\n(weeks of gestation) if it is available; otherwise it is estimated using\nmosgest * 4.33(months of gestation times the average number of weeks\nin a month).\nRecodes are often based on logic that checks the consistency and accuracy of\nthe data. In general it is a good idea to use recodes when they are available,\nunless there is a compelling reason to process the raw data yourself.\n\n1.6 Transformation\n\nWhen you import data like this, you often have to check for errors, deal with\nspecial values, convert data into different formats, and perform calculations.\nThese operations are calleddata cleaning.",
+  "context_ids": [
+    "f40266243aa427f23fa90b4e",
+    "09ee26549d92640de06ef64c",
+    "4f0610284ca731ebc56f0974",
+    "f5d4f52297470390e5b98ec6",
+    "ba9952aacd92f76d8acc4ed7"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 17.558199993800372,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q07",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 4788.38579999865,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Mã outcome nào thể hiện một ca sinh sống?",
+      "config": "dense_context",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:33:36.381268+00:00",
+      "status": "abstain",
+      "citations": [],
+      "events": [
+        {
+          "event": "search",
+          "tool": "dense",
+          "query": "live birth outcome code NSFG",
+          "filter": {},
+          "results": [
+            {
+              "id": "f40266243aa427f23fa90b4e",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 23,
+              "text": "The NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1824,
+                "language": "en",
+                "start_char": 1377,
+                "printed_page": 3,
+                "extraction_status": "ok"
+              },
+              "score": 0.6906112844116273,
+              "method": "dense"
+            },
+            {
+              "id": "09ee26549d92640de06ef64c",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 24,
+              "text": "Let’s see what it does. Pregnancy data from Cycle 6 of the NSFG is in a file\ncalled2002FemPreg.dat.gz; it is a gzip-compressed data file in plain text\n(ASCII), with fixed width columns. Each line in the file is arecordthat\ncontains data about one pregnancy.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1893,
+                "language": "en",
+                "start_char": 1636,
+                "printed_page": 4,
+                "extraction_status": "ok"
+              },
+              "score": 0.6767684817314148,
+              "method": "dense"
+            },
+            {
+              "id": "4f0610284ca731ebc56f0974",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 30,
+              "text": "One way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1418,
+                "language": "en",
+                "start_char": 767,
+                "printed_page": 10,
+                "extraction_status": "ok"
+              },
+              "score": 0.6745096445083618,
+              "method": "dense"
+            },
+            {
+              "id": "f5d4f52297470390e5b98ec6",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 28,
+              "text": "8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 837,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 8,
+                "extraction_status": "ok"
+              },
+              "score": 0.6677502195686245,
+              "method": "dense"
+            },
+            {
+              "id": "ba9952aacd92f76d8acc4ed7",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 28,
+              "text": "If you read the codebook carefully, you will see that many of the variables\narerecodes, which means that they are not part of theraw datacollected\nby the survey; they are calculated using the raw data.\nFor example,prglngthfor live births is equal to the raw variablewksgest\n(weeks of gestation) if it is available; otherwise it is estimated using\nmosgest * 4.33(months of gestation times the average number of weeks\nin a month).\nRecodes are often based on logic that checks the consistency and accuracy of\nthe data. In general it is a good idea to use recodes when they are available,\nunless there is a compelling reason to process the raw data yourself.\n\n1.6 Transformation\n\nWhen you import data like this, you often have to check for errors, deal with\nspecial values, convert data into different formats, and perform calculations.\nThese operations are calleddata cleaning.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1713,
+                "language": "en",
+                "start_char": 839,
+                "printed_page": 8,
+                "extraction_status": "ok"
+              },
+              "score": 0.6642571687698364,
+              "method": "dense"
+            }
+          ],
+          "context": "[f40266243aa427f23fa90b4e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the\n\n[09ee26549d92640de06ef64c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\nLet’s see what it does. Pregnancy data from Cycle 6 of the NSFG is in a file\ncalled2002FemPreg.dat.gz; it is a gzip-compressed data file in plain text\n(ASCII), with fixed width columns. Each line in the file is arecordthat\ncontains data about one pregnancy.\n\n[4f0610284ca731ebc56f0974 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\nOne way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148\n\n[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.\n\n[ba9952aacd92f76d8acc4ed7 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\nIf you read the codebook carefully, you will see that many of the variables\narerecodes, which means that they are not part of theraw datacollected\nby the survey; they are calculated using the raw data.\nFor example,prglngthfor live births is equal to the raw variablewksgest\n(weeks of gestation) if it is available; otherwise it is estimated using\nmosgest * 4.33(months of gestation times the average number of weeks\nin a month).\nRecodes are often based on logic that checks the consistency and accuracy of\nthe data. In general it is a good idea to use recodes when they are available,\nunless there is a compelling reason to process the raw data yourself.\n\n1.6 Transformation\n\nWhen you import data like this, you often have to check for errors, deal with\nspecial values, convert data into different formats, and perform calculations.\nThese operations are calleddata cleaning.",
+          "context_ids": [
+            "f40266243aa427f23fa90b4e",
+            "09ee26549d92640de06ef64c",
+            "4f0610284ca731ebc56f0974",
+            "f5d4f52297470390e5b98ec6",
+            "ba9952aacd92f76d8acc4ed7"
+          ],
+          "elapsed_ms": 28.069299994967878
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "answer": "Mã outcome thể hiện một ca sinh sống (live birth) là 1 [4f0610284ca731ebc56f0974, f5d4f52297470390e5b98ec6].",
+            "citations": [
+              "4f0610284ca731ebc56f0974",
+              "f5d4f52297470390e5b98ec6"
+            ],
+            "abstain": false
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 337,
+            "candidatesTokenCount": 19,
+            "totalTokenCount": 356,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 337
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1539,
+            "candidatesTokenCount": 135,
+            "totalTokenCount": 1674,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1539
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+      "reason": "invalid_citations",
+      "context": "[f40266243aa427f23fa90b4e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the\n\n[09ee26549d92640de06ef64c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\nLet’s see what it does. Pregnancy data from Cycle 6 of the NSFG is in a file\ncalled2002FemPreg.dat.gz; it is a gzip-compressed data file in plain text\n(ASCII), with fixed width columns. Each line in the file is arecordthat\ncontains data about one pregnancy.\n\n[4f0610284ca731ebc56f0974 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\nOne way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148\n\n[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.\n\n[ba9952aacd92f76d8acc4ed7 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\nIf you read the codebook carefully, you will see that many of the variables\narerecodes, which means that they are not part of theraw datacollected\nby the survey; they are calculated using the raw data.\nFor example,prglngthfor live births is equal to the raw variablewksgest\n(weeks of gestation) if it is available; otherwise it is estimated using\nmosgest * 4.33(months of gestation times the average number of weeks\nin a month).\nRecodes are often based on logic that checks the consistency and accuracy of\nthe data. In general it is a good idea to use recodes when they are available,\nunless there is a compelling reason to process the raw data yourself.\n\n1.6 Transformation\n\nWhen you import data like this, you often have to check for errors, deal with\nspecial values, convert data into different formats, and perform calculations.\nThese operations are calleddata cleaning.",
+      "context_ids": [
+        "f40266243aa427f23fa90b4e",
+        "09ee26549d92640de06ef64c",
+        "4f0610284ca731ebc56f0974",
+        "f5d4f52297470390e5b98ec6",
+        "ba9952aacd92f76d8acc4ed7"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 4788.38579999865,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q07",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

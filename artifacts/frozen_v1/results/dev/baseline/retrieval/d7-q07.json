@@ -1,0 +1,165 @@
+{
+  "query_id": "d7-q07",
+  "split": "dev",
+  "config": "baseline",
+  "status": "ok",
+  "query": "Mã outcome nào thể hiện một ca sinh sống?",
+  "filter": {},
+  "results": [
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 30,
+      "text": "One way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 10,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 767,
+        "end_char": 1418,
+        "chunking": "paragraph"
+      },
+      "id": "4f0610284ca731ebc56f0974",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.2008603316756571,
+      "method": "tfidf"
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 33,
+      "text": "1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 13,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 794,
+        "chunking": "paragraph"
+      },
+      "id": "aed02b84a2698a8ad98395fb",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.1653312514850097,
+      "method": "tfidf"
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 42,
+      "text": "Hist provides methodsLargestandSmallest, which take an integernand\nreturn thenlargest or smallest values from the histogram:\nfor weeks, freq in hist.Smallest(10):\nprint(weeks, freq)\nIn the list of pregnancy lengths for live births, the 10 lowest values are\n[0, 4, 9, 13, 17, 18, 19, 20, 21, 22]. Values below 10 weeks are certainly errors; the most likely explanation is that the outcome was not coded\ncorrectly. Values higher than 30 weeks are probably legitimate. Between 10",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "2",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 22,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 1465,
+        "end_char": 1941,
+        "chunking": "paragraph"
+      },
+      "id": "41ed4a031d8153c0b9cb9589",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.104084697687399,
+      "method": "tfidf"
+    }
+  ],
+  "context": "[4f0610284ca731ebc56f0974 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\nOne way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148",
+  "context_ids": [
+    "4f0610284ca731ebc56f0974"
+  ],
+  "hit1": false,
+  "hit3": false,
+  "context_hit": false,
+  "elapsed_ms": 0.18350000027567148,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q07",
+      "split": "dev",
+      "config": "baseline",
+      "status": "ok",
+      "query": "Mã outcome nào thể hiện một ca sinh sống?",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 30,
+          "text": "One way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 10,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 767,
+            "end_char": 1418,
+            "chunking": "paragraph"
+          },
+          "id": "4f0610284ca731ebc56f0974",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.2008603316756571,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 33,
+          "text": "1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 13,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 794,
+            "chunking": "paragraph"
+          },
+          "id": "aed02b84a2698a8ad98395fb",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.1653312514850097,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 42,
+          "text": "Hist provides methodsLargestandSmallest, which take an integernand\nreturn thenlargest or smallest values from the histogram:\nfor weeks, freq in hist.Smallest(10):\nprint(weeks, freq)\nIn the list of pregnancy lengths for live births, the 10 lowest values are\n[0, 4, 9, 13, 17, 18, 19, 20, 21, 22]. Values below 10 weeks are certainly errors; the most likely explanation is that the outcome was not coded\ncorrectly. Values higher than 30 weeks are probably legitimate. Between 10",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 22,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 1465,
+            "end_char": 1941,
+            "chunking": "paragraph"
+          },
+          "id": "41ed4a031d8153c0b9cb9589",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.104084697687399,
+          "method": "tfidf"
+        }
+      ],
+      "context": "[4f0610284ca731ebc56f0974 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\nOne way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148",
+      "context_ids": [
+        "4f0610284ca731ebc56f0974"
+      ],
+      "hit1": false,
+      "hit3": false,
+      "context_hit": false,
+      "elapsed_ms": 0.287900009425357
+    }
+  ]
+}

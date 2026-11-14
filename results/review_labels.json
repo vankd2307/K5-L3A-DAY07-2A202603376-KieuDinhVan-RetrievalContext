@@ -1,0 +1,1433 @@
+[
+  {
+    "config": "baseline",
+    "query_id": "d7-q01",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.985788+00:00",
+    "student_verified": false,
+    "trace_sha256": "b42d7fe330432734960165713d29ea35ce89b1ecf3fa6430a7faddc701ced0ea",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "Đối chiếu PDF 22: người tham gia có con đầu sinh muộn tự chọn vào thảo luận, làm lệch mẫu/kết quả."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-q02",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.986322+00:00",
+    "student_verified": false,
+    "trace_sha256": "fc8a6f0e71c1501cc3b799ef1da14c769bfca5fec67013f7c41b0e4ed96dda1d",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 23 hoặc glossary PDF 35 nêu snapshot một thời điểm và theo dõi lặp cùng nhóm theo thời gian. Glossary là evidence tương đương dù strict gold chỉ ở PDF 23."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-q03",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.986837+00:00",
+    "student_verified": false,
+    "trace_sha256": "017c8be2dac86b9c3eff165a92f5970cb60d9ab72f1bf1c2f40039004b65b314",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 23 ghi rõ quần thể Hoa Kỳ 15–44 tuổi, đúng cả địa lý và khoảng tuổi."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-q04",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.987366+00:00",
+    "student_verified": false,
+    "trace_sha256": "dc4918159e3d935fb0909bc071b3c11e719cdd78f9928a0fc6ca64603f1d9c16",
+    "citation_support": [],
+    "answer_grade": 0,
+    "context_grade": 0,
+    "abstention_correct": null,
+    "reason": "PDF 24 nêu đủ Hispanics, African-Americans, teenagers và mục đích có đủ respondents cho statistical inference. Kết quả hiện tại từ chối dù câu có đáp án; answer=0. Context 0/2 theo nội dung thực sự còn trong budget."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-q05",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.987366+00:00",
+    "student_verified": false,
+    "trace_sha256": "286c2c471d298011df17c676eddbdc5aa581023bf0f984f7309d972cfe41c2df",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 25 mô tả variable names/types/indices cùng ví dụ _column. Answer giữ đủ ba thuộc tính."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-q06",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.987891+00:00",
+    "student_verified": false,
+    "trace_sha256": "a8098912251a0787ceb4088d7e310be1a4bb534c6c56f3bc05b947ed49cadecb",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 26–27: shape có 13593 rows và 244 columns; đoạn Variables cũng xác nhận 244 biến. Đọc cả hai citation nếu được gộp."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-q07",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.988436+00:00",
+    "student_verified": false,
+    "trace_sha256": "bef7c468302cdfe89cc426f6a1928429786a21306aafb86d6f5cf50df3827a99",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 28 hoặc bảng kiểm chứng PDF 30: outcome=1 là live birth. Không lẫn với pregordr/birthord."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-q08",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.988764+00:00",
+    "student_verified": false,
+    "trace_sha256": "bc5b5f043abb936f8b07d893395f3ecf1b488fb34c9f1dfe30881eb0893f5401",
+    "citation_support": [],
+    "answer_grade": 0,
+    "context_grade": 1,
+    "abstention_correct": null,
+    "reason": "PDF 29 giải thích agepreg là integer centiyears; chia 100 đổi sang floating-point years, không chỉ nhắc phép chia. Kết quả hiện tại từ chối dù câu có đáp án; answer=0. Context 1/2 theo nội dung thực sự còn trong budget."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-q09",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.989278+00:00",
+    "student_verified": false,
+    "trace_sha256": "41b1156b2f724468df44ce814c1653da7e8dc83b203a22d7f13687285b4fd847",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 29 nêu 97/98/99 là mã thiếu/refused/unknown; replace thành np.nan tránh số liệu giả."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-q10",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.989806+00:00",
+    "student_verified": false,
+    "trace_sha256": "cfb1d713851d790c10124c8fb9a82d0360200ff76180869b6af3178bb4b60478",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 30: dot notation thêm attribute, không thêm column; phải dùng dictionary syntax."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-q11",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.990225+00:00",
+    "student_verified": false,
+    "trace_sha256": "b451d7c45327c2d11c707ebafc3e1e910e12ebda6e25af359f1ed65dbb7ec317",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 1,
+    "context_grade": 1,
+    "abstention_correct": null,
+    "reason": "PDF 30 chỉ nói nên validation để tránh lỗi. Answer nhắc mục tiêu nhưng không đưa cách tính thống kê rồi đối chiếu published table; đúng một phần, context thiếu bước cụ thể. Citation hỗ trợ phát biểu chung."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-q12",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.990773+00:00",
+    "student_verified": false,
+    "trace_sha256": "a2f7e9923cf1e8c55246d55aaf621b762dd59337a4266e819460c57fb3cdd78b",
+    "citation_support": [],
+    "answer_grade": 0,
+    "context_grade": 1,
+    "abstention_correct": null,
+    "reason": "PDF 42 nêu thay birthwgt_lb >20 thành np.nan. Thay mã 97/98/99 không trả lời điều kiện >20. Kết quả hiện tại từ chối dù câu có đáp án; answer=0. Context 1/2 theo nội dung thực sự còn trong budget."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-q13",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.990773+00:00",
+    "student_verified": false,
+    "trace_sha256": "4fdbdf09f68162966ae3cb2a3f5a1ab971f850f8b09092e9cfca2135c3f1ea26",
+    "citation_support": [],
+    "answer_grade": 0,
+    "context_grade": 0,
+    "abstention_correct": null,
+    "reason": "PDF 37 hoặc glossary PDF 50 và API Hist PDF 38: histogram ánh xạ value→frequency, frequency là số lần xuất hiện. Kết quả hiện tại từ chối dù câu có đáp án; answer=0. Context 0/2 theo nội dung thực sự còn trong budget."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-q14",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.991311+00:00",
+    "student_verified": false,
+    "trace_sha256": "1e50d7692b9ba64659776fc02930fc5f5fbe66d8ce98980e353542327f5cf209",
+    "citation_support": [],
+    "answer_grade": 0,
+    "context_grade": 0,
+    "abstention_correct": null,
+    "reason": "PDF 45 phân biệt mean theo công thức và average là lựa chọn summary statistic của central tendency; ví dụ pumpkin PDF 46 chỉ minh họa một phần. Kết quả hiện tại từ chối dù câu có đáp án; answer=0. Context 0/2 theo nội dung thực sự còn trong budget."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-q15",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.991821+00:00",
+    "student_verified": false,
+    "trace_sha256": "2779729aca95a6dcf84d0eab57bac5fd14665b85537f4c5c767f244a584a5fe6",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 46/50 nêu standard deviation là square root of variance; đúng quan hệ được hỏi."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-u01",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.991821+00:00",
+    "student_verified": false,
+    "trace_sha256": "6ad6857b10ac6af7d788492099f9e81c0488d18b5e9fcb78736dd0db024f3bc6",
+    "citation_support": [],
+    "answer_grade": null,
+    "context_grade": null,
+    "abstention_correct": true,
+    "reason": "Đã đối chiếu phạm vi 42 trang và absence_reason. Agent từ chối rõ ràng, không thêm suy đoán."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-u02",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.992343+00:00",
+    "student_verified": false,
+    "trace_sha256": "4fd05150abf1bbc59377fda6eb77bb9ed83df71cd94e3cc4c5970e258c0bf279",
+    "citation_support": [],
+    "answer_grade": null,
+    "context_grade": null,
+    "abstention_correct": true,
+    "reason": "Đã đối chiếu phạm vi 42 trang và absence_reason. Agent từ chối rõ ràng, không thêm suy đoán."
+  },
+  {
+    "config": "dense",
+    "query_id": "d7-q01",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.992863+00:00",
+    "student_verified": false,
+    "trace_sha256": "cffb657aef33a474b7f6a0ec035caceb3d101d9aef9cafce5e8c1036d8e852fd",
+    "citation_support": [],
+    "answer_grade": 0,
+    "context_grade": 0,
+    "abstention_correct": null,
+    "reason": "Đối chiếu PDF 22: người tham gia có con đầu sinh muộn tự chọn vào thảo luận, làm lệch mẫu/kết quả. Kết quả hiện tại từ chối dù câu có đáp án; answer=0. Context 0/2 theo nội dung thực sự còn trong budget."
+  },
+  {
+    "config": "dense",
+    "query_id": "d7-q02",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.993376+00:00",
+    "student_verified": false,
+    "trace_sha256": "70483cb23f03a5ff7b91f19b173a3177fa5055acb15ec30dc448fa7ac6b09e12",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 23 hoặc glossary PDF 35 nêu snapshot một thời điểm và theo dõi lặp cùng nhóm theo thời gian. Glossary là evidence tương đương dù strict gold chỉ ở PDF 23."
+  },
+  {
+    "config": "dense",
+    "query_id": "d7-q03",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.993903+00:00",
+    "student_verified": false,
+    "trace_sha256": "3efca15bce89a5f3bfd67c16c91303e61498de866bcf0ddffe72959508d91e16",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 23 ghi rõ quần thể Hoa Kỳ 15–44 tuổi, đúng cả địa lý và khoảng tuổi."
+  },
+  {
+    "config": "dense",
+    "query_id": "d7-q04",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.993903+00:00",
+    "student_verified": false,
+    "trace_sha256": "c11a5c07a94529da86a46c4ab0b281a490133470b756ef77ac452b87c16d36bd",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 24 nêu đủ Hispanics, African-Americans, teenagers và mục đích có đủ respondents cho statistical inference."
+  },
+  {
+    "config": "dense",
+    "query_id": "d7-q05",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.994422+00:00",
+    "student_verified": false,
+    "trace_sha256": "c153fe356240ae77dd2df499d637b45d72b3c9ac6b87fbf31d0eccfa7c6a9486",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 25 mô tả variable names/types/indices cùng ví dụ _column. Answer giữ đủ ba thuộc tính."
+  },
+  {
+    "config": "dense",
+    "query_id": "d7-q06",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.994938+00:00",
+    "student_verified": false,
+    "trace_sha256": "4d7d87bab85ed414336ec194b7815529750d80b9bf2b0268680295e9e44b1a82",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 26–27: shape có 13593 rows và 244 columns; đoạn Variables cũng xác nhận 244 biến. Đọc cả hai citation nếu được gộp."
+  },
+  {
+    "config": "dense",
+    "query_id": "d7-q07",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.994938+00:00",
+    "student_verified": false,
+    "trace_sha256": "92144a033d17c9e9d7c935215bdc3731f831370d29cd60f03e5f211158249938",
+    "citation_support": [],
+    "answer_grade": 0,
+    "context_grade": 0,
+    "abstention_correct": null,
+    "reason": "PDF 28 hoặc bảng kiểm chứng PDF 30: outcome=1 là live birth. Không lẫn với pregordr/birthord. Kết quả hiện tại từ chối dù câu có đáp án; answer=0. Context 0/2 theo nội dung thực sự còn trong budget."
+  },
+  {
+    "config": "dense",
+    "query_id": "d7-q08",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.995455+00:00",
+    "student_verified": false,
+    "trace_sha256": "58b1da771b910793b30cf4ca91207e741f070bc2f775c9dc4885ca399a12c715",
+    "citation_support": [],
+    "answer_grade": 0,
+    "context_grade": 1,
+    "abstention_correct": null,
+    "reason": "PDF 29 giải thích agepreg là integer centiyears; chia 100 đổi sang floating-point years, không chỉ nhắc phép chia. Kết quả hiện tại từ chối dù câu có đáp án; answer=0. Context 1/2 theo nội dung thực sự còn trong budget."
+  },
+  {
+    "config": "dense",
+    "query_id": "d7-q09",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.995455+00:00",
+    "student_verified": false,
+    "trace_sha256": "26cc999ca9e5566268e34b6a3baed5a23d2abc9772f1ee91007139372b545a44",
+    "citation_support": [],
+    "answer_grade": 0,
+    "context_grade": 0,
+    "abstention_correct": null,
+    "reason": "PDF 29 nêu 97/98/99 là mã thiếu/refused/unknown; replace thành np.nan tránh số liệu giả. Kết quả hiện tại từ chối dù câu có đáp án; answer=0. Context 0/2 theo nội dung thực sự còn trong budget."
+  },
+  {
+    "config": "dense",
+    "query_id": "d7-q10",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.996194+00:00",
+    "student_verified": false,
+    "trace_sha256": "d9b5fcf5e84d9592b2dbbaa4ee5bb12e2f7b7e977defab5290719afaecb656ea",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 30: dot notation thêm attribute, không thêm column; phải dùng dictionary syntax."
+  },
+  {
+    "config": "dense",
+    "query_id": "d7-q11",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.996723+00:00",
+    "student_verified": false,
+    "trace_sha256": "0e7520c701b9b00f6109022d0441050d114af5ee6a51c9b4830d9ede7e9ad270",
+    "citation_support": [],
+    "answer_grade": 0,
+    "context_grade": 0,
+    "abstention_correct": null,
+    "reason": "PDF 30–31 hoặc đoạn codebook PDF 33: so sánh thống kê/value counts với published table là một cách validation cụ thể. Kết quả hiện tại từ chối dù câu có đáp án; answer=0. Context 0/2 theo nội dung thực sự còn trong budget."
+  },
+  {
+    "config": "dense",
+    "query_id": "d7-q12",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.997188+00:00",
+    "student_verified": false,
+    "trace_sha256": "6ad37d09ce67645a8ffb2790b8fd056d2aa44b4d02dd5aa1a8803d00ffcb5c28",
+    "citation_support": [],
+    "answer_grade": 0,
+    "context_grade": 1,
+    "abstention_correct": null,
+    "reason": "PDF 42 nêu thay birthwgt_lb >20 thành np.nan. Thay mã 97/98/99 không trả lời điều kiện >20. Kết quả hiện tại từ chối dù câu có đáp án; answer=0. Context 1/2 theo nội dung thực sự còn trong budget."
+  },
+  {
+    "config": "dense",
+    "query_id": "d7-q13",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.997188+00:00",
+    "student_verified": false,
+    "trace_sha256": "7dc0940d5da6e6f256c052b7a32f59d46631d852b61696dbf4784aaa55136412",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 37 hoặc glossary PDF 50 và API Hist PDF 38: histogram ánh xạ value→frequency, frequency là số lần xuất hiện."
+  },
+  {
+    "config": "dense",
+    "query_id": "d7-q14",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.997732+00:00",
+    "student_verified": false,
+    "trace_sha256": "eaea9adf5961b82454ceb68f7280e05703be34d2ca6e312c68d6ff3e905beae0",
+    "citation_support": [
+      false
+    ],
+    "answer_grade": 1,
+    "context_grade": 1,
+    "abstention_correct": null,
+    "reason": "PDF 46 có ví dụ mean và typical average nhưng không chứa công thức mean hoặc phân biệt average là một trong nhiều summary statistics. Answer đúng một phần; citation không hỗ trợ đầy đủ các khẳng định đã thêm."
+  },
+  {
+    "config": "dense",
+    "query_id": "d7-q15",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.998272+00:00",
+    "student_verified": false,
+    "trace_sha256": "3842986407cc9e85acdc9e3e10ca7968342b803a9d0d5424517b2c81576ab403",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 46/50 nêu standard deviation là square root of variance; đúng quan hệ được hỏi."
+  },
+  {
+    "config": "dense",
+    "query_id": "d7-u01",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.998272+00:00",
+    "student_verified": false,
+    "trace_sha256": "1959ff459c9dc8052466a4eec1543ac839fa3ca40e0180387bf703d9375a6753",
+    "citation_support": [],
+    "answer_grade": null,
+    "context_grade": null,
+    "abstention_correct": true,
+    "reason": "Đã đối chiếu phạm vi 42 trang và absence_reason. Agent từ chối rõ ràng, không thêm suy đoán."
+  },
+  {
+    "config": "dense",
+    "query_id": "d7-u02",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.998829+00:00",
+    "student_verified": false,
+    "trace_sha256": "3acfe216313e2878aadcb7413c79f8fc5c045c142afd4f70701f2ec34cc9c50a",
+    "citation_support": [],
+    "answer_grade": null,
+    "context_grade": null,
+    "abstention_correct": true,
+    "reason": "Đã đối chiếu phạm vi 42 trang và absence_reason. Agent từ chối rõ ràng, không thêm suy đoán."
+  },
+  {
+    "config": "hybrid",
+    "query_id": "d7-q01",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.999355+00:00",
+    "student_verified": false,
+    "trace_sha256": "d7b63f5f1e7c62fabd973b7c6de201e7fbcceca59a2d7e530cb3768bb7ac02d3",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "Đối chiếu PDF 22: người tham gia có con đầu sinh muộn tự chọn vào thảo luận, làm lệch mẫu/kết quả."
+  },
+  {
+    "config": "hybrid",
+    "query_id": "d7-q02",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:21.999878+00:00",
+    "student_verified": false,
+    "trace_sha256": "315d6d08b178b9dedc019d61ac58b532df2a3521a5b060a40e67e12fff5f2e60",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 23 hoặc glossary PDF 35 nêu snapshot một thời điểm và theo dõi lặp cùng nhóm theo thời gian. Glossary là evidence tương đương dù strict gold chỉ ở PDF 23."
+  },
+  {
+    "config": "hybrid",
+    "query_id": "d7-q03",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.000394+00:00",
+    "student_verified": false,
+    "trace_sha256": "fb6c50a58df24c86915742d1121ab973300f8f898403240bb9111a6df685ef8c",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 23 ghi rõ quần thể Hoa Kỳ 15–44 tuổi, đúng cả địa lý và khoảng tuổi."
+  },
+  {
+    "config": "hybrid",
+    "query_id": "d7-q04",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.000394+00:00",
+    "student_verified": false,
+    "trace_sha256": "3eec08c82e888bff88bf1bf33050b776a53dd4610e13c72070ce7d8c28d0aac0",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 24 nêu đủ Hispanics, African-Americans, teenagers và mục đích có đủ respondents cho statistical inference."
+  },
+  {
+    "config": "hybrid",
+    "query_id": "d7-q05",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.000914+00:00",
+    "student_verified": false,
+    "trace_sha256": "ee93f471d79618578526b5bd7f1382b5a406d026324d7cd9ab463fb6651fbedf",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 25 mô tả variable names/types/indices cùng ví dụ _column. Answer giữ đủ ba thuộc tính."
+  },
+  {
+    "config": "hybrid",
+    "query_id": "d7-q06",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.001430+00:00",
+    "student_verified": false,
+    "trace_sha256": "062b98a5880e4e45861346d26d67747541f960c338947781e735393764017f4a",
+    "citation_support": [
+      true,
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 26–27: shape có 13593 rows và 244 columns; đoạn Variables cũng xác nhận 244 biến. Đọc cả hai citation nếu được gộp."
+  },
+  {
+    "config": "hybrid",
+    "query_id": "d7-q07",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.001956+00:00",
+    "student_verified": false,
+    "trace_sha256": "17ded2f8873e6b5aab352627cf905cedb52948b6fc92b4db93f49a469c9d1a66",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 28 hoặc bảng kiểm chứng PDF 30: outcome=1 là live birth. Không lẫn với pregordr/birthord."
+  },
+  {
+    "config": "hybrid",
+    "query_id": "d7-q08",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.001956+00:00",
+    "student_verified": false,
+    "trace_sha256": "b2d428c6f5ad179c04da839d3034846e766bdc2702ec2b0c60ac646cc91bbadb",
+    "citation_support": [],
+    "answer_grade": 0,
+    "context_grade": 1,
+    "abstention_correct": null,
+    "reason": "PDF 29 giải thích agepreg là integer centiyears; chia 100 đổi sang floating-point years, không chỉ nhắc phép chia. Kết quả hiện tại từ chối dù câu có đáp án; answer=0. Context 1/2 theo nội dung thực sự còn trong budget."
+  },
+  {
+    "config": "hybrid",
+    "query_id": "d7-q09",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.002477+00:00",
+    "student_verified": false,
+    "trace_sha256": "1d1ebb8595336b206de4d2f14113dee75e31e615f4bb4d5c759715982f016a73",
+    "citation_support": [],
+    "answer_grade": 0,
+    "context_grade": 1,
+    "abstention_correct": null,
+    "reason": "PDF 29 nêu 97/98/99 là mã thiếu/refused/unknown; replace thành np.nan tránh số liệu giả. Kết quả hiện tại từ chối dù câu có đáp án; answer=0. Context 1/2 theo nội dung thực sự còn trong budget."
+  },
+  {
+    "config": "hybrid",
+    "query_id": "d7-q10",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.003204+00:00",
+    "student_verified": false,
+    "trace_sha256": "2f3725825de3656cccc51276474a7eefd47991bfe79b6549785aabf309bf14fb",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 30: dot notation thêm attribute, không thêm column; phải dùng dictionary syntax."
+  },
+  {
+    "config": "hybrid",
+    "query_id": "d7-q11",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.003525+00:00",
+    "student_verified": false,
+    "trace_sha256": "8c431b587b7ba15c48660840413603d14d33483f3958b1111519fe71cb78e90e",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 1,
+    "context_grade": 1,
+    "abstention_correct": null,
+    "reason": "PDF 30 chỉ nói nên validation để tránh lỗi. Answer nhắc mục tiêu nhưng không đưa cách tính thống kê rồi đối chiếu published table; đúng một phần, context thiếu bước cụ thể. Citation hỗ trợ phát biểu chung."
+  },
+  {
+    "config": "hybrid",
+    "query_id": "d7-q12",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.003937+00:00",
+    "student_verified": false,
+    "trace_sha256": "3c19cb3fda3697c2abb240d59d1a1318f15531998c88ac25f770cb56ea7e06e0",
+    "citation_support": [
+      false
+    ],
+    "answer_grade": 0,
+    "context_grade": 1,
+    "abstention_correct": null,
+    "reason": "Answer nói về 97/98/99 thay vì điều kiện >20 và kết luận tài liệu không đề cập dù PDF 42 có xử lý >20. Chunk PDF 29 được cite không chứng minh kết luận thiếu thông tin toàn corpus. Answer=0, context=1, citation không hỗ trợ toàn câu."
+  },
+  {
+    "config": "hybrid",
+    "query_id": "d7-q13",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.004447+00:00",
+    "student_verified": false,
+    "trace_sha256": "3f732471d06945dac752de052b8fc813e40c4ca537e6feb41bef4b8425cbc65a",
+    "citation_support": [],
+    "answer_grade": 0,
+    "context_grade": 0,
+    "abstention_correct": null,
+    "reason": "PDF 37 hoặc glossary PDF 50 và API Hist PDF 38: histogram ánh xạ value→frequency, frequency là số lần xuất hiện. Kết quả hiện tại từ chối dù câu có đáp án; answer=0. Context 0/2 theo nội dung thực sự còn trong budget."
+  },
+  {
+    "config": "hybrid",
+    "query_id": "d7-q14",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.004987+00:00",
+    "student_verified": false,
+    "trace_sha256": "25fb9d380a52c8283e4e0267b2acbc61176dafa0d8b2e6cc67d635c84afb898c",
+    "citation_support": [],
+    "answer_grade": 0,
+    "context_grade": 0,
+    "abstention_correct": null,
+    "reason": "PDF 45 phân biệt mean theo công thức và average là lựa chọn summary statistic của central tendency; ví dụ pumpkin PDF 46 chỉ minh họa một phần. Kết quả hiện tại từ chối dù câu có đáp án; answer=0. Context 0/2 theo nội dung thực sự còn trong budget."
+  },
+  {
+    "config": "hybrid",
+    "query_id": "d7-q15",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.005505+00:00",
+    "student_verified": false,
+    "trace_sha256": "aa5d487119c3c539ec3100474534815b169d844000805e60b3105198bfa29380",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 46/50 nêu standard deviation là square root of variance; đúng quan hệ được hỏi."
+  },
+  {
+    "config": "hybrid",
+    "query_id": "d7-u01",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.006039+00:00",
+    "student_verified": false,
+    "trace_sha256": "65abfe8ef885549a4ea8eedb433d696efc4447f04d2b490b5a5fce1b2f8663f7",
+    "citation_support": [],
+    "answer_grade": null,
+    "context_grade": null,
+    "abstention_correct": true,
+    "reason": "Đã đối chiếu phạm vi 42 trang và absence_reason. Agent từ chối rõ ràng, không thêm suy đoán."
+  },
+  {
+    "config": "hybrid",
+    "query_id": "d7-u02",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.006568+00:00",
+    "student_verified": false,
+    "trace_sha256": "661a2d638b07dfa65cbbff1239e030511982624cc3b58dff4764cec51db6fc0e",
+    "citation_support": [],
+    "answer_grade": null,
+    "context_grade": null,
+    "abstention_correct": true,
+    "reason": "Đã đối chiếu phạm vi 42 trang và absence_reason. Agent từ chối rõ ràng, không thêm suy đoán."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-q01",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.007085+00:00",
+    "student_verified": false,
+    "trace_sha256": "f494ca37a17748f8be52582888c30d59eab9fdfca4631ce9be07a685d7058b9c",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "Đối chiếu PDF 22: người tham gia có con đầu sinh muộn tự chọn vào thảo luận, làm lệch mẫu/kết quả."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-q02",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.008122+00:00",
+    "student_verified": false,
+    "trace_sha256": "f91611d670cdad0a83c7aa6e551e20c02788b45bb4841efb685da8783fd83d72",
+    "citation_support": [
+      true,
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 23 hoặc glossary PDF 35 nêu snapshot một thời điểm và theo dõi lặp cùng nhóm theo thời gian. Glossary là evidence tương đương dù strict gold chỉ ở PDF 23."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-q03",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.008666+00:00",
+    "student_verified": false,
+    "trace_sha256": "c2cdf87ef01b2a206d1518acde1727d68bd0148e58a8d27a5892f79b72a86c0b",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 23 ghi rõ quần thể Hoa Kỳ 15–44 tuổi, đúng cả địa lý và khoảng tuổi."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-q04",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.009705+00:00",
+    "student_verified": false,
+    "trace_sha256": "e46217432048e2c49e7d6801cb02acfffaa99b413dd9cfc4bff6c09833c4ac24",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 24 nêu đủ Hispanics, African-Americans, teenagers và mục đích có đủ respondents cho statistical inference."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-q05",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.010249+00:00",
+    "student_verified": false,
+    "trace_sha256": "22c30da9332360c13c851a8ba4aa97559ddf418cf1e02fe78f13ae4f5710be5c",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 25 mô tả variable names/types/indices cùng ví dụ _column. Answer giữ đủ ba thuộc tính."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-q06",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.010982+00:00",
+    "student_verified": false,
+    "trace_sha256": "eb112061a7ffa1664605d8d91ec01d75a2e9e4b6fddfa3320eb0c3c6a431a191",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 26–27: shape có 13593 rows và 244 columns; đoạn Variables cũng xác nhận 244 biến. Đọc cả hai citation nếu được gộp."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-q07",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.012029+00:00",
+    "student_verified": false,
+    "trace_sha256": "38901dc96727a47687439450d2ef6c1e7e6eda580300f910fde27ba1fe5d2842",
+    "citation_support": [
+      true,
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 28 hoặc bảng kiểm chứng PDF 30: outcome=1 là live birth. Không lẫn với pregordr/birthord."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-q08",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.012555+00:00",
+    "student_verified": false,
+    "trace_sha256": "33304bb19e74a1b058aaa0a20e5d772755a8c68ddd1c1b38ed43caccf357ac2a",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 29 giải thích agepreg là integer centiyears; chia 100 đổi sang floating-point years, không chỉ nhắc phép chia."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-q09",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.013733+00:00",
+    "student_verified": false,
+    "trace_sha256": "35f3b405b5966180126e0389ff486fe2a1486e269d618b2cea5913e235b2b224",
+    "citation_support": [],
+    "answer_grade": 0,
+    "context_grade": 1,
+    "abstention_correct": null,
+    "reason": "PDF 29 nêu 97/98/99 là mã thiếu/refused/unknown; replace thành np.nan tránh số liệu giả. Kết quả hiện tại từ chối dù câu có đáp án; answer=0. Context 1/2 theo nội dung thực sự còn trong budget."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-q10",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.014793+00:00",
+    "student_verified": false,
+    "trace_sha256": "9a5ffc3f732b17d73aafb92f0aacec7e9195517a2fcbefa1816cc867e9f86e96",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 30: dot notation thêm attribute, không thêm column; phải dùng dictionary syntax."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-q11",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.015854+00:00",
+    "student_verified": false,
+    "trace_sha256": "0be5843b8a53a933c28286ec21c561f4e3595f1fa11db67da12a2cd820bc2de9",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 30–31 hoặc đoạn codebook PDF 33: so sánh thống kê/value counts với published table là một cách validation cụ thể."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-q12",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.016370+00:00",
+    "student_verified": false,
+    "trace_sha256": "dc77889030212d2d21c1b409f120034e1de5e7a6a6e5d8371a0b68f7f63e81a5",
+    "citation_support": [],
+    "answer_grade": 0,
+    "context_grade": 1,
+    "abstention_correct": null,
+    "reason": "PDF 42 nêu thay birthwgt_lb >20 thành np.nan. Thay mã 97/98/99 không trả lời điều kiện >20. Kết quả hiện tại từ chối dù câu có đáp án; answer=0. Context 1/2 theo nội dung thực sự còn trong budget."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-q13",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.017635+00:00",
+    "student_verified": false,
+    "trace_sha256": "7af30f89efad06388fe37d2e543e8a2f08e821acac9f085bdeaf2bc69514dbce",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 37 hoặc glossary PDF 50 và API Hist PDF 38: histogram ánh xạ value→frequency, frequency là số lần xuất hiện."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-q14",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.018609+00:00",
+    "student_verified": false,
+    "trace_sha256": "e2330b28ff09dd42e301a42c7b86c07dd775912513b050202e473449e85db834",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 45 phân biệt mean theo công thức và average là lựa chọn summary statistic của central tendency; ví dụ pumpkin PDF 46 chỉ minh họa một phần."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-q15",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.019674+00:00",
+    "student_verified": false,
+    "trace_sha256": "875522373027d66313dd943c6275fcce46902f61915368a7e78badeb610e8839",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 46/50 nêu standard deviation là square root of variance; đúng quan hệ được hỏi."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-u01",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.020865+00:00",
+    "student_verified": false,
+    "trace_sha256": "82e91ce1928d80e81a92c7c0ebea15f4eb5aa18474f233a0facbe427b8efebec",
+    "citation_support": [],
+    "answer_grade": null,
+    "context_grade": null,
+    "abstention_correct": true,
+    "reason": "Đã đối chiếu phạm vi 42 trang và absence_reason. Agent từ chối rõ ràng, không thêm suy đoán."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-u02",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.021910+00:00",
+    "student_verified": false,
+    "trace_sha256": "62af72b2694c5194e21ffa8fbf79600b61821bb365b00a297ed2d3b66fa299d9",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": null,
+    "context_grade": null,
+    "abstention_correct": false,
+    "reason": "Đã đối chiếu phạm vi 42 trang và absence_reason. Agent đổi câu hỏi mã API thành caseid. Citation hỗ trợ câu factual về respondent ID nhưng không trả lời câu hỏi gốc; abstention không đạt."
+  },
+  {
+    "config": "hybrid_context",
+    "query_id": "d7-q01",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.022441+00:00",
+    "student_verified": false,
+    "trace_sha256": "b56509597fc698b63daf8f072cc2a009b3f488afc617086d0db9839bc01ba109",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "Đối chiếu PDF 22: người tham gia có con đầu sinh muộn tự chọn vào thảo luận, làm lệch mẫu/kết quả."
+  },
+  {
+    "config": "hybrid_context",
+    "query_id": "d7-q02",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.024644+00:00",
+    "student_verified": false,
+    "trace_sha256": "f206c4b61451f6fc38b1bd5c957e9f2f32666317e81b8aa8f1d2c4421803e3b7",
+    "citation_support": [
+      true,
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 23 hoặc glossary PDF 35 nêu snapshot một thời điểm và theo dõi lặp cùng nhóm theo thời gian. Glossary là evidence tương đương dù strict gold chỉ ở PDF 23."
+  },
+  {
+    "config": "hybrid_context",
+    "query_id": "d7-q03",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.026361+00:00",
+    "student_verified": false,
+    "trace_sha256": "ae17bb6932fd101af344194168af4853c39bc8fad21b86ee3d76f33380d1956f",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 23 ghi rõ quần thể Hoa Kỳ 15–44 tuổi, đúng cả địa lý và khoảng tuổi."
+  },
+  {
+    "config": "hybrid_context",
+    "query_id": "d7-q04",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.026361+00:00",
+    "student_verified": false,
+    "trace_sha256": "1e03e48baffa461d78aeab787d441fb31d7c7b557ed7ee0be327667fa252b9a0",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 24 nêu đủ Hispanics, African-Americans, teenagers và mục đích có đủ respondents cho statistical inference."
+  },
+  {
+    "config": "hybrid_context",
+    "query_id": "d7-q05",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.027868+00:00",
+    "student_verified": false,
+    "trace_sha256": "b0d29484dfdced164385680d690d0c25ecd3afb2e09ac93c3df879e15ab7f74c",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 25 mô tả variable names/types/indices cùng ví dụ _column. Answer giữ đủ ba thuộc tính."
+  },
+  {
+    "config": "hybrid_context",
+    "query_id": "d7-q06",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.030130+00:00",
+    "student_verified": false,
+    "trace_sha256": "9b56e7e8af401583d6b0e71acb6af773362af7ba54d9abb6dfaee33c23da8fa9",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 26–27: shape có 13593 rows và 244 columns; đoạn Variables cũng xác nhận 244 biến. Đọc cả hai citation nếu được gộp."
+  },
+  {
+    "config": "hybrid_context",
+    "query_id": "d7-q07",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.032720+00:00",
+    "student_verified": false,
+    "trace_sha256": "0fa4f98d11674fa107fd5e6850c61fd92410ef39923bd64b25a1db1ddc3f041b",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 28 hoặc bảng kiểm chứng PDF 30: outcome=1 là live birth. Không lẫn với pregordr/birthord."
+  },
+  {
+    "config": "hybrid_context",
+    "query_id": "d7-q08",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.034780+00:00",
+    "student_verified": false,
+    "trace_sha256": "c76cd0f9f87166f9420cb23c09c933f86e6ed2ca6f32f8a37cf629c8fd8bb572",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 29 giải thích agepreg là integer centiyears; chia 100 đổi sang floating-point years, không chỉ nhắc phép chia."
+  },
+  {
+    "config": "hybrid_context",
+    "query_id": "d7-q09",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.036162+00:00",
+    "student_verified": false,
+    "trace_sha256": "2719d62c4b58261ee8a0b088f3fb3ce223f8b693bc958f38ad78fb007205ce9d",
+    "citation_support": [
+      true,
+      true,
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 29 nêu 97/98/99 là mã thiếu/refused/unknown; replace thành np.nan tránh số liệu giả."
+  },
+  {
+    "config": "hybrid_context",
+    "query_id": "d7-q10",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.038671+00:00",
+    "student_verified": false,
+    "trace_sha256": "737257eba81c3e82d1992c8863cd8fbe28480196984242173a30ff541561e7d9",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 30: dot notation thêm attribute, không thêm column; phải dùng dictionary syntax."
+  },
+  {
+    "config": "hybrid_context",
+    "query_id": "d7-q11",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.039628+00:00",
+    "student_verified": false,
+    "trace_sha256": "39a5a9367fdc48bc9193f8c00fc6b66780c452e17ff53e81bb78e0ecaa6b720d",
+    "citation_support": [
+      true,
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 30–31 hoặc đoạn codebook PDF 33: so sánh thống kê/value counts với published table là một cách validation cụ thể."
+  },
+  {
+    "config": "hybrid_context",
+    "query_id": "d7-q12",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.040653+00:00",
+    "student_verified": false,
+    "trace_sha256": "074b984d66180e63665885a2bb52faa5577295a8203650712880a23ab9894ae5",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 42 nêu thay birthwgt_lb >20 thành np.nan. Thay mã 97/98/99 không trả lời điều kiện >20."
+  },
+  {
+    "config": "hybrid_context",
+    "query_id": "d7-q13",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.042680+00:00",
+    "student_verified": false,
+    "trace_sha256": "2fa242a8fe37b587be365b11a172381cca7814c370366c861b9b6198ccdf05fa",
+    "citation_support": [
+      true,
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 37 hoặc glossary PDF 50 và API Hist PDF 38: histogram ánh xạ value→frequency, frequency là số lần xuất hiện."
+  },
+  {
+    "config": "hybrid_context",
+    "query_id": "d7-q14",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.044548+00:00",
+    "student_verified": false,
+    "trace_sha256": "a2e9abbd82f8e90d5c3f7c55b0d1b140a3977a114c34761d527107a8471111bc",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 45 phân biệt mean theo công thức và average là lựa chọn summary statistic của central tendency; ví dụ pumpkin PDF 46 chỉ minh họa một phần."
+  },
+  {
+    "config": "hybrid_context",
+    "query_id": "d7-q15",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.046864+00:00",
+    "student_verified": false,
+    "trace_sha256": "e2c3760c1d57198822fd803582e1ec26352eb35e3fb5fac31b31b87ac43b4da8",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 46/50 nêu standard deviation là square root of variance; đúng quan hệ được hỏi."
+  },
+  {
+    "config": "hybrid_context",
+    "query_id": "d7-u01",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.049351+00:00",
+    "student_verified": false,
+    "trace_sha256": "6cfb7a2a92501f10a14ad669864531c656886b3575c4f6d4aa55309241b91ff9",
+    "citation_support": [],
+    "answer_grade": null,
+    "context_grade": null,
+    "abstention_correct": true,
+    "reason": "Đã đối chiếu phạm vi 42 trang và absence_reason. Agent từ chối rõ ràng, không thêm suy đoán."
+  },
+  {
+    "config": "hybrid_context",
+    "query_id": "d7-u02",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:46:22.053369+00:00",
+    "student_verified": false,
+    "trace_sha256": "e942bf3b1bab12406d6a88e3d14686bac5147e483e560c33f93c1ceaebf62535",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": null,
+    "context_grade": null,
+    "abstention_correct": false,
+    "reason": "Đã đối chiếu phạm vi 42 trang và absence_reason. Agent đổi câu hỏi mã API thành caseid. Citation hỗ trợ câu factual về respondent ID nhưng không trả lời câu hỏi gốc; abstention không đạt."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-t01",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:51:54.688330+00:00",
+    "student_verified": false,
+    "trace_sha256": "7327103c5d4ceb86d52d265d3cef0a568b37915c1e43180436c3bbd69945e568",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 53 nêu Copy tạo và sửa bản sao mà không ảnh hưởng bản gốc; answer giữ đủ cả mục đích và điều kiện không sửa gốc."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-t02",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:51:54.688862+00:00",
+    "student_verified": false,
+    "trace_sha256": "cd3dc965c8b4c5f8e3c07f7a5b5c35aad38a9e1cea0ac6ecbf3e52ef32997b8f",
+    "citation_support": [],
+    "answer_grade": 0,
+    "context_grade": 1,
+    "abstention_correct": null,
+    "reason": "PDF 58: UnbiasPmf nhân từng xác suất với 1.0/x rồi Normalize. Đúng phép toán và đúng bước cuối. Baseline giữ đoạn BiasPmf PDF 57, thiếu UnbiasPmf/Normalize; từ chối nhầm, context chỉ liên quan một phần."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-t03",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:51:54.689396+00:00",
+    "student_verified": false,
+    "trace_sha256": "fea09553e30ac3603aeb66b3eece9d105762a791f812e877cd1f3e6b9e440b77",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 56 nêu sinh viên học 4–5 lớp, giảng viên dạy 1–2 và nhiều sinh viên quan sát lớp đông hơn lớp nhỏ; answer bao phủ hai lý do."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-t04",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:51:54.690547+00:00",
+    "student_verified": false,
+    "trace_sha256": "6ed031d702ffd21c09563faa4a4789a9b6451e5f1541fbf7a48c20db7aebbd8e",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 62 nói cơ hội vượt/bị vượt tỷ lệ chênh lệch tốc độ, ít gặp người cùng tốc độ; answer đúng đại lượng và cơ chế."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-t05",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:51:54.690547+00:00",
+    "student_verified": false,
+    "trace_sha256": "a698783d2bf7a253d6801d8d5d81d90f9c97f3cc9572046b53b91ca45c7e32a2",
+    "citation_support": [],
+    "answer_grade": 0,
+    "context_grade": 0,
+    "abstention_correct": null,
+    "reason": "PDF 62 yêu cầu kiểm tra PmfMean/PmfVar nhất quán với Mean/Var của Pmf, đúng cả hai tên phương thức. Baseline có context rỗng, không đủ evidence và từ chối câu có đáp án."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-u03",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:51:54.691071+00:00",
+    "student_verified": false,
+    "trace_sha256": "6a6cee3aeefd3e349ec9abb3f22780f06299f7c493747598fd8dd5dd79671f2b",
+    "citation_support": [],
+    "answer_grade": null,
+    "context_grade": null,
+    "abstention_correct": true,
+    "reason": "Đối chiếu toàn bộ 42 trang và câu hỏi: không có học phí từng sinh viên (u03) hoặc benchmark H100/PmfMean (u04). Agent từ chối rõ ràng, không thêm số liệu suy đoán."
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-u04",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:51:54.691599+00:00",
+    "student_verified": false,
+    "trace_sha256": "84e0c4c5b3f93e8d52b257d97a1cdc15fcd41497ae64dd9f4419b77a94c61ce4",
+    "citation_support": [],
+    "answer_grade": null,
+    "context_grade": null,
+    "abstention_correct": true,
+    "reason": "Đối chiếu toàn bộ 42 trang và câu hỏi: không có học phí từng sinh viên (u03) hoặc benchmark H100/PmfMean (u04). Agent từ chối rõ ràng, không thêm số liệu suy đoán."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-t01",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:51:54.692123+00:00",
+    "student_verified": false,
+    "trace_sha256": "1e046909cbfe310e338ce28ba9a13496b3245fdf4e6b2638371bc5ff295c9558",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 53 nêu Copy tạo và sửa bản sao mà không ảnh hưởng bản gốc; answer giữ đủ cả mục đích và điều kiện không sửa gốc."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-t02",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:51:54.693175+00:00",
+    "student_verified": false,
+    "trace_sha256": "8ce3386b3c01ff13b5681b4db557eb42b5584c4e83a031fe4ddec2888c5ea261",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 58: UnbiasPmf nhân từng xác suất với 1.0/x rồi Normalize. Đúng phép toán và đúng bước cuối."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-t03",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:51:54.693175+00:00",
+    "student_verified": false,
+    "trace_sha256": "ad6da568499ecc427bba09dcee18f936a4a7f41b39bd5e57722ef8c91f0d4fa0",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 56 nêu sinh viên học 4–5 lớp, giảng viên dạy 1–2 và nhiều sinh viên quan sát lớp đông hơn lớp nhỏ; answer bao phủ hai lý do."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-t04",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:51:54.693700+00:00",
+    "student_verified": false,
+    "trace_sha256": "9e88dd731f39c97ed062e48b02002c38f35568bbd71b09f73f834a146c02900e",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 62 nói cơ hội vượt/bị vượt tỷ lệ chênh lệch tốc độ, ít gặp người cùng tốc độ; answer đúng đại lượng và cơ chế."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-t05",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:51:54.694227+00:00",
+    "student_verified": false,
+    "trace_sha256": "0eb0c8d8d082c2690413243f56c23c829d2119c99f6150389e4775fb97e1c967",
+    "citation_support": [
+      true
+    ],
+    "answer_grade": 2,
+    "context_grade": 2,
+    "abstention_correct": null,
+    "reason": "PDF 62 yêu cầu kiểm tra PmfMean/PmfVar nhất quán với Mean/Var của Pmf, đúng cả hai tên phương thức."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-u03",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:51:54.694750+00:00",
+    "student_verified": false,
+    "trace_sha256": "f72ee9e73c72448ff6385c9f2f877f3ae0fc7a6ded9e2c6ba7f8c8f3c0c9dd79",
+    "citation_support": [],
+    "answer_grade": null,
+    "context_grade": null,
+    "abstention_correct": true,
+    "reason": "Đối chiếu toàn bộ 42 trang và câu hỏi: không có học phí từng sinh viên (u03) hoặc benchmark H100/PmfMean (u04). Agent từ chối rõ ràng, không thêm số liệu suy đoán."
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-u04",
+    "reviewer": "Codex source-based reading",
+    "reviewed_at": "2026-11-14T07:51:54.695276+00:00",
+    "student_verified": false,
+    "trace_sha256": "7426f01f505554efb93102f87542701ee49f5a9bfa739452c235ef94c537e5a5",
+    "citation_support": [],
+    "answer_grade": null,
+    "context_grade": null,
+    "abstention_correct": true,
+    "reason": "Đối chiếu toàn bộ 42 trang và câu hỏi: không có học phí từng sinh viên (u03) hoặc benchmark H100/PmfMean (u04). Agent từ chối rõ ràng, không thêm số liệu suy đoán."
+  }
+]

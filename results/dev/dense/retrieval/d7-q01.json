@@ -1,0 +1,165 @@
+{
+  "query_id": "d7-q01",
+  "split": "dev",
+  "config": "dense",
+  "status": "ok",
+  "query": "Vì sao việc chỉ lấy ý kiến người tham gia thảo luận về con đầu sinh muộn có thể gây selection bias?",
+  "filter": {},
+  "results": [
+    {
+      "id": "ef334e7bae7044ad56c05991",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 21,
+      "text": "“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "1",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1141,
+        "language": "en",
+        "start_char": 625,
+        "printed_page": 1,
+        "extraction_status": "ok"
+      },
+      "score": 0.6785631382037147,
+      "method": "dense"
+    },
+    {
+      "id": "54f0c801e3aa64b436f8c68f",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 22,
+      "text": "2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "1",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 895,
+        "language": "en",
+        "start_char": 0,
+        "printed_page": 2,
+        "extraction_status": "ok"
+      },
+      "score": 0.6714003086090088,
+      "method": "dense"
+    },
+    {
+      "id": "004c768971ba76dd4ebdb170",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 62,
+      "text": "As a result, runners were spread out along the course with little relationship\nbetween speed and location. When I joined the race, the runners near me\nwere (pretty much) a random sample of the runners in the race.\n\nSo where does the bias come from? During my time on the course, the chance\nof overtaking a runner, or being overtaken, is proportional to the difference\nin our speeds. I am more likely to catch a slow runner, and more likely to be\ncaught by a fast runner. But runners at the same speed are unlikely to see\neach other.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "3",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 2111,
+        "language": "en",
+        "start_char": 1579,
+        "printed_page": 42,
+        "extraction_status": "ok"
+      },
+      "score": 0.6457622839737622,
+      "method": "dense"
+    }
+  ],
+  "context": "[ef334e7bae7044ad56c05991 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 21]\n“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,",
+  "context_ids": [
+    "ef334e7bae7044ad56c05991"
+  ],
+  "hit1": false,
+  "hit3": true,
+  "context_hit": false,
+  "elapsed_ms": 36.663200007751584,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q01",
+      "split": "dev",
+      "config": "dense",
+      "status": "ok",
+      "query": "Vì sao việc chỉ lấy ý kiến người tham gia thảo luận về con đầu sinh muộn có thể gây selection bias?",
+      "filter": {},
+      "results": [
+        {
+          "id": "ef334e7bae7044ad56c05991",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 21,
+          "text": "“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1141,
+            "language": "en",
+            "start_char": 625,
+            "printed_page": 1,
+            "extraction_status": "ok"
+          },
+          "score": 0.6785631382037147,
+          "method": "dense"
+        },
+        {
+          "id": "54f0c801e3aa64b436f8c68f",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 22,
+          "text": "2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 895,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 2,
+            "extraction_status": "ok"
+          },
+          "score": 0.6714003086090088,
+          "method": "dense"
+        },
+        {
+          "id": "004c768971ba76dd4ebdb170",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 62,
+          "text": "As a result, runners were spread out along the course with little relationship\nbetween speed and location. When I joined the race, the runners near me\nwere (pretty much) a random sample of the runners in the race.\n\nSo where does the bias come from? During my time on the course, the chance\nof overtaking a runner, or being overtaken, is proportional to the difference\nin our speeds. I am more likely to catch a slow runner, and more likely to be\ncaught by a fast runner. But runners at the same speed are unlikely to see\neach other.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "3",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 2111,
+            "language": "en",
+            "start_char": 1579,
+            "printed_page": 42,
+            "extraction_status": "ok"
+          },
+          "score": 0.6457622839737622,
+          "method": "dense"
+        }
+      ],
+      "context": "[ef334e7bae7044ad56c05991 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 21]\n“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,",
+      "context_ids": [
+        "ef334e7bae7044ad56c05991"
+      ],
+      "hit1": false,
+      "hit3": true,
+      "context_hit": false,
+      "elapsed_ms": 41.420599998673424
+    }
+  ]
+}

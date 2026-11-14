@@ -1,0 +1,257 @@
+{
+  "query_id": "d7-q13",
+  "split": "dev",
+  "config": "dense_context",
+  "status": "ok",
+  "query": "Trong chương 2, histogram thể hiện điều gì và frequency nghĩa là gì?",
+  "filter": {},
+  "results": [
+    {
+      "id": "8849532a0610912f69f6978d",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 37,
+      "text": "Chapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "2",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 846,
+        "language": "en",
+        "start_char": 0,
+        "printed_page": 17,
+        "extraction_status": "ok"
+      },
+      "score": 0.7644991874694824,
+      "method": "dense"
+    },
+    {
+      "id": "69c99c6b45abe7b28d8ff663",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 50,
+      "text": "30 Chapter 2. Distributions\n\n•frequency: The number of times a value appears in a sample.\n\n•mode: The most frequent value in a sample, or one of the most frequent\nvalues.\n\n•normal distribution: An idealization of a bell-shaped distribution;\nalso known as a Gaussian distribution.\n\n•uniform distribution: A distribution in which all values have the\nsame frequency.\n\n•tail: The part of a distribution at the high and low extremes.\n\n•central tendency: A characteristic of a sample or population; intu-\nitively, it is an average or typical value.\n\n•outlier: A value far from the central tendency.\n\n•spread: A measure of how spread out the values in a distribution are.\n\n•summary statistic: A statistic that quantifies some aspect of a dis-\ntribution, like central tendency or spread.\n\n•variance: A summary statistic often used to quantify spread.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "2",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 842,
+        "language": "en",
+        "start_char": 0,
+        "printed_page": 30,
+        "extraction_status": "ok"
+      },
+      "score": 0.7365027885586858,
+      "method": "dense"
+    },
+    {
+      "id": "26ae64c96e1b06d8f4423144",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 49,
+      "text": "•histogram: A mapping from values to frequencies, or a graph that\nshows this mapping.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "2",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1704,
+        "language": "en",
+        "start_char": 1619,
+        "printed_page": 29,
+        "extraction_status": "ok"
+      },
+      "score": 0.7353650331497192,
+      "method": "dense"
+    },
+    {
+      "id": "d198865311365c6ccfa5ea1f",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 44,
+      "text": "24 Chapter 2. Distributions\n\nFigure 2.5: Histogram of pregnancy lengths.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "2",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 72,
+        "language": "en",
+        "start_char": 0,
+        "printed_page": 24,
+        "extraction_status": "ok"
+      },
+      "score": 0.7304723480484593,
+      "method": "dense"
+    },
+    {
+      "id": "529cdc9d1651a8ca2732b74f",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 38,
+      "text": "18 Chapter 2. Distributions\n\nAnother option is to use the pandas methodvalue_counts, which we saw in\nthe previous chapter. But for this book I created a class, Hist, that represents\nhistograms and provides the methods that operate on them.\n\n2.2 Representing histograms",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "2",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 268,
+        "language": "en",
+        "start_char": 0,
+        "printed_page": 18,
+        "extraction_status": "ok"
+      },
+      "score": 0.7288032446865187,
+      "method": "dense"
+    }
+  ],
+  "context": "[8849532a0610912f69f6978d | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 37]\nChapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.\n\n[69c99c6b45abe7b28d8ff663 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 50]\n30 Chapter 2. Distributions\n\n•frequency: The number of times a value appears in a sample.\n\n•mode: The most frequent value in a sample, or one of the most frequent\nvalues.\n\n•normal distribution: An idealization of a bell-shaped distribution;\nalso known as a Gaussian distribution.\n\n•uniform distribution: A distribution in which all values have the\nsame frequency.\n\n•tail: The part of a distribution at the high and low extremes.\n\n•central tendency: A characteristic of a sample or population; intu-\nitively, it is an average or typical value.\n\n•outlier: A value far from the central tendency.\n\n•spread: A measure of how spread out the values in a distribution are.\n\n•summary statistic: A statistic that quantifies some aspect of a dis-\ntribution, like central tendency or spread.\n\n•variance: A summary statistic often used to quantify spread.\n\n[26ae64c96e1b06d8f4423144 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 49]\n•histogram: A mapping from values to frequencies, or a graph that\nshows this mapping.\n\n[d198865311365c6ccfa5ea1f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 44]\n24 Chapter 2. Distributions\n\nFigure 2.5: Histogram of pregnancy lengths.\n\n[529cdc9d1651a8ca2732b74f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 38]\n18 Chapter 2. Distributions\n\nAnother option is to use the pandas methodvalue_counts, which we saw in\nthe previous chapter. But for this book I created a class, Hist, that represents\nhistograms and provides the methods that operate on them.\n\n2.2 Representing histograms",
+  "context_ids": [
+    "8849532a0610912f69f6978d",
+    "69c99c6b45abe7b28d8ff663",
+    "26ae64c96e1b06d8f4423144",
+    "d198865311365c6ccfa5ea1f",
+    "529cdc9d1651a8ca2732b74f"
+  ],
+  "hit1": true,
+  "hit3": true,
+  "context_hit": true,
+  "elapsed_ms": 23.355500015895814,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q13",
+      "split": "dev",
+      "config": "dense_context",
+      "status": "ok",
+      "query": "Trong chương 2, histogram thể hiện điều gì và frequency nghĩa là gì?",
+      "filter": {},
+      "results": [
+        {
+          "id": "8849532a0610912f69f6978d",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 37,
+          "text": "Chapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 846,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 17,
+            "extraction_status": "ok"
+          },
+          "score": 0.7644991874694824,
+          "method": "dense"
+        },
+        {
+          "id": "69c99c6b45abe7b28d8ff663",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 50,
+          "text": "30 Chapter 2. Distributions\n\n•frequency: The number of times a value appears in a sample.\n\n•mode: The most frequent value in a sample, or one of the most frequent\nvalues.\n\n•normal distribution: An idealization of a bell-shaped distribution;\nalso known as a Gaussian distribution.\n\n•uniform distribution: A distribution in which all values have the\nsame frequency.\n\n•tail: The part of a distribution at the high and low extremes.\n\n•central tendency: A characteristic of a sample or population; intu-\nitively, it is an average or typical value.\n\n•outlier: A value far from the central tendency.\n\n•spread: A measure of how spread out the values in a distribution are.\n\n•summary statistic: A statistic that quantifies some aspect of a dis-\ntribution, like central tendency or spread.\n\n•variance: A summary statistic often used to quantify spread.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 842,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 30,
+            "extraction_status": "ok"
+          },
+          "score": 0.7365027885586858,
+          "method": "dense"
+        },
+        {
+          "id": "26ae64c96e1b06d8f4423144",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 49,
+          "text": "•histogram: A mapping from values to frequencies, or a graph that\nshows this mapping.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1704,
+            "language": "en",
+            "start_char": 1619,
+            "printed_page": 29,
+            "extraction_status": "ok"
+          },
+          "score": 0.7353650331497192,
+          "method": "dense"
+        },
+        {
+          "id": "d198865311365c6ccfa5ea1f",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 44,
+          "text": "24 Chapter 2. Distributions\n\nFigure 2.5: Histogram of pregnancy lengths.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 72,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 24,
+            "extraction_status": "ok"
+          },
+          "score": 0.7304723480484593,
+          "method": "dense"
+        },
+        {
+          "id": "529cdc9d1651a8ca2732b74f",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 38,
+          "text": "18 Chapter 2. Distributions\n\nAnother option is to use the pandas methodvalue_counts, which we saw in\nthe previous chapter. But for this book I created a class, Hist, that represents\nhistograms and provides the methods that operate on them.\n\n2.2 Representing histograms",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 268,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 18,
+            "extraction_status": "ok"
+          },
+          "score": 0.7288032446865187,
+          "method": "dense"
+        }
+      ],
+      "context": "[8849532a0610912f69f6978d | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 37]\nChapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.\n\n[69c99c6b45abe7b28d8ff663 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 50]\n30 Chapter 2. Distributions\n\n•frequency: The number of times a value appears in a sample.\n\n•mode: The most frequent value in a sample, or one of the most frequent\nvalues.\n\n•normal distribution: An idealization of a bell-shaped distribution;\nalso known as a Gaussian distribution.\n\n•uniform distribution: A distribution in which all values have the\nsame frequency.\n\n•tail: The part of a distribution at the high and low extremes.\n\n•central tendency: A characteristic of a sample or population; intu-\nitively, it is an average or typical value.\n\n•outlier: A value far from the central tendency.\n\n•spread: A measure of how spread out the values in a distribution are.\n\n•summary statistic: A statistic that quantifies some aspect of a dis-\ntribution, like central tendency or spread.\n\n•variance: A summary statistic often used to quantify spread.\n\n[26ae64c96e1b06d8f4423144 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 49]\n•histogram: A mapping from values to frequencies, or a graph that\nshows this mapping.\n\n[d198865311365c6ccfa5ea1f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 44]\n24 Chapter 2. Distributions\n\nFigure 2.5: Histogram of pregnancy lengths.\n\n[529cdc9d1651a8ca2732b74f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 38]\n18 Chapter 2. Distributions\n\nAnother option is to use the pandas methodvalue_counts, which we saw in\nthe previous chapter. But for this book I created a class, Hist, that represents\nhistograms and provides the methods that operate on them.\n\n2.2 Representing histograms",
+      "context_ids": [
+        "8849532a0610912f69f6978d",
+        "69c99c6b45abe7b28d8ff663",
+        "26ae64c96e1b06d8f4423144",
+        "d198865311365c6ccfa5ea1f",
+        "529cdc9d1651a8ca2732b74f"
+      ],
+      "hit1": true,
+      "hit3": true,
+      "context_hit": true,
+      "elapsed_ms": 17.334999982267618
+    }
+  ]
+}

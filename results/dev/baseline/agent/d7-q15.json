@@ -1,0 +1,289 @@
+{
+  "question": "Độ lệch chuẩn có quan hệ gì với phương sai?",
+  "config": "baseline",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:11.209935+00:00",
+  "status": "answered",
+  "citations": [
+    "d3270a2b867639b7ed5e52b2"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "tfidf",
+      "query": "standard deviation variance Think Stats",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 46,
+          "text": "If there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 26,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 793,
+            "end_char": 1638,
+            "chunking": "paragraph"
+          },
+          "id": "d3270a2b867639b7ed5e52b2",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.3844993416825262,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 50,
+          "text": "•standard deviation: The square root of variance, also used as a\nmeasure of spread.\n\n•effect size: A summary statistic intended to quantify the size of an\neffect like a difference between groups.\n\n•clinically significant: A result, like a difference between groups, that\nis relevant in practice.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 30,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 844,
+            "end_char": 1139,
+            "chunking": "paragraph"
+          },
+          "id": "85c6d34102988e3d43bfab5f",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.22822876409862924,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 47,
+          "text": "2.9. Effect size 27\n\nFor all live births, the mean pregnancy length is 38.6 weeks, the standard\ndeviation is 2.7 weeks, which means we should expect deviations of 2-3 weeks\nto be common.\n\nVariance of pregnancy length is 7.3, which is hard to interpret, especially\nsince the units are weeks2, or “square weeks.” Variance is useful in some\ncalculations, but it is not a good summary statistic.\n\n2.9 Effect size\n\nAneffect sizeis a summary statistic intended to describe (wait for it) the\nsize of an effect. For example, to describe the difference between two groups,\none obvious choice is the difference in the means.\n\nMean pregnancy length for first babies is 38.601; for other babies it is 38.523.\nThe difference is 0.078 weeks, which works out to 13 hours. As a fraction of\nthe typical pregnancy length, this difference is about 0.2%.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 27,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 834,
+            "chunking": "paragraph"
+          },
+          "id": "449838e71555d1ff1d4b20c7",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.13455301025707198,
+          "method": "tfidf"
+        }
+      ],
+      "context": "[d3270a2b867639b7ed5e52b2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\nIf there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()",
+      "context_ids": [
+        "d3270a2b867639b7ed5e52b2"
+      ],
+      "elapsed_ms": 0.2099999983329326
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "abstain": false,
+        "citations": [
+          "d3270a2b867639b7ed5e52b2"
+        ],
+        "answer": "Độ lệch chuẩn là căn bậc hai của phương sai [d3270a2b867639b7ed5e52b2]."
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 338,
+        "candidatesTokenCount": 18,
+        "totalTokenCount": 356,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 338
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 680,
+        "candidatesTokenCount": 82,
+        "totalTokenCount": 762,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 680
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Độ lệch chuẩn là căn bậc hai của phương sai [d3270a2b867639b7ed5e52b2].",
+  "context": "[d3270a2b867639b7ed5e52b2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\nIf there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()",
+  "context_ids": [
+    "d3270a2b867639b7ed5e52b2"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 0.3677000058814883,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q15",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 8382.020099990768,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Độ lệch chuẩn có quan hệ gì với phương sai?",
+      "config": "baseline",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:30:10.519653+00:00",
+      "status": "answered",
+      "citations": [
+        "d3270a2b867639b7ed5e52b2"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "tfidf",
+          "query": "standard deviation variance Think Stats",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 46,
+              "text": "If there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "2",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 26,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 793,
+                "end_char": 1638,
+                "chunking": "paragraph"
+              },
+              "id": "d3270a2b867639b7ed5e52b2",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.3844993416825262,
+              "method": "tfidf"
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 50,
+              "text": "•standard deviation: The square root of variance, also used as a\nmeasure of spread.\n\n•effect size: A summary statistic intended to quantify the size of an\neffect like a difference between groups.\n\n•clinically significant: A result, like a difference between groups, that\nis relevant in practice.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "2",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 30,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 844,
+                "end_char": 1139,
+                "chunking": "paragraph"
+              },
+              "id": "85c6d34102988e3d43bfab5f",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.22822876409862924,
+              "method": "tfidf"
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 47,
+              "text": "2.9. Effect size 27\n\nFor all live births, the mean pregnancy length is 38.6 weeks, the standard\ndeviation is 2.7 weeks, which means we should expect deviations of 2-3 weeks\nto be common.\n\nVariance of pregnancy length is 7.3, which is hard to interpret, especially\nsince the units are weeks2, or “square weeks.” Variance is useful in some\ncalculations, but it is not a good summary statistic.\n\n2.9 Effect size\n\nAneffect sizeis a summary statistic intended to describe (wait for it) the\nsize of an effect. For example, to describe the difference between two groups,\none obvious choice is the difference in the means.\n\nMean pregnancy length for first babies is 38.601; for other babies it is 38.523.\nThe difference is 0.078 weeks, which works out to 13 hours. As a fraction of\nthe typical pregnancy length, this difference is about 0.2%.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "2",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 27,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 834,
+                "chunking": "paragraph"
+              },
+              "id": "449838e71555d1ff1d4b20c7",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.13455301025707198,
+              "method": "tfidf"
+            }
+          ],
+          "context": "[d3270a2b867639b7ed5e52b2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\nIf there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()",
+          "context_ids": [
+            "d3270a2b867639b7ed5e52b2"
+          ],
+          "elapsed_ms": 0.5459999956656247
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "abstain": false,
+            "citations": [
+              "d3270a2b867639b7ed5e52b2"
+            ],
+            "answer": "Độ lệch chuẩn là căn bậc hai của phương sai [d3270a2b867639b7ed5e52b2]."
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 338,
+            "candidatesTokenCount": 18,
+            "totalTokenCount": 356,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 338
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 680,
+            "candidatesTokenCount": 82,
+            "totalTokenCount": 762,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 680
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Độ lệch chuẩn là căn bậc hai của phương sai [d3270a2b867639b7ed5e52b2].",
+      "context": "[d3270a2b867639b7ed5e52b2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\nIf there is no single number that summarizes pumpkin weights, we can do a\nlittle better with two numbers: mean andvariance.\nVariance is a summary statistic intended to describe the variability or spread\nof a distribution. The variance of a set of values is\nS2 = 1 X(x i − ̄x) 2\nn i\n\nThe termx i − ̄xis called the “deviation from the mean,” so variance is the\nmean squared deviation. The square root of variance,S, is thestandard\ndeviation.\nIf you have prior experience, you might have seen a formula for variance with\nn−1 in the denominator, rather thann. This statistic is used to estimate\nthe variance in a population using a sample. We will come back to this in\nChapter 8.\nPandas data structures provides methods to compute mean, variance and\nstandard deviation:\nmean = live.prglngth.mean()\nvar = live.prglngth.var()\nstd = live.prglngth.std()",
+      "context_ids": [
+        "d3270a2b867639b7ed5e52b2"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 8382.020099990768,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q15",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

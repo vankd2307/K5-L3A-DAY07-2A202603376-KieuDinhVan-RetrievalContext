@@ -1,0 +1,297 @@
+{
+  "query_id": "d7-q06",
+  "split": "dev",
+  "config": "hybrid_context",
+  "status": "ok",
+  "query": "DataFrame NSFG được minh họa có bao nhiêu bản ghi và biến?",
+  "filter": {},
+  "results": [
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 26,
+      "text": "6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 6,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 542,
+        "chunking": "paragraph"
+      },
+      "id": "ee672fe7059e3b9d2b8e2207",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.03252247488101534,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 1,
+        "1": 2
+      }
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 25,
+      "text": "The result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 5,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 1345,
+        "end_char": 1637,
+        "chunking": "paragraph"
+      },
+      "id": "de378d91be893b62e4be3810",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.031746031746031744,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 3,
+        "1": 3
+      }
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 30,
+      "text": "One way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 10,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 767,
+        "end_char": 1418,
+        "chunking": "paragraph"
+      },
+      "id": "4f0610284ca731ebc56f0974",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.029910714285714284,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 4,
+        "1": 10
+      }
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 23,
+      "text": "The NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 3,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 1377,
+        "end_char": 1824,
+        "chunking": "paragraph"
+      },
+      "id": "f40266243aa427f23fa90b4e",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.029418126757516764,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 7,
+        "1": 9
+      }
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 34,
+      "text": "file,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences,",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 14,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 936,
+        "end_char": 1831,
+        "chunking": "paragraph"
+      },
+      "id": "1d8260bcb7068f12171046d3",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.028790389395194696,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 8,
+        "1": 11
+      }
+    }
+  ],
+  "context": "[ee672fe7059e3b9d2b8e2207 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\n6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.\n\n[4f0610284ca731ebc56f0974 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\nOne way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148\n\n[f40266243aa427f23fa90b4e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the\n\n[1d8260bcb7068f12171046d3 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 34]\nfile,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences,",
+  "context_ids": [
+    "ee672fe7059e3b9d2b8e2207",
+    "de378d91be893b62e4be3810",
+    "4f0610284ca731ebc56f0974",
+    "f40266243aa427f23fa90b4e",
+    "1d8260bcb7068f12171046d3"
+  ],
+  "hit1": true,
+  "hit3": true,
+  "context_hit": true,
+  "elapsed_ms": 25.190900021698326,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q06",
+      "split": "dev",
+      "config": "hybrid_context",
+      "status": "ok",
+      "query": "DataFrame NSFG được minh họa có bao nhiêu bản ghi và biến?",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 26,
+          "text": "6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 6,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 542,
+            "chunking": "paragraph"
+          },
+          "id": "ee672fe7059e3b9d2b8e2207",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03252247488101534,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1,
+            "1": 2
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 25,
+          "text": "The result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 5,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 1345,
+            "end_char": 1637,
+            "chunking": "paragraph"
+          },
+          "id": "de378d91be893b62e4be3810",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.031746031746031744,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 3,
+            "1": 3
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 30,
+          "text": "One way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 10,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 767,
+            "end_char": 1418,
+            "chunking": "paragraph"
+          },
+          "id": "4f0610284ca731ebc56f0974",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.029910714285714284,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 4,
+            "1": 10
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 23,
+          "text": "The NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 3,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 1377,
+            "end_char": 1824,
+            "chunking": "paragraph"
+          },
+          "id": "f40266243aa427f23fa90b4e",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.029418126757516764,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 7,
+            "1": 9
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 34,
+          "text": "file,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences,",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 14,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 936,
+            "end_char": 1831,
+            "chunking": "paragraph"
+          },
+          "id": "1d8260bcb7068f12171046d3",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.028790389395194696,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 8,
+            "1": 11
+          }
+        }
+      ],
+      "context": "[ee672fe7059e3b9d2b8e2207 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\n6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.\n\n[4f0610284ca731ebc56f0974 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\nOne way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148\n\n[f40266243aa427f23fa90b4e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the\n\n[1d8260bcb7068f12171046d3 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 34]\nfile,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences,",
+      "context_ids": [
+        "ee672fe7059e3b9d2b8e2207",
+        "de378d91be893b62e4be3810",
+        "4f0610284ca731ebc56f0974",
+        "f40266243aa427f23fa90b4e",
+        "1d8260bcb7068f12171046d3"
+      ],
+      "hit1": true,
+      "hit3": true,
+      "context_hit": true,
+      "elapsed_ms": 16.88730000751093
+    }
+  ]
+}

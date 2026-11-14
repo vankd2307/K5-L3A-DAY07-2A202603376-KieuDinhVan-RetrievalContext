@@ -1,0 +1,71 @@
+{
+  "question": "Tác giả báo cáo độ trễ trung bình bao nhiêu mili giây khi chạy PmfMean trên GPU NVIDIA H100?",
+  "config": "baseline",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:44:53.592699+00:00",
+  "status": "abstain",
+  "citations": [],
+  "events": [
+    {
+      "event": "search",
+      "tool": "tfidf",
+      "query": "PmfMean NVIDIA H100 milliseconds latency",
+      "filter": {},
+      "results": [],
+      "context": "",
+      "context_ids": [],
+      "elapsed_ms": 0.1714999962132424
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "abstain": true,
+        "answer": "Không đủ bằng chứng trong tài liệu để trả lời câu hỏi về độ trễ khi chạy PmfMean trên GPU NVIDIA H100.",
+        "citations": []
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": false,
+      "usage": {
+        "promptTokenCount": 353,
+        "candidatesTokenCount": 23,
+        "totalTokenCount": 376,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 353
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": false,
+      "usage": {
+        "promptTokenCount": 406,
+        "candidatesTokenCount": 50,
+        "totalTokenCount": 456,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 406
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+  "context": "",
+  "context_ids": [],
+  "search_count": 1,
+  "elapsed_ms": 8794.20130001381,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-u04",
+  "split": "test",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": null
+}

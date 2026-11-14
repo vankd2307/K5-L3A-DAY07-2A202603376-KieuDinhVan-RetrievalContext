@@ -1,0 +1,128 @@
+{
+  "query_id": "d7-t01",
+  "split": "test",
+  "config": "dense_context",
+  "status": "ok",
+  "query": "Pmf.Copy dùng để làm gì và có làm thay đổi Pmf gốc không?",
+  "filter": {},
+  "results": [
+    {
+      "id": "43bd289ef6813bfb7273739b",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 53,
+      "text": "3.2. Plotting PMFs 33\n\nTo renormalize, callNormalize:\n\n>>> pmf.Normalize()\n>>> pmf.Total()\n1.0\n\nPmf objects provide aCopymethod so you can make and modify a copy\nwithout affecting the original.\n\nMy notation in this section might seem inconsistent, but there is a system: I\nuse Pmf for the name of the class,pmffor an instance of the class, and PMF\nfor the mathematical concept of a probability mass function.\n\n3.2 Plotting PMFs\n\nthinkplotprovides two ways to plot Pmfs:\n\n•To plot a Pmf as a bar graph, you can usethinkplot.Hist. Bar graphs\nare most useful if the number of values in the Pmf is small.\n\n•To plot a Pmf as a step function, you can usethinkplot.Pmf. This\noption is most useful if there are a large number of values and the Pmf\nis smooth. This function also works with Hist objects.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "3",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 794,
+        "language": "en",
+        "start_char": 0,
+        "printed_page": 33,
+        "extraction_status": "ok"
+      },
+      "score": 0.7158517837524414,
+      "method": "dense"
+    },
+    {
+      "id": "91a8afa59ea8ff3ae6ef95a8",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 52,
+      "text": "32 Chapter 3. Probability mass functions\n\n>>> import thinkstats2\n>>> pmf = thinkstats2.Pmf([1, 2, 2, 3, 5])\n>>> pmf\nPmf({1: 0.2, 2: 0.4, 3: 0.2, 5: 0.2})\n\nThe Pmf is normalized so total probability is 1.\n\nPmf and Hist objects are similar in many ways; in fact, they inherit many\nof their methods from a common parent class. For example, the methods\nValuesandItemswork the same way for both. The biggest difference is\nthat a Hist maps from values to integer counters; a Pmf maps from values\nto floating-point probabilities.\n\nTo look up the probability associated with a value, useProb:\n\n>>> pmf.Prob(2)\n0.4\n\nThe bracket operator is equivalent:\n>>> pmf[2]\n0.4\nYou can modify an existing Pmf by incrementing the probability associated\nwith a value:\n\n>>> pmf.Incr(2, 0.2)\n>>> pmf.Prob(2)\n0.6\n\nOr you can multiply a probability by a factor:\n\n>>> pmf.Mult(2, 0.5)\n>>> pmf.Prob(2)\n0.3",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "3",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 877,
+        "language": "en",
+        "start_char": 0,
+        "printed_page": 32,
+        "extraction_status": "ok"
+      },
+      "score": 0.7002673745155334,
+      "method": "dense"
+    },
+    {
+      "id": "f0ab6c9063aae1fe61c7d71b",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 52,
+      "text": "If you modify a Pmf, the result may not be normalized; that is, the probabilities may no longer add up to 1. To check, you can callTotal, which returns\nthe sum of the probabilities:\n\n>>> pmf.Total()\n0.9",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "3",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1081,
+        "language": "en",
+        "start_char": 879,
+        "printed_page": 32,
+        "extraction_status": "ok"
+      },
+      "score": 0.6970882415771484,
+      "method": "dense"
+    },
+    {
+      "id": "cb9a0be491d7015bfc3a82fa",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 57,
+      "text": "new_pmf.Normalize()\nreturn new_pmf\nFor each class size,x, we multiply the probability byx, the number of students\nwho observe that class size. The result is a new Pmf that represents the\nbiased distribution.\nNow we can plot the actual and observed distributions:\nbiased_pmf = BiasPmf(pmf, label='observed')\nthinkplot.PrePlot(2)\nthinkplot.Pmfs([pmf, biased_pmf])\nthinkplot.Show(xlabel='class size', ylabel='PMF')\nFigure 3.3 shows the result. In the biased distribution there are fewer small\nclasses and more large ones. The mean of the biased distribution is 29.1,\nalmost 25% higher than the actual mean.\nIt is also possible to invert this operation. Suppose you want to find the\ndistribution of class sizes at a college, but you can’t get reliable data from",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "3",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1536,
+        "language": "en",
+        "start_char": 779,
+        "printed_page": 37,
+        "extraction_status": "ok"
+      },
+      "score": 0.6867155041311834,
+      "method": "dense"
+    },
+    {
+      "id": "28f79f47128ffffd50f881e4",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 58,
+      "text": "38 Chapter 3. Probability mass functions\n\nFigure 3.3: Distribution of class sizes, actual and as observed by students.\n\nthe Dean. An alternative is to choose a random sample of students and ask\nhow many students are in their classes.\n\nThe result would be biased for the reasons we’ve just seen, but you can use it\nto estimate the actual distribution. Here’s the function that unbiases a Pmf:\n\ndef UnbiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, 1.0/x)\n\nnew_pmf.Normalize()\nreturn new_pmf\n\nIt’s similar toBiasPmf; the only difference is that it divides each probability\nbyxinstead of multiplying.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "3",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 644,
+        "language": "en",
+        "start_char": 0,
+        "printed_page": 38,
+        "extraction_status": "ok"
+      },
+      "score": 0.679186027001503,
+      "method": "dense"
+    }
+  ],
+  "context": "[43bd289ef6813bfb7273739b | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 53]\n3.2. Plotting PMFs 33\n\nTo renormalize, callNormalize:\n\n>>> pmf.Normalize()\n>>> pmf.Total()\n1.0\n\nPmf objects provide aCopymethod so you can make and modify a copy\nwithout affecting the original.\n\nMy notation in this section might seem inconsistent, but there is a system: I\nuse Pmf for the name of the class,pmffor an instance of the class, and PMF\nfor the mathematical concept of a probability mass function.\n\n3.2 Plotting PMFs\n\nthinkplotprovides two ways to plot Pmfs:\n\n•To plot a Pmf as a bar graph, you can usethinkplot.Hist. Bar graphs\nare most useful if the number of values in the Pmf is small.\n\n•To plot a Pmf as a step function, you can usethinkplot.Pmf. This\noption is most useful if there are a large number of values and the Pmf\nis smooth. This function also works with Hist objects.\n\n[91a8afa59ea8ff3ae6ef95a8 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 52]\n32 Chapter 3. Probability mass functions\n\n>>> import thinkstats2\n>>> pmf = thinkstats2.Pmf([1, 2, 2, 3, 5])\n>>> pmf\nPmf({1: 0.2, 2: 0.4, 3: 0.2, 5: 0.2})\n\nThe Pmf is normalized so total probability is 1.\n\nPmf and Hist objects are similar in many ways; in fact, they inherit many\nof their methods from a common parent class. For example, the methods\nValuesandItemswork the same way for both. The biggest difference is\nthat a Hist maps from values to integer counters; a Pmf maps from values\nto floating-point probabilities.\n\nTo look up the probability associated with a value, useProb:\n\n>>> pmf.Prob(2)\n0.4\n\nThe bracket operator is equivalent:\n>>> pmf[2]\n0.4\nYou can modify an existing Pmf by incrementing the probability associated\nwith a value:\n\n>>> pmf.Incr(2, 0.2)\n>>> pmf.Prob(2)\n0.6\n\nOr you can multiply a probability by a factor:\n\n>>> pmf.Mult(2, 0.5)\n>>> pmf.Prob(2)\n0.3\n\n[f0ab6c9063aae1fe61c7d71b | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 52]\nIf you modify a Pmf, the result may not be normalized; that is, the probabilities may no longer add up to 1. To check, you can callTotal, which returns\nthe sum of the probabilities:\n\n>>> pmf.Total()\n0.9\n\n[cb9a0be491d7015bfc3a82fa | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\nnew_pmf.Normalize()\nreturn new_pmf\nFor each class size,x, we multiply the probability byx, the number of students\nwho observe that class size. The result is a new Pmf that represents the\nbiased distribution.\nNow we can plot the actual and observed distributions:\nbiased_pmf = BiasPmf(pmf, label='observed')\nthinkplot.PrePlot(2)\nthinkplot.Pmfs([pmf, biased_pmf])\nthinkplot.Show(xlabel='class size', ylabel='PMF')\nFigure 3.3 shows the result. In the biased distribution there are fewer small\nclasses and more large ones. The mean of the biased distribution is 29.1,\nalmost 25% higher than the actual mean.\nIt is also possible to invert this operation. Suppose you want to find the\ndistribution of class sizes at a college, but you can’t get reliable data from\n\n[28f79f47128ffffd50f881e4 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 58]\n38 Chapter 3. Probability mass functions\n\nFigure 3.3: Distribution of class sizes, actual and as observed by students.\n\nthe Dean. An alternative is to choose a random sample of students and ask\nhow many students are in their classes.\n\nThe result would be biased for the reasons we’ve just seen, but you can use it\nto estimate the actual distribution. Here’s the function that unbiases a Pmf:\n\ndef UnbiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, 1.0/x)\n\nnew_pmf.Normalize()\nreturn new_pmf\n\nIt’s similar toBiasPmf; the only difference is that it divides each probability\nbyxinstead of multiplying.",
+  "context_ids": [
+    "43bd289ef6813bfb7273739b",
+    "91a8afa59ea8ff3ae6ef95a8",
+    "f0ab6c9063aae1fe61c7d71b",
+    "cb9a0be491d7015bfc3a82fa",
+    "28f79f47128ffffd50f881e4"
+  ],
+  "hit1": true,
+  "hit3": true,
+  "context_hit": true,
+  "elapsed_ms": 555.49049997353,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4"
+}

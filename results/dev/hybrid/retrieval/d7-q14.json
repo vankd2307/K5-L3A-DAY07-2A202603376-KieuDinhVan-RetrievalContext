@@ -1,0 +1,189 @@
+{
+  "query_id": "d7-q14",
+  "split": "dev",
+  "config": "hybrid",
+  "status": "ok",
+  "query": "Tác giả phân biệt mean và average như thế nào?",
+  "filter": {},
+  "results": [
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 45,
+      "text": "Statistics designed to answer these questions are calledsummary statistics.\nBy far the most common summary statistic is themean, which is meant to\ndescribe the central tendency of the distribution.\nIf you have a sample ofnvalues,x i, the mean, ̄x, is the sum of the values\ndivided by the number of values; in other words\n̄x= 1X xi\nn i\n\nThe words “mean” and “average” are sometimes used interchangeably, but I\nmake this distinction:\n\n•The “mean” of a sample is the summary statistic computed with the\nprevious formula.\n\n•An “average” is one of several summary statistics you might choose to\ndescribe a central tendency.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "2",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 25,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 788,
+        "end_char": 1406,
+        "chunking": "paragraph"
+      },
+      "id": "7b3b142d5d2b25996d5b4bbb",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.03278688524590164,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 1,
+        "1": 1
+      }
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 46,
+      "text": "26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "2",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 26,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 791,
+        "chunking": "paragraph"
+      },
+      "id": "4321b3f26f9d26c0b20e8a04",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.031754032258064516,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 2,
+        "1": 4
+      }
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 57,
+      "text": "3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "3",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 37,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 777,
+        "chunking": "paragraph"
+      },
+      "id": "971ea28ecfc7e695419ea19c",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.031754032258064516,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 4,
+        "1": 2
+      }
+    }
+  ],
+  "context": "[7b3b142d5d2b25996d5b4bbb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 45]\nStatistics designed to answer these questions are calledsummary statistics.\nBy far the most common summary statistic is themean, which is meant to\ndescribe the central tendency of the distribution.\nIf you have a sample ofnvalues,x i, the mean, ̄x, is the sum of the values\ndivided by the number of values; in other words\n̄x= 1X xi\nn i\n\nThe words “mean” and “average” are sometimes used interchangeably, but I\nmake this distinction:\n\n•The “mean” of a sample is the summary statistic computed with the\nprevious formula.\n\n•An “average” is one of several summary statistics you might choose to\ndescribe a central tendency.",
+  "context_ids": [
+    "7b3b142d5d2b25996d5b4bbb"
+  ],
+  "hit1": true,
+  "hit3": true,
+  "context_hit": true,
+  "elapsed_ms": 22.5751000107266,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q14",
+      "split": "dev",
+      "config": "hybrid",
+      "status": "ok",
+      "query": "Tác giả phân biệt mean và average như thế nào?",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 45,
+          "text": "Statistics designed to answer these questions are calledsummary statistics.\nBy far the most common summary statistic is themean, which is meant to\ndescribe the central tendency of the distribution.\nIf you have a sample ofnvalues,x i, the mean, ̄x, is the sum of the values\ndivided by the number of values; in other words\n̄x= 1X xi\nn i\n\nThe words “mean” and “average” are sometimes used interchangeably, but I\nmake this distinction:\n\n•The “mean” of a sample is the summary statistic computed with the\nprevious formula.\n\n•An “average” is one of several summary statistics you might choose to\ndescribe a central tendency.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 25,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 788,
+            "end_char": 1406,
+            "chunking": "paragraph"
+          },
+          "id": "7b3b142d5d2b25996d5b4bbb",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03278688524590164,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1,
+            "1": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 46,
+          "text": "26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 26,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 791,
+            "chunking": "paragraph"
+          },
+          "id": "4321b3f26f9d26c0b20e8a04",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.031754032258064516,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 2,
+            "1": 4
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 57,
+          "text": "3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 37,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 777,
+            "chunking": "paragraph"
+          },
+          "id": "971ea28ecfc7e695419ea19c",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.031754032258064516,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 4,
+            "1": 2
+          }
+        }
+      ],
+      "context": "[7b3b142d5d2b25996d5b4bbb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 45]\nStatistics designed to answer these questions are calledsummary statistics.\nBy far the most common summary statistic is themean, which is meant to\ndescribe the central tendency of the distribution.\nIf you have a sample ofnvalues,x i, the mean, ̄x, is the sum of the values\ndivided by the number of values; in other words\n̄x= 1X xi\nn i\n\nThe words “mean” and “average” are sometimes used interchangeably, but I\nmake this distinction:\n\n•The “mean” of a sample is the summary statistic computed with the\nprevious formula.\n\n•An “average” is one of several summary statistics you might choose to\ndescribe a central tendency.",
+      "context_ids": [
+        "7b3b142d5d2b25996d5b4bbb"
+      ],
+      "hit1": true,
+      "hit3": true,
+      "context_hit": true,
+      "elapsed_ms": 18.029200000455603
+    }
+  ]
+}

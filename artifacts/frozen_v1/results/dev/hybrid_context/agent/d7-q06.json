@@ -1,0 +1,751 @@
+{
+  "question": "DataFrame NSFG được minh họa có bao nhiêu bản ghi và biến?",
+  "config": "hybrid_context",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:12.822648+00:00",
+  "status": "answered",
+  "citations": [
+    "ee672fe7059e3b9d2b8e2207"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "hybrid",
+      "query": "DataFrame NSFG records variables",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 27,
+          "text": "1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 7,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 902,
+            "end_char": 1158,
+            "chunking": "paragraph"
+          },
+          "id": "2302c0aa2fd4d36ec776cd0e",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03252247488101534,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 2,
+            "1": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 26,
+          "text": "6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 6,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 542,
+            "chunking": "paragraph"
+          },
+          "id": "ee672fe7059e3b9d2b8e2207",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03252247488101534,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1,
+            "1": 2
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 25,
+          "text": "The result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 5,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 1345,
+            "end_char": 1637,
+            "chunking": "paragraph"
+          },
+          "id": "de378d91be893b62e4be3810",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03055037313432836,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 4,
+            "1": 7
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 34,
+          "text": "file,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences,",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 14,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 936,
+            "end_char": 1831,
+            "chunking": "paragraph"
+          },
+          "id": "1d8260bcb7068f12171046d3",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.030309988518943745,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 7,
+            "1": 5
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 39,
+          "text": "Now let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 19,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 625,
+            "end_char": 938,
+            "chunking": "paragraph"
+          },
+          "id": "11f52ca93e1d19a06edc1381",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.029437229437229435,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 10,
+            "1": 6
+          }
+        }
+      ],
+      "context": "[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.\n\n[ee672fe7059e3b9d2b8e2207 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\n6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.\n\n[1d8260bcb7068f12171046d3 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 34]\nfile,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences,\n\n[11f52ca93e1d19a06edc1381 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\nNow let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+      "context_ids": [
+        "2302c0aa2fd4d36ec776cd0e",
+        "ee672fe7059e3b9d2b8e2207",
+        "de378d91be893b62e4be3810",
+        "1d8260bcb7068f12171046d3",
+        "11f52ca93e1d19a06edc1381"
+      ],
+      "elapsed_ms": 17.3804999794811
+    },
+    {
+      "event": "search",
+      "tool": "hybrid",
+      "query": "13593 rows and 244 columns",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 26,
+          "text": "6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 6,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 542,
+            "chunking": "paragraph"
+          },
+          "id": "ee672fe7059e3b9d2b8e2207",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03278688524590164,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1,
+            "1": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 59,
+          "text": "In Section 1.4 we read a pandas DataFrame and used it to select and modify\ndata columns. Now let’s look at row selection. To start, I create a NumPy\narray of random numbers and use it to initialize a DataFrame:\n>>> import numpy as np\n>>> import pandas\n>>> array = np.random.randn(4, 2)\n>>> df = pandas.DataFrame(array)\n>>> df\n0 1\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nBy default, the rows and columns are numbered starting at zero, but you\ncan provide column names:\n>>> columns = ['A', 'B']\n>>> df = pandas.DataFrame(array, columns=columns)\n>>> df\nA B\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nYou can also provide row names. The set of row names is called theindex;\nthe row names themselves are calledlabels.\n>>> index = ['a', 'b', 'c', 'd']\n>>> df = pandas.DataFrame(array, columns=columns, index=index)\n>>>",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 39,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 51,
+            "end_char": 948,
+            "chunking": "paragraph"
+          },
+          "id": "08458cd47e0abe60ec6bbf21",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.031754032258064516,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 4,
+            "1": 2
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 27,
+          "text": "1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 7,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 902,
+            "end_char": 1158,
+            "chunking": "paragraph"
+          },
+          "id": "2302c0aa2fd4d36ec776cd0e",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.031746031746031744,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 3,
+            "1": 3
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 27,
+          "text": "1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 7,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 900,
+            "chunking": "paragraph"
+          },
+          "id": "1d7f5a186b7ba77a2fe8ef9f",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.030309988518943745,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 7,
+            "1": 5
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 26,
+          "text": "The attributecolumnsreturns a sequence of column names as Unicode\nstrings:\n>>> df.columns\nIndex([u'caseid', u'pregordr', u'howpreg_n', u'howpreg_p', ... ])\nThe result is an Index, which is another pandas data structure. We’ll learn\nmore about Index later, but for now we’ll treat it like a list:\n>>> df.columns[1]\n'pregordr'\nTo access a column from a DataFrame, you can use the column name as a\nkey:\n>>> pregordr = df['pregordr']\n>>> type(pregordr)\n<class 'pandas.core.series.Series'>\nThe result is a Series, yet another pandas data structure. A Series is like a\nPython list with some additional features. When you print a Series, you get\nthe indices and the corresponding values:\n>>> pregordr\n0 1\n1 2\n2 1\n3 2",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 6,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 544,
+            "end_char": 1253,
+            "chunking": "paragraph"
+          },
+          "id": "52c6d00857361e7422e6984f",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.029437229437229435,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 10,
+            "1": 6
+          }
+        }
+      ],
+      "context": "[ee672fe7059e3b9d2b8e2207 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\n6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.\n\n[08458cd47e0abe60ec6bbf21 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 59]\nIn Section 1.4 we read a pandas DataFrame and used it to select and modify\ndata columns. Now let’s look at row selection. To start, I create a NumPy\narray of random numbers and use it to initialize a DataFrame:\n>>> import numpy as np\n>>> import pandas\n>>> array = np.random.randn(4, 2)\n>>> df = pandas.DataFrame(array)\n>>> df\n0 1\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nBy default, the rows and columns are numbered starting at zero, but you\ncan provide column names:\n>>> columns = ['A', 'B']\n>>> df = pandas.DataFrame(array, columns=columns)\n>>> df\nA B\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nYou can also provide row names. The set of row names is called theindex;\nthe row names themselves are calledlabels.\n>>> index = ['a', 'b', 'c', 'd']\n>>> df = pandas.DataFrame(array, columns=columns, index=index)\n>>>\n\n[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.\n\n[1d7f5a186b7ba77a2fe8ef9f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n[52c6d00857361e7422e6984f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\nThe attributecolumnsreturns a sequence of column names as Unicode\nstrings:\n>>> df.columns\nIndex([u'caseid', u'pregordr', u'howpreg_n', u'howpreg_p', ... ])\nThe result is an Index, which is another pandas data structure. We’ll learn\nmore about Index later, but for now we’ll treat it like a list:\n>>> df.columns[1]\n'pregordr'\nTo access a column from a DataFrame, you can use the column name as a\nkey:\n>>> pregordr = df['pregordr']\n>>> type(pregordr)\n<class 'pandas.core.series.Series'>\nThe result is a Series, yet another pandas data structure. A Series is like a\nPython list with some additional features. When you print a Series, you get\nthe indices and the corresponding values:\n>>> pregordr\n0 1\n1 2\n2 1\n3 2\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.\n\n[11f52ca93e1d19a06edc1381 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\nNow let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+      "context_ids": [
+        "ee672fe7059e3b9d2b8e2207",
+        "08458cd47e0abe60ec6bbf21",
+        "2302c0aa2fd4d36ec776cd0e",
+        "1d7f5a186b7ba77a2fe8ef9f",
+        "52c6d00857361e7422e6984f",
+        "de378d91be893b62e4be3810",
+        "11f52ca93e1d19a06edc1381"
+      ],
+      "elapsed_ms": 29.532100015785545
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "abstain": false,
+        "citations": [
+          "ee672fe7059e3b9d2b8e2207"
+        ],
+        "answer": "DataFrame NSFG được minh họa có 13.593 bản ghi (rows/records) và 244 biến (columns/variables) [ee672fe7059e3b9d2b8e2207]."
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 340,
+        "candidatesTokenCount": 18,
+        "totalTokenCount": 358,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 340
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1318,
+        "candidatesTokenCount": 25,
+        "totalTokenCount": 1343,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1318
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 2144,
+        "candidatesTokenCount": 101,
+        "totalTokenCount": 2245,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2144
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "DataFrame NSFG được minh họa có 13.593 bản ghi (rows/records) và 244 biến (columns/variables) [ee672fe7059e3b9d2b8e2207].",
+  "context": "[ee672fe7059e3b9d2b8e2207 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\n6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.\n\n[08458cd47e0abe60ec6bbf21 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 59]\nIn Section 1.4 we read a pandas DataFrame and used it to select and modify\ndata columns. Now let’s look at row selection. To start, I create a NumPy\narray of random numbers and use it to initialize a DataFrame:\n>>> import numpy as np\n>>> import pandas\n>>> array = np.random.randn(4, 2)\n>>> df = pandas.DataFrame(array)\n>>> df\n0 1\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nBy default, the rows and columns are numbered starting at zero, but you\ncan provide column names:\n>>> columns = ['A', 'B']\n>>> df = pandas.DataFrame(array, columns=columns)\n>>> df\nA B\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nYou can also provide row names. The set of row names is called theindex;\nthe row names themselves are calledlabels.\n>>> index = ['a', 'b', 'c', 'd']\n>>> df = pandas.DataFrame(array, columns=columns, index=index)\n>>>\n\n[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.\n\n[1d7f5a186b7ba77a2fe8ef9f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n[52c6d00857361e7422e6984f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\nThe attributecolumnsreturns a sequence of column names as Unicode\nstrings:\n>>> df.columns\nIndex([u'caseid', u'pregordr', u'howpreg_n', u'howpreg_p', ... ])\nThe result is an Index, which is another pandas data structure. We’ll learn\nmore about Index later, but for now we’ll treat it like a list:\n>>> df.columns[1]\n'pregordr'\nTo access a column from a DataFrame, you can use the column name as a\nkey:\n>>> pregordr = df['pregordr']\n>>> type(pregordr)\n<class 'pandas.core.series.Series'>\nThe result is a Series, yet another pandas data structure. A Series is like a\nPython list with some additional features. When you print a Series, you get\nthe indices and the corresponding values:\n>>> pregordr\n0 1\n1 2\n2 1\n3 2\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.\n\n[11f52ca93e1d19a06edc1381 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\nNow let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+  "context_ids": [
+    "ee672fe7059e3b9d2b8e2207",
+    "08458cd47e0abe60ec6bbf21",
+    "2302c0aa2fd4d36ec776cd0e",
+    "1d7f5a186b7ba77a2fe8ef9f",
+    "52c6d00857361e7422e6984f",
+    "de378d91be893b62e4be3810",
+    "11f52ca93e1d19a06edc1381"
+  ],
+  "search_count": 2,
+  "elapsed_ms": 47.278499987442046,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q06",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 12382.123599993065,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "DataFrame NSFG được minh họa có bao nhiêu bản ghi và biến?",
+      "config": "hybrid_context",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:35:09.548711+00:00",
+      "status": "answered",
+      "citations": [
+        "ee672fe7059e3b9d2b8e2207"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "hybrid",
+          "query": "DataFrame NSFG records variables",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 27,
+              "text": "1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 7,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 902,
+                "end_char": 1158,
+                "chunking": "paragraph"
+              },
+              "id": "2302c0aa2fd4d36ec776cd0e",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03252247488101534,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 2,
+                "1": 1
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 26,
+              "text": "6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 6,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 542,
+                "chunking": "paragraph"
+              },
+              "id": "ee672fe7059e3b9d2b8e2207",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03252247488101534,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 1,
+                "1": 2
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 25,
+              "text": "The result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 5,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 1345,
+                "end_char": 1637,
+                "chunking": "paragraph"
+              },
+              "id": "de378d91be893b62e4be3810",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03055037313432836,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 4,
+                "1": 7
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 34,
+              "text": "file,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences,",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 14,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 936,
+                "end_char": 1831,
+                "chunking": "paragraph"
+              },
+              "id": "1d8260bcb7068f12171046d3",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.030309988518943745,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 7,
+                "1": 5
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 39,
+              "text": "Now let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "2",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 19,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 625,
+                "end_char": 938,
+                "chunking": "paragraph"
+              },
+              "id": "11f52ca93e1d19a06edc1381",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.029437229437229435,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 10,
+                "1": 6
+              }
+            }
+          ],
+          "context": "[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.\n\n[ee672fe7059e3b9d2b8e2207 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\n6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.\n\n[1d8260bcb7068f12171046d3 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 34]\nfile,2002FemResp.dat.gz.\nThe variablepregnumis a recode that indicates how many times each respondent has been pregnant. Print the value counts for this variable and\ncompare them to the published results in the NSFG codebook.\nYou can also cross-validate the respondent and pregnancy files by comparing\npregnumfor each respondent with the number of records in the pregnancy\nfile.\nYou can usensfg.MakePregMapto make a dictionary that maps from each\ncaseidto a list of indices into the pregnancy DataFrame.\nA solution to this exercise is inchap01soln.py\nExercise 1.3The best way to learn about statistics is to work on a project\nyou are interested in. Is there a question like, “Do first babies arrive late,”\nthat you want to investigate?\nThink about questions you find personally interesting, or items of conventional wisdom, or controversial topics, or questions that have political consequences,\n\n[11f52ca93e1d19a06edc1381 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\nNow let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+          "context_ids": [
+            "2302c0aa2fd4d36ec776cd0e",
+            "ee672fe7059e3b9d2b8e2207",
+            "de378d91be893b62e4be3810",
+            "1d8260bcb7068f12171046d3",
+            "11f52ca93e1d19a06edc1381"
+          ],
+          "elapsed_ms": 35.410899989074096
+        },
+        {
+          "event": "search",
+          "tool": "hybrid",
+          "query": "13593 rows and 244 columns",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 26,
+              "text": "6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 6,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 542,
+                "chunking": "paragraph"
+              },
+              "id": "ee672fe7059e3b9d2b8e2207",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03278688524590164,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 1,
+                "1": 1
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 59,
+              "text": "In Section 1.4 we read a pandas DataFrame and used it to select and modify\ndata columns. Now let’s look at row selection. To start, I create a NumPy\narray of random numbers and use it to initialize a DataFrame:\n>>> import numpy as np\n>>> import pandas\n>>> array = np.random.randn(4, 2)\n>>> df = pandas.DataFrame(array)\n>>> df\n0 1\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nBy default, the rows and columns are numbered starting at zero, but you\ncan provide column names:\n>>> columns = ['A', 'B']\n>>> df = pandas.DataFrame(array, columns=columns)\n>>> df\nA B\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nYou can also provide row names. The set of row names is called theindex;\nthe row names themselves are calledlabels.\n>>> index = ['a', 'b', 'c', 'd']\n>>> df = pandas.DataFrame(array, columns=columns, index=index)\n>>>",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "3",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 39,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 51,
+                "end_char": 948,
+                "chunking": "paragraph"
+              },
+              "id": "08458cd47e0abe60ec6bbf21",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.031754032258064516,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 4,
+                "1": 2
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 27,
+              "text": "1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 7,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 902,
+                "end_char": 1158,
+                "chunking": "paragraph"
+              },
+              "id": "2302c0aa2fd4d36ec776cd0e",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.031746031746031744,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 3,
+                "1": 3
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 27,
+              "text": "1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 7,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 900,
+                "chunking": "paragraph"
+              },
+              "id": "1d7f5a186b7ba77a2fe8ef9f",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.030309988518943745,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 7,
+                "1": 5
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 26,
+              "text": "The attributecolumnsreturns a sequence of column names as Unicode\nstrings:\n>>> df.columns\nIndex([u'caseid', u'pregordr', u'howpreg_n', u'howpreg_p', ... ])\nThe result is an Index, which is another pandas data structure. We’ll learn\nmore about Index later, but for now we’ll treat it like a list:\n>>> df.columns[1]\n'pregordr'\nTo access a column from a DataFrame, you can use the column name as a\nkey:\n>>> pregordr = df['pregordr']\n>>> type(pregordr)\n<class 'pandas.core.series.Series'>\nThe result is a Series, yet another pandas data structure. A Series is like a\nPython list with some additional features. When you print a Series, you get\nthe indices and the corresponding values:\n>>> pregordr\n0 1\n1 2\n2 1\n3 2",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 6,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 544,
+                "end_char": 1253,
+                "chunking": "paragraph"
+              },
+              "id": "52c6d00857361e7422e6984f",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.029437229437229435,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 10,
+                "1": 6
+              }
+            }
+          ],
+          "context": "[ee672fe7059e3b9d2b8e2207 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\n6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.\n\n[08458cd47e0abe60ec6bbf21 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 59]\nIn Section 1.4 we read a pandas DataFrame and used it to select and modify\ndata columns. Now let’s look at row selection. To start, I create a NumPy\narray of random numbers and use it to initialize a DataFrame:\n>>> import numpy as np\n>>> import pandas\n>>> array = np.random.randn(4, 2)\n>>> df = pandas.DataFrame(array)\n>>> df\n0 1\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nBy default, the rows and columns are numbered starting at zero, but you\ncan provide column names:\n>>> columns = ['A', 'B']\n>>> df = pandas.DataFrame(array, columns=columns)\n>>> df\nA B\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nYou can also provide row names. The set of row names is called theindex;\nthe row names themselves are calledlabels.\n>>> index = ['a', 'b', 'c', 'd']\n>>> df = pandas.DataFrame(array, columns=columns, index=index)\n>>>\n\n[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.\n\n[1d7f5a186b7ba77a2fe8ef9f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n[52c6d00857361e7422e6984f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\nThe attributecolumnsreturns a sequence of column names as Unicode\nstrings:\n>>> df.columns\nIndex([u'caseid', u'pregordr', u'howpreg_n', u'howpreg_p', ... ])\nThe result is an Index, which is another pandas data structure. We’ll learn\nmore about Index later, but for now we’ll treat it like a list:\n>>> df.columns[1]\n'pregordr'\nTo access a column from a DataFrame, you can use the column name as a\nkey:\n>>> pregordr = df['pregordr']\n>>> type(pregordr)\n<class 'pandas.core.series.Series'>\nThe result is a Series, yet another pandas data structure. A Series is like a\nPython list with some additional features. When you print a Series, you get\nthe indices and the corresponding values:\n>>> pregordr\n0 1\n1 2\n2 1\n3 2\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.\n\n[11f52ca93e1d19a06edc1381 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\nNow let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+          "context_ids": [
+            "ee672fe7059e3b9d2b8e2207",
+            "08458cd47e0abe60ec6bbf21",
+            "2302c0aa2fd4d36ec776cd0e",
+            "1d7f5a186b7ba77a2fe8ef9f",
+            "52c6d00857361e7422e6984f",
+            "de378d91be893b62e4be3810",
+            "11f52ca93e1d19a06edc1381"
+          ],
+          "elapsed_ms": 3762.728800007608
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "abstain": false,
+            "citations": [
+              "ee672fe7059e3b9d2b8e2207"
+            ],
+            "answer": "DataFrame NSFG được minh họa có 13.593 bản ghi (rows/records) và 244 biến (columns/variables) [ee672fe7059e3b9d2b8e2207]."
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 340,
+            "candidatesTokenCount": 18,
+            "totalTokenCount": 358,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 340
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1318,
+            "candidatesTokenCount": 25,
+            "totalTokenCount": 1343,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1318
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 2144,
+            "candidatesTokenCount": 101,
+            "totalTokenCount": 2245,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 2144
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "DataFrame NSFG được minh họa có 13.593 bản ghi (rows/records) và 244 biến (columns/variables) [ee672fe7059e3b9d2b8e2207].",
+      "context": "[ee672fe7059e3b9d2b8e2207 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\n6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.\n\n[08458cd47e0abe60ec6bbf21 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 59]\nIn Section 1.4 we read a pandas DataFrame and used it to select and modify\ndata columns. Now let’s look at row selection. To start, I create a NumPy\narray of random numbers and use it to initialize a DataFrame:\n>>> import numpy as np\n>>> import pandas\n>>> array = np.random.randn(4, 2)\n>>> df = pandas.DataFrame(array)\n>>> df\n0 1\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nBy default, the rows and columns are numbered starting at zero, but you\ncan provide column names:\n>>> columns = ['A', 'B']\n>>> df = pandas.DataFrame(array, columns=columns)\n>>> df\nA B\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nYou can also provide row names. The set of row names is called theindex;\nthe row names themselves are calledlabels.\n>>> index = ['a', 'b', 'c', 'd']\n>>> df = pandas.DataFrame(array, columns=columns, index=index)\n>>>\n\n[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.\n\n[1d7f5a186b7ba77a2fe8ef9f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n[52c6d00857361e7422e6984f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\nThe attributecolumnsreturns a sequence of column names as Unicode\nstrings:\n>>> df.columns\nIndex([u'caseid', u'pregordr', u'howpreg_n', u'howpreg_p', ... ])\nThe result is an Index, which is another pandas data structure. We’ll learn\nmore about Index later, but for now we’ll treat it like a list:\n>>> df.columns[1]\n'pregordr'\nTo access a column from a DataFrame, you can use the column name as a\nkey:\n>>> pregordr = df['pregordr']\n>>> type(pregordr)\n<class 'pandas.core.series.Series'>\nThe result is a Series, yet another pandas data structure. A Series is like a\nPython list with some additional features. When you print a Series, you get\nthe indices and the corresponding values:\n>>> pregordr\n0 1\n1 2\n2 1\n3 2\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.\n\n[11f52ca93e1d19a06edc1381 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\nNow let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+      "context_ids": [
+        "ee672fe7059e3b9d2b8e2207",
+        "08458cd47e0abe60ec6bbf21",
+        "2302c0aa2fd4d36ec776cd0e",
+        "1d7f5a186b7ba77a2fe8ef9f",
+        "52c6d00857361e7422e6984f",
+        "de378d91be893b62e4be3810",
+        "11f52ca93e1d19a06edc1381"
+      ],
+      "search_count": 2,
+      "elapsed_ms": 12382.123599993065,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q06",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

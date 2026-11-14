@@ -1,0 +1,747 @@
+{
+  "question": "Stata dictionary mô tả những thuộc tính nào để tìm biến trong mỗi dòng dữ liệu?",
+  "config": "hybrid_context",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:12.786898+00:00",
+  "status": "answered",
+  "citations": [
+    "5869e54397098a669dd0b81e"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "hybrid",
+      "query": "Stata dictionary",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 25,
+          "text": "1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 5,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 681,
+            "chunking": "paragraph"
+          },
+          "id": "5869e54397098a669dd0b81e",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03278688524590164,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1,
+            "1": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 25,
+          "text": "The code you downloaded includesthinkstats2.py, which is a Python module that contains many classes and functions used in this book, including\nfunctions that read the Stata dictionary and the NSFG data file. Here’s how\nthey are used innsfg.py:\ndef ReadFemPreg(dct_file='2002FemPreg.dct',\ndat_file='2002FemPreg.dat.gz'):\ndct = thinkstats2.ReadStataDct(dct_file)\ndf = dct.ReadFixedWidth(dat_file, compression='gzip')\nCleanFemPreg(df)\nreturn df\nReadStataDcttakes the name of the dictionary file and returnsdct, a\nFixedWidthVariablesobject that contains the information from the dictionary file.dctprovidesReadFixedWidth, which reads the data file.\n\n1.4 DataFrames",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 5,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 683,
+            "end_char": 1343,
+            "chunking": "paragraph"
+          },
+          "id": "3f3031b3a4a858624a2ac681",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.0315136476426799,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 5,
+            "1": 2
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 37,
+          "text": "Chapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 17,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 846,
+            "chunking": "paragraph"
+          },
+          "id": "8849532a0610912f69f6978d",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.02976190476190476,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 12,
+            "1": 3
+          }
+        },
+        {
+          "id": "71a5a22bdfd93da6d526e632",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 35,
+          "text": "1.10. Glossary 15",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 17,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 15,
+            "extraction_status": "ok"
+          },
+          "score": 0.016129032258064516,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 2
+          }
+        },
+        {
+          "id": "26ae64c96e1b06d8f4423144",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 49,
+          "text": "•histogram: A mapping from values to frequencies, or a graph that\nshows this mapping.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1704,
+            "language": "en",
+            "start_char": 1619,
+            "printed_page": 29,
+            "extraction_status": "ok"
+          },
+          "score": 0.015873015873015872,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 3
+          }
+        }
+      ],
+      "context": "[5869e54397098a669dd0b81e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\n1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.\n\n[3f3031b3a4a858624a2ac681 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe code you downloaded includesthinkstats2.py, which is a Python module that contains many classes and functions used in this book, including\nfunctions that read the Stata dictionary and the NSFG data file. Here’s how\nthey are used innsfg.py:\ndef ReadFemPreg(dct_file='2002FemPreg.dct',\ndat_file='2002FemPreg.dat.gz'):\ndct = thinkstats2.ReadStataDct(dct_file)\ndf = dct.ReadFixedWidth(dat_file, compression='gzip')\nCleanFemPreg(df)\nreturn df\nReadStataDcttakes the name of the dictionary file and returnsdct, a\nFixedWidthVariablesobject that contains the information from the dictionary file.dctprovidesReadFixedWidth, which reads the data file.\n\n1.4 DataFrames\n\n[8849532a0610912f69f6978d | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 37]\nChapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.\n\n[71a5a22bdfd93da6d526e632 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 35]\n1.10. Glossary 15\n\n[26ae64c96e1b06d8f4423144 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 49]\n•histogram: A mapping from values to frequencies, or a graph that\nshows this mapping.",
+      "context_ids": [
+        "5869e54397098a669dd0b81e",
+        "3f3031b3a4a858624a2ac681",
+        "8849532a0610912f69f6978d",
+        "71a5a22bdfd93da6d526e632",
+        "26ae64c96e1b06d8f4423144"
+      ],
+      "elapsed_ms": 15.365100000053644
+    },
+    {
+      "event": "search",
+      "tool": "hybrid",
+      "query": "\"Stata dictionary\" variable names, types, and indices",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 25,
+          "text": "1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 5,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 681,
+            "chunking": "paragraph"
+          },
+          "id": "5869e54397098a669dd0b81e",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03278688524590164,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1,
+            "1": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 27,
+          "text": "1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 7,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 900,
+            "chunking": "paragraph"
+          },
+          "id": "1d7f5a186b7ba77a2fe8ef9f",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03128054740957967,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 2,
+            "1": 6
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 25,
+          "text": "The code you downloaded includesthinkstats2.py, which is a Python module that contains many classes and functions used in this book, including\nfunctions that read the Stata dictionary and the NSFG data file. Here’s how\nthey are used innsfg.py:\ndef ReadFemPreg(dct_file='2002FemPreg.dct',\ndat_file='2002FemPreg.dat.gz'):\ndct = thinkstats2.ReadStataDct(dct_file)\ndf = dct.ReadFixedWidth(dat_file, compression='gzip')\nCleanFemPreg(df)\nreturn df\nReadStataDcttakes the name of the dictionary file and returnsdct, a\nFixedWidthVariablesobject that contains the information from the dictionary file.dctprovidesReadFixedWidth, which reads the data file.\n\n1.4 DataFrames",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 5,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 683,
+            "end_char": 1343,
+            "chunking": "paragraph"
+          },
+          "id": "3f3031b3a4a858624a2ac681",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03128054740957967,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 6,
+            "1": 2
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 25,
+          "text": "The result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 5,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 1345,
+            "end_char": 1637,
+            "chunking": "paragraph"
+          },
+          "id": "de378d91be893b62e4be3810",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.028991596638655463,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 8,
+            "1": 10
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 32,
+          "text": "To work with data effectively, you have to think on two levels at the same\ntime: the level of statistics and the level of context.\n\nAs an example, let’s look at the sequence of outcomes for a few respondents.\nBecause of the way the data files are organized, we have to do some processing\nto collect the pregnancy data for each respondent. Here’s a function that does\nthat:\ndef MakePregMap(df):\nd = defaultdict(list)\nfor index, caseid in df.caseid.iteritems():\nd[caseid].append(index)\nreturn d\ndfis the DataFrame with pregnancy data. Theiteritemsmethod enumerates the index (row number) andcaseidfor each pregnancy.\n\ndis a dictionary that maps from each case ID to a list of indices. If you are not\nfamiliar withdefaultdict, it is in the Pythoncollectionsmodule. Using\nd, we can look up a respondent and get the indices of that respondent’s\npregnancies.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 12,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 840,
+            "end_char": 1692,
+            "chunking": "paragraph"
+          },
+          "id": "963781e5e55ef4b886914fc6",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.028577260665441927,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 11,
+            "1": 9
+          }
+        }
+      ],
+      "context": "[5869e54397098a669dd0b81e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\n1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.\n\n[1d7f5a186b7ba77a2fe8ef9f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n[3f3031b3a4a858624a2ac681 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe code you downloaded includesthinkstats2.py, which is a Python module that contains many classes and functions used in this book, including\nfunctions that read the Stata dictionary and the NSFG data file. Here’s how\nthey are used innsfg.py:\ndef ReadFemPreg(dct_file='2002FemPreg.dct',\ndat_file='2002FemPreg.dat.gz'):\ndct = thinkstats2.ReadStataDct(dct_file)\ndf = dct.ReadFixedWidth(dat_file, compression='gzip')\nCleanFemPreg(df)\nreturn df\nReadStataDcttakes the name of the dictionary file and returnsdct, a\nFixedWidthVariablesobject that contains the information from the dictionary file.dctprovidesReadFixedWidth, which reads the data file.\n\n1.4 DataFrames\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.\n\n[963781e5e55ef4b886914fc6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 32]\nTo work with data effectively, you have to think on two levels at the same\ntime: the level of statistics and the level of context.\n\nAs an example, let’s look at the sequence of outcomes for a few respondents.\nBecause of the way the data files are organized, we have to do some processing\nto collect the pregnancy data for each respondent. Here’s a function that does\nthat:\ndef MakePregMap(df):\nd = defaultdict(list)\nfor index, caseid in df.caseid.iteritems():\nd[caseid].append(index)\nreturn d\ndfis the DataFrame with pregnancy data. Theiteritemsmethod enumerates the index (row number) andcaseidfor each pregnancy.\n\ndis a dictionary that maps from each case ID to a list of indices. If you are not\nfamiliar withdefaultdict, it is in the Pythoncollectionsmodule. Using\nd, we can look up a respondent and get the indices of that respondent’s\npregnancies.\n\n[8849532a0610912f69f6978d | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 37]\nChapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.\n\n[71a5a22bdfd93da6d526e632 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 35]\n1.10. Glossary 15",
+      "context_ids": [
+        "5869e54397098a669dd0b81e",
+        "1d7f5a186b7ba77a2fe8ef9f",
+        "3f3031b3a4a858624a2ac681",
+        "de378d91be893b62e4be3810",
+        "963781e5e55ef4b886914fc6",
+        "8849532a0610912f69f6978d",
+        "71a5a22bdfd93da6d526e632"
+      ],
+      "elapsed_ms": 16.047699988121167
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "abstain": false,
+        "answer": "Trong bối cảnh này, một \"dictionary\" (từ điển) Stata là một danh sách gồm các **tên biến (variable names)**, **kiểu dữ liệu (types)** và **các chỉ số/vị trí (indices)** dùng để xác định vị trí tìm thấy từng biến ở mỗi dòng dữ liệu [5869e54397098a669dd0b81e].",
+        "citations": [
+          "5869e54397098a669dd0b81e"
+        ]
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 344,
+        "candidatesTokenCount": 16,
+        "totalTokenCount": 360,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 344
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1375,
+        "candidatesTokenCount": 25,
+        "totalTokenCount": 1400,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1375
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 2076,
+        "candidatesTokenCount": 138,
+        "totalTokenCount": 2214,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 2076
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Trong bối cảnh này, một \"dictionary\" (từ điển) Stata là một danh sách gồm các **tên biến (variable names)**, **kiểu dữ liệu (types)** và **các chỉ số/vị trí (indices)** dùng để xác định vị trí tìm thấy từng biến ở mỗi dòng dữ liệu [5869e54397098a669dd0b81e].",
+  "context": "[5869e54397098a669dd0b81e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\n1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.\n\n[1d7f5a186b7ba77a2fe8ef9f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n[3f3031b3a4a858624a2ac681 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe code you downloaded includesthinkstats2.py, which is a Python module that contains many classes and functions used in this book, including\nfunctions that read the Stata dictionary and the NSFG data file. Here’s how\nthey are used innsfg.py:\ndef ReadFemPreg(dct_file='2002FemPreg.dct',\ndat_file='2002FemPreg.dat.gz'):\ndct = thinkstats2.ReadStataDct(dct_file)\ndf = dct.ReadFixedWidth(dat_file, compression='gzip')\nCleanFemPreg(df)\nreturn df\nReadStataDcttakes the name of the dictionary file and returnsdct, a\nFixedWidthVariablesobject that contains the information from the dictionary file.dctprovidesReadFixedWidth, which reads the data file.\n\n1.4 DataFrames\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.\n\n[963781e5e55ef4b886914fc6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 32]\nTo work with data effectively, you have to think on two levels at the same\ntime: the level of statistics and the level of context.\n\nAs an example, let’s look at the sequence of outcomes for a few respondents.\nBecause of the way the data files are organized, we have to do some processing\nto collect the pregnancy data for each respondent. Here’s a function that does\nthat:\ndef MakePregMap(df):\nd = defaultdict(list)\nfor index, caseid in df.caseid.iteritems():\nd[caseid].append(index)\nreturn d\ndfis the DataFrame with pregnancy data. Theiteritemsmethod enumerates the index (row number) andcaseidfor each pregnancy.\n\ndis a dictionary that maps from each case ID to a list of indices. If you are not\nfamiliar withdefaultdict, it is in the Pythoncollectionsmodule. Using\nd, we can look up a respondent and get the indices of that respondent’s\npregnancies.\n\n[8849532a0610912f69f6978d | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 37]\nChapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.\n\n[71a5a22bdfd93da6d526e632 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 35]\n1.10. Glossary 15",
+  "context_ids": [
+    "5869e54397098a669dd0b81e",
+    "1d7f5a186b7ba77a2fe8ef9f",
+    "3f3031b3a4a858624a2ac681",
+    "de378d91be893b62e4be3810",
+    "963781e5e55ef4b886914fc6",
+    "8849532a0610912f69f6978d",
+    "71a5a22bdfd93da6d526e632"
+  ],
+  "search_count": 2,
+  "elapsed_ms": 31.776600022567436,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q05",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 12516.716399986763,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Stata dictionary mô tả những thuộc tính nào để tìm biến trong mỗi dòng dữ liệu?",
+      "config": "hybrid_context",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:34:57.027284+00:00",
+      "status": "answered",
+      "citations": [
+        "5869e54397098a669dd0b81e"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "hybrid",
+          "query": "Stata dictionary",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 25,
+              "text": "1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 5,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 681,
+                "chunking": "paragraph"
+              },
+              "id": "5869e54397098a669dd0b81e",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03278688524590164,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 1,
+                "1": 1
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 25,
+              "text": "The code you downloaded includesthinkstats2.py, which is a Python module that contains many classes and functions used in this book, including\nfunctions that read the Stata dictionary and the NSFG data file. Here’s how\nthey are used innsfg.py:\ndef ReadFemPreg(dct_file='2002FemPreg.dct',\ndat_file='2002FemPreg.dat.gz'):\ndct = thinkstats2.ReadStataDct(dct_file)\ndf = dct.ReadFixedWidth(dat_file, compression='gzip')\nCleanFemPreg(df)\nreturn df\nReadStataDcttakes the name of the dictionary file and returnsdct, a\nFixedWidthVariablesobject that contains the information from the dictionary file.dctprovidesReadFixedWidth, which reads the data file.\n\n1.4 DataFrames",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 5,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 683,
+                "end_char": 1343,
+                "chunking": "paragraph"
+              },
+              "id": "3f3031b3a4a858624a2ac681",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.0315136476426799,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 5,
+                "1": 2
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 37,
+              "text": "Chapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "2",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 17,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 846,
+                "chunking": "paragraph"
+              },
+              "id": "8849532a0610912f69f6978d",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.02976190476190476,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 12,
+                "1": 3
+              }
+            },
+            {
+              "id": "71a5a22bdfd93da6d526e632",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 35,
+              "text": "1.10. Glossary 15",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 17,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 15,
+                "extraction_status": "ok"
+              },
+              "score": 0.016129032258064516,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 2
+              }
+            },
+            {
+              "id": "26ae64c96e1b06d8f4423144",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 49,
+              "text": "•histogram: A mapping from values to frequencies, or a graph that\nshows this mapping.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1704,
+                "language": "en",
+                "start_char": 1619,
+                "printed_page": 29,
+                "extraction_status": "ok"
+              },
+              "score": 0.015873015873015872,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 3
+              }
+            }
+          ],
+          "context": "[5869e54397098a669dd0b81e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\n1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.\n\n[3f3031b3a4a858624a2ac681 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe code you downloaded includesthinkstats2.py, which is a Python module that contains many classes and functions used in this book, including\nfunctions that read the Stata dictionary and the NSFG data file. Here’s how\nthey are used innsfg.py:\ndef ReadFemPreg(dct_file='2002FemPreg.dct',\ndat_file='2002FemPreg.dat.gz'):\ndct = thinkstats2.ReadStataDct(dct_file)\ndf = dct.ReadFixedWidth(dat_file, compression='gzip')\nCleanFemPreg(df)\nreturn df\nReadStataDcttakes the name of the dictionary file and returnsdct, a\nFixedWidthVariablesobject that contains the information from the dictionary file.dctprovidesReadFixedWidth, which reads the data file.\n\n1.4 DataFrames\n\n[8849532a0610912f69f6978d | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 37]\nChapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.\n\n[71a5a22bdfd93da6d526e632 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 35]\n1.10. Glossary 15\n\n[26ae64c96e1b06d8f4423144 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 49]\n•histogram: A mapping from values to frequencies, or a graph that\nshows this mapping.",
+          "context_ids": [
+            "5869e54397098a669dd0b81e",
+            "3f3031b3a4a858624a2ac681",
+            "8849532a0610912f69f6978d",
+            "71a5a22bdfd93da6d526e632",
+            "26ae64c96e1b06d8f4423144"
+          ],
+          "elapsed_ms": 16.681999986758456
+        },
+        {
+          "event": "search",
+          "tool": "hybrid",
+          "query": "\"Stata dictionary\" variable names, types, and indices",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 25,
+              "text": "1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 5,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 681,
+                "chunking": "paragraph"
+              },
+              "id": "5869e54397098a669dd0b81e",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03278688524590164,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 1,
+                "1": 1
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 27,
+              "text": "1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 7,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 900,
+                "chunking": "paragraph"
+              },
+              "id": "1d7f5a186b7ba77a2fe8ef9f",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03128054740957967,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 2,
+                "1": 6
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 25,
+              "text": "The code you downloaded includesthinkstats2.py, which is a Python module that contains many classes and functions used in this book, including\nfunctions that read the Stata dictionary and the NSFG data file. Here’s how\nthey are used innsfg.py:\ndef ReadFemPreg(dct_file='2002FemPreg.dct',\ndat_file='2002FemPreg.dat.gz'):\ndct = thinkstats2.ReadStataDct(dct_file)\ndf = dct.ReadFixedWidth(dat_file, compression='gzip')\nCleanFemPreg(df)\nreturn df\nReadStataDcttakes the name of the dictionary file and returnsdct, a\nFixedWidthVariablesobject that contains the information from the dictionary file.dctprovidesReadFixedWidth, which reads the data file.\n\n1.4 DataFrames",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 5,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 683,
+                "end_char": 1343,
+                "chunking": "paragraph"
+              },
+              "id": "3f3031b3a4a858624a2ac681",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03128054740957967,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 6,
+                "1": 2
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 25,
+              "text": "The result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 5,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 1345,
+                "end_char": 1637,
+                "chunking": "paragraph"
+              },
+              "id": "de378d91be893b62e4be3810",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.028991596638655463,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 8,
+                "1": 10
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 32,
+              "text": "To work with data effectively, you have to think on two levels at the same\ntime: the level of statistics and the level of context.\n\nAs an example, let’s look at the sequence of outcomes for a few respondents.\nBecause of the way the data files are organized, we have to do some processing\nto collect the pregnancy data for each respondent. Here’s a function that does\nthat:\ndef MakePregMap(df):\nd = defaultdict(list)\nfor index, caseid in df.caseid.iteritems():\nd[caseid].append(index)\nreturn d\ndfis the DataFrame with pregnancy data. Theiteritemsmethod enumerates the index (row number) andcaseidfor each pregnancy.\n\ndis a dictionary that maps from each case ID to a list of indices. If you are not\nfamiliar withdefaultdict, it is in the Pythoncollectionsmodule. Using\nd, we can look up a respondent and get the indices of that respondent’s\npregnancies.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 12,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 840,
+                "end_char": 1692,
+                "chunking": "paragraph"
+              },
+              "id": "963781e5e55ef4b886914fc6",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.028577260665441927,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 11,
+                "1": 9
+              }
+            }
+          ],
+          "context": "[5869e54397098a669dd0b81e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\n1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.\n\n[1d7f5a186b7ba77a2fe8ef9f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n[3f3031b3a4a858624a2ac681 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe code you downloaded includesthinkstats2.py, which is a Python module that contains many classes and functions used in this book, including\nfunctions that read the Stata dictionary and the NSFG data file. Here’s how\nthey are used innsfg.py:\ndef ReadFemPreg(dct_file='2002FemPreg.dct',\ndat_file='2002FemPreg.dat.gz'):\ndct = thinkstats2.ReadStataDct(dct_file)\ndf = dct.ReadFixedWidth(dat_file, compression='gzip')\nCleanFemPreg(df)\nreturn df\nReadStataDcttakes the name of the dictionary file and returnsdct, a\nFixedWidthVariablesobject that contains the information from the dictionary file.dctprovidesReadFixedWidth, which reads the data file.\n\n1.4 DataFrames\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.\n\n[963781e5e55ef4b886914fc6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 32]\nTo work with data effectively, you have to think on two levels at the same\ntime: the level of statistics and the level of context.\n\nAs an example, let’s look at the sequence of outcomes for a few respondents.\nBecause of the way the data files are organized, we have to do some processing\nto collect the pregnancy data for each respondent. Here’s a function that does\nthat:\ndef MakePregMap(df):\nd = defaultdict(list)\nfor index, caseid in df.caseid.iteritems():\nd[caseid].append(index)\nreturn d\ndfis the DataFrame with pregnancy data. Theiteritemsmethod enumerates the index (row number) andcaseidfor each pregnancy.\n\ndis a dictionary that maps from each case ID to a list of indices. If you are not\nfamiliar withdefaultdict, it is in the Pythoncollectionsmodule. Using\nd, we can look up a respondent and get the indices of that respondent’s\npregnancies.\n\n[8849532a0610912f69f6978d | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 37]\nChapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.\n\n[71a5a22bdfd93da6d526e632 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 35]\n1.10. Glossary 15",
+          "context_ids": [
+            "5869e54397098a669dd0b81e",
+            "1d7f5a186b7ba77a2fe8ef9f",
+            "3f3031b3a4a858624a2ac681",
+            "de378d91be893b62e4be3810",
+            "963781e5e55ef4b886914fc6",
+            "8849532a0610912f69f6978d",
+            "71a5a22bdfd93da6d526e632"
+          ],
+          "elapsed_ms": 3830.344400019385
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "abstain": false,
+            "answer": "Trong bối cảnh này, một \"dictionary\" (từ điển) Stata là một danh sách gồm các **tên biến (variable names)**, **kiểu dữ liệu (types)** và **các chỉ số/vị trí (indices)** dùng để xác định vị trí tìm thấy từng biến ở mỗi dòng dữ liệu [5869e54397098a669dd0b81e].",
+            "citations": [
+              "5869e54397098a669dd0b81e"
+            ]
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 344,
+            "candidatesTokenCount": 16,
+            "totalTokenCount": 360,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 344
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1375,
+            "candidatesTokenCount": 25,
+            "totalTokenCount": 1400,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1375
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 2076,
+            "candidatesTokenCount": 138,
+            "totalTokenCount": 2214,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 2076
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Trong bối cảnh này, một \"dictionary\" (từ điển) Stata là một danh sách gồm các **tên biến (variable names)**, **kiểu dữ liệu (types)** và **các chỉ số/vị trí (indices)** dùng để xác định vị trí tìm thấy từng biến ở mỗi dòng dữ liệu [5869e54397098a669dd0b81e].",
+      "context": "[5869e54397098a669dd0b81e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\n1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.\n\n[1d7f5a186b7ba77a2fe8ef9f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n[3f3031b3a4a858624a2ac681 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe code you downloaded includesthinkstats2.py, which is a Python module that contains many classes and functions used in this book, including\nfunctions that read the Stata dictionary and the NSFG data file. Here’s how\nthey are used innsfg.py:\ndef ReadFemPreg(dct_file='2002FemPreg.dct',\ndat_file='2002FemPreg.dat.gz'):\ndct = thinkstats2.ReadStataDct(dct_file)\ndf = dct.ReadFixedWidth(dat_file, compression='gzip')\nCleanFemPreg(df)\nreturn df\nReadStataDcttakes the name of the dictionary file and returnsdct, a\nFixedWidthVariablesobject that contains the information from the dictionary file.dctprovidesReadFixedWidth, which reads the data file.\n\n1.4 DataFrames\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.\n\n[963781e5e55ef4b886914fc6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 32]\nTo work with data effectively, you have to think on two levels at the same\ntime: the level of statistics and the level of context.\n\nAs an example, let’s look at the sequence of outcomes for a few respondents.\nBecause of the way the data files are organized, we have to do some processing\nto collect the pregnancy data for each respondent. Here’s a function that does\nthat:\ndef MakePregMap(df):\nd = defaultdict(list)\nfor index, caseid in df.caseid.iteritems():\nd[caseid].append(index)\nreturn d\ndfis the DataFrame with pregnancy data. Theiteritemsmethod enumerates the index (row number) andcaseidfor each pregnancy.\n\ndis a dictionary that maps from each case ID to a list of indices. If you are not\nfamiliar withdefaultdict, it is in the Pythoncollectionsmodule. Using\nd, we can look up a respondent and get the indices of that respondent’s\npregnancies.\n\n[8849532a0610912f69f6978d | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 37]\nChapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.\n\n[71a5a22bdfd93da6d526e632 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 35]\n1.10. Glossary 15",
+      "context_ids": [
+        "5869e54397098a669dd0b81e",
+        "1d7f5a186b7ba77a2fe8ef9f",
+        "3f3031b3a4a858624a2ac681",
+        "de378d91be893b62e4be3810",
+        "963781e5e55ef4b886914fc6",
+        "8849532a0610912f69f6978d",
+        "71a5a22bdfd93da6d526e632"
+      ],
+      "search_count": 2,
+      "elapsed_ms": 12516.716399986763,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q05",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

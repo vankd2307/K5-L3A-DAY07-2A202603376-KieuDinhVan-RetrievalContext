@@ -1,0 +1,293 @@
+{
+  "query_id": "d7-q05",
+  "split": "dev",
+  "config": "hybrid_context",
+  "status": "ok",
+  "query": "Stata dictionary mô tả những thuộc tính nào để tìm biến trong mỗi dòng dữ liệu?",
+  "filter": {},
+  "results": [
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 25,
+      "text": "1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 5,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 681,
+        "chunking": "paragraph"
+      },
+      "id": "5869e54397098a669dd0b81e",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.03278688524590164,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 1,
+        "1": 1
+      }
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 25,
+      "text": "The code you downloaded includesthinkstats2.py, which is a Python module that contains many classes and functions used in this book, including\nfunctions that read the Stata dictionary and the NSFG data file. Here’s how\nthey are used innsfg.py:\ndef ReadFemPreg(dct_file='2002FemPreg.dct',\ndat_file='2002FemPreg.dat.gz'):\ndct = thinkstats2.ReadStataDct(dct_file)\ndf = dct.ReadFixedWidth(dat_file, compression='gzip')\nCleanFemPreg(df)\nreturn df\nReadStataDcttakes the name of the dictionary file and returnsdct, a\nFixedWidthVariablesobject that contains the information from the dictionary file.dctprovidesReadFixedWidth, which reads the data file.\n\n1.4 DataFrames",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 5,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 683,
+        "end_char": 1343,
+        "chunking": "paragraph"
+      },
+      "id": "3f3031b3a4a858624a2ac681",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.03128054740957967,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 6,
+        "1": 2
+      }
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 32,
+      "text": "To work with data effectively, you have to think on two levels at the same\ntime: the level of statistics and the level of context.\n\nAs an example, let’s look at the sequence of outcomes for a few respondents.\nBecause of the way the data files are organized, we have to do some processing\nto collect the pregnancy data for each respondent. Here’s a function that does\nthat:\ndef MakePregMap(df):\nd = defaultdict(list)\nfor index, caseid in df.caseid.iteritems():\nd[caseid].append(index)\nreturn d\ndfis the DataFrame with pregnancy data. Theiteritemsmethod enumerates the index (row number) andcaseidfor each pregnancy.\n\ndis a dictionary that maps from each case ID to a list of indices. If you are not\nfamiliar withdefaultdict, it is in the Pythoncollectionsmodule. Using\nd, we can look up a respondent and get the indices of that respondent’s\npregnancies.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 12,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 840,
+        "end_char": 1692,
+        "chunking": "paragraph"
+      },
+      "id": "963781e5e55ef4b886914fc6",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.029236022193768675,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 11,
+        "1": 6
+      }
+    },
+    {
+      "id": "ba9952aacd92f76d8acc4ed7",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 28,
+      "text": "If you read the codebook carefully, you will see that many of the variables\narerecodes, which means that they are not part of theraw datacollected\nby the survey; they are calculated using the raw data.\nFor example,prglngthfor live births is equal to the raw variablewksgest\n(weeks of gestation) if it is available; otherwise it is estimated using\nmosgest * 4.33(months of gestation times the average number of weeks\nin a month).\nRecodes are often based on logic that checks the consistency and accuracy of\nthe data. In general it is a good idea to use recodes when they are available,\nunless there is a compelling reason to process the raw data yourself.\n\n1.6 Transformation\n\nWhen you import data like this, you often have to check for errors, deal with\nspecial values, convert data into different formats, and perform calculations.\nThese operations are calleddata cleaning.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "1",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1713,
+        "language": "en",
+        "start_char": 839,
+        "printed_page": 8,
+        "extraction_status": "ok"
+      },
+      "score": 0.016129032258064516,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 2
+      }
+    },
+    {
+      "id": "2302c0aa2fd4d36ec776cd0e",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 27,
+      "text": "1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "1",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1158,
+        "language": "en",
+        "start_char": 902,
+        "printed_page": 7,
+        "extraction_status": "ok"
+      },
+      "score": 0.015873015873015872,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 3
+      }
+    }
+  ],
+  "context": "[5869e54397098a669dd0b81e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\n1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.\n\n[3f3031b3a4a858624a2ac681 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe code you downloaded includesthinkstats2.py, which is a Python module that contains many classes and functions used in this book, including\nfunctions that read the Stata dictionary and the NSFG data file. Here’s how\nthey are used innsfg.py:\ndef ReadFemPreg(dct_file='2002FemPreg.dct',\ndat_file='2002FemPreg.dat.gz'):\ndct = thinkstats2.ReadStataDct(dct_file)\ndf = dct.ReadFixedWidth(dat_file, compression='gzip')\nCleanFemPreg(df)\nreturn df\nReadStataDcttakes the name of the dictionary file and returnsdct, a\nFixedWidthVariablesobject that contains the information from the dictionary file.dctprovidesReadFixedWidth, which reads the data file.\n\n1.4 DataFrames\n\n[963781e5e55ef4b886914fc6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 32]\nTo work with data effectively, you have to think on two levels at the same\ntime: the level of statistics and the level of context.\n\nAs an example, let’s look at the sequence of outcomes for a few respondents.\nBecause of the way the data files are organized, we have to do some processing\nto collect the pregnancy data for each respondent. Here’s a function that does\nthat:\ndef MakePregMap(df):\nd = defaultdict(list)\nfor index, caseid in df.caseid.iteritems():\nd[caseid].append(index)\nreturn d\ndfis the DataFrame with pregnancy data. Theiteritemsmethod enumerates the index (row number) andcaseidfor each pregnancy.\n\ndis a dictionary that maps from each case ID to a list of indices. If you are not\nfamiliar withdefaultdict, it is in the Pythoncollectionsmodule. Using\nd, we can look up a respondent and get the indices of that respondent’s\npregnancies.\n\n[ba9952aacd92f76d8acc4ed7 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\nIf you read the codebook carefully, you will see that many of the variables\narerecodes, which means that they are not part of theraw datacollected\nby the survey; they are calculated using the raw data.\nFor example,prglngthfor live births is equal to the raw variablewksgest\n(weeks of gestation) if it is available; otherwise it is estimated using\nmosgest * 4.33(months of gestation times the average number of weeks\nin a month).\nRecodes are often based on logic that checks the consistency and accuracy of\nthe data. In general it is a good idea to use recodes when they are available,\nunless there is a compelling reason to process the raw data yourself.\n\n1.6 Transformation\n\nWhen you import data like this, you often have to check for errors, deal with\nspecial values, convert data into different formats, and perform calculations.\nThese operations are calleddata cleaning.\n\n[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.",
+  "context_ids": [
+    "5869e54397098a669dd0b81e",
+    "3f3031b3a4a858624a2ac681",
+    "963781e5e55ef4b886914fc6",
+    "ba9952aacd92f76d8acc4ed7",
+    "2302c0aa2fd4d36ec776cd0e"
+  ],
+  "hit1": true,
+  "hit3": true,
+  "context_hit": true,
+  "elapsed_ms": 28.10160000808537,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q05",
+      "split": "dev",
+      "config": "hybrid_context",
+      "status": "ok",
+      "query": "Stata dictionary mô tả những thuộc tính nào để tìm biến trong mỗi dòng dữ liệu?",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 25,
+          "text": "1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 5,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 681,
+            "chunking": "paragraph"
+          },
+          "id": "5869e54397098a669dd0b81e",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03278688524590164,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1,
+            "1": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 25,
+          "text": "The code you downloaded includesthinkstats2.py, which is a Python module that contains many classes and functions used in this book, including\nfunctions that read the Stata dictionary and the NSFG data file. Here’s how\nthey are used innsfg.py:\ndef ReadFemPreg(dct_file='2002FemPreg.dct',\ndat_file='2002FemPreg.dat.gz'):\ndct = thinkstats2.ReadStataDct(dct_file)\ndf = dct.ReadFixedWidth(dat_file, compression='gzip')\nCleanFemPreg(df)\nreturn df\nReadStataDcttakes the name of the dictionary file and returnsdct, a\nFixedWidthVariablesobject that contains the information from the dictionary file.dctprovidesReadFixedWidth, which reads the data file.\n\n1.4 DataFrames",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 5,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 683,
+            "end_char": 1343,
+            "chunking": "paragraph"
+          },
+          "id": "3f3031b3a4a858624a2ac681",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03128054740957967,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 6,
+            "1": 2
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 32,
+          "text": "To work with data effectively, you have to think on two levels at the same\ntime: the level of statistics and the level of context.\n\nAs an example, let’s look at the sequence of outcomes for a few respondents.\nBecause of the way the data files are organized, we have to do some processing\nto collect the pregnancy data for each respondent. Here’s a function that does\nthat:\ndef MakePregMap(df):\nd = defaultdict(list)\nfor index, caseid in df.caseid.iteritems():\nd[caseid].append(index)\nreturn d\ndfis the DataFrame with pregnancy data. Theiteritemsmethod enumerates the index (row number) andcaseidfor each pregnancy.\n\ndis a dictionary that maps from each case ID to a list of indices. If you are not\nfamiliar withdefaultdict, it is in the Pythoncollectionsmodule. Using\nd, we can look up a respondent and get the indices of that respondent’s\npregnancies.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 12,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 840,
+            "end_char": 1692,
+            "chunking": "paragraph"
+          },
+          "id": "963781e5e55ef4b886914fc6",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.029236022193768675,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 11,
+            "1": 6
+          }
+        },
+        {
+          "id": "ba9952aacd92f76d8acc4ed7",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 28,
+          "text": "If you read the codebook carefully, you will see that many of the variables\narerecodes, which means that they are not part of theraw datacollected\nby the survey; they are calculated using the raw data.\nFor example,prglngthfor live births is equal to the raw variablewksgest\n(weeks of gestation) if it is available; otherwise it is estimated using\nmosgest * 4.33(months of gestation times the average number of weeks\nin a month).\nRecodes are often based on logic that checks the consistency and accuracy of\nthe data. In general it is a good idea to use recodes when they are available,\nunless there is a compelling reason to process the raw data yourself.\n\n1.6 Transformation\n\nWhen you import data like this, you often have to check for errors, deal with\nspecial values, convert data into different formats, and perform calculations.\nThese operations are calleddata cleaning.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1713,
+            "language": "en",
+            "start_char": 839,
+            "printed_page": 8,
+            "extraction_status": "ok"
+          },
+          "score": 0.016129032258064516,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 2
+          }
+        },
+        {
+          "id": "2302c0aa2fd4d36ec776cd0e",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 27,
+          "text": "1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1158,
+            "language": "en",
+            "start_char": 902,
+            "printed_page": 7,
+            "extraction_status": "ok"
+          },
+          "score": 0.015873015873015872,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 3
+          }
+        }
+      ],
+      "context": "[5869e54397098a669dd0b81e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\n1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.\n\n[3f3031b3a4a858624a2ac681 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe code you downloaded includesthinkstats2.py, which is a Python module that contains many classes and functions used in this book, including\nfunctions that read the Stata dictionary and the NSFG data file. Here’s how\nthey are used innsfg.py:\ndef ReadFemPreg(dct_file='2002FemPreg.dct',\ndat_file='2002FemPreg.dat.gz'):\ndct = thinkstats2.ReadStataDct(dct_file)\ndf = dct.ReadFixedWidth(dat_file, compression='gzip')\nCleanFemPreg(df)\nreturn df\nReadStataDcttakes the name of the dictionary file and returnsdct, a\nFixedWidthVariablesobject that contains the information from the dictionary file.dctprovidesReadFixedWidth, which reads the data file.\n\n1.4 DataFrames\n\n[963781e5e55ef4b886914fc6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 32]\nTo work with data effectively, you have to think on two levels at the same\ntime: the level of statistics and the level of context.\n\nAs an example, let’s look at the sequence of outcomes for a few respondents.\nBecause of the way the data files are organized, we have to do some processing\nto collect the pregnancy data for each respondent. Here’s a function that does\nthat:\ndef MakePregMap(df):\nd = defaultdict(list)\nfor index, caseid in df.caseid.iteritems():\nd[caseid].append(index)\nreturn d\ndfis the DataFrame with pregnancy data. Theiteritemsmethod enumerates the index (row number) andcaseidfor each pregnancy.\n\ndis a dictionary that maps from each case ID to a list of indices. If you are not\nfamiliar withdefaultdict, it is in the Pythoncollectionsmodule. Using\nd, we can look up a respondent and get the indices of that respondent’s\npregnancies.\n\n[ba9952aacd92f76d8acc4ed7 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\nIf you read the codebook carefully, you will see that many of the variables\narerecodes, which means that they are not part of theraw datacollected\nby the survey; they are calculated using the raw data.\nFor example,prglngthfor live births is equal to the raw variablewksgest\n(weeks of gestation) if it is available; otherwise it is estimated using\nmosgest * 4.33(months of gestation times the average number of weeks\nin a month).\nRecodes are often based on logic that checks the consistency and accuracy of\nthe data. In general it is a good idea to use recodes when they are available,\nunless there is a compelling reason to process the raw data yourself.\n\n1.6 Transformation\n\nWhen you import data like this, you often have to check for errors, deal with\nspecial values, convert data into different formats, and perform calculations.\nThese operations are calleddata cleaning.\n\n[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.",
+      "context_ids": [
+        "5869e54397098a669dd0b81e",
+        "3f3031b3a4a858624a2ac681",
+        "963781e5e55ef4b886914fc6",
+        "ba9952aacd92f76d8acc4ed7",
+        "2302c0aa2fd4d36ec776cd0e"
+      ],
+      "hit1": true,
+      "hit3": true,
+      "context_hit": true,
+      "elapsed_ms": 16.118699975777417
+    }
+  ]
+}

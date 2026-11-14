@@ -1,0 +1,189 @@
+{
+  "query_id": "d7-q07",
+  "split": "dev",
+  "config": "hybrid",
+  "status": "ok",
+  "query": "Mã outcome nào thể hiện một ca sinh sống?",
+  "filter": {},
+  "results": [
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 30,
+      "text": "One way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 10,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 767,
+        "end_char": 1418,
+        "chunking": "paragraph"
+      },
+      "id": "4f0610284ca731ebc56f0974",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.03278688524590164,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 1,
+        "1": 1
+      }
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 33,
+      "text": "1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 13,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 794,
+        "chunking": "paragraph"
+      },
+      "id": "aed02b84a2698a8ad98395fb",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.03225806451612903,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 2,
+        "1": 2
+      }
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 28,
+      "text": "8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 8,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 837,
+        "chunking": "paragraph"
+      },
+      "id": "f5d4f52297470390e5b98ec6",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.03125763125763126,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 3,
+        "1": 5
+      }
+    }
+  ],
+  "context": "[4f0610284ca731ebc56f0974 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\nOne way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148",
+  "context_ids": [
+    "4f0610284ca731ebc56f0974"
+  ],
+  "hit1": false,
+  "hit3": true,
+  "context_hit": false,
+  "elapsed_ms": 15.21459998912178,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q07",
+      "split": "dev",
+      "config": "hybrid",
+      "status": "ok",
+      "query": "Mã outcome nào thể hiện một ca sinh sống?",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 30,
+          "text": "One way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 10,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 767,
+            "end_char": 1418,
+            "chunking": "paragraph"
+          },
+          "id": "4f0610284ca731ebc56f0974",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03278688524590164,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1,
+            "1": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 33,
+          "text": "1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 13,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 794,
+            "chunking": "paragraph"
+          },
+          "id": "aed02b84a2698a8ad98395fb",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03225806451612903,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 2,
+            "1": 2
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 28,
+          "text": "8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 8,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 837,
+            "chunking": "paragraph"
+          },
+          "id": "f5d4f52297470390e5b98ec6",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03125763125763126,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 3,
+            "1": 5
+          }
+        }
+      ],
+      "context": "[4f0610284ca731ebc56f0974 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\nOne way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148",
+      "context_ids": [
+        "4f0610284ca731ebc56f0974"
+      ],
+      "hit1": false,
+      "hit3": true,
+      "context_hit": false,
+      "elapsed_ms": 23.134299990488216
+    }
+  ]
+}

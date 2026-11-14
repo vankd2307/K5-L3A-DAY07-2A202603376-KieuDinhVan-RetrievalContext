@@ -1,0 +1,15 @@
+{
+  "at": "2026-11-14T08:05:23.157413+00:00",
+  "chunk_count": 91,
+  "read_only": true,
+  "index_matches": true,
+  "versions": [
+    "PostgreSQL 16.16 (Debian 16.16-1.pgdg12+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 12.2.0-14+deb12u1) 12.2.0, 64-bit",
+    "0.8.7"
+  ],
+  "embedding_model": "gemini-embedding-001",
+  "dimensions": 768,
+  "free_tier_confirmed_by_user": true,
+  "credential_configured": true,
+  "agent_model": "gemini-3.5-flash-lite"
+}

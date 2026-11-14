@@ -1,0 +1,30 @@
+test_counts_and_errors_are_separate (test_agent_metrics.AgentMetricTests.test_counts_and_errors_are_separate) ... ok
+test_rejects_missing_review_and_false_abstention_grade (test_agent_metrics.AgentMetricTests.test_rejects_missing_review_and_false_abstention_grade) ... ok
+test_unanswerable_requires_human_confirmation (test_agent_metrics.AgentMetricTests.test_unanswerable_requires_human_confirmation) ... ok
+test_agent_searches_and_cites_actual_context (test_agentic.AgentTests.test_agent_searches_and_cites_actual_context) ... ok
+test_configurable_retrieval_allows_more_than_two_calls (test_agentic.AgentTests.test_configurable_retrieval_allows_more_than_two_calls) ... ok
+test_context_budget_across_multiple_searches (test_agentic.AgentTests.test_context_budget_across_multiple_searches) ... ok
+test_invalid_citation_and_empty_context_abstain (test_agentic.AgentTests.test_invalid_citation_and_empty_context_abstain) ... ok
+test_search_limit_is_enforced (test_agentic.AgentTests.test_search_limit_is_enforced) ... ok
+test_tool_errors_are_not_hidden (test_agentic.AgentTests.test_tool_errors_are_not_hidden) ... ok
+test_budget_dedup_and_empty_query (test_baseline.BaselineTests.test_budget_dedup_and_empty_query) ... ok
+test_cli_uses_requested_split_only (test_baseline.BaselineTests.test_cli_uses_requested_split_only) ... ok
+test_convert_day6_and_preserve_filter (test_baseline.BaselineTests.test_convert_day6_and_preserve_filter) ... ok
+test_gold_alternative_and_wrong_page (test_baseline.BaselineTests.test_gold_alternative_and_wrong_page) ... ok
+test_rank_and_evidence (test_baseline.BaselineTests.test_rank_and_evidence) ... ok
+test_database_error_string_is_redacted (test_day7.AdditionalAgentTests.test_database_error_string_is_redacted) ... ok
+test_free_tier_not_confirmed_means_no_network (test_day7.AdditionalAgentTests.test_free_tier_not_confirmed_means_no_network) ... ok
+test_grouped_citations_normalize_but_unknown_ids_are_rejected (test_day7.AdditionalAgentTests.test_grouped_citations_normalize_but_unknown_ids_are_rejected) ... ok
+test_model_cannot_finish_without_search (test_day7.AdditionalAgentTests.test_model_cannot_finish_without_search) ... ok
+test_context_preserves_source_and_counts_delimiters (test_day7.LabTests.test_context_preserves_source_and_counts_delimiters) ... ok
+test_error_remains_error_and_preserves_previous_events (test_day7.LabTests.test_error_remains_error_and_preserves_previous_events) ... ok
+test_fabricated_citation_is_rejected (test_day7.LabTests.test_fabricated_citation_is_rejected) ... ok
+test_lexical_retrieval_never_calls_api (test_day7.LabTests.test_lexical_retrieval_never_calls_api) ... ok
+test_native_tool_search_then_citation_and_no_gold_in_request (test_day7.LabTests.test_native_tool_search_then_citation_and_no_gold_in_request) ... ok
+test_rrf_uses_rank_and_deduplicates_within_component (test_day7.LabTests.test_rrf_uses_rank_and_deduplicates_within_component) ... ok
+test_fixture_gold_resolves (test_fixture.FixtureTest.test_fixture_gold_resolves) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.147s
+
+OK

@@ -1,0 +1,381 @@
+{
+  "question": "Nếu cân nặng chứa mã 97, 98 hoặc 99 thì phải xử lý thế nào để tránh kết quả sai?",
+  "config": "dense_context",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:12.412638+00:00",
+  "status": "abstain",
+  "citations": [],
+  "events": [
+    {
+      "event": "search",
+      "tool": "dense",
+      "query": "weight 97 98 99 Think Stats",
+      "filter": {},
+      "results": [
+        {
+          "id": "2516759d4fe4ca93f06c23aa",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 43,
+          "text": "2.6. First babies 23\n\nand 30 weeks, it is hard to be sure; some values are probably errors, but\nsome represent premature babies.\nOn the other end of the range, the highest values are:\nweeks count\n43 148\n44 46\n45 10\n46 1\n47 1\n48 7\n50 2\nMost doctors recommend induced labor if a pregnancy exceeds 42 weeks,\nso some of the longer values are surprising. In particular, 50 weeks seems\nmedically unlikely.\nThe best way to handle outliers depends on “domain knowledge”; that is,\ninformation about where the data come from and what they mean. And it\ndepends on what analysis you are planning to perform.\nIn this example, the motivating question is whether first babies tend to be\nearly (or late). When people ask this question, they are usually interested in\nfull-term pregnancies, so for this analysis I will focus on pregnancies longer\nthan 27 weeks.\n\n2.6 First babies",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 862,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 23,
+            "extraction_status": "ok"
+          },
+          "score": 0.7231283783912659,
+          "method": "dense"
+        },
+        {
+          "id": "755c180078e5d3f6fd3f7b9b",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 40,
+          "text": "I’ll start by reading the data and selecting records for live births:\npreg = nsfg.ReadFemPreg()\nlive = preg[preg.outcome == 1]\nThe expression in brackets is a boolean Series that selects rows from the\nDataFrame and returns a new DataFrame. Next I generate and plot the\nhistogram ofbirthwgt_lbfor live births.\nhist = thinkstats2.Hist(live.birthwgt_lb, label='birthwgt_lb')\nthinkplot.Hist(hist)\nthinkplot.Show(xlabel='pounds', ylabel='frequency')\nWhen the argument passed to Hist is a pandas Series, anynanvalues are\ndropped.labelis a string that appears in the legend when the Hist is\nplotted.\n\nFigure 2.1 shows the result. The most common value, called themode, is 7\npounds. The distribution is approximately bell-shaped, which is the shape",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1069,
+            "language": "en",
+            "start_char": 329,
+            "printed_page": 20,
+            "extraction_status": "ok"
+          },
+          "score": 0.709868652216713,
+          "method": "dense"
+        },
+        {
+          "id": "449838e71555d1ff1d4b20c7",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 47,
+          "text": "2.9. Effect size 27\n\nFor all live births, the mean pregnancy length is 38.6 weeks, the standard\ndeviation is 2.7 weeks, which means we should expect deviations of 2-3 weeks\nto be common.\n\nVariance of pregnancy length is 7.3, which is hard to interpret, especially\nsince the units are weeks2, or “square weeks.” Variance is useful in some\ncalculations, but it is not a good summary statistic.\n\n2.9 Effect size\n\nAneffect sizeis a summary statistic intended to describe (wait for it) the\nsize of an effect. For example, to describe the difference between two groups,\none obvious choice is the difference in the means.\n\nMean pregnancy length for first babies is 38.601; for other babies it is 38.523.\nThe difference is 0.078 weeks, which works out to 13 hours. As a fraction of\nthe typical pregnancy length, this difference is about 0.2%.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 834,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 27,
+            "extraction_status": "ok"
+          },
+          "score": 0.7091027324856969,
+          "method": "dense"
+        },
+        {
+          "id": "1bed87a28147c3fc49afaba2",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 55,
+          "text": "thinkplot.Bar(weeks, diffs)\nIn this code,weeksis the range of weeks;diffsis the difference between the\ntwo PMFs in percentage points. Figure 3.2 shows the result as a bar chart.\nThis figure makes the pattern clearer: first babies are less likely to be born\nin week 39, and somewhat more likely to be born in weeks 41 and 42.\nFor now we should hold this conclusion only tentatively. We used the same\ndataset to identify an apparent difference and then chose a visualization that\nmakes the difference apparent. We can’t be sure this effect is real; it might\nbe due to random variation. We’ll address this concern later.\n\n3.4 The class size paradox\n\nBefore we go on, I want to demonstrate one kind of computation you can do\nwith Pmf objects; I call this example the “class size paradox.”",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "3",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1528,
+            "language": "en",
+            "start_char": 744,
+            "printed_page": 35,
+            "extraction_status": "ok"
+          },
+          "score": 0.7076165676116943,
+          "method": "dense"
+        },
+        {
+          "id": "f5d4f52297470390e5b98ec6",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 28,
+          "text": "8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 837,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 8,
+            "extraction_status": "ok"
+          },
+          "score": 0.7065883103959758,
+          "method": "dense"
+        }
+      ],
+      "context": "[2516759d4fe4ca93f06c23aa | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 43]\n2.6. First babies 23\n\nand 30 weeks, it is hard to be sure; some values are probably errors, but\nsome represent premature babies.\nOn the other end of the range, the highest values are:\nweeks count\n43 148\n44 46\n45 10\n46 1\n47 1\n48 7\n50 2\nMost doctors recommend induced labor if a pregnancy exceeds 42 weeks,\nso some of the longer values are surprising. In particular, 50 weeks seems\nmedically unlikely.\nThe best way to handle outliers depends on “domain knowledge”; that is,\ninformation about where the data come from and what they mean. And it\ndepends on what analysis you are planning to perform.\nIn this example, the motivating question is whether first babies tend to be\nearly (or late). When people ask this question, they are usually interested in\nfull-term pregnancies, so for this analysis I will focus on pregnancies longer\nthan 27 weeks.\n\n2.6 First babies\n\n[755c180078e5d3f6fd3f7b9b | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 40]\nI’ll start by reading the data and selecting records for live births:\npreg = nsfg.ReadFemPreg()\nlive = preg[preg.outcome == 1]\nThe expression in brackets is a boolean Series that selects rows from the\nDataFrame and returns a new DataFrame. Next I generate and plot the\nhistogram ofbirthwgt_lbfor live births.\nhist = thinkstats2.Hist(live.birthwgt_lb, label='birthwgt_lb')\nthinkplot.Hist(hist)\nthinkplot.Show(xlabel='pounds', ylabel='frequency')\nWhen the argument passed to Hist is a pandas Series, anynanvalues are\ndropped.labelis a string that appears in the legend when the Hist is\nplotted.\n\nFigure 2.1 shows the result. The most common value, called themode, is 7\npounds. The distribution is approximately bell-shaped, which is the shape\n\n[449838e71555d1ff1d4b20c7 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 47]\n2.9. Effect size 27\n\nFor all live births, the mean pregnancy length is 38.6 weeks, the standard\ndeviation is 2.7 weeks, which means we should expect deviations of 2-3 weeks\nto be common.\n\nVariance of pregnancy length is 7.3, which is hard to interpret, especially\nsince the units are weeks2, or “square weeks.” Variance is useful in some\ncalculations, but it is not a good summary statistic.\n\n2.9 Effect size\n\nAneffect sizeis a summary statistic intended to describe (wait for it) the\nsize of an effect. For example, to describe the difference between two groups,\none obvious choice is the difference in the means.\n\nMean pregnancy length for first babies is 38.601; for other babies it is 38.523.\nThe difference is 0.078 weeks, which works out to 13 hours. As a fraction of\nthe typical pregnancy length, this difference is about 0.2%.\n\n[1bed87a28147c3fc49afaba2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 55]\nthinkplot.Bar(weeks, diffs)\nIn this code,weeksis the range of weeks;diffsis the difference between the\ntwo PMFs in percentage points. Figure 3.2 shows the result as a bar chart.\nThis figure makes the pattern clearer: first babies are less likely to be born\nin week 39, and somewhat more likely to be born in weeks 41 and 42.\nFor now we should hold this conclusion only tentatively. We used the same\ndataset to identify an apparent difference and then chose a visualization that\nmakes the difference apparent. We can’t be sure this effect is real; it might\nbe due to random variation. We’ll address this concern later.\n\n3.4 The class size paradox\n\nBefore we go on, I want to demonstrate one kind of computation you can do\nwith Pmf objects; I call this example the “class size paradox.”\n\n[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+      "context_ids": [
+        "2516759d4fe4ca93f06c23aa",
+        "755c180078e5d3f6fd3f7b9b",
+        "449838e71555d1ff1d4b20c7",
+        "1bed87a28147c3fc49afaba2",
+        "f5d4f52297470390e5b98ec6"
+      ],
+      "elapsed_ms": 26.451999990968034
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "abstain": true,
+        "answer": "",
+        "citations": []
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 354,
+        "candidatesTokenCount": 25,
+        "totalTokenCount": 379,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 354
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1844,
+        "candidatesTokenCount": 21,
+        "totalTokenCount": 1865,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1844
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+  "context": "[2516759d4fe4ca93f06c23aa | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 43]\n2.6. First babies 23\n\nand 30 weeks, it is hard to be sure; some values are probably errors, but\nsome represent premature babies.\nOn the other end of the range, the highest values are:\nweeks count\n43 148\n44 46\n45 10\n46 1\n47 1\n48 7\n50 2\nMost doctors recommend induced labor if a pregnancy exceeds 42 weeks,\nso some of the longer values are surprising. In particular, 50 weeks seems\nmedically unlikely.\nThe best way to handle outliers depends on “domain knowledge”; that is,\ninformation about where the data come from and what they mean. And it\ndepends on what analysis you are planning to perform.\nIn this example, the motivating question is whether first babies tend to be\nearly (or late). When people ask this question, they are usually interested in\nfull-term pregnancies, so for this analysis I will focus on pregnancies longer\nthan 27 weeks.\n\n2.6 First babies\n\n[755c180078e5d3f6fd3f7b9b | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 40]\nI’ll start by reading the data and selecting records for live births:\npreg = nsfg.ReadFemPreg()\nlive = preg[preg.outcome == 1]\nThe expression in brackets is a boolean Series that selects rows from the\nDataFrame and returns a new DataFrame. Next I generate and plot the\nhistogram ofbirthwgt_lbfor live births.\nhist = thinkstats2.Hist(live.birthwgt_lb, label='birthwgt_lb')\nthinkplot.Hist(hist)\nthinkplot.Show(xlabel='pounds', ylabel='frequency')\nWhen the argument passed to Hist is a pandas Series, anynanvalues are\ndropped.labelis a string that appears in the legend when the Hist is\nplotted.\n\nFigure 2.1 shows the result. The most common value, called themode, is 7\npounds. The distribution is approximately bell-shaped, which is the shape\n\n[449838e71555d1ff1d4b20c7 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 47]\n2.9. Effect size 27\n\nFor all live births, the mean pregnancy length is 38.6 weeks, the standard\ndeviation is 2.7 weeks, which means we should expect deviations of 2-3 weeks\nto be common.\n\nVariance of pregnancy length is 7.3, which is hard to interpret, especially\nsince the units are weeks2, or “square weeks.” Variance is useful in some\ncalculations, but it is not a good summary statistic.\n\n2.9 Effect size\n\nAneffect sizeis a summary statistic intended to describe (wait for it) the\nsize of an effect. For example, to describe the difference between two groups,\none obvious choice is the difference in the means.\n\nMean pregnancy length for first babies is 38.601; for other babies it is 38.523.\nThe difference is 0.078 weeks, which works out to 13 hours. As a fraction of\nthe typical pregnancy length, this difference is about 0.2%.\n\n[1bed87a28147c3fc49afaba2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 55]\nthinkplot.Bar(weeks, diffs)\nIn this code,weeksis the range of weeks;diffsis the difference between the\ntwo PMFs in percentage points. Figure 3.2 shows the result as a bar chart.\nThis figure makes the pattern clearer: first babies are less likely to be born\nin week 39, and somewhat more likely to be born in weeks 41 and 42.\nFor now we should hold this conclusion only tentatively. We used the same\ndataset to identify an apparent difference and then chose a visualization that\nmakes the difference apparent. We can’t be sure this effect is real; it might\nbe due to random variation. We’ll address this concern later.\n\n3.4 The class size paradox\n\nBefore we go on, I want to demonstrate one kind of computation you can do\nwith Pmf objects; I call this example the “class size paradox.”\n\n[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+  "context_ids": [
+    "2516759d4fe4ca93f06c23aa",
+    "755c180078e5d3f6fd3f7b9b",
+    "449838e71555d1ff1d4b20c7",
+    "1bed87a28147c3fc49afaba2",
+    "f5d4f52297470390e5b98ec6"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 27.01089999754913,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q09",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": false,
+  "reference_elapsed_ms": 3693.609200010542,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Nếu cân nặng chứa mã 97, 98 hoặc 99 thì phải xử lý thế nào để tránh kết quả sai?",
+      "config": "dense_context",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:33:45.257576+00:00",
+      "status": "abstain",
+      "citations": [],
+      "events": [
+        {
+          "event": "search",
+          "tool": "dense",
+          "query": "weight 97 98 99 Think Stats",
+          "filter": {},
+          "results": [
+            {
+              "id": "2516759d4fe4ca93f06c23aa",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 43,
+              "text": "2.6. First babies 23\n\nand 30 weeks, it is hard to be sure; some values are probably errors, but\nsome represent premature babies.\nOn the other end of the range, the highest values are:\nweeks count\n43 148\n44 46\n45 10\n46 1\n47 1\n48 7\n50 2\nMost doctors recommend induced labor if a pregnancy exceeds 42 weeks,\nso some of the longer values are surprising. In particular, 50 weeks seems\nmedically unlikely.\nThe best way to handle outliers depends on “domain knowledge”; that is,\ninformation about where the data come from and what they mean. And it\ndepends on what analysis you are planning to perform.\nIn this example, the motivating question is whether first babies tend to be\nearly (or late). When people ask this question, they are usually interested in\nfull-term pregnancies, so for this analysis I will focus on pregnancies longer\nthan 27 weeks.\n\n2.6 First babies",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 862,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 23,
+                "extraction_status": "ok"
+              },
+              "score": 0.7231283783912659,
+              "method": "dense"
+            },
+            {
+              "id": "755c180078e5d3f6fd3f7b9b",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 40,
+              "text": "I’ll start by reading the data and selecting records for live births:\npreg = nsfg.ReadFemPreg()\nlive = preg[preg.outcome == 1]\nThe expression in brackets is a boolean Series that selects rows from the\nDataFrame and returns a new DataFrame. Next I generate and plot the\nhistogram ofbirthwgt_lbfor live births.\nhist = thinkstats2.Hist(live.birthwgt_lb, label='birthwgt_lb')\nthinkplot.Hist(hist)\nthinkplot.Show(xlabel='pounds', ylabel='frequency')\nWhen the argument passed to Hist is a pandas Series, anynanvalues are\ndropped.labelis a string that appears in the legend when the Hist is\nplotted.\n\nFigure 2.1 shows the result. The most common value, called themode, is 7\npounds. The distribution is approximately bell-shaped, which is the shape",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1069,
+                "language": "en",
+                "start_char": 329,
+                "printed_page": 20,
+                "extraction_status": "ok"
+              },
+              "score": 0.709868652216713,
+              "method": "dense"
+            },
+            {
+              "id": "449838e71555d1ff1d4b20c7",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 47,
+              "text": "2.9. Effect size 27\n\nFor all live births, the mean pregnancy length is 38.6 weeks, the standard\ndeviation is 2.7 weeks, which means we should expect deviations of 2-3 weeks\nto be common.\n\nVariance of pregnancy length is 7.3, which is hard to interpret, especially\nsince the units are weeks2, or “square weeks.” Variance is useful in some\ncalculations, but it is not a good summary statistic.\n\n2.9 Effect size\n\nAneffect sizeis a summary statistic intended to describe (wait for it) the\nsize of an effect. For example, to describe the difference between two groups,\none obvious choice is the difference in the means.\n\nMean pregnancy length for first babies is 38.601; for other babies it is 38.523.\nThe difference is 0.078 weeks, which works out to 13 hours. As a fraction of\nthe typical pregnancy length, this difference is about 0.2%.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 834,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 27,
+                "extraction_status": "ok"
+              },
+              "score": 0.7091027324856969,
+              "method": "dense"
+            },
+            {
+              "id": "1bed87a28147c3fc49afaba2",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 55,
+              "text": "thinkplot.Bar(weeks, diffs)\nIn this code,weeksis the range of weeks;diffsis the difference between the\ntwo PMFs in percentage points. Figure 3.2 shows the result as a bar chart.\nThis figure makes the pattern clearer: first babies are less likely to be born\nin week 39, and somewhat more likely to be born in weeks 41 and 42.\nFor now we should hold this conclusion only tentatively. We used the same\ndataset to identify an apparent difference and then chose a visualization that\nmakes the difference apparent. We can’t be sure this effect is real; it might\nbe due to random variation. We’ll address this concern later.\n\n3.4 The class size paradox\n\nBefore we go on, I want to demonstrate one kind of computation you can do\nwith Pmf objects; I call this example the “class size paradox.”",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "3",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1528,
+                "language": "en",
+                "start_char": 744,
+                "printed_page": 35,
+                "extraction_status": "ok"
+              },
+              "score": 0.7076165676116943,
+              "method": "dense"
+            },
+            {
+              "id": "f5d4f52297470390e5b98ec6",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 28,
+              "text": "8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 837,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 8,
+                "extraction_status": "ok"
+              },
+              "score": 0.7065883103959758,
+              "method": "dense"
+            }
+          ],
+          "context": "[2516759d4fe4ca93f06c23aa | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 43]\n2.6. First babies 23\n\nand 30 weeks, it is hard to be sure; some values are probably errors, but\nsome represent premature babies.\nOn the other end of the range, the highest values are:\nweeks count\n43 148\n44 46\n45 10\n46 1\n47 1\n48 7\n50 2\nMost doctors recommend induced labor if a pregnancy exceeds 42 weeks,\nso some of the longer values are surprising. In particular, 50 weeks seems\nmedically unlikely.\nThe best way to handle outliers depends on “domain knowledge”; that is,\ninformation about where the data come from and what they mean. And it\ndepends on what analysis you are planning to perform.\nIn this example, the motivating question is whether first babies tend to be\nearly (or late). When people ask this question, they are usually interested in\nfull-term pregnancies, so for this analysis I will focus on pregnancies longer\nthan 27 weeks.\n\n2.6 First babies\n\n[755c180078e5d3f6fd3f7b9b | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 40]\nI’ll start by reading the data and selecting records for live births:\npreg = nsfg.ReadFemPreg()\nlive = preg[preg.outcome == 1]\nThe expression in brackets is a boolean Series that selects rows from the\nDataFrame and returns a new DataFrame. Next I generate and plot the\nhistogram ofbirthwgt_lbfor live births.\nhist = thinkstats2.Hist(live.birthwgt_lb, label='birthwgt_lb')\nthinkplot.Hist(hist)\nthinkplot.Show(xlabel='pounds', ylabel='frequency')\nWhen the argument passed to Hist is a pandas Series, anynanvalues are\ndropped.labelis a string that appears in the legend when the Hist is\nplotted.\n\nFigure 2.1 shows the result. The most common value, called themode, is 7\npounds. The distribution is approximately bell-shaped, which is the shape\n\n[449838e71555d1ff1d4b20c7 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 47]\n2.9. Effect size 27\n\nFor all live births, the mean pregnancy length is 38.6 weeks, the standard\ndeviation is 2.7 weeks, which means we should expect deviations of 2-3 weeks\nto be common.\n\nVariance of pregnancy length is 7.3, which is hard to interpret, especially\nsince the units are weeks2, or “square weeks.” Variance is useful in some\ncalculations, but it is not a good summary statistic.\n\n2.9 Effect size\n\nAneffect sizeis a summary statistic intended to describe (wait for it) the\nsize of an effect. For example, to describe the difference between two groups,\none obvious choice is the difference in the means.\n\nMean pregnancy length for first babies is 38.601; for other babies it is 38.523.\nThe difference is 0.078 weeks, which works out to 13 hours. As a fraction of\nthe typical pregnancy length, this difference is about 0.2%.\n\n[1bed87a28147c3fc49afaba2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 55]\nthinkplot.Bar(weeks, diffs)\nIn this code,weeksis the range of weeks;diffsis the difference between the\ntwo PMFs in percentage points. Figure 3.2 shows the result as a bar chart.\nThis figure makes the pattern clearer: first babies are less likely to be born\nin week 39, and somewhat more likely to be born in weeks 41 and 42.\nFor now we should hold this conclusion only tentatively. We used the same\ndataset to identify an apparent difference and then chose a visualization that\nmakes the difference apparent. We can’t be sure this effect is real; it might\nbe due to random variation. We’ll address this concern later.\n\n3.4 The class size paradox\n\nBefore we go on, I want to demonstrate one kind of computation you can do\nwith Pmf objects; I call this example the “class size paradox.”\n\n[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+          "context_ids": [
+            "2516759d4fe4ca93f06c23aa",
+            "755c180078e5d3f6fd3f7b9b",
+            "449838e71555d1ff1d4b20c7",
+            "1bed87a28147c3fc49afaba2",
+            "f5d4f52297470390e5b98ec6"
+          ],
+          "elapsed_ms": 29.2452999856323
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "abstain": true,
+            "answer": "",
+            "citations": []
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 354,
+            "candidatesTokenCount": 25,
+            "totalTokenCount": 379,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 354
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1844,
+            "candidatesTokenCount": 21,
+            "totalTokenCount": 1865,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1844
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+      "context": "[2516759d4fe4ca93f06c23aa | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 43]\n2.6. First babies 23\n\nand 30 weeks, it is hard to be sure; some values are probably errors, but\nsome represent premature babies.\nOn the other end of the range, the highest values are:\nweeks count\n43 148\n44 46\n45 10\n46 1\n47 1\n48 7\n50 2\nMost doctors recommend induced labor if a pregnancy exceeds 42 weeks,\nso some of the longer values are surprising. In particular, 50 weeks seems\nmedically unlikely.\nThe best way to handle outliers depends on “domain knowledge”; that is,\ninformation about where the data come from and what they mean. And it\ndepends on what analysis you are planning to perform.\nIn this example, the motivating question is whether first babies tend to be\nearly (or late). When people ask this question, they are usually interested in\nfull-term pregnancies, so for this analysis I will focus on pregnancies longer\nthan 27 weeks.\n\n2.6 First babies\n\n[755c180078e5d3f6fd3f7b9b | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 40]\nI’ll start by reading the data and selecting records for live births:\npreg = nsfg.ReadFemPreg()\nlive = preg[preg.outcome == 1]\nThe expression in brackets is a boolean Series that selects rows from the\nDataFrame and returns a new DataFrame. Next I generate and plot the\nhistogram ofbirthwgt_lbfor live births.\nhist = thinkstats2.Hist(live.birthwgt_lb, label='birthwgt_lb')\nthinkplot.Hist(hist)\nthinkplot.Show(xlabel='pounds', ylabel='frequency')\nWhen the argument passed to Hist is a pandas Series, anynanvalues are\ndropped.labelis a string that appears in the legend when the Hist is\nplotted.\n\nFigure 2.1 shows the result. The most common value, called themode, is 7\npounds. The distribution is approximately bell-shaped, which is the shape\n\n[449838e71555d1ff1d4b20c7 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 47]\n2.9. Effect size 27\n\nFor all live births, the mean pregnancy length is 38.6 weeks, the standard\ndeviation is 2.7 weeks, which means we should expect deviations of 2-3 weeks\nto be common.\n\nVariance of pregnancy length is 7.3, which is hard to interpret, especially\nsince the units are weeks2, or “square weeks.” Variance is useful in some\ncalculations, but it is not a good summary statistic.\n\n2.9 Effect size\n\nAneffect sizeis a summary statistic intended to describe (wait for it) the\nsize of an effect. For example, to describe the difference between two groups,\none obvious choice is the difference in the means.\n\nMean pregnancy length for first babies is 38.601; for other babies it is 38.523.\nThe difference is 0.078 weeks, which works out to 13 hours. As a fraction of\nthe typical pregnancy length, this difference is about 0.2%.\n\n[1bed87a28147c3fc49afaba2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 55]\nthinkplot.Bar(weeks, diffs)\nIn this code,weeksis the range of weeks;diffsis the difference between the\ntwo PMFs in percentage points. Figure 3.2 shows the result as a bar chart.\nThis figure makes the pattern clearer: first babies are less likely to be born\nin week 39, and somewhat more likely to be born in weeks 41 and 42.\nFor now we should hold this conclusion only tentatively. We used the same\ndataset to identify an apparent difference and then chose a visualization that\nmakes the difference apparent. We can’t be sure this effect is real; it might\nbe due to random variation. We’ll address this concern later.\n\n3.4 The class size paradox\n\nBefore we go on, I want to demonstrate one kind of computation you can do\nwith Pmf objects; I call this example the “class size paradox.”\n\n[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+      "context_ids": [
+        "2516759d4fe4ca93f06c23aa",
+        "755c180078e5d3f6fd3f7b9b",
+        "449838e71555d1ff1d4b20c7",
+        "1bed87a28147c3fc49afaba2",
+        "f5d4f52297470390e5b98ec6"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 3693.609200010542,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q09",
+      "split": "dev",
+      "context_hit": false
+    }
+  ]
+}

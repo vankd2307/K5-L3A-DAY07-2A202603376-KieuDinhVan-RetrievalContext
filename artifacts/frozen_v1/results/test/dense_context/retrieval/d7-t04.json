@@ -1,0 +1,128 @@
+{
+  "query_id": "d7-t04",
+  "split": "test",
+  "config": "dense_context",
+  "status": "ok",
+  "query": "Trong ví dụ chạy tiếp sức, xác suất hai người chạy vượt nhau tỷ lệ với đại lượng nào, và vì sao ít gặp người cùng tốc độ?",
+  "filter": {},
+  "results": [
+    {
+      "id": "004c768971ba76dd4ebdb170",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 62,
+      "text": "As a result, runners were spread out along the course with little relationship\nbetween speed and location. When I joined the race, the runners near me\nwere (pretty much) a random sample of the runners in the race.\n\nSo where does the bias come from? During my time on the course, the chance\nof overtaking a runner, or being overtaken, is proportional to the difference\nin our speeds. I am more likely to catch a slow runner, and more likely to be\ncaught by a fast runner. But runners at the same speed are unlikely to see\neach other.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "3",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 2111,
+        "language": "en",
+        "start_char": 1579,
+        "printed_page": 42,
+        "extraction_status": "ok"
+      },
+      "score": 0.7637673247983258,
+      "method": "dense"
+    },
+    {
+      "id": "1e66e8dc3acff693d400f751",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 62,
+      "text": "Exercise 3.4In most foot races, everyone starts at the same time. If you\nare a fast runner, you usually pass a lot of people at the beginning of the\nrace, but after a few miles everyone around you is going at the same speed.\n\nWhen I ran a long-distance (209 miles) relay race for the first time, I noticed\nan odd phenomenon: when I overtook another runner, I was usually much\nfaster, and when another runner overtook me, he was usually much faster.\n\nAt first I thought that the distribution of speeds might be bimodal; that is,\nthere were many slow runners and many fast runners, but few at my speed.\n\nThen I realized that I was the victim of a bias similar to the effect of class\nsize. The race was unusual in two ways: it used a staggered start, so teams\nstarted at different times; also, many teams included runners at different\nlevels of ability.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "3",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1577,
+        "language": "en",
+        "start_char": 727,
+        "printed_page": 42,
+        "extraction_status": "ok"
+      },
+      "score": 0.7475862352601443,
+      "method": "dense"
+    },
+    {
+      "id": "96f491a9a2e6ec525df71662",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 63,
+      "text": "3.7. Glossary 43\n\nWrite a function calledObservedPmfthat takes a Pmf representing the actual\ndistribution of runners’ speeds, and the speed of a running observer, and\nreturns a new Pmf representing the distribution of runners’ speeds as seen\nby the observer.\nTo test your function, you can userelay.py, which reads the results from\nthe James Joyce Ramble 10K in Dedham MA and converts the pace of each\nrunner to mph.\nCompute the distribution of speeds you would observe if you ran a relay\nrace at 7.5 mph with this group of runners. A solution to this exercise is in\nrelay_soln.py.\n\n3.7 Glossary\n\n•Probability mass function (PMF): a representation of a distribu-\ntion as a function that maps from values to probabilities.\n\n•probability: A frequency expressed as a fraction of the sample size.\n\n•normalization: The process of dividing a frequency by a sample size\nto get a probability.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "3",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 884,
+        "language": "en",
+        "start_char": 0,
+        "printed_page": 43,
+        "extraction_status": "ok"
+      },
+      "score": 0.6463946104049683,
+      "method": "dense"
+    },
+    {
+      "id": "710efd907cbf9c83dd4f8018",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 56,
+      "text": "36 Chapter 3. Probability mass functions\n\nFigure 3.2: Difference, in percentage points, by week.\n\nAt many American colleges and universities, the student-to-faculty ratio is\nabout 10:1. But students are often surprised to discover that their average\nclass size is bigger than 10. There are two reasons for the discrepancy:\n•Students typically take 4–5 classes per semester, but professors often\nteach 1 or 2.\n•The number of students who enjoy a small class is small, but the num-\nber of students in a large class is (ahem!) large.\nThe first effect is obvious, at least once it is pointed out; the second is more\nsubtle. Let’s look at an example. Suppose that a college offers 65 classes in\na given semester, with the following distribution of sizes:\nsize count\n5- 9 8\n10-14 8\n15-19 14\n20-24 4\n25-29 6\n30-34 12\n35-39 8\n40-44 3\n45-49 2",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "3",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 833,
+        "language": "en",
+        "start_char": 0,
+        "printed_page": 36,
+        "extraction_status": "ok"
+      },
+      "score": 0.6399900913238525,
+      "method": "dense"
+    },
+    {
+      "id": "dff6ab57deda33c673685cdb",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 44,
+      "text": "this example, there are fewer “first babies” than “others,” so some\nof the apparent differences in the histograms are due to sample sizes. In the\nnext chapter we address this problem using probability mass functions.",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "2",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1186,
+        "language": "en",
+        "start_char": 970,
+        "printed_page": 24,
+        "extraction_status": "ok"
+      },
+      "score": 0.6144414131176895,
+      "method": "dense"
+    }
+  ],
+  "context": "[004c768971ba76dd4ebdb170 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 62]\nAs a result, runners were spread out along the course with little relationship\nbetween speed and location. When I joined the race, the runners near me\nwere (pretty much) a random sample of the runners in the race.\n\nSo where does the bias come from? During my time on the course, the chance\nof overtaking a runner, or being overtaken, is proportional to the difference\nin our speeds. I am more likely to catch a slow runner, and more likely to be\ncaught by a fast runner. But runners at the same speed are unlikely to see\neach other.\n\n[1e66e8dc3acff693d400f751 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 62]\nExercise 3.4In most foot races, everyone starts at the same time. If you\nare a fast runner, you usually pass a lot of people at the beginning of the\nrace, but after a few miles everyone around you is going at the same speed.\n\nWhen I ran a long-distance (209 miles) relay race for the first time, I noticed\nan odd phenomenon: when I overtook another runner, I was usually much\nfaster, and when another runner overtook me, he was usually much faster.\n\nAt first I thought that the distribution of speeds might be bimodal; that is,\nthere were many slow runners and many fast runners, but few at my speed.\n\nThen I realized that I was the victim of a bias similar to the effect of class\nsize. The race was unusual in two ways: it used a staggered start, so teams\nstarted at different times; also, many teams included runners at different\nlevels of ability.\n\n[96f491a9a2e6ec525df71662 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 63]\n3.7. Glossary 43\n\nWrite a function calledObservedPmfthat takes a Pmf representing the actual\ndistribution of runners’ speeds, and the speed of a running observer, and\nreturns a new Pmf representing the distribution of runners’ speeds as seen\nby the observer.\nTo test your function, you can userelay.py, which reads the results from\nthe James Joyce Ramble 10K in Dedham MA and converts the pace of each\nrunner to mph.\nCompute the distribution of speeds you would observe if you ran a relay\nrace at 7.5 mph with this group of runners. A solution to this exercise is in\nrelay_soln.py.\n\n3.7 Glossary\n\n•Probability mass function (PMF): a representation of a distribu-\ntion as a function that maps from values to probabilities.\n\n•probability: A frequency expressed as a fraction of the sample size.\n\n•normalization: The process of dividing a frequency by a sample size\nto get a probability.\n\n[710efd907cbf9c83dd4f8018 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 56]\n36 Chapter 3. Probability mass functions\n\nFigure 3.2: Difference, in percentage points, by week.\n\nAt many American colleges and universities, the student-to-faculty ratio is\nabout 10:1. But students are often surprised to discover that their average\nclass size is bigger than 10. There are two reasons for the discrepancy:\n•Students typically take 4–5 classes per semester, but professors often\nteach 1 or 2.\n•The number of students who enjoy a small class is small, but the num-\nber of students in a large class is (ahem!) large.\nThe first effect is obvious, at least once it is pointed out; the second is more\nsubtle. Let’s look at an example. Suppose that a college offers 65 classes in\na given semester, with the following distribution of sizes:\nsize count\n5- 9 8\n10-14 8\n15-19 14\n20-24 4\n25-29 6\n30-34 12\n35-39 8\n40-44 3\n45-49 2\n\n[dff6ab57deda33c673685cdb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 44]\nthis example, there are fewer “first babies” than “others,” so some\nof the apparent differences in the histograms are due to sample sizes. In the\nnext chapter we address this problem using probability mass functions.",
+  "context_ids": [
+    "004c768971ba76dd4ebdb170",
+    "1e66e8dc3acff693d400f751",
+    "96f491a9a2e6ec525df71662",
+    "710efd907cbf9c83dd4f8018",
+    "dff6ab57deda33c673685cdb"
+  ],
+  "hit1": true,
+  "hit3": true,
+  "context_hit": true,
+  "elapsed_ms": 4094.634400011273,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4"
+}

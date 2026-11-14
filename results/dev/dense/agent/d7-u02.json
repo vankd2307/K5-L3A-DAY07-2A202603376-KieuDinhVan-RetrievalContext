@@ -1,0 +1,281 @@
+{
+  "question": "Trong nghiên cứu NSFG được mô tả, mã API cá nhân của từng người tham gia là gì?",
+  "config": "dense",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:11.595113+00:00",
+  "status": "abstain",
+  "citations": [],
+  "events": [
+    {
+      "event": "search",
+      "tool": "dense",
+      "query": "NSFG respondent personal API code",
+      "filter": {},
+      "results": [
+        {
+          "id": "aed02b84a2698a8ad98395fb",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 33,
+          "text": "1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 794,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 13,
+            "extraction_status": "ok"
+          },
+          "score": 0.6704486808314529,
+          "method": "dense"
+        },
+        {
+          "id": "f40266243aa427f23fa90b4e",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 23,
+          "text": "The NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1824,
+            "language": "en",
+            "start_char": 1377,
+            "printed_page": 3,
+            "extraction_status": "ok"
+          },
+          "score": 0.6669955849941601,
+          "method": "dense"
+        },
+        {
+          "id": "11f52ca93e1d19a06edc1381",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 39,
+          "text": "Now let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 938,
+            "language": "en",
+            "start_char": 625,
+            "printed_page": 19,
+            "extraction_status": "ok"
+          },
+          "score": 0.6649801929289163,
+          "method": "dense"
+        }
+      ],
+      "context": "[aed02b84a2698a8ad98395fb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 33]\n1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.",
+      "context_ids": [
+        "aed02b84a2698a8ad98395fb"
+      ],
+      "elapsed_ms": 27.43950000149198
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "abstain": true,
+        "citations": [],
+        "answer": "Không đủ bằng chứng trong tài liệu để trả lời câu hỏi này."
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 347,
+        "candidatesTokenCount": 19,
+        "totalTokenCount": 366,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 347
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 684,
+        "candidatesTokenCount": 37,
+        "totalTokenCount": 721,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 684
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+  "context": "[aed02b84a2698a8ad98395fb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 33]\n1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.",
+  "context_ids": [
+    "aed02b84a2698a8ad98395fb"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 27.769199979957193,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-u02",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": null,
+  "reference_elapsed_ms": 8805.631900002481,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Trong nghiên cứu NSFG được mô tả, mã API cá nhân của từng người tham gia là gì?",
+      "config": "dense",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:32:41.473526+00:00",
+      "status": "abstain",
+      "citations": [],
+      "events": [
+        {
+          "event": "search",
+          "tool": "dense",
+          "query": "NSFG respondent personal API code",
+          "filter": {},
+          "results": [
+            {
+              "id": "aed02b84a2698a8ad98395fb",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 33,
+              "text": "1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 794,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 13,
+                "extraction_status": "ok"
+              },
+              "score": 0.6704486808314529,
+              "method": "dense"
+            },
+            {
+              "id": "f40266243aa427f23fa90b4e",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 23,
+              "text": "The NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1824,
+                "language": "en",
+                "start_char": 1377,
+                "printed_page": 3,
+                "extraction_status": "ok"
+              },
+              "score": 0.6669955849941601,
+              "method": "dense"
+            },
+            {
+              "id": "11f52ca93e1d19a06edc1381",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 39,
+              "text": "Now let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 938,
+                "language": "en",
+                "start_char": 625,
+                "printed_page": 19,
+                "extraction_status": "ok"
+              },
+              "score": 0.6649801929289163,
+              "method": "dense"
+            }
+          ],
+          "context": "[aed02b84a2698a8ad98395fb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 33]\n1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.",
+          "context_ids": [
+            "aed02b84a2698a8ad98395fb"
+          ],
+          "elapsed_ms": 3984.145099995658
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "abstain": true,
+            "citations": [],
+            "answer": "Không đủ bằng chứng trong tài liệu để trả lời câu hỏi này."
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 347,
+            "candidatesTokenCount": 19,
+            "totalTokenCount": 366,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 347
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 684,
+            "candidatesTokenCount": 37,
+            "totalTokenCount": 721,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 684
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+      "context": "[aed02b84a2698a8ad98395fb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 33]\n1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.",
+      "context_ids": [
+        "aed02b84a2698a8ad98395fb"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 8805.631900002481,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-u02",
+      "split": "dev",
+      "context_hit": null
+    }
+  ]
+}

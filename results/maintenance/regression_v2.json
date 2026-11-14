@@ -1,0 +1,604 @@
+{
+  "at": "2026-11-14T08:44:46.601663+00:00",
+  "kind": "offline regression using recorded decisions and retrieval results",
+  "independent_test": false,
+  "api_requests": 0,
+  "cases": 99,
+  "passed": true,
+  "checks": [
+    {
+      "split": "dev",
+      "config": "baseline",
+      "query_id": "d7-q01",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "baseline",
+      "query_id": "d7-q02",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "baseline",
+      "query_id": "d7-q03",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "baseline",
+      "query_id": "d7-q04",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "baseline",
+      "query_id": "d7-q05",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "baseline",
+      "query_id": "d7-q06",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "baseline",
+      "query_id": "d7-q07",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "baseline",
+      "query_id": "d7-q08",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "baseline",
+      "query_id": "d7-q09",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "baseline",
+      "query_id": "d7-q10",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "baseline",
+      "query_id": "d7-q11",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "baseline",
+      "query_id": "d7-q12",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "baseline",
+      "query_id": "d7-q13",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "baseline",
+      "query_id": "d7-q14",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "baseline",
+      "query_id": "d7-q15",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "baseline",
+      "query_id": "d7-u01",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "baseline",
+      "query_id": "d7-u02",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense",
+      "query_id": "d7-q01",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense",
+      "query_id": "d7-q02",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense",
+      "query_id": "d7-q03",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense",
+      "query_id": "d7-q04",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense",
+      "query_id": "d7-q05",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense",
+      "query_id": "d7-q06",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense",
+      "query_id": "d7-q07",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense",
+      "query_id": "d7-q08",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense",
+      "query_id": "d7-q09",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense",
+      "query_id": "d7-q10",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense",
+      "query_id": "d7-q11",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense",
+      "query_id": "d7-q12",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense",
+      "query_id": "d7-q13",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense",
+      "query_id": "d7-q14",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense",
+      "query_id": "d7-q15",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense",
+      "query_id": "d7-u01",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense",
+      "query_id": "d7-u02",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense_context",
+      "query_id": "d7-q01",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense_context",
+      "query_id": "d7-q02",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense_context",
+      "query_id": "d7-q03",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense_context",
+      "query_id": "d7-q04",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense_context",
+      "query_id": "d7-q05",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense_context",
+      "query_id": "d7-q06",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense_context",
+      "query_id": "d7-q07",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense_context",
+      "query_id": "d7-q08",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense_context",
+      "query_id": "d7-q09",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense_context",
+      "query_id": "d7-q10",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense_context",
+      "query_id": "d7-q11",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense_context",
+      "query_id": "d7-q12",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense_context",
+      "query_id": "d7-q13",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense_context",
+      "query_id": "d7-q14",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense_context",
+      "query_id": "d7-q15",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense_context",
+      "query_id": "d7-u01",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "dense_context",
+      "query_id": "d7-u02",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid",
+      "query_id": "d7-q01",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid",
+      "query_id": "d7-q02",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid",
+      "query_id": "d7-q03",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid",
+      "query_id": "d7-q04",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid",
+      "query_id": "d7-q05",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid",
+      "query_id": "d7-q06",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid",
+      "query_id": "d7-q07",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid",
+      "query_id": "d7-q08",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid",
+      "query_id": "d7-q09",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid",
+      "query_id": "d7-q10",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid",
+      "query_id": "d7-q11",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid",
+      "query_id": "d7-q12",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid",
+      "query_id": "d7-q13",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid",
+      "query_id": "d7-q14",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid",
+      "query_id": "d7-q15",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid",
+      "query_id": "d7-u01",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid",
+      "query_id": "d7-u02",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid_context",
+      "query_id": "d7-q01",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid_context",
+      "query_id": "d7-q02",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid_context",
+      "query_id": "d7-q03",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid_context",
+      "query_id": "d7-q04",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid_context",
+      "query_id": "d7-q05",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid_context",
+      "query_id": "d7-q06",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid_context",
+      "query_id": "d7-q07",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid_context",
+      "query_id": "d7-q08",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid_context",
+      "query_id": "d7-q09",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid_context",
+      "query_id": "d7-q10",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid_context",
+      "query_id": "d7-q11",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid_context",
+      "query_id": "d7-q12",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid_context",
+      "query_id": "d7-q13",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid_context",
+      "query_id": "d7-q14",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid_context",
+      "query_id": "d7-q15",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid_context",
+      "query_id": "d7-u01",
+      "differences": []
+    },
+    {
+      "split": "dev",
+      "config": "hybrid_context",
+      "query_id": "d7-u02",
+      "differences": []
+    },
+    {
+      "split": "test",
+      "config": "baseline",
+      "query_id": "d7-t01",
+      "differences": []
+    },
+    {
+      "split": "test",
+      "config": "baseline",
+      "query_id": "d7-t02",
+      "differences": []
+    },
+    {
+      "split": "test",
+      "config": "baseline",
+      "query_id": "d7-t03",
+      "differences": []
+    },
+    {
+      "split": "test",
+      "config": "baseline",
+      "query_id": "d7-t04",
+      "differences": []
+    },
+    {
+      "split": "test",
+      "config": "baseline",
+      "query_id": "d7-t05",
+      "differences": []
+    },
+    {
+      "split": "test",
+      "config": "baseline",
+      "query_id": "d7-u03",
+      "differences": []
+    },
+    {
+      "split": "test",
+      "config": "baseline",
+      "query_id": "d7-u04",
+      "differences": []
+    },
+    {
+      "split": "test",
+      "config": "dense_context",
+      "query_id": "d7-t01",
+      "differences": []
+    },
+    {
+      "split": "test",
+      "config": "dense_context",
+      "query_id": "d7-t02",
+      "differences": []
+    },
+    {
+      "split": "test",
+      "config": "dense_context",
+      "query_id": "d7-t03",
+      "differences": []
+    },
+    {
+      "split": "test",
+      "config": "dense_context",
+      "query_id": "d7-t04",
+      "differences": []
+    },
+    {
+      "split": "test",
+      "config": "dense_context",
+      "query_id": "d7-t05",
+      "differences": []
+    },
+    {
+      "split": "test",
+      "config": "dense_context",
+      "query_id": "d7-u03",
+      "differences": []
+    },
+    {
+      "split": "test",
+      "config": "dense_context",
+      "query_id": "d7-u04",
+      "differences": []
+    }
+  ]
+}

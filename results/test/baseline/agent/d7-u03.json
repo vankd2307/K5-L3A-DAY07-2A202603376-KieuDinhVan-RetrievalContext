@@ -1,0 +1,139 @@
+{
+  "question": "Trong ví dụ khảo sát sĩ số lớp, học phí chính xác của từng sinh viên là bao nhiêu USD?",
+  "config": "baseline",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:44:44.979766+00:00",
+  "status": "abstain",
+  "citations": [],
+  "events": [
+    {
+      "event": "search",
+      "tool": "tfidf",
+      "query": "class size tuition students dollars",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 57,
+          "text": "3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 37,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 777,
+            "chunking": "paragraph"
+          },
+          "id": "971ea28ecfc7e695419ea19c",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.4470083438015884,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 56,
+          "text": "36 Chapter 3. Probability mass functions\n\nFigure 3.2: Difference, in percentage points, by week.\n\nAt many American colleges and universities, the student-to-faculty ratio is\nabout 10:1. But students are often surprised to discover that their average\nclass size is bigger than 10. There are two reasons for the discrepancy:\n•Students typically take 4–5 classes per semester, but professors often\nteach 1 or 2.\n•The number of students who enjoy a small class is small, but the num-\nber of students in a large class is (ahem!) large.\nThe first effect is obvious, at least once it is pointed out; the second is more\nsubtle. Let’s look at an example. Suppose that a college offers 65 classes in\na given semester, with the following distribution of sizes:\nsize count\n5- 9 8\n10-14 8\n15-19 14\n20-24 4\n25-29 6\n30-34 12\n35-39 8\n40-44 3\n45-49 2",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 36,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 833,
+            "chunking": "paragraph"
+          },
+          "id": "710efd907cbf9c83dd4f8018",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.3558528139290173,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 57,
+          "text": "new_pmf.Normalize()\nreturn new_pmf\nFor each class size,x, we multiply the probability byx, the number of students\nwho observe that class size. The result is a new Pmf that represents the\nbiased distribution.\nNow we can plot the actual and observed distributions:\nbiased_pmf = BiasPmf(pmf, label='observed')\nthinkplot.PrePlot(2)\nthinkplot.Pmfs([pmf, biased_pmf])\nthinkplot.Show(xlabel='class size', ylabel='PMF')\nFigure 3.3 shows the result. In the biased distribution there are fewer small\nclasses and more large ones. The mean of the biased distribution is 29.1,\nalmost 25% higher than the actual mean.\nIt is also possible to invert this operation. Suppose you want to find the\ndistribution of class sizes at a college, but you can’t get reliable data from",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 37,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 779,
+            "end_char": 1536,
+            "chunking": "paragraph"
+          },
+          "id": "cb9a0be491d7015bfc3a82fa",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.29074319387550707,
+          "method": "tfidf"
+        }
+      ],
+      "context": "[971ea28ecfc7e695419ea19c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\n3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)",
+      "context_ids": [
+        "971ea28ecfc7e695419ea19c"
+      ],
+      "elapsed_ms": 0.3126000228803605
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "abstain": true,
+        "citations": [],
+        "answer": "Tài liệu không chứa thông tin về học phí chính xác của từng sinh viên trong ví dụ khảo sát sĩ số lớp."
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": false,
+      "usage": {
+        "promptTokenCount": 348,
+        "candidatesTokenCount": 18,
+        "totalTokenCount": 366,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 348
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": false,
+      "usage": {
+        "promptTokenCount": 744,
+        "candidatesTokenCount": 46,
+        "totalTokenCount": 790,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 744
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+  "context": "[971ea28ecfc7e695419ea19c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\n3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)",
+  "context_ids": [
+    "971ea28ecfc7e695419ea19c"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 8610.87580001913,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-u03",
+  "split": "test",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": null
+}

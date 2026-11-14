@@ -1,0 +1,346 @@
+[
+  {
+    "config": "baseline",
+    "query_id": "d7-t01",
+    "answerable": true,
+    "status": "answered",
+    "expected_answer": "Tạo bản sao Pmf để có thể sửa bản sao mà không ảnh hưởng bản gốc.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 53,
+        "evidence": "Pmf objects provide aCopymethod so you can make and modify a copy\nwithout affecting the original."
+      }
+    ],
+    "answer": "Phương thức `Pmf.Copy` được dùng để tạo ra một bản sao của đối tượng Pmf, cho phép bạn thực hiện việc tạo và chỉnh sửa bản sao đó mà không làm ảnh hưởng đến đối tượng Pmf gốc [43bd289ef6813bfb7273739b].",
+    "context": "[43bd289ef6813bfb7273739b | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 53]\n3.2. Plotting PMFs 33\n\nTo renormalize, callNormalize:\n\n>>> pmf.Normalize()\n>>> pmf.Total()\n1.0\n\nPmf objects provide aCopymethod so you can make and modify a copy\nwithout affecting the original.\n\nMy notation in this section might seem inconsistent, but there is a system: I\nuse Pmf for the name of the class,pmffor an instance of the class, and PMF\nfor the mathematical concept of a probability mass function.\n\n3.2 Plotting PMFs\n\nthinkplotprovides two ways to plot Pmfs:\n\n•To plot a Pmf as a bar graph, you can usethinkplot.Hist. Bar graphs\nare most useful if the number of values in the Pmf is small.\n\n•To plot a Pmf as a step function, you can usethinkplot.Pmf. This\noption is most useful if there are a large number of values and the Pmf\nis smooth. This function also works with Hist objects.",
+    "citations": [
+      "43bd289ef6813bfb7273739b"
+    ],
+    "reviewer": null,
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_support": [
+      null
+    ],
+    "abstention_correct": null,
+    "reason": null,
+    "student_verified": false
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-t02",
+    "answerable": true,
+    "status": "abstain",
+    "expected_answer": "Chia từng xác suất cho x (nhân với 1.0/x), sau đó Normalize để chuẩn hóa lại.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 58,
+        "evidence": "for x, p in pmf.Items():\nnew_pmf.Mult(x, 1.0/x)\n\nnew_pmf.Normalize()"
+      }
+    ],
+    "answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+    "context": "[971ea28ecfc7e695419ea19c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\n3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)",
+    "citations": [],
+    "reviewer": null,
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_support": [],
+    "abstention_correct": null,
+    "reason": null,
+    "student_verified": false
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-t03",
+    "answerable": true,
+    "status": "answered",
+    "expected_answer": "Sinh viên học 4–5 lớp mỗi kỳ trong khi giảng viên thường dạy 1–2; lớp đông có nhiều sinh viên quan sát hơn lớp nhỏ.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 56,
+        "evidence": "•Students typically take 4–5 classes per semester, but professors often\nteach 1 or 2.\n•The number of students who enjoy a small class is small, but the num-\nber of students in a large class is (ahem!) large."
+      }
+    ],
+    "answer": "Tỷ lệ sinh viên trên giảng viên khoảng 10:1 không đồng nghĩa với việc lớp học trung bình có 10 người vì hai lý do sau:\n1. Sinh viên thường học 4–5 lớp mỗi học kỳ, trong khi giảng viên thường chỉ dạy 1 hoặc 2 lớp [710efd907cbf9c83dd4f8018].\n2. Số lượng sinh viên học trong các lớp nhỏ thì ít, trong khi số lượng sinh viên tham gia các lớp lớn thì rất nhiều (hiệu ứng quy mô lớp học lớn thu hút đông sinh viên hơn) [710efd907cbf9c83dd4f8018].",
+    "context": "[710efd907cbf9c83dd4f8018 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 56]\n36 Chapter 3. Probability mass functions\n\nFigure 3.2: Difference, in percentage points, by week.\n\nAt many American colleges and universities, the student-to-faculty ratio is\nabout 10:1. But students are often surprised to discover that their average\nclass size is bigger than 10. There are two reasons for the discrepancy:\n•Students typically take 4–5 classes per semester, but professors often\nteach 1 or 2.\n•The number of students who enjoy a small class is small, but the num-\nber of students in a large class is (ahem!) large.\nThe first effect is obvious, at least once it is pointed out; the second is more\nsubtle. Let’s look at an example. Suppose that a college offers 65 classes in\na given semester, with the following distribution of sizes:\nsize count\n5- 9 8\n10-14 8\n15-19 14\n20-24 4\n25-29 6\n30-34 12\n35-39 8\n40-44 3\n45-49 2",
+    "citations": [
+      "710efd907cbf9c83dd4f8018"
+    ],
+    "reviewer": null,
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_support": [
+      null
+    ],
+    "abstention_correct": null,
+    "reason": null,
+    "student_verified": false
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-t04",
+    "answerable": true,
+    "status": "answered",
+    "expected_answer": "Tỷ lệ với chênh lệch tốc độ; người cùng tốc độ ít có khả năng vượt hoặc bị vượt nên khó gặp nhau.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 62,
+        "evidence": "During my time on the course, the chance\nof overtaking a runner, or being overtaken, is proportional to the difference\nin our speeds. I am more likely to catch a slow runner, and more likely to be\ncaught by a fast runner. But runners at the same speed are unlikely to see\neach other."
+      }
+    ],
+    "answer": "Trong ví dụ chạy tiếp sức, xác suất vượt qua một người chạy khác (hoặc bị vượt) tỷ lệ thuận với **độ chênh lệch tốc độ** giữa hai người ($$is proportional to the difference in our speeds$$) [004c768971ba76dd4ebdb170]. \n\nVì lý do này, bạn có nhiều khả năng bắt kịp một người chạy chậm hơn và nhiều khả năng bị bắt bởi một người chạy nhanh hơn [004c768971ba76dd4ebdb170]. Do đó, những người chạy ở cùng tốc độ có độ chênh lệch tốc độ bằng 0 (hoặc rất nhỏ), khiến xác suất họ gặp và nhìn thấy nhau là cực kỳ thấp [004c768971ba76dd4ebdb170].",
+    "context": "[004c768971ba76dd4ebdb170 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 62]\nAs a result, runners were spread out along the course with little relationship\nbetween speed and location. When I joined the race, the runners near me\nwere (pretty much) a random sample of the runners in the race.\n\nSo where does the bias come from? During my time on the course, the chance\nof overtaking a runner, or being overtaken, is proportional to the difference\nin our speeds. I am more likely to catch a slow runner, and more likely to be\ncaught by a fast runner. But runners at the same speed are unlikely to see\neach other.",
+    "citations": [
+      "004c768971ba76dd4ebdb170"
+    ],
+    "reviewer": null,
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_support": [
+      null
+    ],
+    "abstention_correct": null,
+    "reason": null,
+    "student_verified": false
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-t05",
+    "answerable": true,
+    "status": "abstain",
+    "expected_answer": "Đối chiếu với Mean và Var do Pmf cung cấp.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 62,
+        "evidence": "To test these methods, check that they are\nconsistent with the methodsMeanandVarprovided by Pmf."
+      }
+    ],
+    "answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+    "context": "",
+    "citations": [],
+    "reviewer": null,
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_support": [],
+    "abstention_correct": null,
+    "reason": null,
+    "student_verified": false
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-u03",
+    "answerable": false,
+    "status": "abstain",
+    "expected_answer": null,
+    "gold": [],
+    "answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+    "context": "[971ea28ecfc7e695419ea19c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\n3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)",
+    "citations": [],
+    "reviewer": null,
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_support": [],
+    "abstention_correct": null,
+    "reason": null,
+    "student_verified": false
+  },
+  {
+    "config": "baseline",
+    "query_id": "d7-u04",
+    "answerable": false,
+    "status": "abstain",
+    "expected_answer": null,
+    "gold": [],
+    "answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+    "context": "",
+    "citations": [],
+    "reviewer": null,
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_support": [],
+    "abstention_correct": null,
+    "reason": null,
+    "student_verified": false
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-t01",
+    "answerable": true,
+    "status": "answered",
+    "expected_answer": "Tạo bản sao Pmf để có thể sửa bản sao mà không ảnh hưởng bản gốc.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 53,
+        "evidence": "Pmf objects provide aCopymethod so you can make and modify a copy\nwithout affecting the original."
+      }
+    ],
+    "answer": "Phương thức `Pmf.Copy()` được dùng để tạo và chỉnh sửa một bản sao mà không làm ảnh hưởng đến Pmf gốc [43bd289ef6813bfb7273739b]. Do đó, nó không làm thay đổi Pmf gốc [43bd289ef6813bfb7273739b].",
+    "context": "[43bd289ef6813bfb7273739b | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 53]\n3.2. Plotting PMFs 33\n\nTo renormalize, callNormalize:\n\n>>> pmf.Normalize()\n>>> pmf.Total()\n1.0\n\nPmf objects provide aCopymethod so you can make and modify a copy\nwithout affecting the original.\n\nMy notation in this section might seem inconsistent, but there is a system: I\nuse Pmf for the name of the class,pmffor an instance of the class, and PMF\nfor the mathematical concept of a probability mass function.\n\n3.2 Plotting PMFs\n\nthinkplotprovides two ways to plot Pmfs:\n\n•To plot a Pmf as a bar graph, you can usethinkplot.Hist. Bar graphs\nare most useful if the number of values in the Pmf is small.\n\n•To plot a Pmf as a step function, you can usethinkplot.Pmf. This\noption is most useful if there are a large number of values and the Pmf\nis smooth. This function also works with Hist objects.\n\n[91a8afa59ea8ff3ae6ef95a8 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 52]\n32 Chapter 3. Probability mass functions\n\n>>> import thinkstats2\n>>> pmf = thinkstats2.Pmf([1, 2, 2, 3, 5])\n>>> pmf\nPmf({1: 0.2, 2: 0.4, 3: 0.2, 5: 0.2})\n\nThe Pmf is normalized so total probability is 1.\n\nPmf and Hist objects are similar in many ways; in fact, they inherit many\nof their methods from a common parent class. For example, the methods\nValuesandItemswork the same way for both. The biggest difference is\nthat a Hist maps from values to integer counters; a Pmf maps from values\nto floating-point probabilities.\n\nTo look up the probability associated with a value, useProb:\n\n>>> pmf.Prob(2)\n0.4\n\nThe bracket operator is equivalent:\n>>> pmf[2]\n0.4\nYou can modify an existing Pmf by incrementing the probability associated\nwith a value:\n\n>>> pmf.Incr(2, 0.2)\n>>> pmf.Prob(2)\n0.6\n\nOr you can multiply a probability by a factor:\n\n>>> pmf.Mult(2, 0.5)\n>>> pmf.Prob(2)\n0.3\n\n[cb9a0be491d7015bfc3a82fa | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\nnew_pmf.Normalize()\nreturn new_pmf\nFor each class size,x, we multiply the probability byx, the number of students\nwho observe that class size. The result is a new Pmf that represents the\nbiased distribution.\nNow we can plot the actual and observed distributions:\nbiased_pmf = BiasPmf(pmf, label='observed')\nthinkplot.PrePlot(2)\nthinkplot.Pmfs([pmf, biased_pmf])\nthinkplot.Show(xlabel='class size', ylabel='PMF')\nFigure 3.3 shows the result. In the biased distribution there are fewer small\nclasses and more large ones. The mean of the biased distribution is 29.1,\nalmost 25% higher than the actual mean.\nIt is also possible to invert this operation. Suppose you want to find the\ndistribution of class sizes at a college, but you can’t get reliable data from\n\n[f0ab6c9063aae1fe61c7d71b | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 52]\nIf you modify a Pmf, the result may not be normalized; that is, the probabilities may no longer add up to 1. To check, you can callTotal, which returns\nthe sum of the probabilities:\n\n>>> pmf.Total()\n0.9\n\n[84220892cc2f7357d67b6e9a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 51]\nChapter 3\n\nProbability mass functions\n\nThe code for this chapter is inprobability.py. For information about\ndownloading and working with this code, see Section 0.2.\n\n3.1 Pmfs\n\nAnother way to represent a distribution is aprobability mass function\n(PMF), which maps from each value to its probability. Aprobabilityis a\nfrequency expressed as a fraction of the sample size,n. To get from frequencies to probabilities, we divide through byn, which is callednormalization.\n\nGiven a Hist, we can make a dictionary that maps from each value to its\nprobability:\n\nn = hist.Total()\nd = {}\nfor x, freq in hist.Items():\nd[x] = freq / n\n\nOr we can use the Pmf class provided bythinkstats2. Like Hist, the Pmf\nconstructor can take a list, pandas Series, dictionary, Hist, or another Pmf\nobject. Here’s an example with a simple list:",
+    "citations": [
+      "43bd289ef6813bfb7273739b"
+    ],
+    "reviewer": null,
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_support": [
+      null
+    ],
+    "abstention_correct": null,
+    "reason": null,
+    "student_verified": false
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-t02",
+    "answerable": true,
+    "status": "answered",
+    "expected_answer": "Chia từng xác suất cho x (nhân với 1.0/x), sau đó Normalize để chuẩn hóa lại.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 58,
+        "evidence": "for x, p in pmf.Items():\nnew_pmf.Mult(x, 1.0/x)\n\nnew_pmf.Normalize()"
+      }
+    ],
+    "answer": "Hàm `UnbiasPmf` hiệu chỉnh xác suất theo sĩ số lớp $x$ bằng cách chia xác suất của mỗi lớp cho $x$ (hoặc nhân với $1.0/x$) [28f79f47128ffffd50f881e4]. Bước cuối cùng của hàm là chuẩn hóa phân phối (normalization) thông qua phương thức `new_pmf.Normalize()` [28f79f47128ffffd50f881e4].",
+    "context": "[971ea28ecfc7e695419ea19c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\n3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)\n\n[cb9a0be491d7015bfc3a82fa | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\nnew_pmf.Normalize()\nreturn new_pmf\nFor each class size,x, we multiply the probability byx, the number of students\nwho observe that class size. The result is a new Pmf that represents the\nbiased distribution.\nNow we can plot the actual and observed distributions:\nbiased_pmf = BiasPmf(pmf, label='observed')\nthinkplot.PrePlot(2)\nthinkplot.Pmfs([pmf, biased_pmf])\nthinkplot.Show(xlabel='class size', ylabel='PMF')\nFigure 3.3 shows the result. In the biased distribution there are fewer small\nclasses and more large ones. The mean of the biased distribution is 29.1,\nalmost 25% higher than the actual mean.\nIt is also possible to invert this operation. Suppose you want to find the\ndistribution of class sizes at a college, but you can’t get reliable data from\n\n[28f79f47128ffffd50f881e4 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 58]\n38 Chapter 3. Probability mass functions\n\nFigure 3.3: Distribution of class sizes, actual and as observed by students.\n\nthe Dean. An alternative is to choose a random sample of students and ask\nhow many students are in their classes.\n\nThe result would be biased for the reasons we’ve just seen, but you can use it\nto estimate the actual distribution. Here’s the function that unbiases a Pmf:\n\ndef UnbiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, 1.0/x)\n\nnew_pmf.Normalize()\nreturn new_pmf\n\nIt’s similar toBiasPmf; the only difference is that it divides each probability\nbyxinstead of multiplying.\n\n[0cfc1d98edadf52933f8ed7d | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 61]\nSolutions to these exercises are inchap03soln.ipynbandchap03soln.py\nExercise 3.1Something like the class size paradox appears if you survey\nchildren and ask how many children are in their family. Families with many\nchildren are more likely to appear in your sample, and families with no children have no chance to be in the sample.\nUse the NSFG respondent variableNUMKDHHto construct the actual distribution for the number of children under 18 in the household.\nNow compute the biased distribution we would see if we surveyed the children\nand asked them how many children under 18 (including themselves) are in\ntheir household.\nPlot the actual and biased distributions, and compute their means. As a\nstarting place, you can usechap03ex.ipynb.\nExercise 3.2In Section 2.7 we computed the mean of a sample by adding\nup the elements and dividing by n. If you are given a PMF, you can still\ncompute the\n\n[710efd907cbf9c83dd4f8018 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 56]\n36 Chapter 3. Probability mass functions\n\nFigure 3.2: Difference, in percentage points, by week.\n\nAt many American colleges and universities, the student-to-faculty ratio is\nabout 10:1. But students are often surprised to discover that their average\nclass size is bigger than 10. There are two reasons for the discrepancy:\n•Students typically take 4–5 classes per semester, but professors often\nteach 1 or 2.\n•The number of students who enjoy a small class is small, but the num-\nber of students in a large class is (ahem!) large.\nThe first effect is obvious, at least once it is pointed out; the second is more\nsubtle. Let’s look at an example. Suppose that a college offers 65 classes in\na given semester, with the following distribution of sizes:\nsize count\n5- 9 8\n10-14 8\n15-19 14\n20-24 4\n25-29 6\n30-34 12\n35-39 8\n40-44 3\n45-49 2",
+    "citations": [
+      "28f79f47128ffffd50f881e4"
+    ],
+    "reviewer": null,
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_support": [
+      null
+    ],
+    "abstention_correct": null,
+    "reason": null,
+    "student_verified": false
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-t03",
+    "answerable": true,
+    "status": "answered",
+    "expected_answer": "Sinh viên học 4–5 lớp mỗi kỳ trong khi giảng viên thường dạy 1–2; lớp đông có nhiều sinh viên quan sát hơn lớp nhỏ.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 56,
+        "evidence": "•Students typically take 4–5 classes per semester, but professors often\nteach 1 or 2.\n•The number of students who enjoy a small class is small, but the num-\nber of students in a large class is (ahem!) large."
+      }
+    ],
+    "answer": "Tỷ lệ sinh viên trên giảng viên khoảng 10:1 không đồng nghĩa lớp trung bình có 10 người vì hai lý do sau:\n\n1. Sinh viên thường học từ 4 đến 5 lớp mỗi học kỳ, trong khi giảng viên thường dạy 1 hoặc 2 lớp [710efd907cbf9c83dd4f8018].\n2. Số lượng sinh viên trải nghiệm lớp học nhỏ thì ít, nhưng số lượng sinh viên có mặt trong một lớp học lớn lại rất nhiều (hiệu ứng quy mô lớp học hoặc lấy mẫu bị chệch) [710efd907cbf9c83dd4f8018].",
+    "context": "[971ea28ecfc7e695419ea19c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\n3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)\n\n[710efd907cbf9c83dd4f8018 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 56]\n36 Chapter 3. Probability mass functions\n\nFigure 3.2: Difference, in percentage points, by week.\n\nAt many American colleges and universities, the student-to-faculty ratio is\nabout 10:1. But students are often surprised to discover that their average\nclass size is bigger than 10. There are two reasons for the discrepancy:\n•Students typically take 4–5 classes per semester, but professors often\nteach 1 or 2.\n•The number of students who enjoy a small class is small, but the num-\nber of students in a large class is (ahem!) large.\nThe first effect is obvious, at least once it is pointed out; the second is more\nsubtle. Let’s look at an example. Suppose that a college offers 65 classes in\na given semester, with the following distribution of sizes:\nsize count\n5- 9 8\n10-14 8\n15-19 14\n20-24 4\n25-29 6\n30-34 12\n35-39 8\n40-44 3\n45-49 2\n\n[1e66e8dc3acff693d400f751 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 62]\nExercise 3.4In most foot races, everyone starts at the same time. If you\nare a fast runner, you usually pass a lot of people at the beginning of the\nrace, but after a few miles everyone around you is going at the same speed.\n\nWhen I ran a long-distance (209 miles) relay race for the first time, I noticed\nan odd phenomenon: when I overtook another runner, I was usually much\nfaster, and when another runner overtook me, he was usually much faster.\n\nAt first I thought that the distribution of speeds might be bimodal; that is,\nthere were many slow runners and many fast runners, but few at my speed.\n\nThen I realized that I was the victim of a bias similar to the effect of class\nsize. The race was unusual in two ways: it used a staggered start, so teams\nstarted at different times; also, many teams included runners at different\nlevels of ability.\n\n[cb9a0be491d7015bfc3a82fa | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\nnew_pmf.Normalize()\nreturn new_pmf\nFor each class size,x, we multiply the probability byx, the number of students\nwho observe that class size. The result is a new Pmf that represents the\nbiased distribution.\nNow we can plot the actual and observed distributions:\nbiased_pmf = BiasPmf(pmf, label='observed')\nthinkplot.PrePlot(2)\nthinkplot.Pmfs([pmf, biased_pmf])\nthinkplot.Show(xlabel='class size', ylabel='PMF')\nFigure 3.3 shows the result. In the biased distribution there are fewer small\nclasses and more large ones. The mean of the biased distribution is 29.1,\nalmost 25% higher than the actual mean.\nIt is also possible to invert this operation. Suppose you want to find the\ndistribution of class sizes at a college, but you can’t get reliable data from\n\n[cac548a1fd4aaebfd67e0abf | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 34]\nand see if you can formulate a question that lends itself to statistical\ninquiry.",
+    "citations": [
+      "710efd907cbf9c83dd4f8018"
+    ],
+    "reviewer": null,
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_support": [
+      null
+    ],
+    "abstention_correct": null,
+    "reason": null,
+    "student_verified": false
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-t04",
+    "answerable": true,
+    "status": "answered",
+    "expected_answer": "Tỷ lệ với chênh lệch tốc độ; người cùng tốc độ ít có khả năng vượt hoặc bị vượt nên khó gặp nhau.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 62,
+        "evidence": "During my time on the course, the chance\nof overtaking a runner, or being overtaken, is proportional to the difference\nin our speeds. I am more likely to catch a slow runner, and more likely to be\ncaught by a fast runner. But runners at the same speed are unlikely to see\neach other."
+      }
+    ],
+    "answer": "Trong ví dụ chạy tiếp sức, xác suất vượt qua một người chạy khác (hoặc bị vượt) tỷ lệ thuận với **độ chênh lệch tốc độ** giữa hai người (the difference in our speeds) [004c768971ba76dd4ebdb170]. \n\nLý do ít gặp người có cùng tốc độ là vì bạn có nhiều khả năng bắt kịp một người chạy chậm hơn và có nhiều khả năng bị vượt bởi một người chạy nhanh hơn, trong khi những người chạy ở cùng mức tốc độ với bạn rất ít khi có cơ hội nhìn thấy nhau trên đường đua [004c768971ba76dd4ebdb170].",
+    "context": "[004c768971ba76dd4ebdb170 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 62]\nAs a result, runners were spread out along the course with little relationship\nbetween speed and location. When I joined the race, the runners near me\nwere (pretty much) a random sample of the runners in the race.\n\nSo where does the bias come from? During my time on the course, the chance\nof overtaking a runner, or being overtaken, is proportional to the difference\nin our speeds. I am more likely to catch a slow runner, and more likely to be\ncaught by a fast runner. But runners at the same speed are unlikely to see\neach other.\n\n[1e66e8dc3acff693d400f751 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 62]\nExercise 3.4In most foot races, everyone starts at the same time. If you\nare a fast runner, you usually pass a lot of people at the beginning of the\nrace, but after a few miles everyone around you is going at the same speed.\n\nWhen I ran a long-distance (209 miles) relay race for the first time, I noticed\nan odd phenomenon: when I overtook another runner, I was usually much\nfaster, and when another runner overtook me, he was usually much faster.\n\nAt first I thought that the distribution of speeds might be bimodal; that is,\nthere were many slow runners and many fast runners, but few at my speed.\n\nThen I realized that I was the victim of a bias similar to the effect of class\nsize. The race was unusual in two ways: it used a staggered start, so teams\nstarted at different times; also, many teams included runners at different\nlevels of ability.\n\n[96f491a9a2e6ec525df71662 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 63]\n3.7. Glossary 43\n\nWrite a function calledObservedPmfthat takes a Pmf representing the actual\ndistribution of runners’ speeds, and the speed of a running observer, and\nreturns a new Pmf representing the distribution of runners’ speeds as seen\nby the observer.\nTo test your function, you can userelay.py, which reads the results from\nthe James Joyce Ramble 10K in Dedham MA and converts the pace of each\nrunner to mph.\nCompute the distribution of speeds you would observe if you ran a relay\nrace at 7.5 mph with this group of runners. A solution to this exercise is in\nrelay_soln.py.\n\n3.7 Glossary\n\n•Probability mass function (PMF): a representation of a distribu-\ntion as a function that maps from values to probabilities.\n\n•probability: A frequency expressed as a fraction of the sample size.\n\n•normalization: The process of dividing a frequency by a sample size\nto get a probability.\n\n[710efd907cbf9c83dd4f8018 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 56]\n36 Chapter 3. Probability mass functions\n\nFigure 3.2: Difference, in percentage points, by week.\n\nAt many American colleges and universities, the student-to-faculty ratio is\nabout 10:1. But students are often surprised to discover that their average\nclass size is bigger than 10. There are two reasons for the discrepancy:\n•Students typically take 4–5 classes per semester, but professors often\nteach 1 or 2.\n•The number of students who enjoy a small class is small, but the num-\nber of students in a large class is (ahem!) large.\nThe first effect is obvious, at least once it is pointed out; the second is more\nsubtle. Let’s look at an example. Suppose that a college offers 65 classes in\na given semester, with the following distribution of sizes:\nsize count\n5- 9 8\n10-14 8\n15-19 14\n20-24 4\n25-29 6\n30-34 12\n35-39 8\n40-44 3\n45-49 2\n\n[cac548a1fd4aaebfd67e0abf | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 34]\nand see if you can formulate a question that lends itself to statistical\ninquiry.",
+    "citations": [
+      "004c768971ba76dd4ebdb170"
+    ],
+    "reviewer": null,
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_support": [
+      null
+    ],
+    "abstention_correct": null,
+    "reason": null,
+    "student_verified": false
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-t05",
+    "answerable": true,
+    "status": "answered",
+    "expected_answer": "Đối chiếu với Mean và Var do Pmf cung cấp.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 62,
+        "evidence": "To test these methods, check that they are\nconsistent with the methodsMeanandVarprovided by Pmf."
+      }
+    ],
+    "answer": "Bài tập yêu cầu kiểm tra hai hàm `PmfMean` và `PmfVar` tự viết bằng cách đối chiếu xem chúng có nhất quán (consistent) với các phương thức `Mean` và `Var` do lớp `Pmf` cung cấp hay không [54dd11dc5985db806f55aedd].",
+    "context": "[4ea711974ff31d713d352e37 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 61]\nmean, but the process is slightly different:\n\n̄x= X pi xi\ni\nwhere thex i are the unique values in the PMF andp i =PMF(x i). Similarly,\nyou can compute variance like this:\n\nS2 = X pi (x i − ̄x) 2\ni\n\n[54dd11dc5985db806f55aedd | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 62]\n42 Chapter 3. Probability mass functions\n\nWrite functions calledPmfMeanandPmfVarthat take a Pmf object and compute the mean and variance. To test these methods, check that they are\nconsistent with the methodsMeanandVarprovided by Pmf.\n\nExercise 3.3I started with the question, “Are first babies more likely to be\nlate?” To address it, I computed the difference in means between groups of\nbabies, but I ignored the possibility that there might be a difference between\nfirst babies and othersfor the same woman.\n\nTo address this version of the question, select respondents who have at least\ntwo babies and compute pairwise differences. Does this formulation of the\nquestion yield a different result?\n\nHint: usensfg.MakePregMap.\n\n[91a8afa59ea8ff3ae6ef95a8 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 52]\n32 Chapter 3. Probability mass functions\n\n>>> import thinkstats2\n>>> pmf = thinkstats2.Pmf([1, 2, 2, 3, 5])\n>>> pmf\nPmf({1: 0.2, 2: 0.4, 3: 0.2, 5: 0.2})\n\nThe Pmf is normalized so total probability is 1.\n\nPmf and Hist objects are similar in many ways; in fact, they inherit many\nof their methods from a common parent class. For example, the methods\nValuesandItemswork the same way for both. The biggest difference is\nthat a Hist maps from values to integer counters; a Pmf maps from values\nto floating-point probabilities.\n\nTo look up the probability associated with a value, useProb:\n\n>>> pmf.Prob(2)\n0.4\n\nThe bracket operator is equivalent:\n>>> pmf[2]\n0.4\nYou can modify an existing Pmf by incrementing the probability associated\nwith a value:\n\n>>> pmf.Incr(2, 0.2)\n>>> pmf.Prob(2)\n0.6\n\nOr you can multiply a probability by a factor:\n\n>>> pmf.Mult(2, 0.5)\n>>> pmf.Prob(2)\n0.3\n\n[43bd289ef6813bfb7273739b | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 53]\n3.2. Plotting PMFs 33\n\nTo renormalize, callNormalize:\n\n>>> pmf.Normalize()\n>>> pmf.Total()\n1.0\n\nPmf objects provide aCopymethod so you can make and modify a copy\nwithout affecting the original.\n\nMy notation in this section might seem inconsistent, but there is a system: I\nuse Pmf for the name of the class,pmffor an instance of the class, and PMF\nfor the mathematical concept of a probability mass function.\n\n3.2 Plotting PMFs\n\nthinkplotprovides two ways to plot Pmfs:\n\n•To plot a Pmf as a bar graph, you can usethinkplot.Hist. Bar graphs\nare most useful if the number of values in the Pmf is small.\n\n•To plot a Pmf as a step function, you can usethinkplot.Pmf. This\noption is most useful if there are a large number of values and the Pmf\nis smooth. This function also works with Hist objects.\n\n[84220892cc2f7357d67b6e9a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 51]\nChapter 3\n\nProbability mass functions\n\nThe code for this chapter is inprobability.py. For information about\ndownloading and working with this code, see Section 0.2.\n\n3.1 Pmfs\n\nAnother way to represent a distribution is aprobability mass function\n(PMF), which maps from each value to its probability. Aprobabilityis a\nfrequency expressed as a fraction of the sample size,n. To get from frequencies to probabilities, we divide through byn, which is callednormalization.\n\nGiven a Hist, we can make a dictionary that maps from each value to its\nprobability:\n\nn = hist.Total()\nd = {}\nfor x, freq in hist.Items():\nd[x] = freq / n\n\nOr we can use the Pmf class provided bythinkstats2. Like Hist, the Pmf\nconstructor can take a list, pandas Series, dictionary, Hist, or another Pmf\nobject. Here’s an example with a simple list:",
+    "citations": [
+      "54dd11dc5985db806f55aedd"
+    ],
+    "reviewer": null,
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_support": [
+      null
+    ],
+    "abstention_correct": null,
+    "reason": null,
+    "student_verified": false
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-u03",
+    "answerable": false,
+    "status": "abstain",
+    "expected_answer": null,
+    "gold": [],
+    "answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+    "context": "[710efd907cbf9c83dd4f8018 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 56]\n36 Chapter 3. Probability mass functions\n\nFigure 3.2: Difference, in percentage points, by week.\n\nAt many American colleges and universities, the student-to-faculty ratio is\nabout 10:1. But students are often surprised to discover that their average\nclass size is bigger than 10. There are two reasons for the discrepancy:\n•Students typically take 4–5 classes per semester, but professors often\nteach 1 or 2.\n•The number of students who enjoy a small class is small, but the num-\nber of students in a large class is (ahem!) large.\nThe first effect is obvious, at least once it is pointed out; the second is more\nsubtle. Let’s look at an example. Suppose that a college offers 65 classes in\na given semester, with the following distribution of sizes:\nsize count\n5- 9 8\n10-14 8\n15-19 14\n20-24 4\n25-29 6\n30-34 12\n35-39 8\n40-44 3\n45-49 2\n\n[971ea28ecfc7e695419ea19c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\n3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)\n\n[cb9a0be491d7015bfc3a82fa | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\nnew_pmf.Normalize()\nreturn new_pmf\nFor each class size,x, we multiply the probability byx, the number of students\nwho observe that class size. The result is a new Pmf that represents the\nbiased distribution.\nNow we can plot the actual and observed distributions:\nbiased_pmf = BiasPmf(pmf, label='observed')\nthinkplot.PrePlot(2)\nthinkplot.Pmfs([pmf, biased_pmf])\nthinkplot.Show(xlabel='class size', ylabel='PMF')\nFigure 3.3 shows the result. In the biased distribution there are fewer small\nclasses and more large ones. The mean of the biased distribution is 29.1,\nalmost 25% higher than the actual mean.\nIt is also possible to invert this operation. Suppose you want to find the\ndistribution of class sizes at a college, but you can’t get reliable data from\n\n[71a5a22bdfd93da6d526e632 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 35]\n1.10. Glossary 15\n\n[2aa14303b1183a41af894e45 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 22]\n•Inaccuracy: Anecdotes are often personal stories, and often misremem-\nbered, misrepresented, repeated inaccurately, etc.\n\nSo how can we do better?\n\n1.1 A statistical approach\n\nTo address the limitations of anecdotes, we will use the tools of statistics,\nwhich include:\n\n•Data collection: We will use data from a large national survey that\nwas designed explicitly with the goal of generating statistically valid\ninferences about the U.S. population.\n\n•Descriptive statistics: We will generate statistics that summarize the\ndata concisely, and evaluate different ways to visualize data.\n\n•Exploratory data analysis: We will look for patterns, differences, and\nother features that address the questions we are interested in. At the\nsame time we will check for inconsistencies and identify limitations.",
+    "citations": [],
+    "reviewer": null,
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_support": [],
+    "abstention_correct": null,
+    "reason": null,
+    "student_verified": false
+  },
+  {
+    "config": "dense_context",
+    "query_id": "d7-u04",
+    "answerable": false,
+    "status": "abstain",
+    "expected_answer": null,
+    "gold": [],
+    "answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+    "context": "[4ea711974ff31d713d352e37 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 61]\nmean, but the process is slightly different:\n\n̄x= X pi xi\ni\nwhere thex i are the unique values in the PMF andp i =PMF(x i). Similarly,\nyou can compute variance like this:\n\nS2 = X pi (x i − ̄x) 2\ni\n\n[54dd11dc5985db806f55aedd | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 62]\n42 Chapter 3. Probability mass functions\n\nWrite functions calledPmfMeanandPmfVarthat take a Pmf object and compute the mean and variance. To test these methods, check that they are\nconsistent with the methodsMeanandVarprovided by Pmf.\n\nExercise 3.3I started with the question, “Are first babies more likely to be\nlate?” To address it, I computed the difference in means between groups of\nbabies, but I ignored the possibility that there might be a difference between\nfirst babies and othersfor the same woman.\n\nTo address this version of the question, select respondents who have at least\ntwo babies and compute pairwise differences. Does this formulation of the\nquestion yield a different result?\n\nHint: usensfg.MakePregMap.\n\n[96f491a9a2e6ec525df71662 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 63]\n3.7. Glossary 43\n\nWrite a function calledObservedPmfthat takes a Pmf representing the actual\ndistribution of runners’ speeds, and the speed of a running observer, and\nreturns a new Pmf representing the distribution of runners’ speeds as seen\nby the observer.\nTo test your function, you can userelay.py, which reads the results from\nthe James Joyce Ramble 10K in Dedham MA and converts the pace of each\nrunner to mph.\nCompute the distribution of speeds you would observe if you ran a relay\nrace at 7.5 mph with this group of runners. A solution to this exercise is in\nrelay_soln.py.\n\n3.7 Glossary\n\n•Probability mass function (PMF): a representation of a distribu-\ntion as a function that maps from values to probabilities.\n\n•probability: A frequency expressed as a fraction of the sample size.\n\n•normalization: The process of dividing a frequency by a sample size\nto get a probability.\n\n[84220892cc2f7357d67b6e9a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 51]\nChapter 3\n\nProbability mass functions\n\nThe code for this chapter is inprobability.py. For information about\ndownloading and working with this code, see Section 0.2.\n\n3.1 Pmfs\n\nAnother way to represent a distribution is aprobability mass function\n(PMF), which maps from each value to its probability. Aprobabilityis a\nfrequency expressed as a fraction of the sample size,n. To get from frequencies to probabilities, we divide through byn, which is callednormalization.\n\nGiven a Hist, we can make a dictionary that maps from each value to its\nprobability:\n\nn = hist.Total()\nd = {}\nfor x, freq in hist.Items():\nd[x] = freq / n\n\nOr we can use the Pmf class provided bythinkstats2. Like Hist, the Pmf\nconstructor can take a list, pandas Series, dictionary, Hist, or another Pmf\nobject. Here’s an example with a simple list:\n\n[971ea28ecfc7e695419ea19c | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 57]\n3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)",
+    "citations": [],
+    "reviewer": null,
+    "context_grade": null,
+    "answer_grade": null,
+    "citation_support": [],
+    "abstention_correct": null,
+    "reason": null,
+    "student_verified": false
+  }
+]

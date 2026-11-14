@@ -1,0 +1,109 @@
+[
+  {
+    "id": "d7-t01",
+    "split": "test",
+    "question": "Pmf.Copy dùng để làm gì và có làm thay đổi Pmf gốc không?",
+    "answerable": true,
+    "expected_answer": "Tạo bản sao Pmf để có thể sửa bản sao mà không ảnh hưởng bản gốc.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 53,
+        "evidence": "Pmf objects provide aCopymethod so you can make and modify a copy\nwithout affecting the original."
+      }
+    ],
+    "provenance": "New Day 7 question/answer target; not the five published Day 6 test questions."
+  },
+  {
+    "id": "d7-t02",
+    "split": "test",
+    "question": "UnbiasPmf hiệu chỉnh xác suất theo sĩ số lớp x bằng cách nào, và bước cuối là gì?",
+    "answerable": true,
+    "expected_answer": "Chia từng xác suất cho x (nhân với 1.0/x), sau đó Normalize để chuẩn hóa lại.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 58,
+        "evidence": "for x, p in pmf.Items():\nnew_pmf.Mult(x, 1.0/x)\n\nnew_pmf.Normalize()"
+      }
+    ],
+    "provenance": "New Day 7 question/answer target; not the five published Day 6 test questions."
+  },
+  {
+    "id": "d7-t03",
+    "split": "test",
+    "question": "Vì sao tỷ lệ sinh viên trên giảng viên khoảng 10:1 không đồng nghĩa lớp trung bình có 10 người? Nêu hai lý do.",
+    "answerable": true,
+    "expected_answer": "Sinh viên học 4–5 lớp mỗi kỳ trong khi giảng viên thường dạy 1–2; lớp đông có nhiều sinh viên quan sát hơn lớp nhỏ.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 56,
+        "evidence": "•Students typically take 4–5 classes per semester, but professors often\nteach 1 or 2.\n•The number of students who enjoy a small class is small, but the num-\nber of students in a large class is (ahem!) large."
+      }
+    ],
+    "provenance": "New Day 7 question/answer target; not the five published Day 6 test questions."
+  },
+  {
+    "id": "d7-t04",
+    "split": "test",
+    "question": "Trong ví dụ chạy tiếp sức, xác suất hai người chạy vượt nhau tỷ lệ với đại lượng nào, và vì sao ít gặp người cùng tốc độ?",
+    "answerable": true,
+    "expected_answer": "Tỷ lệ với chênh lệch tốc độ; người cùng tốc độ ít có khả năng vượt hoặc bị vượt nên khó gặp nhau.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 62,
+        "evidence": "During my time on the course, the chance\nof overtaking a runner, or being overtaken, is proportional to the difference\nin our speeds. I am more likely to catch a slow runner, and more likely to be\ncaught by a fast runner. But runners at the same speed are unlikely to see\neach other."
+      }
+    ],
+    "provenance": "New Day 7 question/answer target; not the five published Day 6 test questions."
+  },
+  {
+    "id": "d7-t05",
+    "split": "test",
+    "question": "Bài tập yêu cầu kiểm tra hai hàm PmfMean và PmfVar tự viết bằng cách đối chiếu với các phương thức nào?",
+    "answerable": true,
+    "expected_answer": "Đối chiếu với Mean và Var do Pmf cung cấp.",
+    "gold": [
+      {
+        "source_id": "thinkstats2-v2.2.1",
+        "page": 62,
+        "evidence": "To test these methods, check that they are\nconsistent with the methodsMeanandVarprovided by Pmf."
+      }
+    ],
+    "provenance": "New Day 7 question/answer target; not the five published Day 6 test questions."
+  },
+  {
+    "id": "d7-u03",
+    "split": "test",
+    "question": "Trong ví dụ khảo sát sĩ số lớp, học phí chính xác của từng sinh viên là bao nhiêu USD?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "The class-size example contains sizes/counts, not student-level tuition amounts.",
+    "absence_check": {
+      "scope": "All 42 indexed pages, PDF 21-63 except 41; not the entire 264-page book.",
+      "method": "Read source corpus; case-insensitive marker scan plus semantic inspection of relevant examples.",
+      "markers": [
+        "tuition"
+      ]
+    },
+    "gold": []
+  },
+  {
+    "id": "d7-u04",
+    "split": "test",
+    "question": "Tác giả báo cáo độ trễ trung bình bao nhiêu mili giây khi chạy PmfMean trên GPU NVIDIA H100?",
+    "answerable": false,
+    "expected_behavior": "search_and_abstain",
+    "absence_reason": "The corpus has no H100 hardware benchmark or PmfMean timing result.",
+    "absence_check": {
+      "scope": "All 42 indexed pages, PDF 21-63 except 41; not the entire 264-page book.",
+      "method": "Read source corpus; case-insensitive marker scan plus semantic inspection of relevant examples.",
+      "markers": [
+        "H100"
+      ]
+    },
+    "gold": []
+  }
+]

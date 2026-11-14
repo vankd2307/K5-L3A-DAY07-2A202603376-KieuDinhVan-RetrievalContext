@@ -1,0 +1,64 @@
+[
+  {
+    "config": "baseline",
+    "split": "test",
+    "reviewed": 7,
+    "reviewers": [
+      "Codex source-based reading"
+    ],
+    "reviewer": "Codex source-based reading",
+    "student_review_complete": false,
+    "answer_citation_scope": "Successfully answered outputs only; citation gate makes this conditional coverage, not grounding accuracy.",
+    "answer_distribution": {
+      "0": 2,
+      "1": 0,
+      "2": 3
+    },
+    "context_distribution": {
+      "0": 1,
+      "1": 1,
+      "2": 3
+    },
+    "grounded_mean_out_of_2": 1.2,
+    "citation_n": 3,
+    "citation_N": 3,
+    "answer_citation_n": 3,
+    "answer_citation_N": 3,
+    "abstention_n": 2,
+    "abstention_N": 2,
+    "false_abstention_n": 2,
+    "false_abstention_N": 5,
+    "student_verified_n": 0
+  },
+  {
+    "config": "dense_context",
+    "split": "test",
+    "reviewed": 7,
+    "reviewers": [
+      "Codex source-based reading"
+    ],
+    "reviewer": "Codex source-based reading",
+    "student_review_complete": false,
+    "answer_citation_scope": "Successfully answered outputs only; citation gate makes this conditional coverage, not grounding accuracy.",
+    "answer_distribution": {
+      "0": 0,
+      "1": 0,
+      "2": 5
+    },
+    "context_distribution": {
+      "0": 0,
+      "1": 0,
+      "2": 5
+    },
+    "grounded_mean_out_of_2": 2.0,
+    "citation_n": 5,
+    "citation_N": 5,
+    "answer_citation_n": 5,
+    "answer_citation_N": 5,
+    "abstention_n": 2,
+    "abstention_N": 2,
+    "false_abstention_n": 0,
+    "false_abstention_N": 5,
+    "student_verified_n": 0
+  }
+]

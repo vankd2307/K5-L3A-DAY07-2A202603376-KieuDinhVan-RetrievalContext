@@ -1,0 +1,289 @@
+{
+  "question": "Mã outcome nào thể hiện một ca sinh sống?",
+  "config": "baseline",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:11.193466+00:00",
+  "status": "answered",
+  "citations": [
+    "f5d4f52297470390e5b98ec6"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "tfidf",
+      "query": "live birth outcome code NSFG",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 28,
+          "text": "8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 8,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 837,
+            "chunking": "paragraph"
+          },
+          "id": "f5d4f52297470390e5b98ec6",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.321014552386461,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 30,
+          "text": "One way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 10,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 767,
+            "end_char": 1418,
+            "chunking": "paragraph"
+          },
+          "id": "4f0610284ca731ebc56f0974",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.20479510094720077,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 43,
+          "text": "Now we can compare the distribution of pregnancy lengths for first babies\nand others. I divided the DataFrame of live births usingbirthord, and\ncomputed their histograms:\nfirsts = live[live.birthord == 1]\nothers = live[live.birthord != 1]\n\nfirst_hist = thinkstats2.Hist(firsts.prglngth, label='first')\nother_hist = thinkstats2.Hist(others.prglngth, label='other')\nThen I plotted their histograms on the same axis:",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 23,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 864,
+            "end_char": 1277,
+            "chunking": "paragraph"
+          },
+          "id": "1714212a26757908cb9c2e94",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.19391810551600977,
+          "method": "tfidf"
+        }
+      ],
+      "context": "[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+      "context_ids": [
+        "f5d4f52297470390e5b98ec6"
+      ],
+      "elapsed_ms": 0.34669999149627984
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "abstain": false,
+        "citations": [
+          "f5d4f52297470390e5b98ec6"
+        ],
+        "answer": "Mã outcome là 1 thể hiện một ca sinh sống (live birth) [f5d4f52297470390e5b98ec6]."
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 337,
+        "candidatesTokenCount": 19,
+        "totalTokenCount": 356,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 337
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 678,
+        "candidatesTokenCount": 87,
+        "totalTokenCount": 765,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 678
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Mã outcome là 1 thể hiện một ca sinh sống (live birth) [f5d4f52297470390e5b98ec6].",
+  "context": "[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+  "context_ids": [
+    "f5d4f52297470390e5b98ec6"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 0.597400008700788,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q07",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 8432.886700000381,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Mã outcome nào thể hiện một ca sinh sống?",
+      "config": "baseline",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:24:38.430900+00:00",
+      "status": "answered",
+      "citations": [
+        "f5d4f52297470390e5b98ec6"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "tfidf",
+          "query": "live birth outcome code NSFG",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 28,
+              "text": "8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 8,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 837,
+                "chunking": "paragraph"
+              },
+              "id": "f5d4f52297470390e5b98ec6",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.321014552386461,
+              "method": "tfidf"
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 30,
+              "text": "One way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 10,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 767,
+                "end_char": 1418,
+                "chunking": "paragraph"
+              },
+              "id": "4f0610284ca731ebc56f0974",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.20479510094720077,
+              "method": "tfidf"
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 43,
+              "text": "Now we can compare the distribution of pregnancy lengths for first babies\nand others. I divided the DataFrame of live births usingbirthord, and\ncomputed their histograms:\nfirsts = live[live.birthord == 1]\nothers = live[live.birthord != 1]\n\nfirst_hist = thinkstats2.Hist(firsts.prglngth, label='first')\nother_hist = thinkstats2.Hist(others.prglngth, label='other')\nThen I plotted their histograms on the same axis:",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "2",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 23,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 864,
+                "end_char": 1277,
+                "chunking": "paragraph"
+              },
+              "id": "1714212a26757908cb9c2e94",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.19391810551600977,
+              "method": "tfidf"
+            }
+          ],
+          "context": "[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+          "context_ids": [
+            "f5d4f52297470390e5b98ec6"
+          ],
+          "elapsed_ms": 0.39030000334605575
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "abstain": false,
+            "citations": [
+              "f5d4f52297470390e5b98ec6"
+            ],
+            "answer": "Mã outcome là 1 thể hiện một ca sinh sống (live birth) [f5d4f52297470390e5b98ec6]."
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 337,
+            "candidatesTokenCount": 19,
+            "totalTokenCount": 356,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 337
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 678,
+            "candidatesTokenCount": 87,
+            "totalTokenCount": 765,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 678
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Mã outcome là 1 thể hiện một ca sinh sống (live birth) [f5d4f52297470390e5b98ec6].",
+      "context": "[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+      "context_ids": [
+        "f5d4f52297470390e5b98ec6"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 8432.886700000381,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q07",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

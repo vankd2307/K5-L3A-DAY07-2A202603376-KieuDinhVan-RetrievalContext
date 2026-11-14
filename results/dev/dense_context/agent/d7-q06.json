@@ -1,0 +1,389 @@
+{
+  "question": "DataFrame NSFG được minh họa có bao nhiêu bản ghi và biến?",
+  "config": "dense_context",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:12.338617+00:00",
+  "status": "answered",
+  "citations": [
+    "ee672fe7059e3b9d2b8e2207"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "dense",
+      "query": "DataFrame NSFG records variables",
+      "filter": {},
+      "results": [
+        {
+          "id": "ee672fe7059e3b9d2b8e2207",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 26,
+          "text": "6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 542,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 6,
+            "extraction_status": "ok"
+          },
+          "score": 0.7547757029533386,
+          "method": "dense"
+        },
+        {
+          "id": "2302c0aa2fd4d36ec776cd0e",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 27,
+          "text": "1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1158,
+            "language": "en",
+            "start_char": 902,
+            "printed_page": 7,
+            "extraction_status": "ok"
+          },
+          "score": 0.7466742022834484,
+          "method": "dense"
+        },
+        {
+          "id": "4f0610284ca731ebc56f0974",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 30,
+          "text": "One way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1418,
+            "language": "en",
+            "start_char": 767,
+            "printed_page": 10,
+            "extraction_status": "ok"
+          },
+          "score": 0.7413917779922485,
+          "method": "dense"
+        },
+        {
+          "id": "de378d91be893b62e4be3810",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 25,
+          "text": "The result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1637,
+            "language": "en",
+            "start_char": 1345,
+            "printed_page": 5,
+            "extraction_status": "ok"
+          },
+          "score": 0.7384519577026367,
+          "method": "dense"
+        },
+        {
+          "id": "5869e54397098a669dd0b81e",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 25,
+          "text": "1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 681,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 5,
+            "extraction_status": "ok"
+          },
+          "score": 0.7296176552772522,
+          "method": "dense"
+        }
+      ],
+      "context": "[ee672fe7059e3b9d2b8e2207 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\n6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.\n\n[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.\n\n[4f0610284ca731ebc56f0974 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\nOne way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.\n\n[5869e54397098a669dd0b81e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\n1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.",
+      "context_ids": [
+        "ee672fe7059e3b9d2b8e2207",
+        "2302c0aa2fd4d36ec776cd0e",
+        "4f0610284ca731ebc56f0974",
+        "de378d91be893b62e4be3810",
+        "5869e54397098a669dd0b81e"
+      ],
+      "elapsed_ms": 22.53099999506958
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "citations": [
+          "ee672fe7059e3b9d2b8e2207"
+        ],
+        "abstain": false,
+        "answer": "DataFrame NSFG được minh họa có tổng cộng 13.593 bản ghi (rows/records) và 244 biến (columns/variables). [ee672fe7059e3b9d2b8e2207]"
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 340,
+        "candidatesTokenCount": 18,
+        "totalTokenCount": 358,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 340
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1409,
+        "candidatesTokenCount": 103,
+        "totalTokenCount": 1512,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1409
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "DataFrame NSFG được minh họa có tổng cộng 13.593 bản ghi (rows/records) và 244 biến (columns/variables). [ee672fe7059e3b9d2b8e2207]",
+  "context": "[ee672fe7059e3b9d2b8e2207 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\n6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.\n\n[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.\n\n[4f0610284ca731ebc56f0974 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\nOne way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.\n\n[5869e54397098a669dd0b81e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\n1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.",
+  "context_ids": [
+    "ee672fe7059e3b9d2b8e2207",
+    "2302c0aa2fd4d36ec776cd0e",
+    "4f0610284ca731ebc56f0974",
+    "de378d91be893b62e4be3810",
+    "5869e54397098a669dd0b81e"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 22.81689998926595,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q06",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 3585.6455999892205,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "DataFrame NSFG được minh họa có bao nhiêu bản ghi và biến?",
+      "config": "dense_context",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:33:32.795255+00:00",
+      "status": "answered",
+      "citations": [
+        "ee672fe7059e3b9d2b8e2207"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "dense",
+          "query": "DataFrame NSFG records variables",
+          "filter": {},
+          "results": [
+            {
+              "id": "ee672fe7059e3b9d2b8e2207",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 26,
+              "text": "6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 542,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 6,
+                "extraction_status": "ok"
+              },
+              "score": 0.7547757029533386,
+              "method": "dense"
+            },
+            {
+              "id": "2302c0aa2fd4d36ec776cd0e",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 27,
+              "text": "1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1158,
+                "language": "en",
+                "start_char": 902,
+                "printed_page": 7,
+                "extraction_status": "ok"
+              },
+              "score": 0.7466742022834484,
+              "method": "dense"
+            },
+            {
+              "id": "4f0610284ca731ebc56f0974",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 30,
+              "text": "One way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1418,
+                "language": "en",
+                "start_char": 767,
+                "printed_page": 10,
+                "extraction_status": "ok"
+              },
+              "score": 0.7413917779922485,
+              "method": "dense"
+            },
+            {
+              "id": "de378d91be893b62e4be3810",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 25,
+              "text": "The result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1637,
+                "language": "en",
+                "start_char": 1345,
+                "printed_page": 5,
+                "extraction_status": "ok"
+              },
+              "score": 0.7384519577026367,
+              "method": "dense"
+            },
+            {
+              "id": "5869e54397098a669dd0b81e",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 25,
+              "text": "1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "1",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 681,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 5,
+                "extraction_status": "ok"
+              },
+              "score": 0.7296176552772522,
+              "method": "dense"
+            }
+          ],
+          "context": "[ee672fe7059e3b9d2b8e2207 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\n6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.\n\n[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.\n\n[4f0610284ca731ebc56f0974 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\nOne way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.\n\n[5869e54397098a669dd0b81e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\n1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.",
+          "context_ids": [
+            "ee672fe7059e3b9d2b8e2207",
+            "2302c0aa2fd4d36ec776cd0e",
+            "4f0610284ca731ebc56f0974",
+            "de378d91be893b62e4be3810",
+            "5869e54397098a669dd0b81e"
+          ],
+          "elapsed_ms": 26.318599993828684
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "citations": [
+              "ee672fe7059e3b9d2b8e2207"
+            ],
+            "abstain": false,
+            "answer": "DataFrame NSFG được minh họa có tổng cộng 13.593 bản ghi (rows/records) và 244 biến (columns/variables). [ee672fe7059e3b9d2b8e2207]"
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 340,
+            "candidatesTokenCount": 18,
+            "totalTokenCount": 358,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 340
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1409,
+            "candidatesTokenCount": 103,
+            "totalTokenCount": 1512,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1409
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "DataFrame NSFG được minh họa có tổng cộng 13.593 bản ghi (rows/records) và 244 biến (columns/variables). [ee672fe7059e3b9d2b8e2207]",
+      "context": "[ee672fe7059e3b9d2b8e2207 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 26]\n6 Chapter 1. Exploratory data analysis\n\nIn addition to the data, a DataFrame also contains the variable names and\ntheir types, and it provides methods for accessing and modifying the data.\n\nIf you print dfyou get a truncated view of the rows and columns,\nand the shape of the DataFrame, which is 13593 rows/records and 244\ncolumns/variables.\n>>> import nsfg\n>>> df = nsfg.ReadFemPreg()\n>>> df\n...\n[13593 rows x 244 columns]\nThe DataFrame is too big to display, so the output is truncated. The last\nline reports the number of rows and columns.\n\n[2302c0aa2fd4d36ec776cd0e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5 Variables\n\nWe have already seen two variables in the NSFG dataset,caseidand\npregordr, and we have seen that there are 244 variables in total. For the\nexplorations in this book, I use the following variables:\n\n•caseidis the integer ID of the respondent.\n\n[4f0610284ca731ebc56f0974 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\nOne way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.\n\n[5869e54397098a669dd0b81e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\n1.4. DataFrames 5\n\nThe format of the file is documented in2002FemPreg.dct, which is a Stata\ndictionary file. Stata is a statistical software system; a “dictionary” in this\ncontext is a list of variable names, types, and indices that identify where in\neach line to find each variable.\n\nFor example, here are a few lines from2002FemPreg.dct:\n\ninfile dictionary {\n_column(1) str12 caseid %12s \"RESPONDENT ID NUMBER\"\n_column(13) byte pregordr %2f \"PREGNANCY ORDER (NUMBER)\"\n}\n\nThis dictionary describes two variables:caseidis a 12-character string that\nrepresents the respondent ID;pregordris a one-byte integer that indicates\nwhich pregnancy this record describes for this respondent.",
+      "context_ids": [
+        "ee672fe7059e3b9d2b8e2207",
+        "2302c0aa2fd4d36ec776cd0e",
+        "4f0610284ca731ebc56f0974",
+        "de378d91be893b62e4be3810",
+        "5869e54397098a669dd0b81e"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 3585.6455999892205,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q06",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

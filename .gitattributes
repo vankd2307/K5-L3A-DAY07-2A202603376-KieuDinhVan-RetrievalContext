@@ -1,0 +1,11 @@
+# Preserve exact bytes of frozen inputs and code across Windows/Linux checkouts.
+src/*.py -text
+configs/*.json -text
+benchmark/*.json -text
+benchmark/*.md -text
+data/*.json -text
+*.ps1 text eol=crlf
+requirements*.txt text eol=lf
+
+# Archived benchmark files must retain their exact original bytes.
+artifacts/frozen_v1/** -text

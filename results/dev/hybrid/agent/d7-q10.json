@@ -1,0 +1,317 @@
+{
+  "question": "Khi thêm cột vào DataFrame, vì sao không nên gán bằng dot notation?",
+  "config": "hybrid",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:11.846773+00:00",
+  "status": "answered",
+  "citations": [
+    "798698989f39c80a59059a9a"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "hybrid",
+      "query": "DataFrame dot notation assign column Think Stats",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 30,
+          "text": "10 Chapter 1. Exploratory data analysis\n\nOne important note: when you add a new column to a DataFrame, you must\nuse dictionary syntax, like this\n# CORRECT\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nNot dot notation, like this:\n# WRONG!\ndf.totalwgt_lb = df.birthwgt_lb + df.birthwgt_oz / 16.0\nThe version with dot notation adds an attribute to the DataFrame object,\nbut that attribute is not treated as a new column.\n\n1.7 Validation\n\nWhen data is exported from one software environment and imported into\nanother, errors might be introduced. And when you are getting familiar\nwith a new dataset, you might interpret data incorrectly or introduce other\nmisunderstandings. If you take time to validate the data, you can save time\nlater and avoid errors.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 10,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 765,
+            "chunking": "paragraph"
+          },
+          "id": "798698989f39c80a59059a9a",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03278688524590164,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1,
+            "1": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 27,
+          "text": "1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 7,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 900,
+            "chunking": "paragraph"
+          },
+          "id": "1d7f5a186b7ba77a2fe8ef9f",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03200204813108039,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 2,
+            "1": 3
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 63,
+          "text": "•index: In a pandas DataFrame, the index is a special column that\ncontains the row labels.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 43,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 886,
+            "end_char": 976,
+            "chunking": "paragraph"
+          },
+          "id": "dc73365f0c9090fbbf22b333",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.030621785881252923,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 9,
+            "1": 2
+          }
+        }
+      ],
+      "context": "[798698989f39c80a59059a9a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\n10 Chapter 1. Exploratory data analysis\n\nOne important note: when you add a new column to a DataFrame, you must\nuse dictionary syntax, like this\n# CORRECT\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nNot dot notation, like this:\n# WRONG!\ndf.totalwgt_lb = df.birthwgt_lb + df.birthwgt_oz / 16.0\nThe version with dot notation adds an attribute to the DataFrame object,\nbut that attribute is not treated as a new column.\n\n1.7 Validation\n\nWhen data is exported from one software environment and imported into\nanother, errors might be introduced. And when you are getting familiar\nwith a new dataset, you might interpret data incorrectly or introduce other\nmisunderstandings. If you take time to validate the data, you can save time\nlater and avoid errors.\n\n[dc73365f0c9090fbbf22b333 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 63]\n•index: In a pandas DataFrame, the index is a special column that\ncontains the row labels.",
+      "context_ids": [
+        "798698989f39c80a59059a9a",
+        "dc73365f0c9090fbbf22b333"
+      ],
+      "elapsed_ms": 36.915000004228204
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "answer": "Khi thêm cột vào một DataFrame, bạn không nên gán bằng cú pháp chấm (dot notation) vì cách này sẽ chỉ thêm một thuộc tính (attribute) vào đối tượng DataFrame chứ không xem thuộc tính đó là một cột mới [798698989f39c80a59059a9a]. Thay vào đó, bạn phải sử dụng cú pháp từ điển (dictionary syntax, ví dụ: `df['ten_cot'] = ...`) [798698989f39c80a59059a9a].",
+        "abstain": false,
+        "citations": [
+          "798698989f39c80a59059a9a"
+        ]
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 342,
+        "candidatesTokenCount": 20,
+        "totalTokenCount": 362,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 342
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 771,
+        "candidatesTokenCount": 174,
+        "totalTokenCount": 945,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 771
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Khi thêm cột vào một DataFrame, bạn không nên gán bằng cú pháp chấm (dot notation) vì cách này sẽ chỉ thêm một thuộc tính (attribute) vào đối tượng DataFrame chứ không xem thuộc tính đó là một cột mới [798698989f39c80a59059a9a]. Thay vào đó, bạn phải sử dụng cú pháp từ điển (dictionary syntax, ví dụ: `df['ten_cot'] = ...`) [798698989f39c80a59059a9a].",
+  "context": "[798698989f39c80a59059a9a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\n10 Chapter 1. Exploratory data analysis\n\nOne important note: when you add a new column to a DataFrame, you must\nuse dictionary syntax, like this\n# CORRECT\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nNot dot notation, like this:\n# WRONG!\ndf.totalwgt_lb = df.birthwgt_lb + df.birthwgt_oz / 16.0\nThe version with dot notation adds an attribute to the DataFrame object,\nbut that attribute is not treated as a new column.\n\n1.7 Validation\n\nWhen data is exported from one software environment and imported into\nanother, errors might be introduced. And when you are getting familiar\nwith a new dataset, you might interpret data incorrectly or introduce other\nmisunderstandings. If you take time to validate the data, you can save time\nlater and avoid errors.\n\n[dc73365f0c9090fbbf22b333 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 63]\n•index: In a pandas DataFrame, the index is a special column that\ncontains the row labels.",
+  "context_ids": [
+    "798698989f39c80a59059a9a",
+    "dc73365f0c9090fbbf22b333"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 37.23290000925772,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q10",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 25.752299989107996,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Khi thêm cột vào DataFrame, vì sao không nên gán bằng dot notation?",
+      "config": "hybrid",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:32:58.836088+00:00",
+      "status": "answered",
+      "citations": [
+        "798698989f39c80a59059a9a"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "hybrid",
+          "query": "DataFrame dot notation assign column Think Stats",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 30,
+              "text": "10 Chapter 1. Exploratory data analysis\n\nOne important note: when you add a new column to a DataFrame, you must\nuse dictionary syntax, like this\n# CORRECT\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nNot dot notation, like this:\n# WRONG!\ndf.totalwgt_lb = df.birthwgt_lb + df.birthwgt_oz / 16.0\nThe version with dot notation adds an attribute to the DataFrame object,\nbut that attribute is not treated as a new column.\n\n1.7 Validation\n\nWhen data is exported from one software environment and imported into\nanother, errors might be introduced. And when you are getting familiar\nwith a new dataset, you might interpret data incorrectly or introduce other\nmisunderstandings. If you take time to validate the data, you can save time\nlater and avoid errors.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 10,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 765,
+                "chunking": "paragraph"
+              },
+              "id": "798698989f39c80a59059a9a",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03278688524590164,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 1,
+                "1": 1
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 27,
+              "text": "1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 7,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 900,
+                "chunking": "paragraph"
+              },
+              "id": "1d7f5a186b7ba77a2fe8ef9f",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03200204813108039,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 2,
+                "1": 3
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 63,
+              "text": "•index: In a pandas DataFrame, the index is a special column that\ncontains the row labels.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "3",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 43,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 886,
+                "end_char": 976,
+                "chunking": "paragraph"
+              },
+              "id": "dc73365f0c9090fbbf22b333",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.030621785881252923,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 9,
+                "1": 2
+              }
+            }
+          ],
+          "context": "[798698989f39c80a59059a9a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\n10 Chapter 1. Exploratory data analysis\n\nOne important note: when you add a new column to a DataFrame, you must\nuse dictionary syntax, like this\n# CORRECT\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nNot dot notation, like this:\n# WRONG!\ndf.totalwgt_lb = df.birthwgt_lb + df.birthwgt_oz / 16.0\nThe version with dot notation adds an attribute to the DataFrame object,\nbut that attribute is not treated as a new column.\n\n1.7 Validation\n\nWhen data is exported from one software environment and imported into\nanother, errors might be introduced. And when you are getting familiar\nwith a new dataset, you might interpret data incorrectly or introduce other\nmisunderstandings. If you take time to validate the data, you can save time\nlater and avoid errors.\n\n[dc73365f0c9090fbbf22b333 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 63]\n•index: In a pandas DataFrame, the index is a special column that\ncontains the row labels.",
+          "context_ids": [
+            "798698989f39c80a59059a9a",
+            "dc73365f0c9090fbbf22b333"
+          ],
+          "elapsed_ms": 25.427699991269037
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "answer": "Khi thêm cột vào một DataFrame, bạn không nên gán bằng cú pháp chấm (dot notation) vì cách này sẽ chỉ thêm một thuộc tính (attribute) vào đối tượng DataFrame chứ không xem thuộc tính đó là một cột mới [798698989f39c80a59059a9a]. Thay vào đó, bạn phải sử dụng cú pháp từ điển (dictionary syntax, ví dụ: `df['ten_cot'] = ...`) [798698989f39c80a59059a9a].",
+            "abstain": false,
+            "citations": [
+              "798698989f39c80a59059a9a"
+            ]
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 342,
+            "candidatesTokenCount": 20,
+            "totalTokenCount": 362,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 342
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 771,
+            "candidatesTokenCount": 174,
+            "totalTokenCount": 945,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 771
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Khi thêm cột vào một DataFrame, bạn không nên gán bằng cú pháp chấm (dot notation) vì cách này sẽ chỉ thêm một thuộc tính (attribute) vào đối tượng DataFrame chứ không xem thuộc tính đó là một cột mới [798698989f39c80a59059a9a]. Thay vào đó, bạn phải sử dụng cú pháp từ điển (dictionary syntax, ví dụ: `df['ten_cot'] = ...`) [798698989f39c80a59059a9a].",
+      "context": "[798698989f39c80a59059a9a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\n10 Chapter 1. Exploratory data analysis\n\nOne important note: when you add a new column to a DataFrame, you must\nuse dictionary syntax, like this\n# CORRECT\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nNot dot notation, like this:\n# WRONG!\ndf.totalwgt_lb = df.birthwgt_lb + df.birthwgt_oz / 16.0\nThe version with dot notation adds an attribute to the DataFrame object,\nbut that attribute is not treated as a new column.\n\n1.7 Validation\n\nWhen data is exported from one software environment and imported into\nanother, errors might be introduced. And when you are getting familiar\nwith a new dataset, you might interpret data incorrectly or introduce other\nmisunderstandings. If you take time to validate the data, you can save time\nlater and avoid errors.\n\n[dc73365f0c9090fbbf22b333 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 63]\n•index: In a pandas DataFrame, the index is a special column that\ncontains the row labels.",
+      "context_ids": [
+        "798698989f39c80a59059a9a",
+        "dc73365f0c9090fbbf22b333"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 25.752299989107996,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q10",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

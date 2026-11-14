@@ -1,0 +1,193 @@
+{
+  "query_id": "d7-q13",
+  "split": "dev",
+  "config": "hybrid",
+  "status": "ok",
+  "query": "Trong chương 2, histogram thể hiện điều gì và frequency nghĩa là gì?",
+  "filter": {},
+  "results": [
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 44,
+      "text": "24 Chapter 2. Distributions\n\nFigure 2.5: Histogram of pregnancy lengths.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "2",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 24,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 72,
+        "chunking": "paragraph"
+      },
+      "id": "d198865311365c6ccfa5ea1f",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.032018442622950824,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 4,
+        "1": 1
+      }
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 39,
+      "text": "2.3. Plotting histograms 19\n\nFigure 2.1: Histogram of the pound part of birth weight.\n2.3 Plotting histograms\n\nFor this book I wrote a module calledthinkplot.pythat provides functions\nfor plotting Hists and other objects defined inthinkstats2.py. It is based\nonpyplot, which is part of thematplotlibpackage. See Section 0.2 for\ninformation about installingmatplotlib.\nTo plothistwiththinkplot, try this:\n>>> import thinkplot\n>>> thinkplot.Hist(hist)\n>>> thinkplot.Show(xlabel='value', ylabel='frequency')\nYou can read the documentation forthinkplotathttp://greenteapress.\ncom/thinkstats2/thinkplot.html.\n\n2.4 NSFG variables",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "2",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 19,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 623,
+        "chunking": "paragraph"
+      },
+      "id": "a8c59ca57b6a7e806bc2a5e9",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.03128054740957967,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 6,
+        "1": 2
+      }
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 49,
+      "text": "•histogram: A mapping from values to frequencies, or a graph that\nshows this mapping.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "2",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 29,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 1619,
+        "end_char": 1704,
+        "chunking": "paragraph"
+      },
+      "id": "26ae64c96e1b06d8f4423144",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.03057889822595705,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 3,
+        "1": 8
+      }
+    }
+  ],
+  "context": "[d198865311365c6ccfa5ea1f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 44]\n24 Chapter 2. Distributions\n\nFigure 2.5: Histogram of pregnancy lengths.\n\n[a8c59ca57b6a7e806bc2a5e9 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\n2.3. Plotting histograms 19\n\nFigure 2.1: Histogram of the pound part of birth weight.\n2.3 Plotting histograms\n\nFor this book I wrote a module calledthinkplot.pythat provides functions\nfor plotting Hists and other objects defined inthinkstats2.py. It is based\nonpyplot, which is part of thematplotlibpackage. See Section 0.2 for\ninformation about installingmatplotlib.\nTo plothistwiththinkplot, try this:\n>>> import thinkplot\n>>> thinkplot.Hist(hist)\n>>> thinkplot.Show(xlabel='value', ylabel='frequency')\nYou can read the documentation forthinkplotathttp://greenteapress.\ncom/thinkstats2/thinkplot.html.\n\n2.4 NSFG variables\n\n[26ae64c96e1b06d8f4423144 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 49]\n•histogram: A mapping from values to frequencies, or a graph that\nshows this mapping.",
+  "context_ids": [
+    "d198865311365c6ccfa5ea1f",
+    "a8c59ca57b6a7e806bc2a5e9",
+    "26ae64c96e1b06d8f4423144"
+  ],
+  "hit1": false,
+  "hit3": false,
+  "context_hit": false,
+  "elapsed_ms": 17.268800002057105,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q13",
+      "split": "dev",
+      "config": "hybrid",
+      "status": "ok",
+      "query": "Trong chương 2, histogram thể hiện điều gì và frequency nghĩa là gì?",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 44,
+          "text": "24 Chapter 2. Distributions\n\nFigure 2.5: Histogram of pregnancy lengths.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 24,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 72,
+            "chunking": "paragraph"
+          },
+          "id": "d198865311365c6ccfa5ea1f",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.032018442622950824,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 4,
+            "1": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 39,
+          "text": "2.3. Plotting histograms 19\n\nFigure 2.1: Histogram of the pound part of birth weight.\n2.3 Plotting histograms\n\nFor this book I wrote a module calledthinkplot.pythat provides functions\nfor plotting Hists and other objects defined inthinkstats2.py. It is based\nonpyplot, which is part of thematplotlibpackage. See Section 0.2 for\ninformation about installingmatplotlib.\nTo plothistwiththinkplot, try this:\n>>> import thinkplot\n>>> thinkplot.Hist(hist)\n>>> thinkplot.Show(xlabel='value', ylabel='frequency')\nYou can read the documentation forthinkplotathttp://greenteapress.\ncom/thinkstats2/thinkplot.html.\n\n2.4 NSFG variables",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 19,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 623,
+            "chunking": "paragraph"
+          },
+          "id": "a8c59ca57b6a7e806bc2a5e9",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03128054740957967,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 6,
+            "1": 2
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 49,
+          "text": "•histogram: A mapping from values to frequencies, or a graph that\nshows this mapping.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 29,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 1619,
+            "end_char": 1704,
+            "chunking": "paragraph"
+          },
+          "id": "26ae64c96e1b06d8f4423144",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03057889822595705,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 3,
+            "1": 8
+          }
+        }
+      ],
+      "context": "[d198865311365c6ccfa5ea1f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 44]\n24 Chapter 2. Distributions\n\nFigure 2.5: Histogram of pregnancy lengths.\n\n[a8c59ca57b6a7e806bc2a5e9 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\n2.3. Plotting histograms 19\n\nFigure 2.1: Histogram of the pound part of birth weight.\n2.3 Plotting histograms\n\nFor this book I wrote a module calledthinkplot.pythat provides functions\nfor plotting Hists and other objects defined inthinkstats2.py. It is based\nonpyplot, which is part of thematplotlibpackage. See Section 0.2 for\ninformation about installingmatplotlib.\nTo plothistwiththinkplot, try this:\n>>> import thinkplot\n>>> thinkplot.Hist(hist)\n>>> thinkplot.Show(xlabel='value', ylabel='frequency')\nYou can read the documentation forthinkplotathttp://greenteapress.\ncom/thinkstats2/thinkplot.html.\n\n2.4 NSFG variables\n\n[26ae64c96e1b06d8f4423144 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 49]\n•histogram: A mapping from values to frequencies, or a graph that\nshows this mapping.",
+      "context_ids": [
+        "d198865311365c6ccfa5ea1f",
+        "a8c59ca57b6a7e806bc2a5e9",
+        "26ae64c96e1b06d8f4423144"
+      ],
+      "hit1": false,
+      "hit3": false,
+      "context_hit": false,
+      "elapsed_ms": 20.2669000136666
+    }
+  ]
+}

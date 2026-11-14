@@ -1,0 +1,189 @@
+{
+  "query_id": "d7-q03",
+  "split": "dev",
+  "config": "hybrid",
+  "status": "ok",
+  "query": "Quần thể mục tiêu của khảo sát NSFG trong sách gồm những ai?",
+  "filter": {},
+  "results": [
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 23,
+      "text": "The NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 3,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 1377,
+        "end_char": 1824,
+        "chunking": "paragraph"
+      },
+      "id": "f40266243aa427f23fa90b4e",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.032266458495966696,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 1,
+        "1": 3
+      }
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 23,
+      "text": "Since 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 3,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 483,
+        "end_char": 1375,
+        "chunking": "paragraph"
+      },
+      "id": "c820376c2fde59d33d4d8bc8",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.03225806451612903,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 2,
+        "1": 2
+      }
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 24,
+      "text": "Of course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 4,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 754,
+        "end_char": 1634,
+        "chunking": "paragraph"
+      },
+      "id": "62ef79f5baf905618bdfe92a",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.03177805800756621,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 5,
+        "1": 1
+      }
+    }
+  ],
+  "context": "[f40266243aa427f23fa90b4e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+  "context_ids": [
+    "f40266243aa427f23fa90b4e"
+  ],
+  "hit1": true,
+  "hit3": true,
+  "context_hit": true,
+  "elapsed_ms": 15.192000020761043,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q03",
+      "split": "dev",
+      "config": "hybrid",
+      "status": "ok",
+      "query": "Quần thể mục tiêu của khảo sát NSFG trong sách gồm những ai?",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 23,
+          "text": "The NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 3,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 1377,
+            "end_char": 1824,
+            "chunking": "paragraph"
+          },
+          "id": "f40266243aa427f23fa90b4e",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.032266458495966696,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1,
+            "1": 3
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 23,
+          "text": "Since 1973 the U.S. Centers for Disease Control and Prevention (CDC)\nhave conducted the National Survey of Family Growth (NSFG), which is\nintended to gather “information on family life, marriage and divorce, pregnancy, infertility, use of contraception, and men’s and women’s health. The\nsurvey results are used. . . to plan health services and health education programs, and to do statistical studies of families, fertility, and health.” See\nhttp://cdc.gov/nchs/nsfg.htm.\n\nWe will use data collected by this survey to investigate whether first babies\ntend to come late, and other questions. In order to use this data effectively,\nwe have to understand the design of the study.\n\nThe NSFG is across-sectionalstudy, which means that it captures a snapshot of a group at a point in time. The most common alternative is alongitudinalstudy, which observes a group repeatedly over a period of time.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 3,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 483,
+            "end_char": 1375,
+            "chunking": "paragraph"
+          },
+          "id": "c820376c2fde59d33d4d8bc8",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03225806451612903,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 2,
+            "1": 2
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 24,
+          "text": "Of course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 4,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 754,
+            "end_char": 1634,
+            "chunking": "paragraph"
+          },
+          "id": "62ef79f5baf905618bdfe92a",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03177805800756621,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 5,
+            "1": 1
+          }
+        }
+      ],
+      "context": "[f40266243aa427f23fa90b4e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+      "context_ids": [
+        "f40266243aa427f23fa90b4e"
+      ],
+      "hit1": true,
+      "hit3": true,
+      "context_hit": true,
+      "elapsed_ms": 20.62689999002032
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "question": "Nếu cân nặng chứa mã 97, 98 hoặc 99 thì phải xử lý thế nào để tránh kết quả sai?",
+  "config": "baseline",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:11.198618+00:00",
+  "status": "answered",
+  "citations": [
+    "50718039f1ba18056fe56194"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "tfidf",
+      "query": "weight 97 98 99 Think Stats",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 29,
+          "text": "df['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 9,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 298,
+            "end_char": 1193,
+            "chunking": "paragraph"
+          },
+          "id": "50718039f1ba18056fe56194",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.20097801120089398,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 29,
+          "text": "1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 9,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 296,
+            "chunking": "paragraph"
+          },
+          "id": "378c9ef8a37471ebdc49dd13",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.18479971092433023,
+          "method": "tfidf"
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 21,
+          "text": "“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 1,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 625,
+            "end_char": 1141,
+            "chunking": "paragraph"
+          },
+          "id": "ef334e7bae7044ad56c05991",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.08598230048492231,
+          "method": "tfidf"
+        }
+      ],
+      "context": "[50718039f1ba18056fe56194 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /",
+      "context_ids": [
+        "50718039f1ba18056fe56194"
+      ],
+      "elapsed_ms": 0.22200000239536166
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "answer": "Các giá trị đặc biệt mã hóa bằng số (như 97, 98, hoặc 99 biểu thị NOT ASCERTAINED, REFUSED, DON'T KNOW) có thể gây ra kết quả sai (chẳng hạn như một em bé nặng 99 pound nếu không được xử lý đúng cách) [50718039f1ba18056fe56194]. Để tránh điều này, bạn cần sử dụng phương thức `replace` để thay thế các giá trị này bằng `np.nan` (một giá trị số thực đặc biệt đại diện cho \"không phải là số\" - \"not a number\") [50718039f1ba18056fe56194]. Theo chuẩn dấu phẩy động IEEE, mọi phép toán sẽ trả về `nan` nếu có ít nhất một đối số là `nan` [50718039f1ba18056fe56194].",
+        "abstain": false,
+        "citations": [
+          "50718039f1ba18056fe56194"
+        ]
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 354,
+        "candidatesTokenCount": 25,
+        "totalTokenCount": 379,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 354
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 730,
+        "candidatesTokenCount": 263,
+        "totalTokenCount": 993,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 730
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Các giá trị đặc biệt mã hóa bằng số (như 97, 98, hoặc 99 biểu thị NOT ASCERTAINED, REFUSED, DON'T KNOW) có thể gây ra kết quả sai (chẳng hạn như một em bé nặng 99 pound nếu không được xử lý đúng cách) [50718039f1ba18056fe56194]. Để tránh điều này, bạn cần sử dụng phương thức `replace` để thay thế các giá trị này bằng `np.nan` (một giá trị số thực đặc biệt đại diện cho \"không phải là số\" - \"not a number\") [50718039f1ba18056fe56194]. Theo chuẩn dấu phẩy động IEEE, mọi phép toán sẽ trả về `nan` nếu có ít nhất một đối số là `nan` [50718039f1ba18056fe56194].",
+  "context": "[50718039f1ba18056fe56194 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /",
+  "context_ids": [
+    "50718039f1ba18056fe56194"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 0.3778999962378293,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q09",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 8981.373699993128,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Nếu cân nặng chứa mã 97, 98 hoặc 99 thì phải xử lý thế nào để tránh kết quả sai?",
+      "config": "baseline",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:24:55.128828+00:00",
+      "status": "answered",
+      "citations": [
+        "50718039f1ba18056fe56194"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "tfidf",
+          "query": "weight 97 98 99 Think Stats",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 29,
+              "text": "df['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 9,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 298,
+                "end_char": 1193,
+                "chunking": "paragraph"
+              },
+              "id": "50718039f1ba18056fe56194",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.20097801120089398,
+              "method": "tfidf"
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 29,
+              "text": "1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 9,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 296,
+                "chunking": "paragraph"
+              },
+              "id": "378c9ef8a37471ebdc49dd13",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.18479971092433023,
+              "method": "tfidf"
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 21,
+              "text": "“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 1,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 625,
+                "end_char": 1141,
+                "chunking": "paragraph"
+              },
+              "id": "ef334e7bae7044ad56c05991",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.08598230048492231,
+              "method": "tfidf"
+            }
+          ],
+          "context": "[50718039f1ba18056fe56194 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /",
+          "context_ids": [
+            "50718039f1ba18056fe56194"
+          ],
+          "elapsed_ms": 0.41829998372122645
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "answer": "Các giá trị đặc biệt mã hóa bằng số (như 97, 98, hoặc 99 biểu thị NOT ASCERTAINED, REFUSED, DON'T KNOW) có thể gây ra kết quả sai (chẳng hạn như một em bé nặng 99 pound nếu không được xử lý đúng cách) [50718039f1ba18056fe56194]. Để tránh điều này, bạn cần sử dụng phương thức `replace` để thay thế các giá trị này bằng `np.nan` (một giá trị số thực đặc biệt đại diện cho \"không phải là số\" - \"not a number\") [50718039f1ba18056fe56194]. Theo chuẩn dấu phẩy động IEEE, mọi phép toán sẽ trả về `nan` nếu có ít nhất một đối số là `nan` [50718039f1ba18056fe56194].",
+            "abstain": false,
+            "citations": [
+              "50718039f1ba18056fe56194"
+            ]
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 354,
+            "candidatesTokenCount": 25,
+            "totalTokenCount": 379,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 354
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 730,
+            "candidatesTokenCount": 263,
+            "totalTokenCount": 993,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 730
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Các giá trị đặc biệt mã hóa bằng số (như 97, 98, hoặc 99 biểu thị NOT ASCERTAINED, REFUSED, DON'T KNOW) có thể gây ra kết quả sai (chẳng hạn như một em bé nặng 99 pound nếu không được xử lý đúng cách) [50718039f1ba18056fe56194]. Để tránh điều này, bạn cần sử dụng phương thức `replace` để thay thế các giá trị này bằng `np.nan` (một giá trị số thực đặc biệt đại diện cho \"không phải là số\" - \"not a number\") [50718039f1ba18056fe56194]. Theo chuẩn dấu phẩy động IEEE, mọi phép toán sẽ trả về `nan` nếu có ít nhất một đối số là `nan` [50718039f1ba18056fe56194].",
+      "context": "[50718039f1ba18056fe56194 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /",
+      "context_ids": [
+        "50718039f1ba18056fe56194"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 8981.373699993128,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q09",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

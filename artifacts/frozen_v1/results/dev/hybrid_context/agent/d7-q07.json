@@ -1,0 +1,429 @@
+{
+  "question": "Mã outcome nào thể hiện một ca sinh sống?",
+  "config": "hybrid_context",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:12.873834+00:00",
+  "status": "answered",
+  "citations": [
+    "f5d4f52297470390e5b98ec6"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "hybrid",
+      "query": "live birth outcome code NSFG",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 28,
+          "text": "8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 8,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 837,
+            "chunking": "paragraph"
+          },
+          "id": "f5d4f52297470390e5b98ec6",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.032018442622950824,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 4,
+            "1": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 30,
+          "text": "One way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 10,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 767,
+            "end_char": 1418,
+            "chunking": "paragraph"
+          },
+          "id": "4f0610284ca731ebc56f0974",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03200204813108039,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 3,
+            "1": 2
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 33,
+          "text": "1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 13,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 794,
+            "chunking": "paragraph"
+          },
+          "id": "aed02b84a2698a8ad98395fb",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03007688828584351,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 7,
+            "1": 6
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 24,
+          "text": "Of course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 4,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 754,
+            "end_char": 1634,
+            "chunking": "paragraph"
+          },
+          "id": "62ef79f5baf905618bdfe92a",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.029877369007803793,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 9,
+            "1": 5
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 39,
+          "text": "Now let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 19,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 625,
+            "end_char": 938,
+            "chunking": "paragraph"
+          },
+          "id": "11f52ca93e1d19a06edc1381",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.029211087420042643,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 10,
+            "1": 7
+          }
+        }
+      ],
+      "context": "[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.\n\n[4f0610284ca731ebc56f0974 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\nOne way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148\n\n[aed02b84a2698a8ad98395fb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 33]\n1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.\n\n[62ef79f5baf905618bdfe92a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\nOf course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”\n\n[11f52ca93e1d19a06edc1381 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\nNow let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+      "context_ids": [
+        "f5d4f52297470390e5b98ec6",
+        "4f0610284ca731ebc56f0974",
+        "aed02b84a2698a8ad98395fb",
+        "62ef79f5baf905618bdfe92a",
+        "11f52ca93e1d19a06edc1381"
+      ],
+      "elapsed_ms": 16.431799973361194
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "abstain": false,
+        "answer": "Mã outcome là **1** thể hiện một ca sinh sống (live birth) [f5d4f52297470390e5b98ec6].",
+        "citations": [
+          "f5d4f52297470390e5b98ec6"
+        ]
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 337,
+        "candidatesTokenCount": 19,
+        "totalTokenCount": 356,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 337
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1680,
+        "candidatesTokenCount": 88,
+        "totalTokenCount": 1768,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1680
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Mã outcome là **1** thể hiện một ca sinh sống (live birth) [f5d4f52297470390e5b98ec6].",
+  "context": "[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.\n\n[4f0610284ca731ebc56f0974 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\nOne way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148\n\n[aed02b84a2698a8ad98395fb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 33]\n1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.\n\n[62ef79f5baf905618bdfe92a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\nOf course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”\n\n[11f52ca93e1d19a06edc1381 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\nNow let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+  "context_ids": [
+    "f5d4f52297470390e5b98ec6",
+    "4f0610284ca731ebc56f0974",
+    "aed02b84a2698a8ad98395fb",
+    "62ef79f5baf905618bdfe92a",
+    "11f52ca93e1d19a06edc1381"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 16.659999993862584,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q07",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 4131.2471999845,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Mã outcome nào thể hiện một ca sinh sống?",
+      "config": "hybrid_context",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:35:21.933047+00:00",
+      "status": "answered",
+      "citations": [
+        "f5d4f52297470390e5b98ec6"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "hybrid",
+          "query": "live birth outcome code NSFG",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 28,
+              "text": "8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 8,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 837,
+                "chunking": "paragraph"
+              },
+              "id": "f5d4f52297470390e5b98ec6",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.032018442622950824,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 4,
+                "1": 1
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 30,
+              "text": "One way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 10,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 767,
+                "end_char": 1418,
+                "chunking": "paragraph"
+              },
+              "id": "4f0610284ca731ebc56f0974",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03200204813108039,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 3,
+                "1": 2
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 33,
+              "text": "1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 13,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 794,
+                "chunking": "paragraph"
+              },
+              "id": "aed02b84a2698a8ad98395fb",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03007688828584351,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 7,
+                "1": 6
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 24,
+              "text": "Of course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 4,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 754,
+                "end_char": 1634,
+                "chunking": "paragraph"
+              },
+              "id": "62ef79f5baf905618bdfe92a",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.029877369007803793,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 9,
+                "1": 5
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 39,
+              "text": "Now let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "2",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 19,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 625,
+                "end_char": 938,
+                "chunking": "paragraph"
+              },
+              "id": "11f52ca93e1d19a06edc1381",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.029211087420042643,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 10,
+                "1": 7
+              }
+            }
+          ],
+          "context": "[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.\n\n[4f0610284ca731ebc56f0974 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\nOne way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148\n\n[aed02b84a2698a8ad98395fb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 33]\n1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.\n\n[62ef79f5baf905618bdfe92a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\nOf course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”\n\n[11f52ca93e1d19a06edc1381 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\nNow let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+          "context_ids": [
+            "f5d4f52297470390e5b98ec6",
+            "4f0610284ca731ebc56f0974",
+            "aed02b84a2698a8ad98395fb",
+            "62ef79f5baf905618bdfe92a",
+            "11f52ca93e1d19a06edc1381"
+          ],
+          "elapsed_ms": 22.62100001098588
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "abstain": false,
+            "answer": "Mã outcome là **1** thể hiện một ca sinh sống (live birth) [f5d4f52297470390e5b98ec6].",
+            "citations": [
+              "f5d4f52297470390e5b98ec6"
+            ]
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 337,
+            "candidatesTokenCount": 19,
+            "totalTokenCount": 356,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 337
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1680,
+            "candidatesTokenCount": 88,
+            "totalTokenCount": 1768,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1680
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Mã outcome là **1** thể hiện một ca sinh sống (live birth) [f5d4f52297470390e5b98ec6].",
+      "context": "[f5d4f52297470390e5b98ec6 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 28]\n8 Chapter 1. Exploratory data analysis\n\n•prglngthis the integer duration of the pregnancy in weeks.\n•outcomeis an integer code for the outcome of the pregnancy. The code\n1 indicates a live birth.\n\n•pregordris a pregnancy serial number; for example, the code for a\nrespondent’s first pregnancy is 1, for the second pregnancy is 2, and so\non.\n\n•birthordis a serial number for live births; the code for a respondent’s\nfirst child is 1, and so on. For outcomes other than live birth, this field\nis blank.\n\n•birthwgt_lbandbirthwgt_ozcontain the pounds and ounces parts\nof the birth weight of the baby.\n\n•agepregis the mother’s age at the end of the pregnancy.\n•finalwgtis the statistical weight associated with the respondent. It is\na floating-point value that indicates the number of people in the U.S.\npopulation this respondent represents.\n\n[4f0610284ca731ebc56f0974 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\nOne way to validate data is to compute basic statistics and compare them\nwith published results. For example, the NSFG codebook includes tables\nthat summarize each variable. Here is the table foroutcome, which encodes\nthe outcome of each pregnancy:\nvalue label Total\n1 LIVE BIRTH 9148\n2 INDUCED ABORTION 1862\n3 STILLBIRTH 120\n4 MISCARRIAGE 1921\n5 ECTOPIC PREGNANCY 190\n6 CURRENT PREGNANCY 352\nThe Series class provides a method,value_counts, that counts the number of times each value appears. If we select theoutcomeSeries from the\nDataFrame, we can usevalue_countsto compare with the published data:\n>>> df.outcome.value_counts().sort_index()\n1 9148\n\n[aed02b84a2698a8ad98395fb | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 33]\n1.9. Exercises 13\n\nThis example looks up one respondent and prints a list of outcomes for her\npregnancies:\n>>> caseid = 10229\n>>> preg_map = nsfg.MakePregMap(df)\n>>> indices = preg_map[caseid]\n>>> df.outcome[indices].values\n[4 4 4 4 4 4 1]\nindicesis the list of indices for pregnancies corresponding to respondent\n10229.\n\nUsing this list as an index intodf.outcomeselects the indicated rows and\nyields a Series. Instead of printing the whole Series, I selected thevalues\nattribute, which is a NumPy array.\n\nThe outcome code1indicates a live birth. Code4indicates a miscarriage;\nthat is, a pregnancy that ended spontaneously, usually with no known medical cause.\n\nStatistically this respondent is not unusual. Miscarriages are common and\nthere are other respondents who reported as many or more.\n\n[62ef79f5baf905618bdfe92a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\nOf course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”\n\n[11f52ca93e1d19a06edc1381 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\nNow let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+      "context_ids": [
+        "f5d4f52297470390e5b98ec6",
+        "4f0610284ca731ebc56f0974",
+        "aed02b84a2698a8ad98395fb",
+        "62ef79f5baf905618bdfe92a",
+        "11f52ca93e1d19a06edc1381"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 4131.2471999845,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q07",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

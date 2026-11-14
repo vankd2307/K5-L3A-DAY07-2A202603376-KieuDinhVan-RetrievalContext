@@ -1,0 +1,735 @@
+{
+  "question": "Trong bộ tài liệu, tỷ lệ người trả lời NSFG sử dụng Python 3.12 là bao nhiêu phần trăm?",
+  "config": "hybrid_context",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:13.194990+00:00",
+  "status": "abstain",
+  "citations": [],
+  "events": [
+    {
+      "event": "search",
+      "tool": "hybrid",
+      "query": "Python 3.12 NSFG",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 24,
+          "text": "Of course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 4,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 754,
+            "end_char": 1634,
+            "chunking": "paragraph"
+          },
+          "id": "62ef79f5baf905618bdfe92a",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03076923076923077,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 5,
+            "1": 5
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 25,
+          "text": "The code you downloaded includesthinkstats2.py, which is a Python module that contains many classes and functions used in this book, including\nfunctions that read the Stata dictionary and the NSFG data file. Here’s how\nthey are used innsfg.py:\ndef ReadFemPreg(dct_file='2002FemPreg.dct',\ndat_file='2002FemPreg.dat.gz'):\ndct = thinkstats2.ReadStataDct(dct_file)\ndf = dct.ReadFixedWidth(dat_file, compression='gzip')\nCleanFemPreg(df)\nreturn df\nReadStataDcttakes the name of the dictionary file and returnsdct, a\nFixedWidthVariablesobject that contains the information from the dictionary file.dctprovidesReadFixedWidth, which reads the data file.\n\n1.4 DataFrames",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 5,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 683,
+            "end_char": 1343,
+            "chunking": "paragraph"
+          },
+          "id": "3f3031b3a4a858624a2ac681",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.030330882352941176,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 4,
+            "1": 8
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 55,
+          "text": "3.3. Other visualizations 35\n\non the same axes, which is generally a good idea if you intend to compare\ntwo figures.\n\n3.3 Other visualizations\n\nHistograms and PMFs are useful while you are exploring data and trying to\nidentify patterns and relationships. Once you have an idea what is going on,\na good next step is to design a visualization that makes the patterns you\nhave identified as clear as possible.\nIn the NSFG data, the biggest differences in the distributions are near the\nmode. So it makes sense to zoom in on that part of the graph, and to\ntransform the data to emphasize differences:\nweeks = range(35, 46)\ndiffs = []\nfor week in weeks:\np1 = first_pmf.Prob(week)\np2 = other_pmf.Prob(week)\ndiff = 100 * (p1 - p2)\ndiffs.append(diff)",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 35,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 742,
+            "chunking": "paragraph"
+          },
+          "id": "9faf77d4bd6468f627c85636",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.029857397504456328,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 8,
+            "1": 6
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 23,
+          "text": "The NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 3,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 1377,
+            "end_char": 1824,
+            "chunking": "paragraph"
+          },
+          "id": "f40266243aa427f23fa90b4e",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.02976190476190476,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 3,
+            "1": 12
+          }
+        },
+        {
+          "id": "11f52ca93e1d19a06edc1381",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 39,
+          "text": "Now let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 938,
+            "language": "en",
+            "start_char": 625,
+            "printed_page": 19,
+            "extraction_status": "ok"
+          },
+          "score": 0.01639344262295082,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1
+          }
+        }
+      ],
+      "context": "[62ef79f5baf905618bdfe92a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\nOf course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”\n\n[3f3031b3a4a858624a2ac681 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe code you downloaded includesthinkstats2.py, which is a Python module that contains many classes and functions used in this book, including\nfunctions that read the Stata dictionary and the NSFG data file. Here’s how\nthey are used innsfg.py:\ndef ReadFemPreg(dct_file='2002FemPreg.dct',\ndat_file='2002FemPreg.dat.gz'):\ndct = thinkstats2.ReadStataDct(dct_file)\ndf = dct.ReadFixedWidth(dat_file, compression='gzip')\nCleanFemPreg(df)\nreturn df\nReadStataDcttakes the name of the dictionary file and returnsdct, a\nFixedWidthVariablesobject that contains the information from the dictionary file.dctprovidesReadFixedWidth, which reads the data file.\n\n1.4 DataFrames\n\n[9faf77d4bd6468f627c85636 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 55]\n3.3. Other visualizations 35\n\non the same axes, which is generally a good idea if you intend to compare\ntwo figures.\n\n3.3 Other visualizations\n\nHistograms and PMFs are useful while you are exploring data and trying to\nidentify patterns and relationships. Once you have an idea what is going on,\na good next step is to design a visualization that makes the patterns you\nhave identified as clear as possible.\nIn the NSFG data, the biggest differences in the distributions are near the\nmode. So it makes sense to zoom in on that part of the graph, and to\ntransform the data to emphasize differences:\nweeks = range(35, 46)\ndiffs = []\nfor week in weeks:\np1 = first_pmf.Prob(week)\np2 = other_pmf.Prob(week)\ndiff = 100 * (p1 - p2)\ndiffs.append(diff)\n\n[f40266243aa427f23fa90b4e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the\n\n[11f52ca93e1d19a06edc1381 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\nNow let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+      "context_ids": [
+        "62ef79f5baf905618bdfe92a",
+        "3f3031b3a4a858624a2ac681",
+        "9faf77d4bd6468f627c85636",
+        "f40266243aa427f23fa90b4e",
+        "11f52ca93e1d19a06edc1381"
+      ],
+      "elapsed_ms": 18.12160000554286
+    },
+    {
+      "event": "search",
+      "tool": "hybrid",
+      "query": "Python 3.12",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 59,
+          "text": "3.5. DataFrame indexing 39\n3.5 DataFrame indexing",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 39,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 49,
+            "chunking": "paragraph"
+          },
+          "id": "328bb76367d79e6b875428e2",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.032018442622950824,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 4,
+            "1": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 27,
+          "text": "1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 7,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 900,
+            "chunking": "paragraph"
+          },
+          "id": "1d7f5a186b7ba77a2fe8ef9f",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.031544957774465976,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1,
+            "1": 6
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 55,
+          "text": "3.3. Other visualizations 35\n\non the same axes, which is generally a good idea if you intend to compare\ntwo figures.\n\n3.3 Other visualizations\n\nHistograms and PMFs are useful while you are exploring data and trying to\nidentify patterns and relationships. Once you have an idea what is going on,\na good next step is to design a visualization that makes the patterns you\nhave identified as clear as possible.\nIn the NSFG data, the biggest differences in the distributions are near the\nmode. So it makes sense to zoom in on that part of the graph, and to\ntransform the data to emphasize differences:\nweeks = range(35, 46)\ndiffs = []\nfor week in weeks:\np1 = first_pmf.Prob(week)\np2 = other_pmf.Prob(week)\ndiff = 100 * (p1 - p2)\ndiffs.append(diff)",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 35,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 742,
+            "chunking": "paragraph"
+          },
+          "id": "9faf77d4bd6468f627c85636",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.030309988518943745,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 5,
+            "1": 7
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 37,
+          "text": "Chapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "2",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 17,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 846,
+            "chunking": "paragraph"
+          },
+          "id": "8849532a0610912f69f6978d",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.028594771241830064,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 8,
+            "1": 12
+          }
+        },
+        {
+          "id": "84220892cc2f7357d67b6e9a",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 51,
+          "text": "Chapter 3\n\nProbability mass functions\n\nThe code for this chapter is inprobability.py. For information about\ndownloading and working with this code, see Section 0.2.\n\n3.1 Pmfs\n\nAnother way to represent a distribution is aprobability mass function\n(PMF), which maps from each value to its probability. Aprobabilityis a\nfrequency expressed as a fraction of the sample size,n. To get from frequencies to probabilities, we divide through byn, which is callednormalization.\n\nGiven a Hist, we can make a dictionary that maps from each value to its\nprobability:\n\nn = hist.Total()\nd = {}\nfor x, freq in hist.Items():\nd[x] = freq / n\n\nOr we can use the Pmf class provided bythinkstats2. Like Hist, the Pmf\nconstructor can take a list, pandas Series, dictionary, Hist, or another Pmf\nobject. Here’s an example with a simple list:",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "3",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 818,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 31,
+            "extraction_status": "ok"
+          },
+          "score": 0.016129032258064516,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 2
+          }
+        }
+      ],
+      "context": "[328bb76367d79e6b875428e2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 59]\n3.5. DataFrame indexing 39\n3.5 DataFrame indexing\n\n[1d7f5a186b7ba77a2fe8ef9f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n[9faf77d4bd6468f627c85636 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 55]\n3.3. Other visualizations 35\n\non the same axes, which is generally a good idea if you intend to compare\ntwo figures.\n\n3.3 Other visualizations\n\nHistograms and PMFs are useful while you are exploring data and trying to\nidentify patterns and relationships. Once you have an idea what is going on,\na good next step is to design a visualization that makes the patterns you\nhave identified as clear as possible.\nIn the NSFG data, the biggest differences in the distributions are near the\nmode. So it makes sense to zoom in on that part of the graph, and to\ntransform the data to emphasize differences:\nweeks = range(35, 46)\ndiffs = []\nfor week in weeks:\np1 = first_pmf.Prob(week)\np2 = other_pmf.Prob(week)\ndiff = 100 * (p1 - p2)\ndiffs.append(diff)\n\n[8849532a0610912f69f6978d | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 37]\nChapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.\n\n[84220892cc2f7357d67b6e9a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 51]\nChapter 3\n\nProbability mass functions\n\nThe code for this chapter is inprobability.py. For information about\ndownloading and working with this code, see Section 0.2.\n\n3.1 Pmfs\n\nAnother way to represent a distribution is aprobability mass function\n(PMF), which maps from each value to its probability. Aprobabilityis a\nfrequency expressed as a fraction of the sample size,n. To get from frequencies to probabilities, we divide through byn, which is callednormalization.\n\nGiven a Hist, we can make a dictionary that maps from each value to its\nprobability:\n\nn = hist.Total()\nd = {}\nfor x, freq in hist.Items():\nd[x] = freq / n\n\nOr we can use the Pmf class provided bythinkstats2. Like Hist, the Pmf\nconstructor can take a list, pandas Series, dictionary, Hist, or another Pmf\nobject. Here’s an example with a simple list:\n\n[62ef79f5baf905618bdfe92a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\nOf course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”",
+      "context_ids": [
+        "328bb76367d79e6b875428e2",
+        "1d7f5a186b7ba77a2fe8ef9f",
+        "9faf77d4bd6468f627c85636",
+        "8849532a0610912f69f6978d",
+        "84220892cc2f7357d67b6e9a",
+        "62ef79f5baf905618bdfe92a"
+      ],
+      "elapsed_ms": 15.277799975592643
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "abstain": true,
+        "answer": "Tài liệu không cung cấp thông tin về tỷ lệ người trả lời khảo sát NSFG sử dụng Python 3.12.",
+        "citations": []
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 352,
+        "candidatesTokenCount": 21,
+        "totalTokenCount": 373,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 352
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1579,
+        "candidatesTokenCount": 19,
+        "totalTokenCount": 1598,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1579
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1999,
+        "candidatesTokenCount": 48,
+        "totalTokenCount": 2047,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1999
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+  "context": "[328bb76367d79e6b875428e2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 59]\n3.5. DataFrame indexing 39\n3.5 DataFrame indexing\n\n[1d7f5a186b7ba77a2fe8ef9f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n[9faf77d4bd6468f627c85636 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 55]\n3.3. Other visualizations 35\n\non the same axes, which is generally a good idea if you intend to compare\ntwo figures.\n\n3.3 Other visualizations\n\nHistograms and PMFs are useful while you are exploring data and trying to\nidentify patterns and relationships. Once you have an idea what is going on,\na good next step is to design a visualization that makes the patterns you\nhave identified as clear as possible.\nIn the NSFG data, the biggest differences in the distributions are near the\nmode. So it makes sense to zoom in on that part of the graph, and to\ntransform the data to emphasize differences:\nweeks = range(35, 46)\ndiffs = []\nfor week in weeks:\np1 = first_pmf.Prob(week)\np2 = other_pmf.Prob(week)\ndiff = 100 * (p1 - p2)\ndiffs.append(diff)\n\n[8849532a0610912f69f6978d | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 37]\nChapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.\n\n[84220892cc2f7357d67b6e9a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 51]\nChapter 3\n\nProbability mass functions\n\nThe code for this chapter is inprobability.py. For information about\ndownloading and working with this code, see Section 0.2.\n\n3.1 Pmfs\n\nAnother way to represent a distribution is aprobability mass function\n(PMF), which maps from each value to its probability. Aprobabilityis a\nfrequency expressed as a fraction of the sample size,n. To get from frequencies to probabilities, we divide through byn, which is callednormalization.\n\nGiven a Hist, we can make a dictionary that maps from each value to its\nprobability:\n\nn = hist.Total()\nd = {}\nfor x, freq in hist.Items():\nd[x] = freq / n\n\nOr we can use the Pmf class provided bythinkstats2. Like Hist, the Pmf\nconstructor can take a list, pandas Series, dictionary, Hist, or another Pmf\nobject. Here’s an example with a simple list:\n\n[62ef79f5baf905618bdfe92a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\nOf course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”",
+  "context_ids": [
+    "328bb76367d79e6b875428e2",
+    "1d7f5a186b7ba77a2fe8ef9f",
+    "9faf77d4bd6468f627c85636",
+    "8849532a0610912f69f6978d",
+    "84220892cc2f7357d67b6e9a",
+    "62ef79f5baf905618bdfe92a"
+  ],
+  "search_count": 2,
+  "elapsed_ms": 33.77420001197606,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-u01",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": null,
+  "reference_elapsed_ms": 12610.402999998769,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Trong bộ tài liệu, tỷ lệ người trả lời NSFG sử dụng Python 3.12 là bao nhiêu phần trăm?",
+      "config": "hybrid_context",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:36:49.874437+00:00",
+      "status": "abstain",
+      "citations": [],
+      "events": [
+        {
+          "event": "search",
+          "tool": "hybrid",
+          "query": "Python 3.12 NSFG",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 24,
+              "text": "Of course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 4,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 754,
+                "end_char": 1634,
+                "chunking": "paragraph"
+              },
+              "id": "62ef79f5baf905618bdfe92a",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03076923076923077,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 5,
+                "1": 5
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 25,
+              "text": "The code you downloaded includesthinkstats2.py, which is a Python module that contains many classes and functions used in this book, including\nfunctions that read the Stata dictionary and the NSFG data file. Here’s how\nthey are used innsfg.py:\ndef ReadFemPreg(dct_file='2002FemPreg.dct',\ndat_file='2002FemPreg.dat.gz'):\ndct = thinkstats2.ReadStataDct(dct_file)\ndf = dct.ReadFixedWidth(dat_file, compression='gzip')\nCleanFemPreg(df)\nreturn df\nReadStataDcttakes the name of the dictionary file and returnsdct, a\nFixedWidthVariablesobject that contains the information from the dictionary file.dctprovidesReadFixedWidth, which reads the data file.\n\n1.4 DataFrames",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 5,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 683,
+                "end_char": 1343,
+                "chunking": "paragraph"
+              },
+              "id": "3f3031b3a4a858624a2ac681",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.030330882352941176,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 4,
+                "1": 8
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 55,
+              "text": "3.3. Other visualizations 35\n\non the same axes, which is generally a good idea if you intend to compare\ntwo figures.\n\n3.3 Other visualizations\n\nHistograms and PMFs are useful while you are exploring data and trying to\nidentify patterns and relationships. Once you have an idea what is going on,\na good next step is to design a visualization that makes the patterns you\nhave identified as clear as possible.\nIn the NSFG data, the biggest differences in the distributions are near the\nmode. So it makes sense to zoom in on that part of the graph, and to\ntransform the data to emphasize differences:\nweeks = range(35, 46)\ndiffs = []\nfor week in weeks:\np1 = first_pmf.Prob(week)\np2 = other_pmf.Prob(week)\ndiff = 100 * (p1 - p2)\ndiffs.append(diff)",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "3",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 35,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 742,
+                "chunking": "paragraph"
+              },
+              "id": "9faf77d4bd6468f627c85636",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.029857397504456328,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 8,
+                "1": 6
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 23,
+              "text": "The NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 3,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 1377,
+                "end_char": 1824,
+                "chunking": "paragraph"
+              },
+              "id": "f40266243aa427f23fa90b4e",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.02976190476190476,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 3,
+                "1": 12
+              }
+            },
+            {
+              "id": "11f52ca93e1d19a06edc1381",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 39,
+              "text": "Now let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 938,
+                "language": "en",
+                "start_char": 625,
+                "printed_page": 19,
+                "extraction_status": "ok"
+              },
+              "score": 0.01639344262295082,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 1
+              }
+            }
+          ],
+          "context": "[62ef79f5baf905618bdfe92a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\nOf course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”\n\n[3f3031b3a4a858624a2ac681 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe code you downloaded includesthinkstats2.py, which is a Python module that contains many classes and functions used in this book, including\nfunctions that read the Stata dictionary and the NSFG data file. Here’s how\nthey are used innsfg.py:\ndef ReadFemPreg(dct_file='2002FemPreg.dct',\ndat_file='2002FemPreg.dat.gz'):\ndct = thinkstats2.ReadStataDct(dct_file)\ndf = dct.ReadFixedWidth(dat_file, compression='gzip')\nCleanFemPreg(df)\nreturn df\nReadStataDcttakes the name of the dictionary file and returnsdct, a\nFixedWidthVariablesobject that contains the information from the dictionary file.dctprovidesReadFixedWidth, which reads the data file.\n\n1.4 DataFrames\n\n[9faf77d4bd6468f627c85636 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 55]\n3.3. Other visualizations 35\n\non the same axes, which is generally a good idea if you intend to compare\ntwo figures.\n\n3.3 Other visualizations\n\nHistograms and PMFs are useful while you are exploring data and trying to\nidentify patterns and relationships. Once you have an idea what is going on,\na good next step is to design a visualization that makes the patterns you\nhave identified as clear as possible.\nIn the NSFG data, the biggest differences in the distributions are near the\nmode. So it makes sense to zoom in on that part of the graph, and to\ntransform the data to emphasize differences:\nweeks = range(35, 46)\ndiffs = []\nfor week in weeks:\np1 = first_pmf.Prob(week)\np2 = other_pmf.Prob(week)\ndiff = 100 * (p1 - p2)\ndiffs.append(diff)\n\n[f40266243aa427f23fa90b4e | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 23]\nThe NSFG has been conducted seven times; each deployment is called a\ncycle. We will use data from Cycle 6, which was conducted from January\n2002 to March 2003.\n\nThe goal of the survey is to draw conclusions about apopulation; the\ntarget population of the NSFG is people in the United States aged 15-44.\nIdeally surveys would collect data from every member of the population,\nbut that’s seldom possible. Instead we collect data from a subset of the\n\n[11f52ca93e1d19a06edc1381 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 39]\nNow let’s get back to the data from the NSFG. The code in this chapter is in\nfirst.py. For information about downloading and working with this code,\nsee Section 0.2.\nWhen you start working with a new dataset, I suggest you explore the variables you are planning to use one at a time, and a good way to start is by",
+          "context_ids": [
+            "62ef79f5baf905618bdfe92a",
+            "3f3031b3a4a858624a2ac681",
+            "9faf77d4bd6468f627c85636",
+            "f40266243aa427f23fa90b4e",
+            "11f52ca93e1d19a06edc1381"
+          ],
+          "elapsed_ms": 15.953699999954551
+        },
+        {
+          "event": "search",
+          "tool": "hybrid",
+          "query": "Python 3.12",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 59,
+              "text": "3.5. DataFrame indexing 39\n3.5 DataFrame indexing",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "3",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 39,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 49,
+                "chunking": "paragraph"
+              },
+              "id": "328bb76367d79e6b875428e2",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.032018442622950824,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 4,
+                "1": 1
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 27,
+              "text": "1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 7,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 900,
+                "chunking": "paragraph"
+              },
+              "id": "1d7f5a186b7ba77a2fe8ef9f",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.031544957774465976,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 1,
+                "1": 6
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 55,
+              "text": "3.3. Other visualizations 35\n\non the same axes, which is generally a good idea if you intend to compare\ntwo figures.\n\n3.3 Other visualizations\n\nHistograms and PMFs are useful while you are exploring data and trying to\nidentify patterns and relationships. Once you have an idea what is going on,\na good next step is to design a visualization that makes the patterns you\nhave identified as clear as possible.\nIn the NSFG data, the biggest differences in the distributions are near the\nmode. So it makes sense to zoom in on that part of the graph, and to\ntransform the data to emphasize differences:\nweeks = range(35, 46)\ndiffs = []\nfor week in weeks:\np1 = first_pmf.Prob(week)\np2 = other_pmf.Prob(week)\ndiff = 100 * (p1 - p2)\ndiffs.append(diff)",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "3",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 35,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 742,
+                "chunking": "paragraph"
+              },
+              "id": "9faf77d4bd6468f627c85636",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.030309988518943745,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 5,
+                "1": 7
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 37,
+              "text": "Chapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "2",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 17,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 846,
+                "chunking": "paragraph"
+              },
+              "id": "8849532a0610912f69f6978d",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.028594771241830064,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 8,
+                "1": 12
+              }
+            },
+            {
+              "id": "84220892cc2f7357d67b6e9a",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 51,
+              "text": "Chapter 3\n\nProbability mass functions\n\nThe code for this chapter is inprobability.py. For information about\ndownloading and working with this code, see Section 0.2.\n\n3.1 Pmfs\n\nAnother way to represent a distribution is aprobability mass function\n(PMF), which maps from each value to its probability. Aprobabilityis a\nfrequency expressed as a fraction of the sample size,n. To get from frequencies to probabilities, we divide through byn, which is callednormalization.\n\nGiven a Hist, we can make a dictionary that maps from each value to its\nprobability:\n\nn = hist.Total()\nd = {}\nfor x, freq in hist.Items():\nd[x] = freq / n\n\nOr we can use the Pmf class provided bythinkstats2. Like Hist, the Pmf\nconstructor can take a list, pandas Series, dictionary, Hist, or another Pmf\nobject. Here’s an example with a simple list:",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "3",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 818,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 31,
+                "extraction_status": "ok"
+              },
+              "score": 0.016129032258064516,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 2
+              }
+            }
+          ],
+          "context": "[328bb76367d79e6b875428e2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 59]\n3.5. DataFrame indexing 39\n3.5 DataFrame indexing\n\n[1d7f5a186b7ba77a2fe8ef9f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n[9faf77d4bd6468f627c85636 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 55]\n3.3. Other visualizations 35\n\non the same axes, which is generally a good idea if you intend to compare\ntwo figures.\n\n3.3 Other visualizations\n\nHistograms and PMFs are useful while you are exploring data and trying to\nidentify patterns and relationships. Once you have an idea what is going on,\na good next step is to design a visualization that makes the patterns you\nhave identified as clear as possible.\nIn the NSFG data, the biggest differences in the distributions are near the\nmode. So it makes sense to zoom in on that part of the graph, and to\ntransform the data to emphasize differences:\nweeks = range(35, 46)\ndiffs = []\nfor week in weeks:\np1 = first_pmf.Prob(week)\np2 = other_pmf.Prob(week)\ndiff = 100 * (p1 - p2)\ndiffs.append(diff)\n\n[8849532a0610912f69f6978d | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 37]\nChapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.\n\n[84220892cc2f7357d67b6e9a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 51]\nChapter 3\n\nProbability mass functions\n\nThe code for this chapter is inprobability.py. For information about\ndownloading and working with this code, see Section 0.2.\n\n3.1 Pmfs\n\nAnother way to represent a distribution is aprobability mass function\n(PMF), which maps from each value to its probability. Aprobabilityis a\nfrequency expressed as a fraction of the sample size,n. To get from frequencies to probabilities, we divide through byn, which is callednormalization.\n\nGiven a Hist, we can make a dictionary that maps from each value to its\nprobability:\n\nn = hist.Total()\nd = {}\nfor x, freq in hist.Items():\nd[x] = freq / n\n\nOr we can use the Pmf class provided bythinkstats2. Like Hist, the Pmf\nconstructor can take a list, pandas Series, dictionary, Hist, or another Pmf\nobject. Here’s an example with a simple list:\n\n[62ef79f5baf905618bdfe92a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\nOf course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”",
+          "context_ids": [
+            "328bb76367d79e6b875428e2",
+            "1d7f5a186b7ba77a2fe8ef9f",
+            "9faf77d4bd6468f627c85636",
+            "8849532a0610912f69f6978d",
+            "84220892cc2f7357d67b6e9a",
+            "62ef79f5baf905618bdfe92a"
+          ],
+          "elapsed_ms": 3581.355500005884
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "abstain": true,
+            "answer": "Tài liệu không cung cấp thông tin về tỷ lệ người trả lời khảo sát NSFG sử dụng Python 3.12.",
+            "citations": []
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 352,
+            "candidatesTokenCount": 21,
+            "totalTokenCount": 373,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 352
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1579,
+            "candidatesTokenCount": 19,
+            "totalTokenCount": 1598,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1579
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1999,
+            "candidatesTokenCount": 48,
+            "totalTokenCount": 2047,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1999
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Không đủ bằng chứng trong tài liệu để trả lời.",
+      "context": "[328bb76367d79e6b875428e2 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 59]\n3.5. DataFrame indexing 39\n3.5 DataFrame indexing\n\n[1d7f5a186b7ba77a2fe8ef9f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n[9faf77d4bd6468f627c85636 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 55]\n3.3. Other visualizations 35\n\non the same axes, which is generally a good idea if you intend to compare\ntwo figures.\n\n3.3 Other visualizations\n\nHistograms and PMFs are useful while you are exploring data and trying to\nidentify patterns and relationships. Once you have an idea what is going on,\na good next step is to design a visualization that makes the patterns you\nhave identified as clear as possible.\nIn the NSFG data, the biggest differences in the distributions are near the\nmode. So it makes sense to zoom in on that part of the graph, and to\ntransform the data to emphasize differences:\nweeks = range(35, 46)\ndiffs = []\nfor week in weeks:\np1 = first_pmf.Prob(week)\np2 = other_pmf.Prob(week)\ndiff = 100 * (p1 - p2)\ndiffs.append(diff)\n\n[8849532a0610912f69f6978d | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 37]\nChapter 2\n\nDistributions\n\n2.1 Histograms\n\nOne of the best ways to describe a variable is to report the values that appear\nin the dataset and how many times each value appears. This description is\ncalled thedistributionof the variable.\n\nThe most common representation of a distribution is ahistogram, which is a\ngraph that shows thefrequencyof each value. In this context, “frequency”\nmeans the number of times the value appears.\n\nIn Python, an efficient way to compute frequencies is with a dictionary. Given\na sequence of values,t:\n\nhist = {}\nfor x in t:\nhist[x] = hist.get(x, 0) + 1\n\nThe result is a dictionary that maps from values to frequencies. Alternatively,\nyou could use theCounterclass defined in thecollectionsmodule:\nfrom collections import Counter\ncounter = Counter(t)\nThe result is aCounterobject, which is a subclass of dictionary.\n\n[84220892cc2f7357d67b6e9a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 51]\nChapter 3\n\nProbability mass functions\n\nThe code for this chapter is inprobability.py. For information about\ndownloading and working with this code, see Section 0.2.\n\n3.1 Pmfs\n\nAnother way to represent a distribution is aprobability mass function\n(PMF), which maps from each value to its probability. Aprobabilityis a\nfrequency expressed as a fraction of the sample size,n. To get from frequencies to probabilities, we divide through byn, which is callednormalization.\n\nGiven a Hist, we can make a dictionary that maps from each value to its\nprobability:\n\nn = hist.Total()\nd = {}\nfor x, freq in hist.Items():\nd[x] = freq / n\n\nOr we can use the Pmf class provided bythinkstats2. Like Hist, the Pmf\nconstructor can take a list, pandas Series, dictionary, Hist, or another Pmf\nobject. Here’s an example with a simple list:\n\n[62ef79f5baf905618bdfe92a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 24]\nOf course, the drawback of oversampling is that it is not as easy to draw\nconclusions about the general population based on statistics from the survey.\nWe will come back to this point later.\n\nWhen working with this kind of data, it is important to be familiar with\nthecodebook, which documents the design of the study, the survey questions, and the encoding of the responses. The codebook and user’s guide for\nthe NSFG data are available fromhttp://www.cdc.gov/nchs/nsfg/nsfg_\ncycle6.htm\n\n1.3 Importing the data\n\nThe code and data used in this book are available fromhttps://github.\ncom/AllenDowney/ThinkStats2. For information about downloading and\nworking with this code, see Section 0.2.\n\nOnce you download the code, you should have a file called\nThinkStats2/code/nsfg.py. If you run it, it should read a data file,\nrun some tests, and print a message like, “All tests passed.”",
+      "context_ids": [
+        "328bb76367d79e6b875428e2",
+        "1d7f5a186b7ba77a2fe8ef9f",
+        "9faf77d4bd6468f627c85636",
+        "8849532a0610912f69f6978d",
+        "84220892cc2f7357d67b6e9a",
+        "62ef79f5baf905618bdfe92a"
+      ],
+      "search_count": 2,
+      "elapsed_ms": 12610.402999998769,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-u01",
+      "split": "dev",
+      "context_hit": null
+    }
+  ]
+}

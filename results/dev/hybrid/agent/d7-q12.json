@@ -1,0 +1,313 @@
+{
+  "question": "CleanFemPreg xử lý birthwgt_lb vượt 20 như thế nào?",
+  "config": "hybrid",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:11.927802+00:00",
+  "status": "answered",
+  "citations": [
+    "378c9ef8a37471ebdc49dd13"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "hybrid",
+      "query": "CleanFemPreg birthwgt_lb 20",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 29,
+          "text": "1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 9,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 296,
+            "chunking": "paragraph"
+          },
+          "id": "378c9ef8a37471ebdc49dd13",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03252247488101534,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 2,
+            "1": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 29,
+          "text": "df['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 9,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 298,
+            "end_char": 1193,
+            "chunking": "paragraph"
+          },
+          "id": "50718039f1ba18056fe56194",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.030886196246139225,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1,
+            "1": 9
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 32,
+          "text": "12 Chapter 1. Exploratory data analysis\n\nThe counts for 6, 7, and 8 pounds check out, and if you add up the counts\nfor 0-5 and 9-95, they check out, too. But if you look more closely, you will\nnotice one value that has to be an error, a 51 pound baby!\n\nTo deal with this error, I added a line toCleanFemPreg:\ndf.loc[df.birthwgt_lb > 20, 'birthwgt_lb'] = np.nan\nThis statement replaces invalid values withnp.nan. The attributelocprovides several ways to select rows and columns from a DataFrame. In this\nexample, the first expression in brackets is the row indexer; the second expression selects the column.\n\nThe expressiondf.birthwgt_lb > 20yields a Series of typebool, where\nTrue indicates that the condition is true. When a boolean Series is used as\nan index, it selects only the elements that satisfy the condition.\n\n1.8 Interpretation",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 12,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 838,
+            "chunking": "paragraph"
+          },
+          "id": "9766333af7f057a687bda0c0",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.030834914611005692,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 8,
+            "1": 2
+          }
+        }
+      ],
+      "context": "[378c9ef8a37471ebdc49dd13 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)",
+      "context_ids": [
+        "378c9ef8a37471ebdc49dd13"
+      ],
+      "elapsed_ms": 28.031299996655434
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "citations": [
+          "378c9ef8a37471ebdc49dd13"
+        ],
+        "abstain": false,
+        "answer": "Trong hàm `CleanFemPreg`, các giá trị NA (97, 98, 99) trong `birthwgt_lb` được thay thế thành `np.nan` [378c9ef8a37471ebdc49dd13]. Tài liệu không đề cập đến việc xử lý các giá trị `birthwgt_lb` vượt quá 20 [378c9ef8a37471ebdc49dd13]."
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 344,
+        "candidatesTokenCount": 24,
+        "totalTokenCount": 368,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 344
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 591,
+        "candidatesTokenCount": 151,
+        "totalTokenCount": 742,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 591
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Trong hàm `CleanFemPreg`, các giá trị NA (97, 98, 99) trong `birthwgt_lb` được thay thế thành `np.nan` [378c9ef8a37471ebdc49dd13]. Tài liệu không đề cập đến việc xử lý các giá trị `birthwgt_lb` vượt quá 20 [378c9ef8a37471ebdc49dd13].",
+  "context": "[378c9ef8a37471ebdc49dd13 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)",
+  "context_ids": [
+    "378c9ef8a37471ebdc49dd13"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 28.39920000405982,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q12",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": false,
+  "reference_elapsed_ms": 4640.613900002791,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "CleanFemPreg xử lý birthwgt_lb vượt 20 như thế nào?",
+      "config": "hybrid",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:32:58.889041+00:00",
+      "status": "answered",
+      "citations": [
+        "378c9ef8a37471ebdc49dd13"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "hybrid",
+          "query": "CleanFemPreg birthwgt_lb 20",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 29,
+              "text": "1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 9,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 296,
+                "chunking": "paragraph"
+              },
+              "id": "378c9ef8a37471ebdc49dd13",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03252247488101534,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 2,
+                "1": 1
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 29,
+              "text": "df['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nagepregcontains the mother’s age at the end of the pregnancy. In the data\nfile,agepregis encoded as an integer number of centiyears. So the first line\ndivides each element ofagepregby 100, yielding a floating-point value in\nyears.\nbirthwgt_lbandbirthwgt_ozcontain the weight of the baby, in pounds\nand ounces, for pregnancies that end in live birth. In addition it uses several\nspecial codes:\n97 NOT ASCERTAINED\n98 REFUSED\n99 DON'T KNOW\nSpecial values encoded as numbers aredangerousbecause if they are not\nhandled properly, they can generate bogus results, like a 99-pound baby.\nThereplacemethod replaces these values withnp.nan, a special floatingpoint value that represents “not a number.”\nAs part of the IEEE floating-point standard, all mathematical operations\nreturnnanif either argument isnan:\n>>> import numpy as np\n>>> np.nan /",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 9,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 298,
+                "end_char": 1193,
+                "chunking": "paragraph"
+              },
+              "id": "50718039f1ba18056fe56194",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.030886196246139225,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 1,
+                "1": 9
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 32,
+              "text": "12 Chapter 1. Exploratory data analysis\n\nThe counts for 6, 7, and 8 pounds check out, and if you add up the counts\nfor 0-5 and 9-95, they check out, too. But if you look more closely, you will\nnotice one value that has to be an error, a 51 pound baby!\n\nTo deal with this error, I added a line toCleanFemPreg:\ndf.loc[df.birthwgt_lb > 20, 'birthwgt_lb'] = np.nan\nThis statement replaces invalid values withnp.nan. The attributelocprovides several ways to select rows and columns from a DataFrame. In this\nexample, the first expression in brackets is the row indexer; the second expression selects the column.\n\nThe expressiondf.birthwgt_lb > 20yields a Series of typebool, where\nTrue indicates that the condition is true. When a boolean Series is used as\nan index, it selects only the elements that satisfy the condition.\n\n1.8 Interpretation",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 12,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 838,
+                "chunking": "paragraph"
+              },
+              "id": "9766333af7f057a687bda0c0",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.030834914611005692,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 8,
+                "1": 2
+              }
+            }
+          ],
+          "context": "[378c9ef8a37471ebdc49dd13 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)",
+          "context_ids": [
+            "378c9ef8a37471ebdc49dd13"
+          ],
+          "elapsed_ms": 22.338700015097857
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "citations": [
+              "378c9ef8a37471ebdc49dd13"
+            ],
+            "abstain": false,
+            "answer": "Trong hàm `CleanFemPreg`, các giá trị NA (97, 98, 99) trong `birthwgt_lb` được thay thế thành `np.nan` [378c9ef8a37471ebdc49dd13]. Tài liệu không đề cập đến việc xử lý các giá trị `birthwgt_lb` vượt quá 20 [378c9ef8a37471ebdc49dd13]."
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 344,
+            "candidatesTokenCount": 24,
+            "totalTokenCount": 368,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 344
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 591,
+            "candidatesTokenCount": 151,
+            "totalTokenCount": 742,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 591
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Trong hàm `CleanFemPreg`, các giá trị NA (97, 98, 99) trong `birthwgt_lb` được thay thế thành `np.nan` [378c9ef8a37471ebdc49dd13]. Tài liệu không đề cập đến việc xử lý các giá trị `birthwgt_lb` vượt quá 20 [378c9ef8a37471ebdc49dd13].",
+      "context": "[378c9ef8a37471ebdc49dd13 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 29]\n1.6. Transformation 9\n\nnsfg.pyincludesCleanFemPreg, a function that cleans the variables I am\nplanning to use.\ndef CleanFemPreg(df):\ndf.agepreg /= 100.0\n\nna_vals = [97, 98, 99]\ndf['birthwgt_lb'] = df.birthwgt_lb.replace(na_vals, np.nan)\ndf['birthwgt_oz'] = df.birthwgt_oz.replace(na_vals, np.nan)",
+      "context_ids": [
+        "378c9ef8a37471ebdc49dd13"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 4640.613900002791,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q12",
+      "split": "dev",
+      "context_hit": false
+    }
+  ]
+}

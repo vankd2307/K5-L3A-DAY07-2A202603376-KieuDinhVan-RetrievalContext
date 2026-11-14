@@ -1,0 +1,293 @@
+{
+  "query_id": "d7-q01",
+  "split": "dev",
+  "config": "hybrid_context",
+  "status": "ok",
+  "query": "Vì sao việc chỉ lấy ý kiến người tham gia thảo luận về con đầu sinh muộn có thể gây selection bias?",
+  "filter": {},
+  "results": [
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 22,
+      "text": "2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "1",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 2,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 0,
+        "end_char": 895,
+        "chunking": "paragraph"
+      },
+      "id": "54f0c801e3aa64b436f8c68f",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.03252247488101534,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 2,
+        "1": 1
+      }
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 62,
+      "text": "As a result, runners were spread out along the course with little relationship\nbetween speed and location. When I joined the race, the runners near me\nwere (pretty much) a random sample of the runners in the race.\n\nSo where does the bias come from? During my time on the course, the chance\nof overtaking a runner, or being overtaken, is proportional to the difference\nin our speeds. I am more likely to catch a slow runner, and more likely to be\ncaught by a fast runner. But runners at the same speed are unlikely to see\neach other.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "3",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 42,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 1579,
+        "end_char": 2111,
+        "chunking": "paragraph"
+      },
+      "id": "004c768971ba76dd4ebdb170",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.03200204813108039,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 3,
+        "1": 2
+      }
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 62,
+      "text": "Exercise 3.4In most foot races, everyone starts at the same time. If you\nare a fast runner, you usually pass a lot of people at the beginning of the\nrace, but after a few miles everyone around you is going at the same speed.\n\nWhen I ran a long-distance (209 miles) relay race for the first time, I noticed\nan odd phenomenon: when I overtook another runner, I was usually much\nfaster, and when another runner overtook me, he was usually much faster.\n\nAt first I thought that the distribution of speeds might be bimodal; that is,\nthere were many slow runners and many fast runners, but few at my speed.\n\nThen I realized that I was the victim of a bias similar to the effect of class\nsize. The race was unusual in two ways: it used a staggered start, so teams\nstarted at different times; also, many teams included runners at different\nlevels of ability.",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "3",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 42,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 727,
+        "end_char": 1577,
+        "chunking": "paragraph"
+      },
+      "id": "1e66e8dc3acff693d400f751",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.031024531024531024,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 6,
+        "1": 3
+      }
+    },
+    {
+      "id": "ef334e7bae7044ad56c05991",
+      "source_id": "thinkstats2-v2.2.1",
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 21,
+      "text": "“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,",
+      "metadata": {
+        "author": "Allen B. Downey",
+        "chapter": "1",
+        "license": "CC-BY-NC-SA-4.0",
+        "version": "2.2.1",
+        "chunking": "paragraph",
+        "end_char": 1141,
+        "language": "en",
+        "start_char": 625,
+        "printed_page": 1,
+        "extraction_status": "ok"
+      },
+      "score": 0.01639344262295082,
+      "method": "hybrid",
+      "component_ranks": {
+        "0": 1
+      }
+    },
+    {
+      "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+      "page": 59,
+      "text": "In Section 1.4 we read a pandas DataFrame and used it to select and modify\ndata columns. Now let’s look at row selection. To start, I create a NumPy\narray of random numbers and use it to initialize a DataFrame:\n>>> import numpy as np\n>>> import pandas\n>>> array = np.random.randn(4, 2)\n>>> df = pandas.DataFrame(array)\n>>> df\n0 1\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nBy default, the rows and columns are numbered starting at zero, but you\ncan provide column names:\n>>> columns = ['A', 'B']\n>>> df = pandas.DataFrame(array, columns=columns)\n>>> df\nA B\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nYou can also provide row names. The set of row names is called theindex;\nthe row names themselves are calledlabels.\n>>> index = ['a', 'b', 'c', 'd']\n>>> df = pandas.DataFrame(array, columns=columns, index=index)\n>>>",
+      "metadata": {
+        "extraction_status": "ok",
+        "chapter": "3",
+        "language": "en",
+        "version": "2.2.1",
+        "printed_page": 39,
+        "license": "CC-BY-NC-SA-4.0",
+        "author": "Allen B. Downey",
+        "start_char": 51,
+        "end_char": 948,
+        "chunking": "paragraph"
+      },
+      "id": "08458cd47e0abe60ec6bbf21",
+      "source_id": "thinkstats2-v2.2.1",
+      "score": 0.015625,
+      "method": "hybrid",
+      "component_ranks": {
+        "1": 4
+      }
+    }
+  ],
+  "context": "[54f0c801e3aa64b436f8c68f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 22]\n2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.\n\n[004c768971ba76dd4ebdb170 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 62]\nAs a result, runners were spread out along the course with little relationship\nbetween speed and location. When I joined the race, the runners near me\nwere (pretty much) a random sample of the runners in the race.\n\nSo where does the bias come from? During my time on the course, the chance\nof overtaking a runner, or being overtaken, is proportional to the difference\nin our speeds. I am more likely to catch a slow runner, and more likely to be\ncaught by a fast runner. But runners at the same speed are unlikely to see\neach other.\n\n[1e66e8dc3acff693d400f751 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 62]\nExercise 3.4In most foot races, everyone starts at the same time. If you\nare a fast runner, you usually pass a lot of people at the beginning of the\nrace, but after a few miles everyone around you is going at the same speed.\n\nWhen I ran a long-distance (209 miles) relay race for the first time, I noticed\nan odd phenomenon: when I overtook another runner, I was usually much\nfaster, and when another runner overtook me, he was usually much faster.\n\nAt first I thought that the distribution of speeds might be bimodal; that is,\nthere were many slow runners and many fast runners, but few at my speed.\n\nThen I realized that I was the victim of a bias similar to the effect of class\nsize. The race was unusual in two ways: it used a staggered start, so teams\nstarted at different times; also, many teams included runners at different\nlevels of ability.\n\n[ef334e7bae7044ad56c05991 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 21]\n“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,\n\n[08458cd47e0abe60ec6bbf21 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 59]\nIn Section 1.4 we read a pandas DataFrame and used it to select and modify\ndata columns. Now let’s look at row selection. To start, I create a NumPy\narray of random numbers and use it to initialize a DataFrame:\n>>> import numpy as np\n>>> import pandas\n>>> array = np.random.randn(4, 2)\n>>> df = pandas.DataFrame(array)\n>>> df\n0 1\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nBy default, the rows and columns are numbered starting at zero, but you\ncan provide column names:\n>>> columns = ['A', 'B']\n>>> df = pandas.DataFrame(array, columns=columns)\n>>> df\nA B\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nYou can also provide row names. The set of row names is called theindex;\nthe row names themselves are calledlabels.\n>>> index = ['a', 'b', 'c', 'd']\n>>> df = pandas.DataFrame(array, columns=columns, index=index)\n>>>",
+  "context_ids": [
+    "54f0c801e3aa64b436f8c68f",
+    "004c768971ba76dd4ebdb170",
+    "1e66e8dc3acff693d400f751",
+    "ef334e7bae7044ad56c05991",
+    "08458cd47e0abe60ec6bbf21"
+  ],
+  "hit1": true,
+  "hit3": true,
+  "context_hit": true,
+  "elapsed_ms": 27.650000003632158,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q01",
+      "split": "dev",
+      "config": "hybrid_context",
+      "status": "ok",
+      "query": "Vì sao việc chỉ lấy ý kiến người tham gia thảo luận về con đầu sinh muộn có thể gây selection bias?",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 22,
+          "text": "2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 2,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 895,
+            "chunking": "paragraph"
+          },
+          "id": "54f0c801e3aa64b436f8c68f",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03252247488101534,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 2,
+            "1": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 62,
+          "text": "As a result, runners were spread out along the course with little relationship\nbetween speed and location. When I joined the race, the runners near me\nwere (pretty much) a random sample of the runners in the race.\n\nSo where does the bias come from? During my time on the course, the chance\nof overtaking a runner, or being overtaken, is proportional to the difference\nin our speeds. I am more likely to catch a slow runner, and more likely to be\ncaught by a fast runner. But runners at the same speed are unlikely to see\neach other.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 42,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 1579,
+            "end_char": 2111,
+            "chunking": "paragraph"
+          },
+          "id": "004c768971ba76dd4ebdb170",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03200204813108039,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 3,
+            "1": 2
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 62,
+          "text": "Exercise 3.4In most foot races, everyone starts at the same time. If you\nare a fast runner, you usually pass a lot of people at the beginning of the\nrace, but after a few miles everyone around you is going at the same speed.\n\nWhen I ran a long-distance (209 miles) relay race for the first time, I noticed\nan odd phenomenon: when I overtook another runner, I was usually much\nfaster, and when another runner overtook me, he was usually much faster.\n\nAt first I thought that the distribution of speeds might be bimodal; that is,\nthere were many slow runners and many fast runners, but few at my speed.\n\nThen I realized that I was the victim of a bias similar to the effect of class\nsize. The race was unusual in two ways: it used a staggered start, so teams\nstarted at different times; also, many teams included runners at different\nlevels of ability.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 42,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 727,
+            "end_char": 1577,
+            "chunking": "paragraph"
+          },
+          "id": "1e66e8dc3acff693d400f751",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.031024531024531024,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 6,
+            "1": 3
+          }
+        },
+        {
+          "id": "ef334e7bae7044ad56c05991",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 21,
+          "text": "“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "1",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1141,
+            "language": "en",
+            "start_char": 625,
+            "printed_page": 1,
+            "extraction_status": "ok"
+          },
+          "score": 0.01639344262295082,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 59,
+          "text": "In Section 1.4 we read a pandas DataFrame and used it to select and modify\ndata columns. Now let’s look at row selection. To start, I create a NumPy\narray of random numbers and use it to initialize a DataFrame:\n>>> import numpy as np\n>>> import pandas\n>>> array = np.random.randn(4, 2)\n>>> df = pandas.DataFrame(array)\n>>> df\n0 1\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nBy default, the rows and columns are numbered starting at zero, but you\ncan provide column names:\n>>> columns = ['A', 'B']\n>>> df = pandas.DataFrame(array, columns=columns)\n>>> df\nA B\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nYou can also provide row names. The set of row names is called theindex;\nthe row names themselves are calledlabels.\n>>> index = ['a', 'b', 'c', 'd']\n>>> df = pandas.DataFrame(array, columns=columns, index=index)\n>>>",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 39,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 51,
+            "end_char": 948,
+            "chunking": "paragraph"
+          },
+          "id": "08458cd47e0abe60ec6bbf21",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.015625,
+          "method": "hybrid",
+          "component_ranks": {
+            "1": 4
+          }
+        }
+      ],
+      "context": "[54f0c801e3aa64b436f8c68f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 22]\n2 Chapter 1. Exploratory data analysis\n\nthere is nothing wrong with anecdotes, so I don’t mean to pick on the people\nI quoted.\nBut we might want evidence that is more persuasive and an answer that is\nmore reliable. By those standards, anecdotal evidence usually fails, because:\n\n•Small number of observations: If pregnancy length is longer for first\nbabies, the difference is probably small compared to natural variation.\nIn that case, we might have to compare a large number of pregnancies\nto be sure that a difference exists.\n\n•Selection bias: People who join a discussion of this question might be\ninterested because their first babies were late. In that case the process\nof selecting data would bias the results.\n\n•Confirmation bias: People who believe the claim might be more likely\nto contribute examples that confirm it. People who doubt the claim\nare more likely to cite counterexamples.\n\n[004c768971ba76dd4ebdb170 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 62]\nAs a result, runners were spread out along the course with little relationship\nbetween speed and location. When I joined the race, the runners near me\nwere (pretty much) a random sample of the runners in the race.\n\nSo where does the bias come from? During my time on the course, the chance\nof overtaking a runner, or being overtaken, is proportional to the difference\nin our speeds. I am more likely to catch a slow runner, and more likely to be\ncaught by a fast runner. But runners at the same speed are unlikely to see\neach other.\n\n[1e66e8dc3acff693d400f751 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 62]\nExercise 3.4In most foot races, everyone starts at the same time. If you\nare a fast runner, you usually pass a lot of people at the beginning of the\nrace, but after a few miles everyone around you is going at the same speed.\n\nWhen I ran a long-distance (209 miles) relay race for the first time, I noticed\nan odd phenomenon: when I overtook another runner, I was usually much\nfaster, and when another runner overtook me, he was usually much faster.\n\nAt first I thought that the distribution of speeds might be bimodal; that is,\nthere were many slow runners and many fast runners, but few at my speed.\n\nThen I realized that I was the victim of a bias similar to the effect of class\nsize. The race was unusual in two ways: it used a staggered start, so teams\nstarted at different times; also, many teams included runners at different\nlevels of ability.\n\n[ef334e7bae7044ad56c05991 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 21]\n“My two friends that have given birth recently to their first ba-\nbies, BOTH went almost 2 weeks overdue before going into labour\nor being induced.”\n“My first one came 2 weeks late and now I think the second one\nis going to come out two weeks early!!”\n“I don’t think that can be true because my sister was my mother’s\nfirst and she was early, as with many of my cousins.”\n\nReports like these are calledanecdotal evidencebecause they are based\non data that is unpublished and usually personal. In casual conversation,\n\n[08458cd47e0abe60ec6bbf21 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 59]\nIn Section 1.4 we read a pandas DataFrame and used it to select and modify\ndata columns. Now let’s look at row selection. To start, I create a NumPy\narray of random numbers and use it to initialize a DataFrame:\n>>> import numpy as np\n>>> import pandas\n>>> array = np.random.randn(4, 2)\n>>> df = pandas.DataFrame(array)\n>>> df\n0 1\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nBy default, the rows and columns are numbered starting at zero, but you\ncan provide column names:\n>>> columns = ['A', 'B']\n>>> df = pandas.DataFrame(array, columns=columns)\n>>> df\nA B\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nYou can also provide row names. The set of row names is called theindex;\nthe row names themselves are calledlabels.\n>>> index = ['a', 'b', 'c', 'd']\n>>> df = pandas.DataFrame(array, columns=columns, index=index)\n>>>",
+      "context_ids": [
+        "54f0c801e3aa64b436f8c68f",
+        "004c768971ba76dd4ebdb170",
+        "1e66e8dc3acff693d400f751",
+        "ef334e7bae7044ad56c05991",
+        "08458cd47e0abe60ec6bbf21"
+      ],
+      "hit1": true,
+      "hit3": true,
+      "context_hit": true,
+      "elapsed_ms": 15.995699999621138
+    }
+  ]
+}

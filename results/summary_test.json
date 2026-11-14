@@ -1,0 +1,58 @@
+[
+  {
+    "config": "baseline",
+    "split": "test",
+    "expected_answerable": 5,
+    "expected_total": 7,
+    "retrieval_completed": 5,
+    "agent_completed": 7,
+    "agent_errors": 0,
+    "hit1_n": 1,
+    "hit3_n": 3,
+    "retrieval_context_n": 2,
+    "agent_context_n": 3,
+    "tool_use_n": 7,
+    "tool_use_N": 7,
+    "search_count_distribution": {
+      "1": 7
+    },
+    "agent_median_ms": 8610.87580001913,
+    "agent_current_median_ms": 8610.87580001913,
+    "retrieval_median_ms": 0.2822000242304057,
+    "successful_generation_requests": 14,
+    "cached_generation_requests": 0,
+    "billing_cost_usd": null,
+    "hit1": 0.2,
+    "hit3": 0.6,
+    "retrieval_context_rate": 0.4,
+    "agent_context_rate": 0.6
+  },
+  {
+    "config": "dense_context",
+    "split": "test",
+    "expected_answerable": 5,
+    "expected_total": 7,
+    "retrieval_completed": 5,
+    "agent_completed": 7,
+    "agent_errors": 0,
+    "hit1_n": 5,
+    "hit3_n": 5,
+    "retrieval_context_n": 5,
+    "agent_context_n": 5,
+    "tool_use_n": 7,
+    "tool_use_N": 7,
+    "search_count_distribution": {
+      "1": 7
+    },
+    "agent_median_ms": 8448.246200016001,
+    "agent_current_median_ms": 8448.246200016001,
+    "retrieval_median_ms": 4098.934200010262,
+    "successful_generation_requests": 14,
+    "cached_generation_requests": 7,
+    "billing_cost_usd": null,
+    "hit1": 1.0,
+    "hit3": 1.0,
+    "retrieval_context_rate": 1.0,
+    "agent_context_rate": 1.0
+  }
+]

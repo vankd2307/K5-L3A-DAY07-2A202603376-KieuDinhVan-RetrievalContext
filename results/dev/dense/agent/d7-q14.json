@@ -1,0 +1,289 @@
+{
+  "question": "Tác giả phân biệt mean và average như thế nào?",
+  "config": "dense",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:11.511864+00:00",
+  "status": "answered",
+  "citations": [
+    "4321b3f26f9d26c0b20e8a04"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "dense",
+      "query": "mean average Think Stats",
+      "filter": {},
+      "results": [
+        {
+          "id": "4321b3f26f9d26c0b20e8a04",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 46,
+          "text": "26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 791,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 26,
+            "extraction_status": "ok"
+          },
+          "score": 0.7461833064337604,
+          "method": "dense"
+        },
+        {
+          "id": "971ea28ecfc7e695419ea19c",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 57,
+          "text": "3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "3",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 777,
+            "language": "en",
+            "start_char": 0,
+            "printed_page": 37,
+            "extraction_status": "ok"
+          },
+          "score": 0.7447795423996735,
+          "method": "dense"
+        },
+        {
+          "id": "7b3b142d5d2b25996d5b4bbb",
+          "source_id": "thinkstats2-v2.2.1",
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 45,
+          "text": "Statistics designed to answer these questions are calledsummary statistics.\nBy far the most common summary statistic is themean, which is meant to\ndescribe the central tendency of the distribution.\nIf you have a sample ofnvalues,x i, the mean, ̄x, is the sum of the values\ndivided by the number of values; in other words\n̄x= 1X xi\nn i\n\nThe words “mean” and “average” are sometimes used interchangeably, but I\nmake this distinction:\n\n•The “mean” of a sample is the summary statistic computed with the\nprevious formula.\n\n•An “average” is one of several summary statistics you might choose to\ndescribe a central tendency.",
+          "metadata": {
+            "author": "Allen B. Downey",
+            "chapter": "2",
+            "license": "CC-BY-NC-SA-4.0",
+            "version": "2.2.1",
+            "chunking": "paragraph",
+            "end_char": 1406,
+            "language": "en",
+            "start_char": 788,
+            "printed_page": 25,
+            "extraction_status": "ok"
+          },
+          "score": 0.741181090999778,
+          "method": "dense"
+        }
+      ],
+      "context": "[4321b3f26f9d26c0b20e8a04 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\n26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+      "context_ids": [
+        "4321b3f26f9d26c0b20e8a04"
+      ],
+      "elapsed_ms": 22.214700002223253
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "abstain": false,
+        "answer": "Trong sách *Think Stats*, tác giả phân biệt khái niệm \"mean\" (số trung bình) và \"average\" (giá trị trung bình/đại diện) qua các ví dụ như sau:\n\n* **Mean (Số trung bình):** Là một phép tính toán học cụ thể (tổng của các giá trị chia cho số lượng giá trị) [4321b3f26f9d26c0b20e8a04]. Ví dụ, khi thu hoạch 6 quả bí ngô có trọng lượng lần lượt là 1, 1, 1, 3, 3 và 591 pound, số trung bình (mean) của mẫu này là 100 pound [4321b3f26f9d26c0b20e8a04].\n* **Average (Giá trị đại diện/trung bình thông thường):** Thường được dùng như một bản tóm tắt hoặc mô tả cho một tập hợp giá trị [4321b3f26f9d26c0b20e8a04]. Tác giả chỉ ra rằng khi các giá trị khá đồng đều (chẳng hạn như những quả táo trong siêu thị có kích thước tương tự nhau), mean là một mô tả tốt và việc nói \"mỗi quả nặng khoảng nửa cân\" là một cách diễn đạt \"average\" hợp lý [4321b3f26f9d26c0b20e8a04]. Tuy nhiên, khi tập hợp dữ liệu có sự chênh lệch lớn (như các loại bí ngô khác nhau trong ví dụ trên), việc nói rằng \"quả bí ngô trung bình (average) trong vườn của tôi nặng 100 pound\" sẽ mang tính đánh lừa, bởi vì trong trường hợp này không có một giá trị \"average\" nào có ý nghĩa hay đại diện cho một quả bí ngô điển hình cả [4321b3f26f9d26c0b20e8a04].",
+        "citations": [
+          "4321b3f26f9d26c0b20e8a04"
+        ]
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 338,
+        "candidatesTokenCount": 17,
+        "totalTokenCount": 355,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 338
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 655,
+        "candidatesTokenCount": 490,
+        "totalTokenCount": 1145,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 655
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Trong sách *Think Stats*, tác giả phân biệt khái niệm \"mean\" (số trung bình) và \"average\" (giá trị trung bình/đại diện) qua các ví dụ như sau:\n\n* **Mean (Số trung bình):** Là một phép tính toán học cụ thể (tổng của các giá trị chia cho số lượng giá trị) [4321b3f26f9d26c0b20e8a04]. Ví dụ, khi thu hoạch 6 quả bí ngô có trọng lượng lần lượt là 1, 1, 1, 3, 3 và 591 pound, số trung bình (mean) của mẫu này là 100 pound [4321b3f26f9d26c0b20e8a04].\n* **Average (Giá trị đại diện/trung bình thông thường):** Thường được dùng như một bản tóm tắt hoặc mô tả cho một tập hợp giá trị [4321b3f26f9d26c0b20e8a04]. Tác giả chỉ ra rằng khi các giá trị khá đồng đều (chẳng hạn như những quả táo trong siêu thị có kích thước tương tự nhau), mean là một mô tả tốt và việc nói \"mỗi quả nặng khoảng nửa cân\" là một cách diễn đạt \"average\" hợp lý [4321b3f26f9d26c0b20e8a04]. Tuy nhiên, khi tập hợp dữ liệu có sự chênh lệch lớn (như các loại bí ngô khác nhau trong ví dụ trên), việc nói rằng \"quả bí ngô trung bình (average) trong vườn của tôi nặng 100 pound\" sẽ mang tính đánh lừa, bởi vì trong trường hợp này không có một giá trị \"average\" nào có ý nghĩa hay đại diện cho một quả bí ngô điển hình cả [4321b3f26f9d26c0b20e8a04].",
+  "context": "[4321b3f26f9d26c0b20e8a04 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\n26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+  "context_ids": [
+    "4321b3f26f9d26c0b20e8a04"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 22.545000014360994,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q14",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": false,
+  "reference_elapsed_ms": 10183.702000009362,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Tác giả phân biệt mean và average như thế nào?",
+      "config": "dense",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:32:20.891867+00:00",
+      "status": "answered",
+      "citations": [
+        "4321b3f26f9d26c0b20e8a04"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "dense",
+          "query": "mean average Think Stats",
+          "filter": {},
+          "results": [
+            {
+              "id": "4321b3f26f9d26c0b20e8a04",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 46,
+              "text": "26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 791,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 26,
+                "extraction_status": "ok"
+              },
+              "score": 0.7461833064337604,
+              "method": "dense"
+            },
+            {
+              "id": "971ea28ecfc7e695419ea19c",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 57,
+              "text": "3.4. The class size paradox 37\n\nIf you ask the Dean for the average class size, he would construct a PMF,\ncompute the mean, and report that the average class size is 23.7. Here’s the\ncode:\nd = { 7: 8, 12: 8, 17: 14, 22: 4,\n27: 6, 32: 12, 37: 8, 42: 3, 47: 2 }\n\npmf = thinkstats2.Pmf(d, label='actual')\nprint('mean', pmf.Mean())\nBut if you survey a group of students, ask them how many students are in\ntheir classes, and compute the mean, you would think the average class was\nbigger. Let’s see how much bigger.\nFirst, I compute the distribution as observed by students, where the probability associated with each class size is “biased” by the number of students\nin the class.\ndef BiasPmf(pmf, label):\nnew_pmf = pmf.Copy(label=label)\n\nfor x, p in pmf.Items():\nnew_pmf.Mult(x, x)",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "3",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 777,
+                "language": "en",
+                "start_char": 0,
+                "printed_page": 37,
+                "extraction_status": "ok"
+              },
+              "score": 0.7447795423996735,
+              "method": "dense"
+            },
+            {
+              "id": "7b3b142d5d2b25996d5b4bbb",
+              "source_id": "thinkstats2-v2.2.1",
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 45,
+              "text": "Statistics designed to answer these questions are calledsummary statistics.\nBy far the most common summary statistic is themean, which is meant to\ndescribe the central tendency of the distribution.\nIf you have a sample ofnvalues,x i, the mean, ̄x, is the sum of the values\ndivided by the number of values; in other words\n̄x= 1X xi\nn i\n\nThe words “mean” and “average” are sometimes used interchangeably, but I\nmake this distinction:\n\n•The “mean” of a sample is the summary statistic computed with the\nprevious formula.\n\n•An “average” is one of several summary statistics you might choose to\ndescribe a central tendency.",
+              "metadata": {
+                "author": "Allen B. Downey",
+                "chapter": "2",
+                "license": "CC-BY-NC-SA-4.0",
+                "version": "2.2.1",
+                "chunking": "paragraph",
+                "end_char": 1406,
+                "language": "en",
+                "start_char": 788,
+                "printed_page": 25,
+                "extraction_status": "ok"
+              },
+              "score": 0.741181090999778,
+              "method": "dense"
+            }
+          ],
+          "context": "[4321b3f26f9d26c0b20e8a04 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\n26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+          "context_ids": [
+            "4321b3f26f9d26c0b20e8a04"
+          ],
+          "elapsed_ms": 3528.7788999849
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "abstain": false,
+            "answer": "Trong sách *Think Stats*, tác giả phân biệt khái niệm \"mean\" (số trung bình) và \"average\" (giá trị trung bình/đại diện) qua các ví dụ như sau:\n\n* **Mean (Số trung bình):** Là một phép tính toán học cụ thể (tổng của các giá trị chia cho số lượng giá trị) [4321b3f26f9d26c0b20e8a04]. Ví dụ, khi thu hoạch 6 quả bí ngô có trọng lượng lần lượt là 1, 1, 1, 3, 3 và 591 pound, số trung bình (mean) của mẫu này là 100 pound [4321b3f26f9d26c0b20e8a04].\n* **Average (Giá trị đại diện/trung bình thông thường):** Thường được dùng như một bản tóm tắt hoặc mô tả cho một tập hợp giá trị [4321b3f26f9d26c0b20e8a04]. Tác giả chỉ ra rằng khi các giá trị khá đồng đều (chẳng hạn như những quả táo trong siêu thị có kích thước tương tự nhau), mean là một mô tả tốt và việc nói \"mỗi quả nặng khoảng nửa cân\" là một cách diễn đạt \"average\" hợp lý [4321b3f26f9d26c0b20e8a04]. Tuy nhiên, khi tập hợp dữ liệu có sự chênh lệch lớn (như các loại bí ngô khác nhau trong ví dụ trên), việc nói rằng \"quả bí ngô trung bình (average) trong vườn của tôi nặng 100 pound\" sẽ mang tính đánh lừa, bởi vì trong trường hợp này không có một giá trị \"average\" nào có ý nghĩa hay đại diện cho một quả bí ngô điển hình cả [4321b3f26f9d26c0b20e8a04].",
+            "citations": [
+              "4321b3f26f9d26c0b20e8a04"
+            ]
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 338,
+            "candidatesTokenCount": 17,
+            "totalTokenCount": 355,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 338
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 655,
+            "candidatesTokenCount": 490,
+            "totalTokenCount": 1145,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 655
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Trong sách *Think Stats*, tác giả phân biệt khái niệm \"mean\" (số trung bình) và \"average\" (giá trị trung bình/đại diện) qua các ví dụ như sau:\n\n* **Mean (Số trung bình):** Là một phép tính toán học cụ thể (tổng của các giá trị chia cho số lượng giá trị) [4321b3f26f9d26c0b20e8a04]. Ví dụ, khi thu hoạch 6 quả bí ngô có trọng lượng lần lượt là 1, 1, 1, 3, 3 và 591 pound, số trung bình (mean) của mẫu này là 100 pound [4321b3f26f9d26c0b20e8a04].\n* **Average (Giá trị đại diện/trung bình thông thường):** Thường được dùng như một bản tóm tắt hoặc mô tả cho một tập hợp giá trị [4321b3f26f9d26c0b20e8a04]. Tác giả chỉ ra rằng khi các giá trị khá đồng đều (chẳng hạn như những quả táo trong siêu thị có kích thước tương tự nhau), mean là một mô tả tốt và việc nói \"mỗi quả nặng khoảng nửa cân\" là một cách diễn đạt \"average\" hợp lý [4321b3f26f9d26c0b20e8a04]. Tuy nhiên, khi tập hợp dữ liệu có sự chênh lệch lớn (như các loại bí ngô khác nhau trong ví dụ trên), việc nói rằng \"quả bí ngô trung bình (average) trong vườn của tôi nặng 100 pound\" sẽ mang tính đánh lừa, bởi vì trong trường hợp này không có một giá trị \"average\" nào có ý nghĩa hay đại diện cho một quả bí ngô điển hình cả [4321b3f26f9d26c0b20e8a04].",
+      "context": "[4321b3f26f9d26c0b20e8a04 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 46]\n26 Chapter 2. Distributions\n\nSometimes the mean is a good description of a set of values. For example,\napples are all pretty much the same size (at least the ones sold in supermarkets). So if I buy 6 apples and the total weight is 3 pounds, it would be a\nreasonable summary to say they are about a half pound each.\nBut pumpkins are more diverse. Suppose I grow several varieties in my garden, and one day I harvest three decorative pumpkins that are 1 pound each,\ntwo pie pumpkins that are 3 pounds each, and one Atlantic Giant®pumpkin that weighs 591 pounds. The mean of this sample is 100 pounds, but if I\ntold you “The average pumpkin in my garden is 100 pounds,” that would be\nmisleading. In this example, there is no meaningful average because there is\nno typical pumpkin.\n\n2.8 Variance",
+      "context_ids": [
+        "4321b3f26f9d26c0b20e8a04"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 10183.702000009362,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q14",
+      "split": "dev",
+      "context_hit": false
+    }
+  ]
+}

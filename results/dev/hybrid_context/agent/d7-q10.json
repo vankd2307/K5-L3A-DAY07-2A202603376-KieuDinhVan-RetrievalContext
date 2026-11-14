@@ -1,0 +1,429 @@
+{
+  "question": "Khi thêm cột vào DataFrame, vì sao không nên gán bằng dot notation?",
+  "config": "hybrid_context",
+  "model": "gemini-3.5-flash-lite",
+  "started_at": "2026-11-14T07:41:12.982356+00:00",
+  "status": "answered",
+  "citations": [
+    "798698989f39c80a59059a9a"
+  ],
+  "events": [
+    {
+      "event": "search",
+      "tool": "hybrid",
+      "query": "DataFrame dot notation assign column Think Stats",
+      "filter": {},
+      "results": [
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 30,
+          "text": "10 Chapter 1. Exploratory data analysis\n\nOne important note: when you add a new column to a DataFrame, you must\nuse dictionary syntax, like this\n# CORRECT\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nNot dot notation, like this:\n# WRONG!\ndf.totalwgt_lb = df.birthwgt_lb + df.birthwgt_oz / 16.0\nThe version with dot notation adds an attribute to the DataFrame object,\nbut that attribute is not treated as a new column.\n\n1.7 Validation\n\nWhen data is exported from one software environment and imported into\nanother, errors might be introduced. And when you are getting familiar\nwith a new dataset, you might interpret data incorrectly or introduce other\nmisunderstandings. If you take time to validate the data, you can save time\nlater and avoid errors.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 10,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 765,
+            "chunking": "paragraph"
+          },
+          "id": "798698989f39c80a59059a9a",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03278688524590164,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 1,
+            "1": 1
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 27,
+          "text": "1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 7,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 0,
+            "end_char": 900,
+            "chunking": "paragraph"
+          },
+          "id": "1d7f5a186b7ba77a2fe8ef9f",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03200204813108039,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 2,
+            "1": 3
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 63,
+          "text": "•index: In a pandas DataFrame, the index is a special column that\ncontains the row labels.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 43,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 886,
+            "end_char": 976,
+            "chunking": "paragraph"
+          },
+          "id": "dc73365f0c9090fbbf22b333",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.030621785881252923,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 9,
+            "1": 2
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 25,
+          "text": "The result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "1",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 5,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 1345,
+            "end_char": 1637,
+            "chunking": "paragraph"
+          },
+          "id": "de378d91be893b62e4be3810",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.03055037313432836,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 7,
+            "1": 4
+          }
+        },
+        {
+          "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+          "page": 59,
+          "text": "In Section 1.4 we read a pandas DataFrame and used it to select and modify\ndata columns. Now let’s look at row selection. To start, I create a NumPy\narray of random numbers and use it to initialize a DataFrame:\n>>> import numpy as np\n>>> import pandas\n>>> array = np.random.randn(4, 2)\n>>> df = pandas.DataFrame(array)\n>>> df\n0 1\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nBy default, the rows and columns are numbered starting at zero, but you\ncan provide column names:\n>>> columns = ['A', 'B']\n>>> df = pandas.DataFrame(array, columns=columns)\n>>> df\nA B\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nYou can also provide row names. The set of row names is called theindex;\nthe row names themselves are calledlabels.\n>>> index = ['a', 'b', 'c', 'd']\n>>> df = pandas.DataFrame(array, columns=columns, index=index)\n>>>",
+          "metadata": {
+            "extraction_status": "ok",
+            "chapter": "3",
+            "language": "en",
+            "version": "2.2.1",
+            "printed_page": 39,
+            "license": "CC-BY-NC-SA-4.0",
+            "author": "Allen B. Downey",
+            "start_char": 51,
+            "end_char": 948,
+            "chunking": "paragraph"
+          },
+          "id": "08458cd47e0abe60ec6bbf21",
+          "source_id": "thinkstats2-v2.2.1",
+          "score": 0.029857397504456328,
+          "method": "hybrid",
+          "component_ranks": {
+            "0": 6,
+            "1": 8
+          }
+        }
+      ],
+      "context": "[798698989f39c80a59059a9a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\n10 Chapter 1. Exploratory data analysis\n\nOne important note: when you add a new column to a DataFrame, you must\nuse dictionary syntax, like this\n# CORRECT\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nNot dot notation, like this:\n# WRONG!\ndf.totalwgt_lb = df.birthwgt_lb + df.birthwgt_oz / 16.0\nThe version with dot notation adds an attribute to the DataFrame object,\nbut that attribute is not treated as a new column.\n\n1.7 Validation\n\nWhen data is exported from one software environment and imported into\nanother, errors might be introduced. And when you are getting familiar\nwith a new dataset, you might interpret data incorrectly or introduce other\nmisunderstandings. If you take time to validate the data, you can save time\nlater and avoid errors.\n\n[1d7f5a186b7ba77a2fe8ef9f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n[dc73365f0c9090fbbf22b333 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 63]\n•index: In a pandas DataFrame, the index is a special column that\ncontains the row labels.\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.\n\n[08458cd47e0abe60ec6bbf21 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 59]\nIn Section 1.4 we read a pandas DataFrame and used it to select and modify\ndata columns. Now let’s look at row selection. To start, I create a NumPy\narray of random numbers and use it to initialize a DataFrame:\n>>> import numpy as np\n>>> import pandas\n>>> array = np.random.randn(4, 2)\n>>> df = pandas.DataFrame(array)\n>>> df\n0 1\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nBy default, the rows and columns are numbered starting at zero, but you\ncan provide column names:\n>>> columns = ['A', 'B']\n>>> df = pandas.DataFrame(array, columns=columns)\n>>> df\nA B\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nYou can also provide row names. The set of row names is called theindex;\nthe row names themselves are calledlabels.\n>>> index = ['a', 'b', 'c', 'd']\n>>> df = pandas.DataFrame(array, columns=columns, index=index)\n>>>",
+      "context_ids": [
+        "798698989f39c80a59059a9a",
+        "1d7f5a186b7ba77a2fe8ef9f",
+        "dc73365f0c9090fbbf22b333",
+        "de378d91be893b62e4be3810",
+        "08458cd47e0abe60ec6bbf21"
+      ],
+      "elapsed_ms": 17.98390000476502
+    },
+    {
+      "event": "finish",
+      "arguments": {
+        "answer": "Khi thêm một cột mới vào DataFrame, bạn không nên sử dụng cú pháp dấu chấm (dot notation) vì nó chỉ thêm một thuộc tính (attribute) vào đối tượng DataFrame chứ không xem thuộc tính đó là một cột mới [798698989f39c80a59059a9a]. Thay vào đó, bạn phải sử dụng cú pháp từ điển (dictionary syntax, ví dụ: `df['totalwgt_lb'] = ...`) [798698989f39c80a59059a9a].",
+        "citations": [
+          "798698989f39c80a59059a9a"
+        ],
+        "abstain": false
+      }
+    }
+  ],
+  "requests": [
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 342,
+        "candidatesTokenCount": 20,
+        "totalTokenCount": 362,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 342
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    },
+    {
+      "cached": true,
+      "usage": {
+        "promptTokenCount": 1709,
+        "candidatesTokenCount": 175,
+        "totalTokenCount": 1884,
+        "promptTokensDetails": [
+          {
+            "modality": "TEXT",
+            "tokenCount": 1709
+          }
+        ],
+        "serviceTier": "standard"
+      }
+    }
+  ],
+  "answer": "Khi thêm một cột mới vào DataFrame, bạn không nên sử dụng cú pháp dấu chấm (dot notation) vì nó chỉ thêm một thuộc tính (attribute) vào đối tượng DataFrame chứ không xem thuộc tính đó là một cột mới [798698989f39c80a59059a9a]. Thay vào đó, bạn phải sử dụng cú pháp từ điển (dictionary syntax, ví dụ: `df['totalwgt_lb'] = ...`) [798698989f39c80a59059a9a].",
+  "context": "[798698989f39c80a59059a9a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\n10 Chapter 1. Exploratory data analysis\n\nOne important note: when you add a new column to a DataFrame, you must\nuse dictionary syntax, like this\n# CORRECT\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nNot dot notation, like this:\n# WRONG!\ndf.totalwgt_lb = df.birthwgt_lb + df.birthwgt_oz / 16.0\nThe version with dot notation adds an attribute to the DataFrame object,\nbut that attribute is not treated as a new column.\n\n1.7 Validation\n\nWhen data is exported from one software environment and imported into\nanother, errors might be introduced. And when you are getting familiar\nwith a new dataset, you might interpret data incorrectly or introduce other\nmisunderstandings. If you take time to validate the data, you can save time\nlater and avoid errors.\n\n[1d7f5a186b7ba77a2fe8ef9f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n[dc73365f0c9090fbbf22b333 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 63]\n•index: In a pandas DataFrame, the index is a special column that\ncontains the row labels.\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.\n\n[08458cd47e0abe60ec6bbf21 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 59]\nIn Section 1.4 we read a pandas DataFrame and used it to select and modify\ndata columns. Now let’s look at row selection. To start, I create a NumPy\narray of random numbers and use it to initialize a DataFrame:\n>>> import numpy as np\n>>> import pandas\n>>> array = np.random.randn(4, 2)\n>>> df = pandas.DataFrame(array)\n>>> df\n0 1\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nBy default, the rows and columns are numbered starting at zero, but you\ncan provide column names:\n>>> columns = ['A', 'B']\n>>> df = pandas.DataFrame(array, columns=columns)\n>>> df\nA B\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nYou can also provide row names. The set of row names is called theindex;\nthe row names themselves are calledlabels.\n>>> index = ['a', 'b', 'c', 'd']\n>>> df = pandas.DataFrame(array, columns=columns, index=index)\n>>>",
+  "context_ids": [
+    "798698989f39c80a59059a9a",
+    "1d7f5a186b7ba77a2fe8ef9f",
+    "dc73365f0c9090fbbf22b333",
+    "de378d91be893b62e4be3810",
+    "08458cd47e0abe60ec6bbf21"
+  ],
+  "search_count": 1,
+  "elapsed_ms": 18.26789998449385,
+  "billing_cost_usd": null,
+  "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+  "query_id": "d7-q10",
+  "split": "dev",
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "context_hit": true,
+  "reference_elapsed_ms": 3879.8919999971986,
+  "reference_elapsed_note": "Timing from earlier real/cached mixed execution; current elapsed_ms measures cache replay.",
+  "previous_attempts": [
+    {
+      "question": "Khi thêm cột vào DataFrame, vì sao không nên gán bằng dot notation?",
+      "config": "hybrid_context",
+      "model": "gemini-3.5-flash-lite",
+      "started_at": "2026-11-14T07:35:52.049301+00:00",
+      "status": "answered",
+      "citations": [
+        "798698989f39c80a59059a9a"
+      ],
+      "events": [
+        {
+          "event": "search",
+          "tool": "hybrid",
+          "query": "DataFrame dot notation assign column Think Stats",
+          "filter": {},
+          "results": [
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 30,
+              "text": "10 Chapter 1. Exploratory data analysis\n\nOne important note: when you add a new column to a DataFrame, you must\nuse dictionary syntax, like this\n# CORRECT\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nNot dot notation, like this:\n# WRONG!\ndf.totalwgt_lb = df.birthwgt_lb + df.birthwgt_oz / 16.0\nThe version with dot notation adds an attribute to the DataFrame object,\nbut that attribute is not treated as a new column.\n\n1.7 Validation\n\nWhen data is exported from one software environment and imported into\nanother, errors might be introduced. And when you are getting familiar\nwith a new dataset, you might interpret data incorrectly or introduce other\nmisunderstandings. If you take time to validate the data, you can save time\nlater and avoid errors.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 10,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 765,
+                "chunking": "paragraph"
+              },
+              "id": "798698989f39c80a59059a9a",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03278688524590164,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 1,
+                "1": 1
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 27,
+              "text": "1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 7,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 0,
+                "end_char": 900,
+                "chunking": "paragraph"
+              },
+              "id": "1d7f5a186b7ba77a2fe8ef9f",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03200204813108039,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 2,
+                "1": 3
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 63,
+              "text": "•index: In a pandas DataFrame, the index is a special column that\ncontains the row labels.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "3",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 43,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 886,
+                "end_char": 976,
+                "chunking": "paragraph"
+              },
+              "id": "dc73365f0c9090fbbf22b333",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.030621785881252923,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 9,
+                "1": 2
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 25,
+              "text": "The result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "1",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 5,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 1345,
+                "end_char": 1637,
+                "chunking": "paragraph"
+              },
+              "id": "de378d91be893b62e4be3810",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.03055037313432836,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 7,
+                "1": 4
+              }
+            },
+            {
+              "source": "https://greenteapress.com/thinkstats2/thinkstats2.pdf",
+              "page": 59,
+              "text": "In Section 1.4 we read a pandas DataFrame and used it to select and modify\ndata columns. Now let’s look at row selection. To start, I create a NumPy\narray of random numbers and use it to initialize a DataFrame:\n>>> import numpy as np\n>>> import pandas\n>>> array = np.random.randn(4, 2)\n>>> df = pandas.DataFrame(array)\n>>> df\n0 1\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nBy default, the rows and columns are numbered starting at zero, but you\ncan provide column names:\n>>> columns = ['A', 'B']\n>>> df = pandas.DataFrame(array, columns=columns)\n>>> df\nA B\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nYou can also provide row names. The set of row names is called theindex;\nthe row names themselves are calledlabels.\n>>> index = ['a', 'b', 'c', 'd']\n>>> df = pandas.DataFrame(array, columns=columns, index=index)\n>>>",
+              "metadata": {
+                "extraction_status": "ok",
+                "chapter": "3",
+                "language": "en",
+                "version": "2.2.1",
+                "printed_page": 39,
+                "license": "CC-BY-NC-SA-4.0",
+                "author": "Allen B. Downey",
+                "start_char": 51,
+                "end_char": 948,
+                "chunking": "paragraph"
+              },
+              "id": "08458cd47e0abe60ec6bbf21",
+              "source_id": "thinkstats2-v2.2.1",
+              "score": 0.029857397504456328,
+              "method": "hybrid",
+              "component_ranks": {
+                "0": 6,
+                "1": 8
+              }
+            }
+          ],
+          "context": "[798698989f39c80a59059a9a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\n10 Chapter 1. Exploratory data analysis\n\nOne important note: when you add a new column to a DataFrame, you must\nuse dictionary syntax, like this\n# CORRECT\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nNot dot notation, like this:\n# WRONG!\ndf.totalwgt_lb = df.birthwgt_lb + df.birthwgt_oz / 16.0\nThe version with dot notation adds an attribute to the DataFrame object,\nbut that attribute is not treated as a new column.\n\n1.7 Validation\n\nWhen data is exported from one software environment and imported into\nanother, errors might be introduced. And when you are getting familiar\nwith a new dataset, you might interpret data incorrectly or introduce other\nmisunderstandings. If you take time to validate the data, you can save time\nlater and avoid errors.\n\n[1d7f5a186b7ba77a2fe8ef9f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n[dc73365f0c9090fbbf22b333 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 63]\n•index: In a pandas DataFrame, the index is a special column that\ncontains the row labels.\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.\n\n[08458cd47e0abe60ec6bbf21 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 59]\nIn Section 1.4 we read a pandas DataFrame and used it to select and modify\ndata columns. Now let’s look at row selection. To start, I create a NumPy\narray of random numbers and use it to initialize a DataFrame:\n>>> import numpy as np\n>>> import pandas\n>>> array = np.random.randn(4, 2)\n>>> df = pandas.DataFrame(array)\n>>> df\n0 1\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nBy default, the rows and columns are numbered starting at zero, but you\ncan provide column names:\n>>> columns = ['A', 'B']\n>>> df = pandas.DataFrame(array, columns=columns)\n>>> df\nA B\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nYou can also provide row names. The set of row names is called theindex;\nthe row names themselves are calledlabels.\n>>> index = ['a', 'b', 'c', 'd']\n>>> df = pandas.DataFrame(array, columns=columns, index=index)\n>>>",
+          "context_ids": [
+            "798698989f39c80a59059a9a",
+            "1d7f5a186b7ba77a2fe8ef9f",
+            "dc73365f0c9090fbbf22b333",
+            "de378d91be893b62e4be3810",
+            "08458cd47e0abe60ec6bbf21"
+          ],
+          "elapsed_ms": 32.8105999797117
+        },
+        {
+          "event": "finish",
+          "arguments": {
+            "answer": "Khi thêm một cột mới vào DataFrame, bạn không nên sử dụng cú pháp dấu chấm (dot notation) vì nó chỉ thêm một thuộc tính (attribute) vào đối tượng DataFrame chứ không xem thuộc tính đó là một cột mới [798698989f39c80a59059a9a]. Thay vào đó, bạn phải sử dụng cú pháp từ điển (dictionary syntax, ví dụ: `df['totalwgt_lb'] = ...`) [798698989f39c80a59059a9a].",
+            "citations": [
+              "798698989f39c80a59059a9a"
+            ],
+            "abstain": false
+          }
+        }
+      ],
+      "requests": [
+        {
+          "cached": true,
+          "usage": {
+            "promptTokenCount": 342,
+            "candidatesTokenCount": 20,
+            "totalTokenCount": 362,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 342
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        },
+        {
+          "cached": false,
+          "usage": {
+            "promptTokenCount": 1709,
+            "candidatesTokenCount": 175,
+            "totalTokenCount": 1884,
+            "promptTokensDetails": [
+              {
+                "modality": "TEXT",
+                "tokenCount": 1709
+              }
+            ],
+            "serviceTier": "standard"
+          }
+        }
+      ],
+      "answer": "Khi thêm một cột mới vào DataFrame, bạn không nên sử dụng cú pháp dấu chấm (dot notation) vì nó chỉ thêm một thuộc tính (attribute) vào đối tượng DataFrame chứ không xem thuộc tính đó là một cột mới [798698989f39c80a59059a9a]. Thay vào đó, bạn phải sử dụng cú pháp từ điển (dictionary syntax, ví dụ: `df['totalwgt_lb'] = ...`) [798698989f39c80a59059a9a].",
+      "context": "[798698989f39c80a59059a9a | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 30]\n10 Chapter 1. Exploratory data analysis\n\nOne important note: when you add a new column to a DataFrame, you must\nuse dictionary syntax, like this\n# CORRECT\ndf['totalwgt_lb'] = df.birthwgt_lb + df.birthwgt_oz / 16.0\nNot dot notation, like this:\n# WRONG!\ndf.totalwgt_lb = df.birthwgt_lb + df.birthwgt_oz / 16.0\nThe version with dot notation adds an attribute to the DataFrame object,\nbut that attribute is not treated as a new column.\n\n1.7 Validation\n\nWhen data is exported from one software environment and imported into\nanother, errors might be introduced. And when you are getting familiar\nwith a new dataset, you might interpret data incorrectly or introduce other\nmisunderstandings. If you take time to validate the data, you can save time\nlater and avoid errors.\n\n[1d7f5a186b7ba77a2fe8ef9f | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 27]\n1.5. Variables 7\n\n...\n13590 3\n13591 4\n13592 5\nName: pregordr, Length: 13593, dtype: int64\nIn this example the indices are integers from 0 to 13592, but in general they\ncan be any sortable type. The elements are also integers, but they can be\nany type.\nThe last line includes the variable name, Series length, and data type;int64\nis one of the types provided by NumPy. If you run this example on a 32-bit\nmachine you might seeint32.\nYou can access the elements of a Series using integer indices and slices:\n>>> pregordr[0]\n1\n>>> pregordr[2:5]\n2 1\n3 2\n4 3\nName: pregordr, dtype: int64\nThe result of the index operator is anint64; the result of the slice is another\nSeries.\n\nYou can also access the columns of a DataFrame using dot notation:\n>>> pregordr = df.pregordr\nThis notation only works if the column name is a valid Python identifier, so\nit has to begin with a letter, can’t contain spaces, etc.\n\n[dc73365f0c9090fbbf22b333 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 63]\n•index: In a pandas DataFrame, the index is a special column that\ncontains the row labels.\n\n[de378d91be893b62e4be3810 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 25]\nThe result ofReadFixedWidthis a DataFrame, which is the fundamental data\nstructure provided by pandas, which is a Python data and statistics package\nwe’ll use throughout this book. A DataFrame contains a row for each record,\nin this case one row per pregnancy, and a column for each variable.\n\n[08458cd47e0abe60ec6bbf21 | https://greenteapress.com/thinkstats2/thinkstats2.pdf | PDF page 59]\nIn Section 1.4 we read a pandas DataFrame and used it to select and modify\ndata columns. Now let’s look at row selection. To start, I create a NumPy\narray of random numbers and use it to initialize a DataFrame:\n>>> import numpy as np\n>>> import pandas\n>>> array = np.random.randn(4, 2)\n>>> df = pandas.DataFrame(array)\n>>> df\n0 1\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nBy default, the rows and columns are numbered starting at zero, but you\ncan provide column names:\n>>> columns = ['A', 'B']\n>>> df = pandas.DataFrame(array, columns=columns)\n>>> df\nA B\n0 -0.143510 0.616050\n1 -1.489647 0.300774\n2 -0.074350 0.039621\n3 -1.369968 0.545897\nYou can also provide row names. The set of row names is called theindex;\nthe row names themselves are calledlabels.\n>>> index = ['a', 'b', 'c', 'd']\n>>> df = pandas.DataFrame(array, columns=columns, index=index)\n>>>",
+      "context_ids": [
+        "798698989f39c80a59059a9a",
+        "1d7f5a186b7ba77a2fe8ef9f",
+        "dc73365f0c9090fbbf22b333",
+        "de378d91be893b62e4be3810",
+        "08458cd47e0abe60ec6bbf21"
+      ],
+      "search_count": 1,
+      "elapsed_ms": 3879.8919999971986,
+      "billing_cost_usd": null,
+      "cost_note": "Free Tier confirmed by user; no billing invoice available; cached calls make no new requests.",
+      "query_id": "d7-q10",
+      "split": "dev",
+      "context_hit": true
+    }
+  ]
+}

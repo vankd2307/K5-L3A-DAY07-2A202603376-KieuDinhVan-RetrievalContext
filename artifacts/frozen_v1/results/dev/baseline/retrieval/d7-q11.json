@@ -1,0 +1,33 @@
+{
+  "query_id": "d7-q11",
+  "split": "dev",
+  "config": "baseline",
+  "status": "ok",
+  "query": "Một cách kiểm chứng dữ liệu sau khi chuyển giữa hai môi trường phần mềm là gì?",
+  "filter": {},
+  "results": [],
+  "context": "",
+  "context_ids": [],
+  "hit1": false,
+  "hit3": false,
+  "context_hit": false,
+  "elapsed_ms": 0.15010000788606703,
+  "execution_hash": "6da8a19311dae3036fbabc3ae1da67e52a9e2efbaaa768e198d92067edb4f4e4",
+  "previous_attempts": [
+    {
+      "query_id": "d7-q11",
+      "split": "dev",
+      "config": "baseline",
+      "status": "ok",
+      "query": "Một cách kiểm chứng dữ liệu sau khi chuyển giữa hai môi trường phần mềm là gì?",
+      "filter": {},
+      "results": [],
+      "context": "",
+      "context_ids": [],
+      "hit1": false,
+      "hit3": false,
+      "context_hit": false,
+      "elapsed_ms": 0.4267999902367592
+    }
+  ]
+}
